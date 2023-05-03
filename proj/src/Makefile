@@ -3,7 +3,7 @@ PROG=proj
 
 .PATH: ${.CURDIR}/drivers/
 
-# source code files to be compiled  serial_pPOrt.Port.c
+# source code files to be compiled
 SRCS = 	proj.c
 
 # additional compilation flags
