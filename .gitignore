@@ -1,0 +1,5 @@
+.vscode/
+
+#ignore object files and dependency files
+*.o
+*.d
