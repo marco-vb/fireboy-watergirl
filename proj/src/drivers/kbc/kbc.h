@@ -9,7 +9,7 @@
 
 int (kbc_get_status)(uint8_t* st);
 int (kbc_read_data)(uint8_t* data);
-int (kbc_write)(uint8_t port, uint8_t data);
+int (kbc_write)(uint8_t port, uint8_t cmd);
 int (kbc_write_cmd)(uint8_t cmd);
 int (kbc_write_arg)(uint8_t arg);
 int (obf_full)();

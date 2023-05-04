@@ -3,3 +3,6 @@
 #ignore object files and dependency files
 *.o
 *.d
+
+#ignore executable
+proj

@@ -6,7 +6,7 @@
 #include "kbc.h"
 #include "mouse.h"
 
-static uint8_t hook_mouse = 2, size = 0;
+static int hook_mouse = 2, size = 0;
 struct packet pp;
 bool mouse_packet_complete = false;
 

@@ -86,13 +86,13 @@ void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     memcpy(&video_mem[i], &color, bytes_per_pixel);
 }
 
-int (video_draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
+void (video_draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
     xpm_image_t img;
     uint8_t* colors = xpm_load(xpm, XPM_INDEXED, &img);
 
     for (int h = 0; h < img.height; h++) {
         for (int w = 0; w < img.width; w++, colors++) {
-            video_draw_pixel(x + w, y + h, *colors)
+            video_draw_pixel(x + w, y + h, *colors);
         }
     }
 }

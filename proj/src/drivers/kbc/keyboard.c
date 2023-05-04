@@ -6,7 +6,7 @@
 #include "kbc.h"
 #include "keyboard.h"
 
-static uint8_t hook_keyboard = 1, size = 0;
+static int hook_keyboard = 1, size = 0;
 uint8_t bytes[2];
 bool keyboard_packet_complete = false;
 

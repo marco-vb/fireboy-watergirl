@@ -13,7 +13,7 @@ int (kbc_read_data)(uint8_t* data) {
     return util_sys_inb(KBC_OUT, data);
 }
 
-int (kbc_write)(uint8_t port, uint8_t data) {
+int (kbc_write)(uint8_t port, uint8_t cmd) {
     uint8_t st, wait = 5;
 
     while (wait--) {
