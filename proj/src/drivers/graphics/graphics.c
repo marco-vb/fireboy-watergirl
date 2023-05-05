@@ -42,7 +42,12 @@ int (text_mode)() {
 }
 
 int (video_mode)() {
-    return video_set_mode(VBE_VIDEO_MODE_DC);
+    if (video_set_mode(VBE_VIDEO_MODE_DC) != 0) {
+        printf("video_set_mode() failed\n");
+        return 1;
+    }
+
+    return map_memory(VBE_VIDEO_MODE_DC);
 }
 
 int (map_memory)(uint16_t mode) {

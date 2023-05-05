@@ -7,7 +7,7 @@ PROG=proj
 .PATH: ${.CURDIR}/drivers/timer
 
 # source code files to be compiled
-SRCS = 	proj.c utils.c keyboard.c mouse.c kbc.c timer.c graphics.c
+SRCS = 	utils.c keyboard.c mouse.c kbc.c timer.c graphics.c proj.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

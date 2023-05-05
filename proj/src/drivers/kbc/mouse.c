@@ -7,10 +7,9 @@
 #include "mouse.h"
 
 static int hook_mouse = 2, size = 0;
-struct packet pp;
-bool mouse_packet_complete = false;
+mouse_packet_t mouse_packet;
 
-int(mouse_subscribe_int)(int* bit_no) {
+int(mouse_subscribe_int)(uint8_t* bit_no) {
     *bit_no = BIT(hook_mouse);
     return sys_irqsetpolicy(MOUSE_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_mouse);
 }
@@ -56,14 +55,19 @@ int (mouse_send_cmd)(uint8_t cmd) {
     return 0;
 }
 
-void (mouse_ih)() {
-    mouse_packet_complete = false;
-
-    uint8_t st, byte;
-
-    if (size > 2) {
-        size = 0;
+void (m_read_byte)(uint8_t b) {
+    mouse_packet.data.bytes[mouse_packet.byte++] = b;
+    if (mouse_packet.byte == 3) {
+        mouse_packet.byte = 0;
+        mouse_packet.complete = true;
     }
+    else {
+        mouse_packet.complete = false;
+    }
+}
+
+void (mouse_ih)() {
+    uint8_t st, byte;
 
     if (kbc_get_status(&st)) {
         printf("Error reading status!\n");
@@ -83,8 +87,14 @@ void (mouse_ih)() {
             return;
         }
 
-        pp.bytes[size++] = byte;
-
-        mouse_packet_complete = size == 3;
+        m_read_byte(byte);
     }
+}
+
+int (mouse_enable_dr)() {
+    return mouse_send_cmd(MOUSE_ENABLE_DR);
+}
+
+int (mouse_disable_dr)() {
+    return mouse_send_cmd(MOUSE_DISABLE_DR);
 }

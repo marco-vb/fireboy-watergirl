@@ -5,13 +5,18 @@
 #include <stdint.h>
 #include "i8042.h"
 
-//enum mouse_state {};
+typedef struct {
+    struct packet data;
+    int byte;
+    bool complete;
+} mouse_packet_t;
 
-int (mouse_subscribe_int)(int* bit_no);
+int (mouse_subscribe_int)(uint8_t* bit_no);
 int (mouse_unsubscribe_int)();
+void (m_read_byte)(uint8_t b);
 void (mouse_ih)();
 int (mouse_send_cmd)(uint8_t cmd);
-void (mouse_build_packet)();
-int (mouse_write)(uint8_t cmd);
+int (mouse_enable_dr)();
+int (mouse_disable_dr)();
 
 #endif /* __MOUSE_H */

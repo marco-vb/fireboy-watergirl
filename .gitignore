@@ -3,6 +3,8 @@
 #ignore object files and dependency files
 *.o
 *.d
+.clang-format
+.gdbinit
 
 #ignore executable
 proj

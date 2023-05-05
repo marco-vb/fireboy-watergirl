@@ -6,9 +6,8 @@
 #include "kbc.h"
 #include "keyboard.h"
 
-static int hook_keyboard = 1, size = 0;
-uint8_t bytes[2];
-bool keyboard_packet_complete = false;
+static int hook_keyboard = 1;
+keyboard_packet_t keyboard_packet;
 
 int (keyboard_subscribe_int)(uint8_t* bit_no) {
     *bit_no = BIT(hook_keyboard);
@@ -19,14 +18,20 @@ int (keyboard_unsubscribe_int)() {
     return sys_irqrmpolicy(&hook_keyboard);
 }
 
-int (keyboard_read_data)() {
-    return kbc_read_data(&bytes[size]);
+void (k_read_byte)(uint8_t b) {
+    keyboard_packet.data[keyboard_packet.byte] = b;
+    if (b == TWO_BYTES) {
+        keyboard_packet.complete = false;
+        keyboard_packet.byte++;
+    }
+    else {
+        keyboard_packet.complete = true;
+        keyboard_packet.byte = 0;
+    }
 }
 
 void (keyboard_ih)() {
-    keyboard_packet_complete = false;
-
-    uint8_t st;
+    uint8_t st, byte;
     if (kbc_get_status(&st) != F_OK) {
         printf("Error getting keyboard status.\n");
         return;
@@ -36,14 +41,9 @@ void (keyboard_ih)() {
         return;
     }
 
-    if (st & KBC_OUT_FULL) keyboard_read_data();
-
-    if (bytes[size] == TWO_BYTES) {
-        size++;
-    }
-    else {
-        keyboard_packet_complete = true;
-        size = 0;
+    if (st & KBC_OUT_FULL) {
+        kbc_read_data(&byte);
+        k_read_byte(byte);
     }
 }
 
