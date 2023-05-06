@@ -1,10 +1,8 @@
 .vscode/
-
 #ignore object files and dependency files
 *.o
 *.d
-.clang-format
-.gdbinit
-
 #ignore executable
 proj
+#ignore main file for testing purposes
+proj/src/proj.c
