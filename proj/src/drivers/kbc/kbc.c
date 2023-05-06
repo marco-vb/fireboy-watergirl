@@ -76,6 +76,11 @@ int (kbc_init)(uint8_t* irq_keyboard, uint8_t* irq_mouse) {
         return 1;
     }
 
+    if (mouse_stream_mode() != OK) {
+        printf("Error setting stream mode.\n");
+        return 1;
+    }
+
     return 0;
 }
 
