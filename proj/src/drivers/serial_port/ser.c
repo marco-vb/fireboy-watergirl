@@ -2,8 +2,18 @@
 #include "ser.h"
 #include "uart.h"
 
-int line_ctrl_reg_read(uint8_t *info) {
-    if (util_sys_inb(SER_LCR, info)) {
+int line_ctrl_reg_read(uint8_t *conf) {
+    if (util_sys_inb(SER_LCR, conf)) {
+        printf("Error while reading from LCR\n");
+        return 1;
+    }
+
+    return 0;
+}
+
+int line_ctrl_reg_write(uint8_t conf) {
+    if (sys_outb(SER_LCR, conf)) {
+        printf("Error while writing to LCR\n");
         return 1;
     }
 
@@ -37,8 +47,44 @@ int line_ctrl_reg_conf(uint8_t bits, uint8_t stop, uint8_t par_mode) {
     if (par_mode > 2)
         conf |= BIT(5);
 
-    if (sys_outb(SER_LCR, conf))
+    if (line_ctrl_reg_write(conf))
         return 1;
 
+    return 0;
+}
+
+int bit_rate_conf(uint32_t bit_rate) {
+    uint8_t ser_conf, lsb, msb;
+    uint16_t val = 115200/bit_rate;
+
+    if (line_ctrl_reg_read(&ser_conf))
+        return 1;
+    
+    ser_conf |= LCR_DLAB;
+
+    if (line_ctrl_reg_write(ser_conf))
+        return 1;
+    
+    if (util_get_LSB(val, &lsb))
+        return 1;
+    
+    if (util_get_MSB(val, &msb))
+        return 1;
+    
+    if (sys_outb(SER_DLL, lsb)){
+        printf("Error while writing to DLL\n");
+        return 1;
+    }
+    
+    if (sys_outb(SER_DLM, msb)){
+        printf("Error while writing to DLM\n");
+        return 1;
+    }
+
+    ser_conf &= ~LCR_DLAB;
+
+    if (line_ctrl_reg_write(ser_conf))
+        return 1;
+    
     return 0;
 }
