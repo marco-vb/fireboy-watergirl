@@ -6,6 +6,7 @@
 
 #include "../xpm/cursor.xpm"
 #include "../xpm/background.xpm"
+#include "../xpm/logo.xpm"
 
 typedef struct {
     uint16_t x, y;
@@ -16,6 +17,7 @@ typedef struct {
 
 Sprite* background;
 Sprite* cursor;
+Sprite* logo;
 
 Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, int16_t xspeed, int16_t yspeed);
 

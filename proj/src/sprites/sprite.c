@@ -27,8 +27,9 @@ Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, int16_t xspeed, int
 int load_sprites() {
     background = create_sprite((xpm_map_t)background_xpm, 0, 0, 0, 0);
     cursor = create_sprite((xpm_map_t)cursor_xpm, 0, 0, 0, 0);
+    logo = create_sprite((xpm_map_t)logo_xpm, 0, 0, 0, 0);
 
-    if (!background || !cursor) return 1;
+    if (!background || !cursor || !logo) return 1;
 
     return 0;
 }
