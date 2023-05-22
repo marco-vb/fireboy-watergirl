@@ -6,9 +6,10 @@ PROG=proj
 .PATH: ${.CURDIR}/drivers/kbc
 .PATH: ${.CURDIR}/drivers/timer
 .PATH: ${.CURDIR}/sprites
+.PATH: ${.CURDIR}/maps
 
 # source code files to be compiled
-SRCS = 	utils.c kbc.c keyboard.c mouse.c timer.c sprite.c graphics.c proj.c
+SRCS = 	utils.c kbc.c keyboard.c mouse.c timer.c sprite.c graphics.c proj.c map.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

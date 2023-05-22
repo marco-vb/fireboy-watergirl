@@ -9,6 +9,7 @@
 #include "drivers/kbc/mouse.h"
 #include "drivers/graphics/graphics.h"
 #include "sprites/sprite.h"
+#include "maps/map.h"
 
 extern mouse_packet_t mouse_packet;
 extern keyboard_packet_t keyboard_packet;
@@ -55,7 +56,7 @@ int (proj_main_loop)(int argc, char* argv[]) {
         return 1;
     }
 
-    timer_set_frequency(0, 30);
+    timer_set_frequency(0, 60);
 
     if (kbc_init(&irq_keyboard, &irq_mouse)) {
         printf("Error initializing kbc.\n");
@@ -64,6 +65,9 @@ int (proj_main_loop)(int argc, char* argv[]) {
 
     if (load_sprites()) {
         printf("Error loading cursor.\n");
+        return 1;
+    }
+    if(load_Maps()){
         return 1;
     }
 
