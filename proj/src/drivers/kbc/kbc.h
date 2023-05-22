@@ -15,5 +15,7 @@ int (kbc_write_arg)(uint8_t arg);
 int (obf_full)();
 int (ibf_empty)();
 int (buffer_full)(uint8_t flag);
+int (kbc_init)(uint8_t* irq_keyboard, uint8_t* irq_mouse);
+int (kbc_disable)();
 
 #endif /* __KBC_H */

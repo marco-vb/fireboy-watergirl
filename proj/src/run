@@ -1,0 +1,2 @@
+make clean && make depend && make
+lcom_run proj

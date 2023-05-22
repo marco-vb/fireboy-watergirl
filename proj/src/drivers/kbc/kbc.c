@@ -4,6 +4,8 @@
 #include <stdbool.h>
 
 #include "kbc.h"
+#include "keyboard.h"
+#include "mouse.h"
 
 int (kbc_get_status)(uint8_t* st) {
     return util_sys_inb(KBC_ST_REG, st);
@@ -56,4 +58,42 @@ int (ibf_empty)() {
 
 int (obf_full)() {
     return buffer_full(KBC_OUT_FULL);
+}
+
+int (kbc_init)(uint8_t* irq_keyboard, uint8_t* irq_mouse) {
+    if (keyboard_subscribe_int(irq_keyboard) != OK) {
+        printf("Error subscribing keyboard interrupts.\n");
+        return 1;
+    }
+
+    if (mouse_enable_dr() != OK) {
+        printf("Error enabling data reporting.\n");
+        return 1;
+    }
+
+    if (mouse_subscribe_int(irq_mouse) != OK) {
+        printf("Error subscribing mouse interrupts.\n");
+        return 1;
+    }
+
+    return 0;
+}
+
+int (kbc_disable)() {
+    if (mouse_disable_dr() != OK) {
+        printf("Error disabling data reporting.\n");
+        return 1;
+    }
+
+    if (mouse_unsubscribe_int()) {
+        printf("Error unsubscribing mouse interrupts.\n");
+        return 1;
+    }
+
+    if (keyboard_unsubscribe_int()) {
+        printf("Error unsubscribing keyboard interrupts.\n");
+        return 1;
+    }
+
+    return 0;
 }
