@@ -33,5 +33,6 @@ void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 void (video_draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y);
 uint16_t(get_hres)();
 uint16_t(get_vres)();
-
+int(clear_buffer)();
+int (draw_buffer)();
 #endif /* __GRAPHICS_H */

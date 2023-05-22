@@ -86,8 +86,10 @@ int (proj_main_loop)(int argc, char* argv[]) {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
+                    // clear_buffer();
                     draw_sprite(background);
                     draw_sprite(cursor);
+                    draw_buffer();
                 }
 
                 if (msg.m_notify.interrupts & irq_keyboard) {
