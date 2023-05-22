@@ -5,6 +5,7 @@
 
 #include <stdint.h>
 #include "i8042.h"
+#include "../../sprites/sprite.h"
 
 typedef struct {
     int16_t byte, x, y;
@@ -23,5 +24,9 @@ int (mouse_send_cmd)(uint8_t cmd);
 int (mouse_enable_dr)();
 int (mouse_disable_dr)();
 int (mouse_stream_mode)();
+int (mouse_inside)(uint16_t x, uint16_t y, uint16_t width, uint16_t height);
+int (mouse_over_sprite)(Sprite* sp);
+int (mouse_lclick_sprite)(Sprite* sp);
+int (mouse_rclick_sprite)(Sprite* sp);
 
 #endif /* __MOUSE_H */
