@@ -66,18 +66,13 @@ int (kbc_init)(uint8_t* irq_keyboard, uint8_t* irq_mouse) {
         return 1;
     }
 
-    if (mouse_subscribe_int(irq_mouse) != OK) {
-        printf("Error subscribing mouse interrupts.\n");
-        return 1;
-    }
-
     if (mouse_enable_dr() != OK) {
         printf("Error enabling data reporting.\n");
         return 1;
     }
 
-    if (mouse_stream_mode() != OK) {
-        printf("Error setting stream mode.\n");
+    if (mouse_subscribe_int(irq_mouse) != OK) {
+        printf("Error subscribing mouse interrupts.\n");
         return 1;
     }
 

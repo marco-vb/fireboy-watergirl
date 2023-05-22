@@ -8,9 +8,11 @@
 #include "drivers/kbc/keyboard.h"
 #include "drivers/kbc/mouse.h"
 #include "drivers/graphics/graphics.h"
+#include "sprites/sprite.h"
 
 extern mouse_packet_t mouse_packet;
 extern keyboard_packet_t keyboard_packet;
+extern Sprite* cursor;
 
 
 int main(int argc, char* argv[]) {
@@ -47,23 +49,20 @@ int (proj_main_loop)(int argc, char* argv[]) {
         return 1;
     }
 
-    if (mouse_subscribe_int(&irq_mouse)) {
-        printf("Error subscribing mouse interrupts.\n");
-        return 1;
-    }
-
     if (timer_subscribe_int(&irq_timer)) {
         printf("Error subscribing timer interrupts.\n");
         return 1;
     }
 
-    if (keyboard_subscribe_int(&irq_keyboard)) {
-        printf("Error subscribing keyboard interrupts.\n");
+    timer_set_frequency(0, 60);
+
+    if (kbc_init(&irq_keyboard, &irq_mouse)) {
+        printf("Error initializing kbc.\n");
         return 1;
     }
 
-    if (mouse_enable_dr() != OK) {
-        printf("Error enabling data reporting.\n");
+    if (load_cursor() != OK) {
+        printf("Error loading cursor.\n");
         return 1;
     }
 
@@ -78,22 +77,25 @@ int (proj_main_loop)(int argc, char* argv[]) {
             case HARDWARE:
                 if (msg.m_notify.interrupts & irq_mouse) {
                     mouse_ih();
-                    if (mouse_packet.complete) {
-                        video_draw_rectangle(50, 50, 200, 200, 0x0000FF);
-                    }
+                    if (!mouse_packet.complete) continue;
+
+                    cursor->x = mouse_packet.x;
+                    cursor->y = mouse_packet.y;
+                    draw_sprite(cursor);
                 }
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
+                    // draw the mouse
+                    //video_draw_rectangle(mouse_packet.x, mouse_packet.y, 10, 10, 0xFF0000);
                 }
 
                 if (msg.m_notify.interrupts & irq_keyboard) {
                     keyboard_ih();
-                    if (keyboard_packet.complete) {
-                        video_draw_rectangle(50, 50, 200, 200, 0x00FF00);
-                    }
+                    // if (keyboard_packet.complete) {
+                    //     video_draw_rectangle(50, 50, 200, 200, 0x00FF00);
+                    // }
                 }
-
                 break;
             default:
                 break;
@@ -101,23 +103,13 @@ int (proj_main_loop)(int argc, char* argv[]) {
         }
     } while (keyboard_packet.data[0] != ESC_BREAK);
 
-    if (mouse_disable_dr() != OK) {
-        printf("Error disabling data reporting.\n");
-        return 1;
-    }
-
-    if (mouse_unsubscribe_int()) {
-        printf("Error unsubscribing mouse interrupts.\n");
+    if (kbc_disable() != OK) {
+        printf("Error disabling kbc.\n");
         return 1;
     }
 
     if (timer_unsubscribe_int()) {
         printf("Error unsubscribing timer interrupts.\n");
-        return 1;
-    }
-
-    if (keyboard_unsubscribe_int()) {
-        printf("Error unsubscribing keyboard interrupts.\n");
         return 1;
     }
 

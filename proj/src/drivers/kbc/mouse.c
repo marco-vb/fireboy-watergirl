@@ -7,7 +7,7 @@
 #include "mouse.h"
 #include "../graphics/graphics.h"
 
-static int hook_mouse = 2, size = 0;
+static int hook_mouse = 2;
 mouse_packet_t mouse_packet;
 
 int(mouse_subscribe_int)(uint8_t* bit_no) {
@@ -83,6 +83,8 @@ void (mouse_update_pos)() {
     int16_t dx = mouse_packet.delta_x;
     int16_t dy = mouse_packet.delta_y;
 
+    printf("Updating position: %d %d\n", dx, dy);
+
     if (!mouse_packet.x_ov) {
         if (mouse_packet.x + dx < 0) {
             mouse_packet.x = 0;
@@ -124,12 +126,13 @@ void (mouse_ih)() {
             return;
         }
 
-        if (size == 0 && !(byte & MOUSE_SYNC_BIT)) {
+        if (mouse_packet.byte == 0 && !(byte & MOUSE_SYNC_BIT)) {
             printf("Mouse is not synced!\n");
             return;
         }
 
         m_read_byte(byte);
+        printf("here\n");
     }
 }
 

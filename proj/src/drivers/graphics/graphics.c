@@ -102,10 +102,10 @@ void (video_draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
     }
 }
 
-uint16_t (get_hres)() {
+uint16_t(get_hres)() {
     return hres;
 }
 
-uint16_t (get_vres)() {
+uint16_t(get_vres)() {
     return vres;
 }

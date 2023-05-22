@@ -7,7 +7,7 @@
 #include "i8042.h"
 
 typedef struct {
-    int byte, x, y;
+    int16_t byte, x, y;
     int16_t delta_x, delta_y;
     uint8_t bytes[3];
     uint8_t rb, mb, lb, x_ov, y_ov, complete;
