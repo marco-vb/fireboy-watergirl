@@ -147,3 +147,19 @@ int (mouse_disable_dr)() {
 int (mouse_stream_mode)() {
     return mouse_send_cmd(MOUSE_STREAM_MODE);
 }
+
+int (mouse_inside)(uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
+    return (x <= mouse_packet.x && mouse_packet.x <= x + width) && (y <= mouse_packet.y && mouse_packet.y <= y + height);
+}
+
+int (mouse_over_sprite)(Sprite* sp) {
+    return mouse_inside(sp->x, sp->y, sp->width, sp->height);
+}
+
+int (mouse_lclick_sprite)(Sprite* sp) {
+    return mouse_over_sprite(sp) && mouse_packet.lb;
+}
+
+int (mouse_rclick_sprite)(Sprite* sp) {
+    return mouse_over_sprite(sp) && mouse_packet.rb;
+}
