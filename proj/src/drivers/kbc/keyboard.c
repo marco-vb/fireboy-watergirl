@@ -60,3 +60,11 @@ int (keyboard_restore_int)() {
 
     return 0;
 }
+
+keyboard_key(keyboard_get_key)() {
+    if (!keyboard_packet.complete) {
+        return KEY_NONE;
+    }
+
+    return keyboard_packet.data[0];
+}
