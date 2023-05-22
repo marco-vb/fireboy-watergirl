@@ -12,6 +12,7 @@
 
 extern mouse_packet_t mouse_packet;
 extern keyboard_packet_t keyboard_packet;
+extern Sprite* background;
 extern Sprite* cursor;
 
 
@@ -44,7 +45,7 @@ int (proj_main_loop)(int argc, char* argv[]) {
     message msg;
     uint8_t irq_mouse, irq_timer, irq_keyboard;
 
-    if (video_mode() != OK) {
+    if (video_mode()) {
         printf("Error setting video mode.\n");
         return 1;
     }
@@ -54,14 +55,14 @@ int (proj_main_loop)(int argc, char* argv[]) {
         return 1;
     }
 
-    timer_set_frequency(0, 60);
+    timer_set_frequency(0, 30);
 
     if (kbc_init(&irq_keyboard, &irq_mouse)) {
         printf("Error initializing kbc.\n");
         return 1;
     }
 
-    if (load_cursor() != OK) {
+    if (load_sprites()) {
         printf("Error loading cursor.\n");
         return 1;
     }
@@ -81,13 +82,12 @@ int (proj_main_loop)(int argc, char* argv[]) {
 
                     cursor->x = mouse_packet.x;
                     cursor->y = mouse_packet.y;
-                    draw_sprite(cursor);
                 }
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
-                    // draw the mouse
-                    //video_draw_rectangle(mouse_packet.x, mouse_packet.y, 10, 10, 0xFF0000);
+                    draw_sprite(background);
+                    draw_sprite(cursor);
                 }
 
                 if (msg.m_notify.interrupts & irq_keyboard) {

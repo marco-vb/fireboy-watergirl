@@ -2,7 +2,3 @@
 #ignore object files and dependency files
 *.o
 *.d
-#ignore executable
-proj
-#ignore main file for testing purposes
-proj/src/proj.c
