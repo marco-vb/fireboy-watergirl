@@ -58,7 +58,9 @@ game.d game.ln game.o: game.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   drivers/kbc/../../sprites/../xpm/settings.xpm \
   drivers/kbc/../../sprites/../xpm/settingsH.xpm \
   drivers/kbc/../../sprites/../xpm/exit.xpm \
-  drivers/kbc/../../sprites/../xpm/exitH.xpm
+  drivers/kbc/../../sprites/../xpm/exitH.xpm \
+  drivers/kbc/../../sprites/../xpm/fireboy.xpm \
+  drivers/kbc/../../sprites/../xpm/watergirl.xpm
 graphics.d graphics.ln graphics.o: /home/lcom/labs/shared/proj/src/drivers/graphics/graphics.c \
   /usr/include/lcom/lcf.h /usr/include/stdbool.h /usr/include/stdio.h \
   /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
@@ -170,7 +172,9 @@ kbc.d kbc.ln kbc.o: /home/lcom/labs/shared/proj/src/drivers/kbc/kbc.c \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/settings.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/settingsH.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exit.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exitH.xpm
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exitH.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/fireboy.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/watergirl.xpm
 keyboard.d keyboard.ln keyboard.o: /home/lcom/labs/shared/proj/src/drivers/kbc/keyboard.c \
   /usr/include/lcom/lcf.h /usr/include/stdbool.h /usr/include/stdio.h \
   /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
@@ -283,7 +287,9 @@ mouse.d mouse.ln mouse.o: /home/lcom/labs/shared/proj/src/drivers/kbc/mouse.c \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/settings.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/settingsH.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exit.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exitH.xpm
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exitH.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/fireboy.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/watergirl.xpm
 proj.d proj.ln proj.o: proj.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   /usr/include/stdio.h /usr/include/sys/cdefs.h \
   /usr/include/machine/cdefs.h /usr/include/sys/cdefs_elf.h \
@@ -344,7 +350,9 @@ proj.d proj.ln proj.o: proj.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   drivers/kbc/../../sprites/../xpm/settings.xpm \
   drivers/kbc/../../sprites/../xpm/settingsH.xpm \
   drivers/kbc/../../sprites/../xpm/exit.xpm \
-  drivers/kbc/../../sprites/../xpm/exitH.xpm
+  drivers/kbc/../../sprites/../xpm/exitH.xpm \
+  drivers/kbc/../../sprites/../xpm/fireboy.xpm \
+  drivers/kbc/../../sprites/../xpm/watergirl.xpm
 sprite.d sprite.ln sprite.o: /home/lcom/labs/shared/proj/src/sprites/sprite.c \
   /home/lcom/labs/shared/proj/src/sprites/sprite.h \
   /usr/include/lcom/lcf.h /usr/include/stdbool.h /usr/include/stdio.h \
@@ -403,7 +411,9 @@ sprite.d sprite.ln sprite.o: /home/lcom/labs/shared/proj/src/sprites/sprite.c \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/settings.xpm \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/settingsH.xpm \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/exit.xpm \
-  /home/lcom/labs/shared/proj/src/sprites/../xpm/exitH.xpm
+  /home/lcom/labs/shared/proj/src/sprites/../xpm/exitH.xpm \
+  /home/lcom/labs/shared/proj/src/sprites/../xpm/fireboy.xpm \
+  /home/lcom/labs/shared/proj/src/sprites/../xpm/watergirl.xpm
 timer.d timer.ln timer.o: /home/lcom/labs/shared/proj/src/drivers/timer/timer.c \
   /usr/include/lcom/lcf.h /usr/include/stdbool.h /usr/include/stdio.h \
   /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \

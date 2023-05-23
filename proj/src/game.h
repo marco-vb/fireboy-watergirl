@@ -15,6 +15,7 @@ extern mouse_packet_t mouse_packet;
 extern keyboard_packet_t keyboard_packet;
 extern Sprite* background, * cursor, * logo, * play_text, * settings_text, * exit_text;
 extern Sprite* play_texth, * settings_texth, * exit_texth;
+extern Sprite* fireboy, * watergirl;
 
 typedef enum {
     MAIN_MENU,
@@ -34,5 +35,7 @@ int draw_settings_menu();
 int draw_game();
 int draw_pause_menu();
 int draw_game_over();
+int fireboy_move(keyboard_key key);
+int watergirl_move(keyboard_key key);
 
 #endif /* __GAME_H */

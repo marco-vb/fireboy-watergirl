@@ -34,6 +34,8 @@ int load_sprites() {
     settings_texth = create_sprite((xpm_map_t)settingsh_xpm, 100, 450, 0, 0);
     exit_text = create_sprite((xpm_map_t)exit_xpm, 350, 650, 0, 0);
     exit_texth = create_sprite((xpm_map_t)exith_xpm, 350, 650, 0, 0);
+    fireboy = create_sprite((xpm_map_t)fireboy_xpm, 300, 400, 0, 0);
+    watergirl = create_sprite((xpm_map_t)watergirl_xpm, 500, 400, 0, 0);
 
     return 0;
 }
