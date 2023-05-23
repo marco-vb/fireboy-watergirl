@@ -10,6 +10,7 @@
 #include "drivers/graphics/graphics.h"
 #include "sprites/sprite.h"
 #include "maps/map.h"
+#include "count_down/count_down.h"
 
 extern mouse_packet_t mouse_packet;
 extern keyboard_packet_t keyboard_packet;
@@ -41,7 +42,8 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
-
+int frames_per_second=60;
+int current_frame=0;
 int (proj_main_loop)(int argc, char* argv[]) {
     int ipc_status, r;
     message msg;
@@ -57,7 +59,7 @@ int (proj_main_loop)(int argc, char* argv[]) {
         return 1;
     }
 
-    timer_set_frequency(0, 60);
+    timer_set_frequency(0, frames_per_second);
 
     if (kbc_init(&irq_keyboard, &irq_mouse)) {
         printf("Error initializing kbc.\n");
@@ -72,6 +74,7 @@ int (proj_main_loop)(int argc, char* argv[]) {
         return 1;
     }
     draw_map(map1);
+    start_counter(120);
 
     do {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -95,9 +98,14 @@ int (proj_main_loop)(int argc, char* argv[]) {
                     // clear_buffer();
                     
                     draw_sprite(cursor);
-                   
+                    
                     draw_buffer();
-                     erase_sprite(cursor);
+                    erase_sprite(cursor);
+                    if((current_frame++)==frames_per_second){ 
+                        decrement_counter();
+                        current_frame=0;
+                        }
+                        draw_counter();
                 }
 
                 if (msg.m_notify.interrupts & irq_keyboard) {

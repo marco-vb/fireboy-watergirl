@@ -7,13 +7,14 @@ PROG=proj
 .PATH: ${.CURDIR}/drivers/timer
 .PATH: ${.CURDIR}/sprites
 .PATH: ${.CURDIR}/maps
+.PATH: ${.CURDIR}/count_down
 
 # source code files to be compiled
-SRCS = 	utils.c kbc.c keyboard.c mouse.c timer.c sprite.c graphics.c proj.c map.c
+SRCS = 	utils.c kbc.c keyboard.c mouse.c timer.c sprite.c graphics.c proj.c map.c count_down.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
-CFLAGS += -pedantic -D_LCOM_OPTIMIZED_
+CFLAGS += -pedantic
 
 # list of library dependencies
 DPADD += ${LIBLCF}

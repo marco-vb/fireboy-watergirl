@@ -12,12 +12,13 @@ typedef struct {
 
     uint16_t rows, colums;
     char* map;
+    int x,y;
 } Map;
 
 Map* map1;
 
 
-Map* (create_Map)(char *map_, int rows, int colums);
+Map* (create_Map)(char *map_, int rows, int colums,int x,int y);
 
 int (load_Maps)();
 

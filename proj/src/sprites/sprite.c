@@ -62,6 +62,8 @@ int erase_sprite(Sprite* sp) {
 
     for (int h = 0; h < sp->height; h++) {
         for (int w = 0; w < sp->width; w++) {
+            uint32_t pixel = sp->map[h * sp->width + w];
+            if (pixel == xpm_transparency_color(XPM_8_8_8_8)) continue;
             replace_with_background(sp->x + w, sp->y + h);
         }
     }
