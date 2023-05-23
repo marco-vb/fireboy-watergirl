@@ -15,9 +15,11 @@ typedef struct {
 Map* map1;
 
 
-Map* (create_Map)(const char *filePath);
+Map* (create_Map)(char *map_, int rows, int colums);
 
 int (load_Maps)();
+
+int (draw_map)(Map* map);
 
 
 

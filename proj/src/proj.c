@@ -15,6 +15,7 @@ extern mouse_packet_t mouse_packet;
 extern keyboard_packet_t keyboard_packet;
 extern Sprite* background;
 extern Sprite* cursor;
+extern Map* map1;
 
 
 int main(int argc, char* argv[]) {
@@ -91,7 +92,7 @@ int (proj_main_loop)(int argc, char* argv[]) {
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
                     // clear_buffer();
-                    draw_sprite(background);
+                    draw_map(map1);
                     draw_sprite(cursor);
                     draw_buffer();
                 }
