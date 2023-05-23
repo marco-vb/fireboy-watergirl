@@ -26,6 +26,7 @@ typedef struct {
 Sprite* background, * cursor, * logo, * play_text, * settings_text, * exit_text;
 Sprite* play_texth, * settings_texth, * exit_texth;
 Sprite* fireboy, * watergirl;
+Sprite* block;
 
 Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, int16_t xspeed, int16_t yspeed);
 

@@ -37,6 +37,10 @@ int load_sprites() {
     fireboy = create_sprite((xpm_map_t)fireboy_xpm, 300, 400, 0, 0);
     watergirl = create_sprite((xpm_map_t)watergirl_xpm, 500, 400, 0, 0);
 
+
+
+    if (!background || !cursor) return 1;
+
     return 0;
 }
 
@@ -68,7 +72,9 @@ int erase_sprite(Sprite* sp) {
 
     for (int h = 0; h < sp->height; h++) {
         for (int w = 0; w < sp->width; w++) {
-            video_draw_pixel(sp->x + w, sp->y + h, 0);
+            uint32_t pixel = sp->map[h * sp->width + w];
+            if (pixel == xpm_transparency_color(XPM_8_8_8_8)) continue;
+            replace_with_background(sp->x + w, sp->y + h);
         }
     }
 

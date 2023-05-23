@@ -4,7 +4,11 @@
 #include <stdint.h>
 
 #include "game.h"
-
+#include "maps/map.h"
+#include "count_down/count_down.h"
+int frames_per_second=60;
+int current_frame=0;
+extern Map* map1;
 uint8_t irq_mouse, irq_timer, irq_keyboard;
 
 int game_init() {
@@ -29,6 +33,11 @@ int game_init() {
         printf("Error loading cursor.\n");
         return 1;
     }
+      if(load_Maps()){
+        return 1;
+    }
+   
+    
 
     return 0;
 }
@@ -89,6 +98,7 @@ int game_loop() {
                     case KEY_ESC:
                         if (state == MAIN_MENU) state = EXIT;
                         else state = MAIN_MENU;
+                        clear_background();
                         break;
 
                     case KEY_A: case KEY_W: case KEY_S: case KEY_D:
@@ -122,6 +132,7 @@ int draw_screen() {
         break;
     case GAME:
         draw_game();
+
         break;
     case PAUSE_MENU:
         draw_pause_menu();
@@ -137,38 +148,52 @@ int draw_screen() {
 }
 
 int draw_main_menu() {
+    Sprite * chosen[3];
     draw_sprite(logo);
 
     if (mouse_over_sprite(play_text)) {
-        draw_sprite(play_texth);
+        chosen[0]=(play_texth);
         if (mouse_lclick_sprite(play_text)) {
             state = GAME;
+            start_counter(120);
+             clear_background();
+             draw_map(map1);
+             return 0;
         }
     }
     else {
-        draw_sprite(play_text);
+        chosen[0]=(play_text);
     }
     if (mouse_over_sprite(settings_text)) {
-        draw_sprite(settings_texth);
+        chosen[1]=(settings_texth);
         if (mouse_lclick_sprite(settings_text)) {
             state = SETTINGS_MENU;
         }
     }
     else {
-        draw_sprite(settings_text);
+        chosen[1]=(settings_text);
     }
     if (mouse_over_sprite(exit_text)) {
-        draw_sprite(exit_texth);
+        chosen[2]=(exit_texth);
         if (mouse_lclick_sprite(exit_text)) {
             state = EXIT;
         }
     }
     else {
-        draw_sprite(exit_text);
+        chosen[2]=(exit_text);
     }
-
+    draw_sprite(chosen[0]);
+    draw_sprite(chosen[1]);
+    draw_sprite(chosen[2]);
     draw_sprite(cursor);
     draw_buffer();
+    erase_sprite(cursor);
+    erase_sprite(logo);
+    erase_sprite(chosen[0]);
+    erase_sprite(chosen[1]);
+    erase_sprite(chosen[2]);
+    
+
 
     return 0;
 }
@@ -178,10 +203,14 @@ int draw_settings_menu() {
 }
 
 int draw_game() {
-    draw_sprite(fireboy);
-    draw_sprite(watergirl);
-    draw_sprite(cursor);
+    draw_sprite(cursor); 
     draw_buffer();
+    erase_sprite(cursor);
+     if((current_frame++)==frames_per_second){ 
+        decrement_counter();
+        current_frame=0;
+    }
+    draw_counter();
 
     return 0;
 }
