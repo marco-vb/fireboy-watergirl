@@ -3,6 +3,8 @@
 
 #include <lcom/lcf.h>
 #include "../drivers/graphics/graphics.h"
+#include "../xpm/floor.xpm"
+#include "../xpm/wall1.xpm"
 
 
 

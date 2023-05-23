@@ -71,6 +71,7 @@ int (proj_main_loop)(int argc, char* argv[]) {
     if(load_Maps()){
         return 1;
     }
+    draw_map(map1);
 
     do {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -92,9 +93,11 @@ int (proj_main_loop)(int argc, char* argv[]) {
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
                     // clear_buffer();
-                    draw_map(map1);
+                    
                     draw_sprite(cursor);
+                   
                     draw_buffer();
+                     erase_sprite(cursor);
                 }
 
                 if (msg.m_notify.interrupts & irq_keyboard) {

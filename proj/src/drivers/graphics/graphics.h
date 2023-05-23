@@ -32,4 +32,7 @@ uint16_t(get_hres)();
 uint16_t(get_vres)();
 int(clear_buffer)();
 int (draw_buffer)();
+int(draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y);
+int (draw_background)();
+int (replace_with_background)(uint16_t x, uint16_t y);
 #endif /* __GRAPHICS_H */

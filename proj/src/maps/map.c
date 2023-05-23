@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include "maps.c"
 #include <lcom/lcf.h>
+#include "../drivers/graphics/graphics.h"
 
 // ...
 extern Map * map1;
@@ -27,7 +28,7 @@ Map* (create_Map)(char *map_, int rows, int colums){
 }
 
 int (load_Maps)() {
-    map1 = create_Map(map1_,1,3);
+    map1 = create_Map(map1_,10,20);
     if (!map1)
         return 1;
 
@@ -38,21 +39,17 @@ int (load_Maps)() {
 }
 
 int (draw_map)(Map* map){
-     printf("Matrix:\n");
     
     for (int i = 0; i <= map->rows; i++) {
         for (int j = 0; j < map->colums; j++) {
-            printf("%c ", map->map[i*map->colums + j]);
-        }
-        printf("\n");
-    }
-    for (int i = 0; i <= map->rows; i++) {
-        for (int j = 0; j < map->colums; j++) {
-            printf("%c ", map->map[i*map->colums + j]);
-            // if(map->map[i*map->colums + j]=='A');
-            vg_draw_rectangle(10+30*i,10+30*j,30,30,0xFFFFFF);
-        }
-        printf("\n");
+            // printf("%c ", map->map[i*map->colums + j]);
+            if(map->map[i*map->colums + j]=='B')
+                draw_xpm((xpm_map_t)floor_xpm,10+j*32,+i*32);
+            else if(map->map[i*map->colums + j]=='A')
+                draw_xpm((xpm_map_t)wall_xpm,10+j*32,+i*32);
+        }   
+        draw_background();
+        
     }
     return 0;
 }

@@ -28,6 +28,7 @@ int load_sprites() {
     background = create_sprite((xpm_map_t)background_xpm, 0, 0, 0, 0);
     cursor = create_sprite((xpm_map_t)cursor_xpm, 0, 0, 0, 0);
 
+
     if (!background || !cursor) return 1;
 
     return 0;
@@ -61,7 +62,7 @@ int erase_sprite(Sprite* sp) {
 
     for (int h = 0; h < sp->height; h++) {
         for (int w = 0; w < sp->width; w++) {
-            video_draw_pixel(sp->x + w, sp->y + h, 0);
+            replace_with_background(sp->x + w, sp->y + h);
         }
     }
 
