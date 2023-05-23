@@ -27,8 +27,15 @@ Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, int16_t xspeed, int
 int load_sprites() {
     background = create_sprite((xpm_map_t)background_xpm, 0, 0, 0, 0);
     cursor = create_sprite((xpm_map_t)cursor_xpm, 0, 0, 0, 0);
-
-    if (!background || !cursor) return 1;
+    logo = create_sprite((xpm_map_t)logo_xpm, 0, 20, 0, 0);
+    play_text = create_sprite((xpm_map_t)play_xpm, 350, 250, 0, 0);
+    play_texth = create_sprite((xpm_map_t)playh_xpm, 350, 250, 0, 0);
+    settings_text = create_sprite((xpm_map_t)settings_xpm, 100, 450, 0, 0);
+    settings_texth = create_sprite((xpm_map_t)settingsh_xpm, 100, 450, 0, 0);
+    exit_text = create_sprite((xpm_map_t)exit_xpm, 350, 650, 0, 0);
+    exit_texth = create_sprite((xpm_map_t)exith_xpm, 350, 650, 0, 0);
+    fireboy = create_sprite((xpm_map_t)fireboy_xpm, 300, 400, 0, 0);
+    watergirl = create_sprite((xpm_map_t)watergirl_xpm, 500, 400, 0, 0);
 
     return 0;
 }

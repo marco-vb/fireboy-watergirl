@@ -83,8 +83,6 @@ void (mouse_update_pos)() {
     int16_t dx = mouse_packet.delta_x;
     int16_t dy = mouse_packet.delta_y;
 
-    printf("Updating position: %d %d\n", dx, dy);
-
     if (!mouse_packet.x_ov) {
         if (mouse_packet.x + dx < 0) {
             mouse_packet.x = 0;
@@ -132,7 +130,6 @@ void (mouse_ih)() {
         }
 
         m_read_byte(byte);
-        printf("here\n");
     }
 }
 

@@ -12,7 +12,7 @@ static uint16_t hres, vres, bytes_per_pixel;
 size_t frames;
 
 int (video_set_mode)(uint16_t mode) {
-    
+
     reg86_t r;
     memset(&r, 0, sizeof(r));
 
@@ -79,7 +79,7 @@ int (map_memory)(uint16_t mode) {
     }
 
 
-    frames=frame_size;
+    frames = frame_size;
 
     if (video_mem == MAP_FAILED) {
         panic("couldn't map video memory");
@@ -91,7 +91,7 @@ int (map_memory)(uint16_t mode) {
 void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     if (x < 0 || y < 0 || x >= hres || y >= vres) return;
     size_t i = (hres * y + x) * bytes_per_pixel;
-     memcpy(&buffer[i], &color, bytes_per_pixel);
+    memcpy(&buffer[i], &color, bytes_per_pixel);
 }
 
 uint16_t(get_hres)() {
@@ -101,11 +101,12 @@ uint16_t(get_hres)() {
 uint16_t(get_vres)() {
     return vres;
 }
-int(clear_buffer)(){
-    memset(buffer, 0, frames); 
+int(clear_buffer)() {
+    memset(buffer, 0, frames);
     return 0;
 }
-int (draw_buffer)(){
+int (draw_buffer)() {
     memcpy(video_mem, buffer, frames);
+    memset(buffer, 0, frames);
     return 0;
 }
