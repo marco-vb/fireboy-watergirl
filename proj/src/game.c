@@ -33,6 +33,25 @@ int game_init() {
     return 0;
 }
 
+int game_exit() {
+    if (kbc_disable() != OK) {
+        printf("Error disabling kbc.\n");
+        return 1;
+    }
+
+    if (timer_unsubscribe_int()) {
+        printf("Error unsubscribing timer interrupts.\n");
+        return 1;
+    }
+
+    if (text_mode() != OK) {
+        printf("Error exiting video mode.\n");
+        return 1;
+    }
+
+    return 0;
+}
+
 int game_loop() {
     int ipc_status, r;
     message msg;
@@ -56,10 +75,7 @@ int game_loop() {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
-                    //draw_sprite(background);
-                    draw_sprite(logo);
-                    erase_sprite(cursor);
-                    draw_sprite(cursor);
+                    draw_screen();
                 }
 
                 if (msg.m_notify.interrupts & irq_keyboard) {
@@ -81,21 +97,30 @@ int game_loop() {
     return 0;
 }
 
-int game_exit() {
-    if (kbc_disable() != OK) {
-        printf("Error disabling kbc.\n");
-        return 1;
+int draw_screen() {
+    draw_sprite(logo);
+
+    if (mouse_over_sprite(play_text)) {
+        draw_sprite(play_texth);
+    }
+    else {
+        draw_sprite(play_text);
+    }
+    if (mouse_over_sprite(settings_text)) {
+        draw_sprite(settings_texth);
+    }
+    else {
+        draw_sprite(settings_text);
+    }
+    if (mouse_over_sprite(exit_text)) {
+        draw_sprite(exit_texth);
+    }
+    else {
+        draw_sprite(exit_text);
     }
 
-    if (timer_unsubscribe_int()) {
-        printf("Error unsubscribing timer interrupts.\n");
-        return 1;
-    }
-
-    if (text_mode() != OK) {
-        printf("Error exiting video mode.\n");
-        return 1;
-    }
+    draw_sprite(cursor);
+    draw_buffer();
 
     return 0;
 }
