@@ -52,6 +52,8 @@ int game_exit() {
     return 0;
 }
 
+game_state state = MAIN_MENU;
+
 int game_loop() {
     int ipc_status, r;
     message msg;
@@ -92,28 +94,62 @@ int game_loop() {
                 break;
             }
         }
-    } while (keyboard_packet.data[0] != ESC_BREAK);
+    } while (keyboard_packet.data[0] != ESC_BREAK && state != EXIT);
 
     return 0;
 }
 
 int draw_screen() {
+    return draw_main_menu();
+    switch (state) {
+    case MAIN_MENU:
+        draw_main_menu();
+        break;
+    case SETTINGS_MENU:
+        draw_settings_menu();
+        break;
+    case GAME:
+        draw_game();
+        break;
+    case PAUSE_MENU:
+        draw_pause_menu();
+        break;
+    case GAME_OVER:
+        draw_game_over();
+        break;
+    default:
+        break;
+    }
+
+    return 0;
+}
+
+int draw_main_menu() {
     draw_sprite(logo);
 
     if (mouse_over_sprite(play_text)) {
         draw_sprite(play_texth);
+        if (mouse_lclick_sprite(play_text)) {
+            state = GAME;
+        }
     }
     else {
         draw_sprite(play_text);
     }
     if (mouse_over_sprite(settings_text)) {
         draw_sprite(settings_texth);
+        if (mouse_lclick_sprite(settings_text)) {
+            state = SETTINGS_MENU;
+        }
     }
     else {
         draw_sprite(settings_text);
     }
     if (mouse_over_sprite(exit_text)) {
         draw_sprite(exit_texth);
+        if (mouse_lclick_sprite(exit_text)) {
+            state = EXIT;
+        }
     }
     else {
         draw_sprite(exit_text);
@@ -122,5 +158,21 @@ int draw_screen() {
     draw_sprite(cursor);
     draw_buffer();
 
+    return 0;
+}
+
+int draw_settings_menu() {
+    return 0;
+}
+
+int draw_game() {
+    return 0;
+}
+
+int draw_pause_menu() {
+    return 0;
+}
+
+int draw_game_over() {
     return 0;
 }
