@@ -17,17 +17,16 @@
 #include "../xpm/watergirl.xpm"
 
 typedef struct {
-    uint16_t x, y;
+    uint16_t x, y, xspeed, yspeed;
     uint16_t width, height;
     uint32_t* map;
 } Sprite;
 
 Sprite* background, * cursor, * logo, * single_player_text, * coop_text, * exit_text;
 Sprite* single_player_texth, * coop_texth, * exit_texth;
-Sprite* fireboy, * watergirl;
-Sprite* block, *fzl;
+Sprite* block, * fzl;
 
-Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y);
+Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, uint16_t xspeed, uint16_t yspeed);
 
 int load_sprites();
 

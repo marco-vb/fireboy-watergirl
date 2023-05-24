@@ -1,6 +1,6 @@
 #include "sprite.h"
 
-Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y) {
+Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, uint16_t xspeed, uint16_t yspeed) {
     Sprite* sp = (Sprite*)malloc(sizeof(Sprite));
 
     if (sp == NULL) return NULL;
@@ -15,6 +15,8 @@ Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y) {
 
     sp->x = x;
     sp->y = y;
+    sp->xspeed = xspeed;
+    sp->yspeed = yspeed;
     sp->width = img.width;
     sp->height = img.height;
     sp->map = colormap;
@@ -23,17 +25,15 @@ Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y) {
 }
 
 int load_sprites() {
-    background = create_sprite((xpm_map_t)background_xpm, 0, 0);
-    cursor = create_sprite((xpm_map_t)cursor_xpm, 0, 0);
-    logo = create_sprite((xpm_map_t)logo_xpm, 0, 100);
-    single_player_text = create_sprite((xpm_map_t)single_player_xpm, 420, 400);
-    single_player_texth = create_sprite((xpm_map_t)single_playerh_xpm, 430, 400);
-    coop_text = create_sprite((xpm_map_t)coop_xpm, 490, 470);
-    coop_texth = create_sprite((xpm_map_t)cooph_xpm, 490, 470);
-    exit_text = create_sprite((xpm_map_t)exit_xpm, 500, 560);
-    exit_texth = create_sprite((xpm_map_t)exith_xpm, 500, 560);
-    fireboy = create_sprite((xpm_map_t)fireboy_xpm, 300, 400);
-    watergirl = create_sprite((xpm_map_t)watergirl_xpm, 500, 400);
+    background = create_sprite((xpm_map_t)background_xpm, 0, 0, 0, 0);
+    cursor = create_sprite((xpm_map_t)cursor_xpm, 0, 0, 0, 0);
+    logo = create_sprite((xpm_map_t)logo_xpm, 0, 100, 0, 0);
+    single_player_text = create_sprite((xpm_map_t)single_player_xpm, 420, 400, 0, 0);
+    single_player_texth = create_sprite((xpm_map_t)single_playerh_xpm, 430, 400, 0, 0);
+    coop_text = create_sprite((xpm_map_t)coop_xpm, 490, 470, 0, 0);
+    coop_texth = create_sprite((xpm_map_t)cooph_xpm, 490, 470, 0, 0);
+    exit_text = create_sprite((xpm_map_t)exit_xpm, 500, 560, 0, 0);
+    exit_texth = create_sprite((xpm_map_t)exith_xpm, 500, 560, 0, 0);
 
     return 0;
 }
@@ -71,6 +71,25 @@ int erase_sprite(Sprite* sp) {
             replace_with_background(sp->x + w, sp->y + h);
         }
     }
+
+    return 0;
+}
+
+int move_sprite(Sprite* sp) {
+    if (!sp) return 1;
+
+    sp->x += sp->xspeed;
+    sp->y += sp->yspeed;
+
+    return 0;
+}
+
+int animate_sprite(Sprite* sp) {
+    if (!sp) return 1;
+
+    if (move_sprite(sp)) return 1;
+
+    if (draw_sprite(sp)) return 1;
 
     return 0;
 }

@@ -34,6 +34,12 @@ int game_init() {
         return 1;
     }
     if (load_maps()) {
+        printf("Error loading maps.\n");
+        return 1;
+    }
+
+    if (create_characters()) {
+        printf("Error loading characters.\n");
         return 1;
     }
 
@@ -95,8 +101,10 @@ int game_loop() {
                     switch (k) {
                     case KEY_ESC:
                         if (state == MAIN_MENU) state = EXIT;
-                        else state = MAIN_MENU;
-                        clear_background();
+                        else {
+                            state = MAIN_MENU;
+                            clear_background();
+                        }
                         break;
 
                     case KEY_A: case KEY_W: case KEY_S: case KEY_D:
@@ -191,16 +199,27 @@ int draw_settings_menu() {
 
 int draw_game() {
     draw_sprite(cursor);
+
+    move(fireboy);
+    move(watergirl);
+    draw_character(fireboy);
+    draw_character(watergirl);
+
     draw_buffer();
     erase_sprite(cursor);
+    erase_sprite(fireboy->sprite);
+    erase_sprite(watergirl->sprite);
+
     if ((current_frame++) == frames_per_second) {
         decrement_counter();
         current_frame = 0;
     }
+
     draw_counter();
 
     return 0;
 }
+
 
 int draw_pause_menu() {
     return 0;
@@ -213,18 +232,13 @@ int draw_game_over() {
 int fireboy_move(keyboard_key key) {
     switch (key) {
     case KEY_A:
-        fireboy->sprite->x = fireboy->sprite->x - 5 > 5 ? fireboy->sprite->x - 5 : 5;
-        moveLeft(fireboy);
+        move_left(fireboy);
         break;
     case KEY_W:
-        fireboy->sprite->y = fireboy->sprite->y - 5 > 5 ? fireboy->sprite->y - 5 : 5;
-        break;
-    case KEY_S:
-        fireboy->sprite->y = fireboy->sprite->y + 5 < get_vres() - fireboy->sprite->height ? fireboy->sprite->y + 5 : get_vres() - fireboy->sprite->height;
+        jump(fireboy);
         break;
     case KEY_D:
-        fireboy->sprite->x = fireboy->sprite->x + 5 < get_hres() - fireboy->sprite->width ? fireboy->sprite->x + 5 : get_hres() - fireboy->sprite->width;
-        moveRight(fireboy);
+        move_right(fireboy);
         break;
     default:
         break;
@@ -236,18 +250,13 @@ int fireboy_move(keyboard_key key) {
 int watergirl_move(keyboard_key key) {
     switch (key) {
     case KEY_LEFT:
-        watergirl->sprite->x = watergirl->sprite->x - 5 > 5 ? watergirl->sprite->x - 5 : 5;
-        moveLeft(watergirl);
+        move_left(watergirl);
         break;
     case KEY_UP:
-        watergirl->sprite->y = watergirl->sprite->y - 5 > 5 ? watergirl->sprite->y - 5 : 5;
-        break;
-    case KEY_DOWN:
-        watergirl->sprite->y = watergirl->sprite->y + 5 < get_vres() - watergirl->sprite->height ? watergirl->sprite->y + 5 : get_vres() - watergirl->sprite->height;
+        jump(watergirl);
         break;
     case KEY_RIGHT:
-        watergirl->sprite->x = watergirl->sprite->x + 5 < get_hres() - watergirl->sprite->width ? watergirl->sprite->x + 5 : get_hres() - watergirl->sprite->width;
-        moveLeft(watergirl);
+        move_right(watergirl);
         break;
     default:
         break;

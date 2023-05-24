@@ -2,9 +2,11 @@
 #define __CHARECTER_H
 
 #include <lcom/lcf.h>
-#include "../drivers/graphics/graphics.h"
 
+#include "../drivers/graphics/graphics.h"
 #include "../sprites/sprite.h"
+#include "../maps/map.h"
+
 #include "../xpm/zeldas/fireZelda/running_down_shield0.xpm"
 #include "../xpm/zeldas/fireZelda/shield_left/left_shield1.xpm"
 #include "../xpm/zeldas/fireZelda/shield_left/left_shield2.xpm"
@@ -32,32 +34,46 @@
 #include "../xpm/zeldas/waterZelda/shield_right/shield_right5.xpm"
 #include "../xpm/zeldas/waterZelda/shield_right/shield_right6.xpm"
 
-enum Direction{LEFT,RIGHT,UP,DEFAULT};
+
+enum Direction { LEFT, RIGHT, UP, DEFAULT };
+#define GRAVITY 1
+#define DEFAULT_SPEED 3
+#define JUMP 15
 
 typedef struct {
     enum Direction direction;
     int animation_delay;
     int frames_to_next_change;
     int current_sprite;
-    Sprite * sprite;
+    Sprite* sprite;
     uint32_t* left[6];
     uint32_t* right[6];
-    uint32_t *front;
+    uint32_t* front;
 } Character;
 
 
 Character* fireboy, * watergirl;
+extern Map* map1;
 
+char get_tile(Map* map, u_int32_t x, u_int32_t y);
+int wall_down(Character* character);
+int wall_left(Character* character);
+int wall_right(Character* character);
+int wall_up(Character* character);
+int door_fire(Character* character);
+int door_water(Character* character);
 
-int (create_Characters)();
+int(draw_character)(Character* Character);
+int (create_characters)();
+int (set_position)(Character* Character, int x, int y);
+void (character_current_sprite)(Character* character);
 
-int (setPosition)(Character * Character, int x, int y);
+/* Movements due to 'gravity' */
+void move(Character* Character);
 
-void (moveLeft)(Character * Character);
-void (moveRight)(Character * Character);
-int(draw_character)(Character * Character);
-int (jump)(Character * Character);
-void (character_current_sprite)(Character * character);
-
+/* Movements due to user input */
+void (move_left)(Character* Character);
+void (move_right)(Character* Character);
+void (jump)(Character* Character);
 
 #endif /* __SPRITE_H */

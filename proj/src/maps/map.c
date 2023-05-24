@@ -63,10 +63,6 @@ int (draw_map)(Map* map) {
             uint32_t index = i * map->columns + j;
             uint32_t x = map->x + j * TILE_SIZE, y = map->y + i * TILE_SIZE;
 
-            printf("Index: %d\n", index);
-            printf("X: %d\n", x);
-            printf("Y: %d\n", y);
-
             if (map->map[index] == 'B') {
                 draw_xpm((xpm_map_t)floor_xpm, x, y);
             }
@@ -76,77 +72,5 @@ int (draw_map)(Map* map) {
         }
         draw_background();
     }
-    return 0;
-}
-
-char get_tile(Map* map, u_int32_t x, u_int32_t y) {
-    uint32_t index = y / TILE_SIZE * map->columns + x / TILE_SIZE;
-
-    return map->map[index];
-}
-
-int wall_down(Character* character) {
-    uint32_t x = character->sprite->x + character->sprite->width / 2;
-    uint32_t y = character->sprite->y + character->sprite->height;
-
-    char tile = get_tile(map1, x, y);
-
-    if (tile == 'A') { return 1; }
-
-    return 0;
-}
-
-int wall_left(Character* character) {
-    uint32_t x = character->sprite->x;
-    uint32_t y = character->sprite->y + character->sprite->height / 2;
-
-    char tile = get_tile(map1, x, y);
-
-    if (tile == 'A') { return 1; }
-
-    return 0;
-}
-
-int wall_right(Character* character) {
-    uint32_t x = character->sprite->x + character->sprite->width;
-    uint32_t y = character->sprite->y + character->sprite->height / 2;
-
-    char tile = get_tile(map1, x, y);
-
-    if (tile == 'A') { return 1; }
-
-    return 0;
-}
-
-int wall_up(Character* character) {
-    uint32_t x = character->sprite->x + character->sprite->width / 2;
-    uint32_t y = character->sprite->y;
-
-    char tile = get_tile(map1, x, y);
-
-    if (tile == 'A') { return 1; }
-
-    return 0;
-}
-
-int door_fire(Character* character) {
-    uint32_t x = character->sprite->x + character->sprite->width / 2;
-    uint32_t y = character->sprite->y + character->sprite->height / 2;
-
-    char tile = get_tile(map1, x, y);
-
-    if (tile == 'F') { return 1; }
-
-    return 0;
-}
-
-int door_water(Character* character) {
-    uint32_t x = character->sprite->x + character->sprite->width / 2;
-    uint32_t y = character->sprite->y + character->sprite->height / 2;
-
-    char tile = get_tile(map1, x, y);
-
-    if (tile == 'W') { return 1; }
-
     return 0;
 }
