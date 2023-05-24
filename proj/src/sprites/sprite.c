@@ -27,8 +27,15 @@ Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, int16_t xspeed, int
 int load_sprites() {
     background = create_sprite((xpm_map_t)background_xpm, 0, 0, 0, 0);
     cursor = create_sprite((xpm_map_t)cursor_xpm, 0, 0, 0, 0);
-
-    if (!background || !cursor) return 1;
+    logo = create_sprite((xpm_map_t)logo_xpm, 0, 100, 0, 0);
+    single_player_text = create_sprite((xpm_map_t)single_player_xpm, 420, 400, 0, 0);
+    single_player_texth = create_sprite((xpm_map_t)single_playerh_xpm, 430, 400, 0, 0);
+    coop_text = create_sprite((xpm_map_t)coop_xpm, 490, 470, 0, 0);
+    coop_texth = create_sprite((xpm_map_t)cooph_xpm, 490, 470, 0, 0);
+    exit_text = create_sprite((xpm_map_t)exit_xpm, 500, 560, 0, 0);
+    exit_texth = create_sprite((xpm_map_t)exith_xpm, 500, 560, 0, 0);
+    fireboy = create_sprite((xpm_map_t)fireboy_xpm, 300, 400, 0, 0);
+    watergirl = create_sprite((xpm_map_t)watergirl_xpm, 500, 400, 0, 0);
 
     return 0;
 }
@@ -61,7 +68,9 @@ int erase_sprite(Sprite* sp) {
 
     for (int h = 0; h < sp->height; h++) {
         for (int w = 0; w < sp->width; w++) {
-            video_draw_pixel(sp->x + w, sp->y + h, 0);
+            uint32_t pixel = sp->map[h * sp->width + w];
+            if (pixel == xpm_transparency_color(XPM_8_8_8_8)) continue;
+            replace_with_background(sp->x + w, sp->y + h);
         }
     }
 

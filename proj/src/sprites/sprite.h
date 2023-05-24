@@ -6,6 +6,15 @@
 
 #include "../xpm/cursor.xpm"
 #include "../xpm/background.xpm"
+#include "../xpm/logo.xpm"
+#include "../xpm/single_player.xpm"
+#include "../xpm/single_playerh.xpm"
+#include "../xpm/coop.xpm"
+#include "../xpm/cooph.xpm"
+#include "../xpm/exit.xpm"
+#include "../xpm/exitH.xpm"
+#include "../xpm/fireboy.xpm"
+#include "../xpm/watergirl.xpm"
 
 typedef struct {
     uint16_t x, y;
@@ -14,8 +23,10 @@ typedef struct {
     uint32_t* map;
 } Sprite;
 
-Sprite* background;
-Sprite* cursor;
+Sprite* background, * cursor, * logo, * single_player_text, * coop_text, * exit_text;
+Sprite* single_player_texth, * coop_texth, * exit_texth;
+Sprite* fireboy, * watergirl;
+Sprite* block;
 
 Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, int16_t xspeed, int16_t yspeed);
 
