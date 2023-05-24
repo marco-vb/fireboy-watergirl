@@ -5,7 +5,7 @@ int (create_characters)() {
     fireboy = (Character*)malloc(sizeof(Character));
 
     if (fireboy == NULL) return 1;
-    fireboy->sprite = create_sprite((xpm_map_t)(fireL1_xpm), 600, 600, DEFAULT_SPEED, 0);
+    fireboy->sprite = create_sprite((xpm_map_t)(fireL1_xpm), 600, 600, 0, 0);
     fireboy->direction = DEFAULT;
     fireboy->animation_delay = 1;
     fireboy->current_sprite = 0;
@@ -28,7 +28,7 @@ int (create_characters)() {
     watergirl = (Character*)malloc(sizeof(Character));
 
     if (watergirl == NULL) return 1;
-    watergirl->sprite = create_sprite((xpm_map_t)(waterL1_xpm), 600, 600, DEFAULT_SPEED, 0);
+    watergirl->sprite = create_sprite((xpm_map_t)(waterL1_xpm), 600, 600, 0, 0);
     watergirl->left[0] = load_img((xpm_map_t)waterL1_xpm);
     watergirl->left[1] = load_img((xpm_map_t)waterL2_xpm);
     watergirl->left[2] = load_img((xpm_map_t)waterL3_xpm);
@@ -124,22 +124,50 @@ int door_water(Character* character) {
     return 0;
 }
 
+void update_character(Character* character, enum Direction dir) {
+    if (character->direction == dir) {
+        if ((character->frames_to_next_change++) == character->animation_delay) {
+            character->current_sprite++;
+            character->frames_to_next_change = 0;
+            if (character->current_sprite > 5) character->current_sprite = 0;
+        }
+    }
+    else {
+        character->direction = dir;
+        character->current_sprite = 0;
+        character->frames_to_next_change = 0;
+    }
+}
+
 void move(Character* character) {
     if (wall_down(character)) {
         /* Boy is on the ground, chill out! */
         character->sprite->yspeed = 0;
+
+        /* Put character on top of the ground */
+        character->sprite->y = (character->sprite->y / TILE_SIZE) * TILE_SIZE;
+
+        /* Move to left or right */
+        if (character->direction == LEFT && !wall_left(character)) {
+            character->sprite->x += character->sprite->xspeed;
+        }
+
+        else if (character->direction == RIGHT && !wall_right(character)) {
+            character->sprite->x += character->sprite->xspeed;
+        }
+
         return;
+    }
+
+
+    if (wall_up(character)) {
+        character->sprite->y = ((character->sprite->y + character->sprite->height) / TILE_SIZE) * TILE_SIZE;
+        character->sprite->yspeed = 0;
     }
 
     character->sprite->y += character->sprite->yspeed;
     character->sprite->yspeed += GRAVITY;
-
-    if (character->direction == LEFT && !wall_left(character)) {
-        character->sprite->x -= character->sprite->xspeed;
-    }
-    if (character->direction == RIGHT && !wall_right(character)) {
-        character->sprite->x += character->sprite->xspeed;
-    }
+    character->sprite->x += character->sprite->xspeed;
 }
 
 void (move_left)(Character* character) {
@@ -148,21 +176,10 @@ void (move_left)(Character* character) {
         return;
     }
 
-    character->sprite->x -= 3 * character->sprite->xspeed;
-    //character->sprite->xspeed = -DEFAULT_SPEED;
+    //character->sprite->x -= 3 * character->sprite->xspeed;
+    character->sprite->xspeed = -DEFAULT_SPEED;
 
-    if (character->direction == LEFT) {
-        if ((character->frames_to_next_change++) == character->animation_delay) {
-            character->current_sprite++;
-            character->frames_to_next_change = 0;
-            if (character->current_sprite > 5) character->current_sprite = 0;
-        }
-    }
-    else {
-        character->direction = LEFT;
-        character->current_sprite = 0;
-        character->frames_to_next_change = 0;
-    }
+    update_character(character, LEFT);
 }
 void (move_right)(Character* character) {
     if (wall_right(character)) {
@@ -170,21 +187,15 @@ void (move_right)(Character* character) {
         return;
     }
 
-    character->sprite->x += 3 * character->sprite->xspeed;
-    //character->sprite->xspeed = DEFAULT_SPEED;
+    //character->sprite->x += 3 * character->sprite->xspeed;
+    character->sprite->xspeed = DEFAULT_SPEED;
 
-    if (character->direction == RIGHT) {
-        if ((character->frames_to_next_change++) == character->animation_delay) {
-            character->current_sprite++;
-            character->frames_to_next_change = 0;
-            if (character->current_sprite > 5) character->current_sprite = 0;
-        }
-    }
-    else {
-        character->direction = RIGHT;
-        character->current_sprite = 0;
-        character->frames_to_next_change = 0;
-    }
+    update_character(character, RIGHT);
+}
+
+void (stop_moving)(Character* character) {
+    character->sprite->xspeed = 0;
+    character->direction = DEFAULT;
 }
 
 void (jump)(Character* character) {

@@ -37,7 +37,7 @@
 
 enum Direction { LEFT, RIGHT, UP, DEFAULT };
 #define GRAVITY 1
-#define DEFAULT_SPEED 3
+#define DEFAULT_SPEED 6
 #define JUMP 15
 
 typedef struct {
@@ -67,6 +67,7 @@ int(draw_character)(Character* Character);
 int (create_characters)();
 int (set_position)(Character* Character, int x, int y);
 void (character_current_sprite)(Character* character);
+void update_character(Character* character, enum Direction dir);
 
 /* Movements due to 'gravity' */
 void move(Character* Character);
@@ -75,5 +76,8 @@ void move(Character* Character);
 void (move_left)(Character* Character);
 void (move_right)(Character* Character);
 void (jump)(Character* Character);
+
+/* 'Cancel' movement when user releases key */
+void (stop_moving)(Character* Character);
 
 #endif /* __SPRITE_H */

@@ -116,6 +116,8 @@ int game_loop() {
                         break;
 
                     default:
+                        fireboy_move(k);
+                        watergirl_move(k);
                         break;
                     }
                 }
@@ -241,6 +243,7 @@ int fireboy_move(keyboard_key key) {
         move_right(fireboy);
         break;
     default:
+        stop_moving(fireboy);
         break;
     }
 
@@ -259,6 +262,7 @@ int watergirl_move(keyboard_key key) {
         move_right(watergirl);
         break;
     default:
+        stop_moving(watergirl);
         break;
     }
 
