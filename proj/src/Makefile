@@ -5,14 +5,15 @@ PROG=proj
 .PATH: ${.CURDIR}/drivers/graphics
 .PATH: ${.CURDIR}/drivers/kbc
 .PATH: ${.CURDIR}/drivers/timer
+.PATH: ${.CURDIR}/drivers/rtc
 .PATH: ${.CURDIR}/sprites
 
 # source code files to be compiled
-SRCS = 	utils.c kbc.c keyboard.c mouse.c timer.c sprite.c graphics.c proj.c
+SRCS = 	utils.c kbc.c keyboard.c mouse.c timer.c rtc.c sprite.c graphics.c proj.c 
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
-CFLAGS += -pedantic -D_LCOM_OPTIMIZED_
+CFLAGS += -pedantic
 
 # list of library dependencies
 DPADD += ${LIBLCF}
