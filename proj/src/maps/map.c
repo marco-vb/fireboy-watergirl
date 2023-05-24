@@ -1,14 +1,7 @@
 #include <lcom/lcf.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-#include "../drivers/graphics/graphics.h"
 #include "map.h"
-#include "maps.c"
 
-// ...
 extern Map* map1;
 
 
@@ -136,3 +129,24 @@ int wall_up(Character* character) {
     return 0;
 }
 
+int door_fire(Character* character) {
+    uint32_t x = character->sprite->x + character->sprite->width / 2;
+    uint32_t y = character->sprite->y + character->sprite->height / 2;
+
+    char tile = get_tile(map1, x, y);
+
+    if (tile == 'F') { return 1; }
+
+    return 0;
+}
+
+int door_water(Character* character) {
+    uint32_t x = character->sprite->x + character->sprite->width / 2;
+    uint32_t y = character->sprite->y + character->sprite->height / 2;
+
+    char tile = get_tile(map1, x, y);
+
+    if (tile == 'W') { return 1; }
+
+    return 0;
+}

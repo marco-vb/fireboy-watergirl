@@ -2,6 +2,11 @@
 #define __MAP_H
 
 #include <lcom/lcf.h>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 #include "../drivers/graphics/graphics.h"
 #include "../sprites/sprite.h"
 #include "../xpm/floor.xpm"
@@ -25,7 +30,7 @@ typedef struct {
 } Character;
 
 
-Character* fireboy, * watergirl;
+//Character* fireboy, * watergirl;
 
 typedef struct {
     int x, y;
@@ -44,5 +49,7 @@ int wall_down(Character* character);
 int wall_left(Character* character);
 int wall_right(Character* character);
 int wall_up(Character* character);
+int door_fire(Character* character);
+int door_water(Character* character);
 
 #endif
