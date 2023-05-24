@@ -7,10 +7,10 @@
 #include "../xpm/cursor.xpm"
 #include "../xpm/background.xpm"
 #include "../xpm/logo.xpm"
-#include "../xpm/play.xpm"
-#include "../xpm/playH.xpm"
-#include "../xpm/settings.xpm"
-#include "../xpm/settingsH.xpm"
+#include "../xpm/single_player.xpm"
+#include "../xpm/single_playerh.xpm"
+#include "../xpm/coop.xpm"
+#include "../xpm/cooph.xpm"
 #include "../xpm/exit.xpm"
 #include "../xpm/exitH.xpm"
 #include "../xpm/fireboy.xpm"
@@ -23,8 +23,8 @@ typedef struct {
     uint32_t* map;
 } Sprite;
 
-Sprite* background, * cursor, * logo, * play_text, * settings_text, * exit_text;
-Sprite* play_texth, * settings_texth, * exit_texth;
+Sprite* background, * cursor, * logo, * single_player_text, * coop_text, * exit_text;
+Sprite* single_player_texth, * coop_texth, * exit_texth;
 Sprite* fireboy, * watergirl;
 Sprite* block;
 

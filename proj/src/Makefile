@@ -1,4 +1,3 @@
-
 # name of the program (Minix service)
 PROG=proj
 
@@ -11,7 +10,7 @@ PROG=proj
 .PATH: ${.CURDIR}/count_down
 
 # source code files to be compiled
-SRCS = 	utils.c kbc.c keyboard.c mouse.c timer.c sprite.c graphics.c game.c proj.c map.c count_down.c
+SRCS = 	utils.c kbc.c keyboard.c mouse.c timer.c sprite.c graphics.c map.c count_down.c game.c proj.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

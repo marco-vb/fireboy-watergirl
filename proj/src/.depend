@@ -113,10 +113,10 @@ game.d game.ln game.o: game.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   drivers/kbc/../../sprites/../xpm/cursor.xpm \
   drivers/kbc/../../sprites/../xpm/background.xpm \
   drivers/kbc/../../sprites/../xpm/logo.xpm \
-  drivers/kbc/../../sprites/../xpm/play.xpm \
-  drivers/kbc/../../sprites/../xpm/playH.xpm \
-  drivers/kbc/../../sprites/../xpm/settings.xpm \
-  drivers/kbc/../../sprites/../xpm/settingsH.xpm \
+  drivers/kbc/../../sprites/../xpm/single_player.xpm \
+  drivers/kbc/../../sprites/../xpm/single_playerh.xpm \
+  drivers/kbc/../../sprites/../xpm/coop.xpm \
+  drivers/kbc/../../sprites/../xpm/cooph.xpm \
   drivers/kbc/../../sprites/../xpm/exit.xpm \
   drivers/kbc/../../sprites/../xpm/exitH.xpm \
   drivers/kbc/../../sprites/../xpm/fireboy.xpm \
@@ -233,10 +233,10 @@ kbc.d kbc.ln kbc.o: /home/lcom/labs/shared/proj/src/drivers/kbc/kbc.c \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/cursor.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/background.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/logo.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/play.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/playH.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/settings.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/settingsH.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/single_player.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/single_playerh.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/coop.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/cooph.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exit.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exitH.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/fireboy.xpm \
@@ -401,10 +401,10 @@ mouse.d mouse.ln mouse.o: /home/lcom/labs/shared/proj/src/drivers/kbc/mouse.c \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/cursor.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/background.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/logo.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/play.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/playH.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/settings.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/settingsH.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/single_player.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/single_playerh.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/coop.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/cooph.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exit.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exitH.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/fireboy.xpm \
@@ -464,10 +464,10 @@ proj.d proj.ln proj.o: proj.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   drivers/kbc/../../sprites/../xpm/cursor.xpm \
   drivers/kbc/../../sprites/../xpm/background.xpm \
   drivers/kbc/../../sprites/../xpm/logo.xpm \
-  drivers/kbc/../../sprites/../xpm/play.xpm \
-  drivers/kbc/../../sprites/../xpm/playH.xpm \
-  drivers/kbc/../../sprites/../xpm/settings.xpm \
-  drivers/kbc/../../sprites/../xpm/settingsH.xpm \
+  drivers/kbc/../../sprites/../xpm/single_player.xpm \
+  drivers/kbc/../../sprites/../xpm/single_playerh.xpm \
+  drivers/kbc/../../sprites/../xpm/coop.xpm \
+  drivers/kbc/../../sprites/../xpm/cooph.xpm \
   drivers/kbc/../../sprites/../xpm/exit.xpm \
   drivers/kbc/../../sprites/../xpm/exitH.xpm \
   drivers/kbc/../../sprites/../xpm/fireboy.xpm \
@@ -525,10 +525,10 @@ sprite.d sprite.ln sprite.o: /home/lcom/labs/shared/proj/src/sprites/sprite.c \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/cursor.xpm \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/background.xpm \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/logo.xpm \
-  /home/lcom/labs/shared/proj/src/sprites/../xpm/play.xpm \
-  /home/lcom/labs/shared/proj/src/sprites/../xpm/playH.xpm \
-  /home/lcom/labs/shared/proj/src/sprites/../xpm/settings.xpm \
-  /home/lcom/labs/shared/proj/src/sprites/../xpm/settingsH.xpm \
+  /home/lcom/labs/shared/proj/src/sprites/../xpm/single_player.xpm \
+  /home/lcom/labs/shared/proj/src/sprites/../xpm/single_playerh.xpm \
+  /home/lcom/labs/shared/proj/src/sprites/../xpm/coop.xpm \
+  /home/lcom/labs/shared/proj/src/sprites/../xpm/cooph.xpm \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/exit.xpm \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/exitH.xpm \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/fireboy.xpm \
