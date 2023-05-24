@@ -292,8 +292,7 @@ keyboard.d keyboard.ln keyboard.o: /home/lcom/labs/shared/proj/src/drivers/kbc/k
   /home/lcom/labs/shared/proj/src/drivers/kbc/kbc.h \
   /home/lcom/labs/shared/proj/src/drivers/kbc/i8042.h \
   /home/lcom/labs/shared/proj/src/drivers/kbc/keyboard.h
-map.d map.ln map.o: /home/lcom/labs/shared/proj/src/maps/map.c \
-  /home/lcom/labs/shared/proj/src/maps/map.h /usr/include/lcom/lcf.h \
+map.d map.ln map.o: /home/lcom/labs/shared/proj/src/maps/map.c /usr/include/lcom/lcf.h \
   /usr/include/stdbool.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
   /usr/include/machine/cdefs.h /usr/include/sys/cdefs_elf.h \
   /usr/include/sys/featuretest.h /usr/include/sys/ansi.h \
@@ -342,6 +341,7 @@ map.d map.ln map.o: /home/lcom/labs/shared/proj/src/maps/map.c \
   /usr/include/lcom/vbe.h /usr/include/lcom/video_gr.h \
   /usr/include/lcom/proj.h /usr/include/lcom/types.h \
   /home/lcom/labs/shared/proj/src/maps/../drivers/graphics/graphics.h \
+  /home/lcom/labs/shared/proj/src/maps/map.h \
   /home/lcom/labs/shared/proj/src/maps/../xpm/floor.xpm \
   /home/lcom/labs/shared/proj/src/maps/../xpm/wall1.xpm \
   /home/lcom/labs/shared/proj/src/maps/maps.c

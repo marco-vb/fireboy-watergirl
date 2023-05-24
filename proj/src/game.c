@@ -33,7 +33,7 @@ int game_init() {
         printf("Error loading cursor.\n");
         return 1;
     }
-    if (load_Maps()) {
+    if (load_maps()) {
         return 1;
     }
 
