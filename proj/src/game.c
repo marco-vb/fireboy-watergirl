@@ -213,16 +213,18 @@ int draw_game_over() {
 int fireboy_move(keyboard_key key) {
     switch (key) {
     case KEY_A:
-        fireboy->x = fireboy->x - 5 > 5 ? fireboy->x - 5 : 5;
+        fireboy->sprite->x = fireboy->sprite->x - 5 > 5 ? fireboy->sprite->x - 5 : 5;
+        moveLeft(fireboy);
         break;
     case KEY_W:
-        fireboy->y = fireboy->y - 5 > 5 ? fireboy->y - 5 : 5;
+        fireboy->sprite->y = fireboy->sprite->y - 5 > 5 ? fireboy->sprite->y - 5 : 5;
         break;
     case KEY_S:
-        fireboy->y = fireboy->y + 5 < get_vres() - fireboy->height ? fireboy->y + 5 : get_vres() - fireboy->height;
+        fireboy->sprite->y = fireboy->sprite->y + 5 < get_vres() - fireboy->sprite->height ? fireboy->sprite->y + 5 : get_vres() - fireboy->sprite->height;
         break;
     case KEY_D:
-        fireboy->x = fireboy->x + 5 < get_hres() - fireboy->width ? fireboy->x + 5 : get_hres() - fireboy->width;
+        fireboy->sprite->x = fireboy->sprite->x + 5 < get_hres() - fireboy->sprite->width ? fireboy->sprite->x + 5 : get_hres() - fireboy->sprite->width;
+        moveRight(fireboy);
         break;
     default:
         break;
@@ -234,16 +236,18 @@ int fireboy_move(keyboard_key key) {
 int watergirl_move(keyboard_key key) {
     switch (key) {
     case KEY_LEFT:
-        watergirl->x = watergirl->x - 5 > 5 ? watergirl->x - 5 : 5;
+        watergirl->sprite->x = watergirl->sprite->x - 5 > 5 ? watergirl->sprite->x - 5 : 5;
+        moveLeft(watergirl);
         break;
     case KEY_UP:
-        watergirl->y = watergirl->y - 5 > 5 ? watergirl->y - 5 : 5;
+        watergirl->sprite->y = watergirl->sprite->y - 5 > 5 ? watergirl->sprite->y - 5 : 5;
         break;
     case KEY_DOWN:
-        watergirl->y = watergirl->y + 5 < get_vres() - watergirl->height ? watergirl->y + 5 : get_vres() - watergirl->height;
+        watergirl->sprite->y = watergirl->sprite->y + 5 < get_vres() - watergirl->sprite->height ? watergirl->sprite->y + 5 : get_vres() - watergirl->sprite->height;
         break;
     case KEY_RIGHT:
-        watergirl->x = watergirl->x + 5 < get_hres() - watergirl->width ? watergirl->x + 5 : get_hres() - watergirl->width;
+        watergirl->sprite->x = watergirl->sprite->x + 5 < get_hres() - watergirl->sprite->width ? watergirl->sprite->x + 5 : get_hres() - watergirl->sprite->width;
+        moveLeft(watergirl);
         break;
     default:
         break;

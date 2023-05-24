@@ -25,7 +25,7 @@ typedef struct {
 Sprite* background, * cursor, * logo, * single_player_text, * coop_text, * exit_text;
 Sprite* single_player_texth, * coop_texth, * exit_texth;
 Sprite* fireboy, * watergirl;
-Sprite* block;
+Sprite* block, *fzl;
 
 Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y);
 
