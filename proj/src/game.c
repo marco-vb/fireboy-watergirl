@@ -6,8 +6,8 @@
 #include "game.h"
 #include "maps/map.h"
 #include "count_down/count_down.h"
-int frames_per_second=60;
-int current_frame=0;
+int frames_per_second = 60;
+int current_frame = 0;
 extern Map* map1;
 uint8_t irq_mouse, irq_timer, irq_keyboard;
 
@@ -33,11 +33,9 @@ int game_init() {
         printf("Error loading cursor.\n");
         return 1;
     }
-      if(load_Maps()){
+    if (load_Maps()) {
         return 1;
     }
-   
-    
 
     return 0;
 }
@@ -148,52 +146,41 @@ int draw_screen() {
 }
 
 int draw_main_menu() {
-    Sprite * chosen[3];
+    draw_sprite(background);
     draw_sprite(logo);
 
-    if (mouse_over_sprite(play_text)) {
-        chosen[0]=(play_texth);
-        if (mouse_lclick_sprite(play_text)) {
-            state = GAME;
-            start_counter(120);
-             clear_background();
-             draw_map(map1);
-             return 0;
-        }
-    }
-    else {
-        chosen[0]=(play_text);
-    }
-    if (mouse_over_sprite(settings_text)) {
-        chosen[1]=(settings_texth);
-        if (mouse_lclick_sprite(settings_text)) {
-            state = SETTINGS_MENU;
-        }
-    }
-    else {
-        chosen[1]=(settings_text);
-    }
-    if (mouse_over_sprite(exit_text)) {
-        chosen[2]=(exit_texth);
-        if (mouse_lclick_sprite(exit_text)) {
-            state = EXIT;
-        }
-    }
-    else {
-        chosen[2]=(exit_text);
-    }
-    draw_sprite(chosen[0]);
-    draw_sprite(chosen[1]);
-    draw_sprite(chosen[2]);
-    draw_sprite(cursor);
-    draw_buffer();
-    erase_sprite(cursor);
-    erase_sprite(logo);
-    erase_sprite(chosen[0]);
-    erase_sprite(chosen[1]);
-    erase_sprite(chosen[2]);
-    
+    Sprite* single_player = mouse_over_sprite(single_player_text) ? single_player_texth : single_player_text;
+    Sprite* coop = mouse_over_sprite(coop_text) ? coop_texth : coop_text;
+    Sprite* exit = mouse_over_sprite(exit_text) ? exit_texth : exit_text;
 
+    if (mouse_lclick_sprite(single_player)) {
+        state = GAME;
+        start_counter(120);
+        clear_background();
+        draw_map(map1);
+        return 0;
+    }
+    if (mouse_lclick_sprite(coop)) {
+        state = SETTINGS_MENU;
+        return 0;
+    }
+    if (mouse_lclick_sprite(exit)) {
+        state = EXIT;
+        return 0;
+    }
+
+    draw_sprite(single_player);
+    draw_sprite(coop);
+    draw_sprite(exit);
+    draw_sprite(cursor);
+
+    draw_buffer();
+
+    erase_sprite(logo);
+    erase_sprite(single_player);
+    erase_sprite(coop);
+    erase_sprite(exit);
+    erase_sprite(cursor);
 
     return 0;
 }
@@ -203,12 +190,12 @@ int draw_settings_menu() {
 }
 
 int draw_game() {
-    draw_sprite(cursor); 
+    draw_sprite(cursor);
     draw_buffer();
     erase_sprite(cursor);
-     if((current_frame++)==frames_per_second){ 
+    if ((current_frame++) == frames_per_second) {
         decrement_counter();
-        current_frame=0;
+        current_frame = 0;
     }
     draw_counter();
 
