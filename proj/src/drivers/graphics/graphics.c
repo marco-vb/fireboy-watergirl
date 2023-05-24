@@ -132,11 +132,17 @@ int (replace_with_background)(uint16_t x, uint16_t y){
     return 0;
 }
 int (clear_background)(){
-    printf("clear");
     memset(background_buffer, 0, frames); 
     memset(buffer, 0, frames); 
     memset(video_mem, 0, frames); 
     draw_buffer();
     return 0;
+}
+
+uint32_t *(load_img)(xpm_map_t pic){
+    xpm_image_t img;
+    uint32_t* colormap = (uint32_t*)xpm_load(pic, XPM_8_8_8_8, &img);
+    return colormap;
+
 }
 

@@ -10,12 +10,13 @@
 #include "drivers/kbc/mouse.h"
 #include "drivers/graphics/graphics.h"
 #include "sprites/sprite.h"
+#include "characters/character.h"
 
 extern mouse_packet_t mouse_packet;
 extern keyboard_packet_t keyboard_packet;
 extern Sprite* background, * cursor, * logo, * play_text, * settings_text, * exit_text;
 extern Sprite* play_texth, * settings_texth, * exit_texth;
-extern Sprite* fireboy, * watergirl;
+extern Character* fireboy, * watergirl;
 
 typedef enum {
     MAIN_MENU,
