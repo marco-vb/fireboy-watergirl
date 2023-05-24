@@ -86,3 +86,53 @@ int (draw_map)(Map* map) {
     return 0;
 }
 
+char get_tile(Map* map, u_int32_t x, u_int32_t y) {
+    uint32_t index = y / TILE_SIZE * map->columns + x / TILE_SIZE;
+
+    return map->map[index];
+}
+
+int wall_down(Character* character) {
+    uint32_t x = character->sprite->x + character->sprite->width / 2;
+    uint32_t y = character->sprite->y + character->sprite->height;
+
+    char tile = get_tile(map1, x, y);
+
+    if (tile == 'A') { return 1; }
+
+    return 0;
+}
+
+int wall_left(Character* character) {
+    uint32_t x = character->sprite->x;
+    uint32_t y = character->sprite->y + character->sprite->height / 2;
+
+    char tile = get_tile(map1, x, y);
+
+    if (tile == 'A') { return 1; }
+
+    return 0;
+}
+
+int wall_right(Character* character) {
+    uint32_t x = character->sprite->x + character->sprite->width;
+    uint32_t y = character->sprite->y + character->sprite->height / 2;
+
+    char tile = get_tile(map1, x, y);
+
+    if (tile == 'A') { return 1; }
+
+    return 0;
+}
+
+int wall_up(Character* character) {
+    uint32_t x = character->sprite->x + character->sprite->width / 2;
+    uint32_t y = character->sprite->y;
+
+    char tile = get_tile(map1, x, y);
+
+    if (tile == 'A') { return 1; }
+
+    return 0;
+}
+
