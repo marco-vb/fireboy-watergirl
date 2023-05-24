@@ -3,9 +3,9 @@ int (create_Characters)(){
     fireboy = (Character*)malloc(sizeof(Character));
 
     if (fireboy == NULL) return 1;
-    fireboy->sprite = create_sprite((xpm_map_t)(fire_default_xpm),100,100,10,10);
+    fireboy->sprite = create_sprite((xpm_map_t)(fireL1_xpm),100,100,10,10);
     fireboy->direction=DEFAULT;
-    fireboy->animation_delay=6;
+    fireboy->animation_delay=1;
     fireboy->current_sprite=0;
     fireboy->frames_to_next_change=0;
   
@@ -26,7 +26,7 @@ int (create_Characters)(){
     watergirl = (Character*)malloc(sizeof(Character));
 
     if (watergirl == NULL) return 1;
-    watergirl->sprite = create_sprite((xpm_map_t)(water_default_xpm),100,100,10,10);
+    watergirl->sprite = create_sprite((xpm_map_t)(waterL1_xpm),100,100,10,10);
     watergirl->left[0]=load_img((xpm_map_t)waterL1_xpm);
     watergirl->left[1]=load_img((xpm_map_t)waterL2_xpm);
     watergirl->left[2]=load_img((xpm_map_t)waterL3_xpm);
@@ -87,7 +87,7 @@ void  (character_current_sprite)(Character * character){
               character->sprite->map=character->left[character->current_sprite];
              //memcpy(character->sprite->map,character->left[character->current_sprite],sizeof(&character->sprite->map));
         }else if(character->direction==RIGHT){
-           memcpy(character->sprite->map, character->right[character->current_sprite], sizeof(*character->right[character->current_sprite]));
+            character->sprite->map=character->right[character->current_sprite];
 
         }else{
             character->sprite->map= character->front;

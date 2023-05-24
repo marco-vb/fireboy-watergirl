@@ -210,6 +210,7 @@ int draw_settings_menu() {
 int draw_game() {
     draw_sprite(cursor); 
     draw_character(fireboy);
+    draw_character(watergirl);
     draw_buffer();
     erase_sprite(cursor);
     erase_sprite(fireboy->sprite);
@@ -258,7 +259,7 @@ int watergirl_move(keyboard_key key) {
     switch (key) {
     case KEY_LEFT:
         watergirl->sprite->x = watergirl->sprite->x - 5 > 5 ? watergirl->sprite->x - 5 : 5;
-        
+        moveLeft(watergirl);
         break;
     case KEY_UP:
         watergirl->sprite->y = watergirl->sprite->y - 5 > 5 ? watergirl->sprite->y - 5 : 5;
@@ -268,7 +269,7 @@ int watergirl_move(keyboard_key key) {
         break;
     case KEY_RIGHT:
         watergirl->sprite->x = watergirl->sprite->x + 5 < get_hres() - watergirl->sprite->width ? watergirl->sprite->x + 5 : get_hres() - watergirl->sprite->width;
-        
+        moveLeft(watergirl);
         break;
     default:
         break;
