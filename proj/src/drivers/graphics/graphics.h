@@ -12,6 +12,8 @@
 #include "../../xpm/numbers/7.xpm"
 #include "../../xpm/numbers/8.xpm"
 #include "../../xpm/numbers/9.xpm"
+#include "../../xpm/numbers/slash.xpm"
+#include "../../xpm/numbers/colon.xpm"
 
 #define VBE_VID_INT 0x10
 
@@ -47,5 +49,6 @@ int (draw_background)();
 int (replace_with_background)(uint16_t x, uint16_t y);
 int (clear_background)();
 int (draw_number)(uint16_t x, uint16_t y, uint32_t number);
+int (draw_special_char)(uint16_t x, uint16_t y, uint32_t special_char);
 uint32_t * (load_img)(xpm_map_t img);
 #endif /* __GRAPHICS_H */

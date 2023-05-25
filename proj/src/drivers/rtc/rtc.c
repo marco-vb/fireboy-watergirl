@@ -147,8 +147,10 @@ int (draw_time)() {
 
     if (draw_number(850, 0, h1)) return 1;
     if (draw_number((850+30), 0, h2)) return 1;
+    if (draw_special_char((850+60), 0, 11)) return 1;
     if (draw_number((850+90), 0, m1)) return 1;
     if (draw_number((850+120), 0, m2)) return 1;
+    if (draw_special_char((850+150), 0, 11)) return 1;
     if (draw_number((850+180), 0, s1)) return 1;
     if (draw_number((850+210), 0, s2)) return 1;
 
@@ -156,5 +158,31 @@ int (draw_time)() {
 
 }
 
+int (draw_date)() {
+    
+        uint8_t day, month, year;
+        if (read_date(&day, &month, &year)) return 1;
+    
+        uint8_t d1 = day / 10;
+        uint8_t d2 = day % 10;
+        
+        uint8_t m1 = month / 10;
+        uint8_t m2 = month % 10;
+        
+        uint8_t y1 = year / 10;
+        uint8_t y2 = year % 10;
+    
+        if (draw_number(450, 0, d1)) return 1;
+        if (draw_number((450+30), 0, d2)) return 1;
+        if (draw_special_char((450+60), 0, 10)) return 1;
+        if (draw_number((450+90), 0, m1)) return 1;
+        if (draw_number((450+120), 0, m2)) return 1;
+        if (draw_special_char((450+150), 0, 10)) return 1;
+        if (draw_number((450+180), 0, y1)) return 1;
+        if (draw_number((450+210), 0, y2)) return 1;
+    
+        return 0;
+    
+}
 
 

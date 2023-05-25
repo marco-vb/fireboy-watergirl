@@ -226,6 +226,7 @@ int draw_game() {
 
     draw_counter();
     draw_time();
+    draw_date();
 
     return 0;
 }

@@ -1,6 +1,6 @@
 #include "count_down.h"
 int seconds_left=0,first,second,third;
-int x=0,y=0;
+int x=150,y=0;
 
 int(start_counter)(int time){
     if(time<0) return 1;
