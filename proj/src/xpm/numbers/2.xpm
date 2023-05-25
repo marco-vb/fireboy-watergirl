@@ -1,7 +1,7 @@
 /* XPM */
 static char * n2_xpm[] = {
 "18 28 6 1",
-" 	c #000000",
+" 	c None",
 ".	c #CFCFCF",
 "+	c #FFFFFF",
 "@	c #BFBFBF",

@@ -1,6 +1,6 @@
 #include "sprite.h"
 
-Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, int16_t xspeed, int16_t yspeed) {
+Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, uint16_t xspeed, uint16_t yspeed) {
     Sprite* sp = (Sprite*)malloc(sizeof(Sprite));
 
     if (sp == NULL) return NULL;
@@ -34,8 +34,6 @@ int load_sprites() {
     coop_texth = create_sprite((xpm_map_t)cooph_xpm, 490, 470, 0, 0);
     exit_text = create_sprite((xpm_map_t)exit_xpm, 500, 560, 0, 0);
     exit_texth = create_sprite((xpm_map_t)exith_xpm, 500, 560, 0, 0);
-    fireboy = create_sprite((xpm_map_t)fireboy_xpm, 300, 400, 0, 0);
-    watergirl = create_sprite((xpm_map_t)watergirl_xpm, 500, 400, 0, 0);
 
     return 0;
 }

@@ -65,6 +65,26 @@ keyboard_key(keyboard_get_key)() {
     if (!keyboard_packet.complete) {
         return KEY_NONE;
     }
-
-    return keyboard_packet.data[0];
+    if(keyboard_packet.data[0]!=0xE0)
+        return keyboard_packet.data[0];
+    else{
+        switch (keyboard_packet.data[1])
+        {
+        case 0x48 :
+            return KEY_UP;
+        case 0x4b  :
+            return KEY_LEFT;
+        case 0xcb :
+            return KEY_LEFT_BREAK;
+        case 0x4d:
+            return KEY_RIGHT;
+        case 0xcd:
+            return KEY_RIGHT_BREAK;
+        case 0x50:
+            return KEY_DOWN;                  
+        default:
+            return KEY_NONE;
+            
+        }
+    }   
 }
