@@ -66,8 +66,7 @@ int (map_memory)(uint16_t mode) {
     struct minix_mem_range mr;
     mr.mr_base = vmi_p.PhysBasePtr;
     mr.mr_limit = mr.mr_base + frame_size;
-    printf("%d\n",hres);
-    printf("%d\n",vres);
+
 
     if (OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))) {
         panic("sys_privctl (ADD_MEM) failed: %d\n", r);

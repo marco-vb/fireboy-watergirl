@@ -57,17 +57,57 @@ int (load_maps)() {
 }
 
 int (draw_map)(Map* map) {
-
+    unsigned int background=0;
+    unsigned int wall=0;
+    unsigned int lava=0;
+    unsigned int water=0;
     for (uint32_t i = 0; i < map->rows; i++) {
         for (uint32_t j = 0; j < map->columns; j++) {
             uint32_t index = i * map->columns + j;
             uint32_t x = map->x + j * TILE_SIZE, y = map->y + i * TILE_SIZE;
 
             if (map->map[index] == 'B') {
-                draw_xpm((xpm_map_t)floor_xpm, x, y);
+                switch (background%3)
+                {
+                case 0:
+                    draw_xpm((xpm_map_t)level_background1_xpm, x, y);
+                    break;
+                case 1:
+                    draw_xpm((xpm_map_t)level_background2_xpm, x, y);
+                case 2:
+                    draw_xpm((xpm_map_t)level_background3_xpm, x, y);    
+
+                default:
+                    draw_xpm((xpm_map_t)level_background1_xpm, x, y);
+                    break;
+                }
+                background++;
+                
             }
             if (map->map[index] == 'A') {
-                draw_xpm((xpm_map_t)wall_xpm, x, y);
+                switch (wall%2)
+                {
+                case 1:
+                    draw_xpm((xpm_map_t)wall1_xpm, x, y);
+                    break;
+                
+                default:
+                    draw_xpm((xpm_map_t)wall2_xpm, x, y);
+                    break;
+                }
+                wall++;
+            }
+            if (map->map[index] == 'L') {
+                if(lava%5==0)draw_xpm((xpm_map_t)lava1_xpm, x, y);
+                else if( lava%5==4)draw_xpm((xpm_map_t)lava3_xpm, x, y);
+                else draw_xpm((xpm_map_t)lava2_xpm, x, y);
+                lava++;
+            }
+             if (map->map[index] == 'P') {
+                if(water%5==0)draw_xpm((xpm_map_t)water1_xpm, x, y);
+                else if( water%5==4)draw_xpm((xpm_map_t)water3_xpm, x, y);
+                else draw_xpm((xpm_map_t)water2_xpm, x, y);
+                water++;
             }
         }
         draw_background();
