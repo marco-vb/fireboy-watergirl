@@ -38,6 +38,8 @@ int game_init() {
         return 1;
     }
 
+    if (rtc_init()) return 1;
+
     return 0;
 }
 

@@ -10,6 +10,7 @@ static uint8_t* video_mem;
 uint8_t* buffer, *background_buffer;
 static uint16_t hres, vres, bytes_per_pixel;
 size_t frames;
+xpm_map_t numbersxpm[10]={(xpm_map_t)n0_xpm,(xpm_map_t)n1_xpm,(xpm_map_t)n2_xpm,(xpm_map_t)n3_xpm,(xpm_map_t)n4_xpm,(xpm_map_t)n5_xpm,(xpm_map_t)n6_xpm,(xpm_map_t)n7_xpm,(xpm_map_t)n8_xpm,(xpm_map_t)n9_xpm};
 
 int (video_set_mode)(uint16_t mode) {
     
@@ -140,8 +141,6 @@ int (clear_background)(){
     return 0;
 }
 
-xpm_map_t numbersxpm[10]={(xpm_map_t)n0_xpm,(xpm_map_t)n1_xpm,(xpm_map_t)n2_xpm,(xpm_map_t)n3_xpm,(xpm_map_t)n4_xpm,(xpm_map_t)n5_xpm,(xpm_map_t)n6_xpm,(xpm_map_t)n7_xpm,(xpm_map_t)n8_xpm,(xpm_map_t)n9_xpm};
-
 int(draw_number)(uint16_t x, uint16_t y, uint32_t number){
 
     if (number>9) return 1;
@@ -152,7 +151,7 @@ int(draw_number)(uint16_t x, uint16_t y, uint32_t number){
         }
     }
 
-    draw_xpm(numbersxpm[0],x,y);
+    draw_xpm(numbersxpm[number],x,y);
 
     return 0;
 }

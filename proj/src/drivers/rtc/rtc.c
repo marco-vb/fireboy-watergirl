@@ -1,11 +1,28 @@
 #include <lcom/lcf.h>
 #include "rtc.h"
 
-int rtc_hook_id = 8; 
-xpm_map_t numberssprite[10]={(xpm_map_t)n0_xpm,(xpm_map_t)n1_xpm,(xpm_map_t)n2_xpm,(xpm_map_t)n3_xpm,(xpm_map_t)n4_xpm,(xpm_map_t)n5_xpm,(xpm_map_t)n6_xpm,(xpm_map_t)n7_xpm,(xpm_map_t)n8_xpm,(xpm_map_t)n9_xpm};
+int rtc_hook_id = 8;
 
+int (rtc_init)(){
+    uint8_t regB;
 
-int rtc_subscribe_int(uint8_t *bit_no){
+    if (rtc_read_reg(REG_B, &regB) != 0) {
+        printf("Error: Couldn't read reg B\n");
+        return 1;
+    }
+
+    regB &= ~SET;
+    regB |= HR;
+    regB |= DM;
+
+    if (rtc_write_reg(REG_B, regB) != 0) {
+        printf("Error: Couldn't write reg B\n");
+        return 1;
+    }
+    return 0;
+}
+
+int (rtc_subscribe_int)(uint8_t *bit_no){
     *bit_no = rtc_hook_id;
     if (sys_irqsetpolicy(RTC_IRQ, IRQ_REENABLE, &rtc_hook_id) != OK) {
         printf("Error in sys_irqsetpolicy()\n");
@@ -14,7 +31,7 @@ int rtc_subscribe_int(uint8_t *bit_no){
     return 0;
 }
 
-int rtc_unsubscribe_int(){
+int (rtc_unsubscribe_int)(){
     if (sys_irqrmpolicy(&rtc_hook_id) != OK) {
         printf("Error in sys_irqrmpolicy()\n");
         return 1;
@@ -56,7 +73,7 @@ int (rtc_write_reg)(uint8_t reg, uint8_t data) {
 
 int (read_hours)(uint8_t *hours) {
 
-    if (rtc_read_reg(SECS, hours)) return 1;
+    if (rtc_read_reg(HOURS, hours)) return 1;
 
     return 0;
 }
@@ -70,7 +87,7 @@ int (read_minutes)(uint8_t *minutes) {
 
 int (read_seconds)(uint8_t *seconds) {
 
-    if (rtc_read_reg(HOURS, seconds)) return 1;
+    if (rtc_read_reg(SECS, seconds)) return 1;
 
     return 0;
 }
@@ -121,19 +138,19 @@ int (draw_time)() {
 
     uint8_t h1 = hours / 10;
     uint8_t h2 = hours % 10;
-
+    
     uint8_t m1 = minutes / 10;
     uint8_t m2 = minutes % 10;
-
+    
     uint8_t s1 = seconds / 10;
     uint8_t s2 = seconds % 10;
 
-    if (draw_number(918, 0, h1)) return 1;
-    if (draw_number((918+30), 0, h2)) return 1;
-    if (draw_number((918+90), 0, m1)) return 1;
-    if (draw_number((918+120), 0, m2)) return 1;
-    if (draw_number((918+180), 0, s1)) return 1;
-    if (draw_number((918+210), 0, s2)) return 1;
+    if (draw_number(850, 0, h1)) return 1;
+    if (draw_number((850+30), 0, h2)) return 1;
+    if (draw_number((850+90), 0, m1)) return 1;
+    if (draw_number((850+120), 0, m2)) return 1;
+    if (draw_number((850+180), 0, s1)) return 1;
+    if (draw_number((850+210), 0, s2)) return 1;
 
     return 0;
 

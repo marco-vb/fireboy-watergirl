@@ -1,6 +1,6 @@
 #include "count_down.h"
 int seconds_left=0,first,second,third;
-int x=0,y=0;
+int x=0,y=10;
 
 int(start_counter)(int time){
     if(time<0) return 1;
@@ -12,9 +12,9 @@ int(start_counter)(int time){
     return 0;
 }
 int(draw_counter)(){
-    draw_number(first,x,y);
-    draw_number(second,x+18,y);
-    draw_number(third,x+36,y);
+    draw_number((x+30),y, first);
+    draw_number((x+60),y, second);
+    draw_number((x+90),y, third);
     return 0;
 }
 

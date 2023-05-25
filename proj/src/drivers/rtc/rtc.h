@@ -73,7 +73,7 @@
 
 #define VRT BIT(7) /* @brief BIT for Valid RAM/time */
 
-
+int (rtc_init)();
 
 int (rtc_subscribe_int)(uint8_t *bit_no);
 
