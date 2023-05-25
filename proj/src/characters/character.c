@@ -145,7 +145,7 @@ void move(Character* character) {
         character->sprite->yspeed = 0;
 
         /* Put character on top of the ground */
-        character->sprite->y = (character->sprite->y / TILE_SIZE) * TILE_SIZE;
+        //character->sprite->y = (character->sprite->y / TILE_SIZE) * TILE_SIZE;
     }
     else {
         if (wall_up(character)) {
@@ -161,31 +161,18 @@ void move(Character* character) {
     if (character->direction == LEFT && !wall_left(character)) {
         character->sprite->x += character->sprite->xspeed;
     }
-
     else if (character->direction == RIGHT && !wall_right(character)) {
         character->sprite->x += character->sprite->xspeed;
     }
 }
 
 void (move_left)(Character* character) {
-    if (wall_left(character)) {
-        /* Bro's against the wall */
-        character->sprite->xspeed = 0;
-        return;
-    }
-
     //character->sprite->x -= 3 * character->sprite->xspeed;
     character->sprite->xspeed = -DEFAULT_SPEED;
 
     update_character(character, LEFT);
 }
 void (move_right)(Character* character) {
-    if (wall_right(character)) {
-        /* Bro's against the wall */
-        character->sprite->xspeed = 0;
-        return;
-    }
-
     //character->sprite->x += 3 * character->sprite->xspeed;
     character->sprite->xspeed = DEFAULT_SPEED;
 
