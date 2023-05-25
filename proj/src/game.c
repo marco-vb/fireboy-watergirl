@@ -191,6 +191,7 @@ int draw_settings_menu() {
 
 int draw_game() {
     draw_sprite(cursor);
+    draw_sprite(watergirl);
     draw_buffer();
     erase_sprite(cursor);
     if ((current_frame++) == frames_per_second) {
