@@ -13,6 +13,7 @@ int(start_counter)(int time){
     return 0;
 }
 int(draw_counter)(){
+
     clear_timer();
     draw_xpm(numbersala[first],x,y);
     draw_xpm(numbersala[second],x+18,y);

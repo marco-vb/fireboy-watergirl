@@ -66,6 +66,8 @@ int (map_memory)(uint16_t mode) {
     struct minix_mem_range mr;
     mr.mr_base = vmi_p.PhysBasePtr;
     mr.mr_limit = mr.mr_base + frame_size;
+    printf("%d\n",hres);
+    printf("%d\n",vres);
 
     if (OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))) {
         panic("sys_privctl (ADD_MEM) failed: %d\n", r);
@@ -90,6 +92,7 @@ int (map_memory)(uint16_t mode) {
 }
 
 void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
+     if (color == xpm_transparency_color(XPM_8_8_8_8)) return;
     if (x < 0 || y < 0 || x >= hres || y >= vres) return;
     size_t i = (hres * y + x) * bytes_per_pixel;
      memcpy(&buffer[i], &color, bytes_per_pixel);
@@ -116,6 +119,7 @@ int(draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y){
     uint32_t *color=(uint32_t*)xpm_load(xpm, XPM_8_8_8_8, &img);
     for(int i=0;i<img.height;i++){
         for(int j=0;j<img.width;j++){
+         
             video_draw_pixel(x+j,y+i,*color);
             color++;
         }

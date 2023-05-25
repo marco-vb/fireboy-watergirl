@@ -7,7 +7,7 @@ int (create_characters)() {
     if (fireboy == NULL) return 1;
     fireboy->sprite = create_sprite((xpm_map_t)(fireL1_xpm), 600, 600, 0, 0);
     fireboy->direction = DEFAULT;
-    fireboy->animation_delay = 1;
+    fireboy->animation_delay = 5;
     fireboy->current_sprite = 0;
     fireboy->frames_to_next_change = 0;
 
@@ -29,6 +29,10 @@ int (create_characters)() {
 
     if (watergirl == NULL) return 1;
     watergirl->sprite = create_sprite((xpm_map_t)(waterL1_xpm), 600, 600, 0, 0);
+    watergirl->direction = DEFAULT;
+    watergirl->animation_delay = 5;
+    watergirl->current_sprite = 0;
+    watergirl->frames_to_next_change = 0;
     watergirl->left[0] = load_img((xpm_map_t)waterL1_xpm);
     watergirl->left[1] = load_img((xpm_map_t)waterL2_xpm);
     watergirl->left[2] = load_img((xpm_map_t)waterL3_xpm);
@@ -59,45 +63,50 @@ char get_tile(Map* map, u_int32_t x, u_int32_t y) {
 }
 
 int wall_down(Character* character) {
-    uint32_t x = character->sprite->x + character->sprite->width / 2;
-    uint32_t y = character->sprite->y + character->sprite->height;
+    uint32_t x = character->sprite->x  ;
+    uint32_t y = character->sprite->y + character->sprite->height+ character->sprite->yspeed;
 
-    char tile = get_tile(map1, x, y);
+    char tile = get_tile(map1, x + CHECKBOX_PADDING, y);
 
     if (tile == 'A') { return 1; }
+    if(get_tile(map1,x + character->sprite->width - CHECKBOX_PADDING,y)=='A') return 1;
 
     return 0;
 }
 
 int wall_left(Character* character) {
-    uint32_t x = character->sprite->x;
-    uint32_t y = character->sprite->y + character->sprite->height / 2;
+    
+    uint32_t x = character->sprite->x -character->sprite->xspeed;
+    uint32_t y = character->sprite->y ;
 
-    char tile = get_tile(map1, x, y);
+    char tile = get_tile(map1, x, y + CHECKBOX_PADDING);
 
     if (tile == 'A') { return 1; }
+    if(get_tile(map1,x,y+ character->sprite->height -CHECKBOX_PADDING)=='A') return 1;
 
     return 0;
 }
 
 int wall_right(Character* character) {
-    uint32_t x = character->sprite->x + character->sprite->width;
-    uint32_t y = character->sprite->y + character->sprite->height / 2;
+    uint32_t x = character->sprite->x + character->sprite->width + character->sprite->xspeed;
+    uint32_t y = character->sprite->y ;
 
-    char tile = get_tile(map1, x, y);
+    char tile = get_tile(map1, x, y +CHECKBOX_PADDING);
 
     if (tile == 'A') { return 1; }
+    if(get_tile(map1,x ,y+ character->sprite->height -CHECKBOX_PADDING)=='A') return 1;
 
     return 0;
 }
 
 int wall_up(Character* character) {
-    uint32_t x = character->sprite->x + character->sprite->width / 2;
-    uint32_t y = character->sprite->y;
+    uint32_t x = character->sprite->x ;
+    uint32_t y = character->sprite->y -character->sprite->yspeed;
 
-    char tile = get_tile(map1, x, y);
+    char tile = get_tile(map1, x +CHECKBOX_PADDING, y);
 
     if (tile == 'A') { return 1; }
+    if(get_tile(map1,x + character->sprite->width - CHECKBOX_PADDING,y)=='A') return 1;
 
     return 0;
 }
@@ -124,25 +133,36 @@ int door_water(Character* character) {
     return 0;
 }
 
-void update_character(Character* character, enum Direction dir) {
-    if (character->direction == dir) {
-        if ((character->frames_to_next_change++) == character->animation_delay) {
+void update_character(Character* character) {
+    if ( character->direction!=DEFAULT ) {
+        if ((++character->frames_to_next_change) == character->animation_delay) {
             character->current_sprite++;
             character->frames_to_next_change = 0;
             if (character->current_sprite > 5) character->current_sprite = 0;
         }
     }
-    else {
-        character->direction = dir;
+
+}
+int (update_direction)(Character * character, enum Direction dir){
+    if(character->direction!=dir){
+         character->direction = dir;
         character->current_sprite = 0;
         character->frames_to_next_change = 0;
+        return 1;
     }
+    return 0;
 }
 
 void move(Character* character) {
+    
     if (wall_down(character)) {
         /* Boy is on the ground, chill out! */
         character->sprite->yspeed = 0;
+        while (!is_on_ground(character))
+        {
+            character->sprite->y++;
+        }
+        
 
         /* Put character on top of the ground */
         //character->sprite->y = (character->sprite->y / TILE_SIZE) * TILE_SIZE;
@@ -159,7 +179,7 @@ void move(Character* character) {
 
     /* Move to left or right */
     if (character->direction == LEFT && !wall_left(character)) {
-        character->sprite->x += character->sprite->xspeed;
+        character->sprite->x -= character->sprite->xspeed;
     }
     else if (character->direction == RIGHT && !wall_right(character)) {
         character->sprite->x += character->sprite->xspeed;
@@ -168,15 +188,15 @@ void move(Character* character) {
 
 void (move_left)(Character* character) {
     //character->sprite->x -= 3 * character->sprite->xspeed;
-    character->sprite->xspeed = -DEFAULT_SPEED;
+    character->sprite->xspeed = DEFAULT_SPEED;
+    update_direction(character, LEFT);
 
-    update_character(character, LEFT);
 }
 void (move_right)(Character* character) {
     //character->sprite->x += 3 * character->sprite->xspeed;
     character->sprite->xspeed = DEFAULT_SPEED;
 
-    update_character(character, RIGHT);
+    update_direction(character, RIGHT);
 }
 
 void (stop_moving)(Character* character) {
@@ -186,13 +206,8 @@ void (stop_moving)(Character* character) {
 
 void (jump)(Character* character) {
     /* Get him off the ground or else move() will prevent jump! */
-    bool on_ground = false;
-    while (wall_down(character)) {
-        character->sprite->y -= 1;
-        on_ground = true;
-    }
 
-    if (on_ground) {
+    if (is_on_ground(character)) {
         character->sprite->yspeed = -JUMP;
     }
 }
@@ -200,7 +215,7 @@ void (jump)(Character* character) {
 void (character_current_sprite)(Character* character) {
     if (character->direction == LEFT) {
         character->sprite->map = character->left[character->current_sprite];
-        //memcpy(character->sprite->map,character->left[character->current_sprite],sizeof(&character->sprite->map));
+
     }
     else if (character->direction == RIGHT) {
         character->sprite->map = character->right[character->current_sprite];
@@ -213,5 +228,16 @@ void (character_current_sprite)(Character* character) {
 int(draw_character)(Character* Character) {
     character_current_sprite(Character);
     draw_sprite((Character->sprite));
+    return 0;
+}
+int (is_on_ground)(Character * character){
+    uint32_t x = character->sprite->x ;
+    uint32_t y = character->sprite->y + character->sprite->height;
+
+    char tile = get_tile(map1, x, y+1);
+
+    if (tile == 'A') { return 1; }
+    if(get_tile(map1,x + character->sprite->width,y)=='A') return 1;
+
     return 0;
 }

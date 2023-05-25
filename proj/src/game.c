@@ -90,6 +90,8 @@ int game_loop() {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
+                    update_character(fireboy);
+                    update_character(watergirl);
                     draw_screen();
                 }
 
@@ -217,11 +219,11 @@ int draw_game() {
     erase_sprite(watergirl->sprite);
 
     if ((current_frame++) == frames_per_second) {
-        decrement_counter();
+        if(!decrement_counter())draw_counter();
         current_frame = 0;
     }
 
-    draw_counter();
+    
 
     return 0;
 }
@@ -250,6 +252,7 @@ int fireboy_move(keyboard_key key) {
         stop_moving(fireboy);
         break;
     }
+  
 
     return 0;
 }

@@ -2,7 +2,7 @@
 static char *n8_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "18 28 6 1 ",
-"  c #000000",
+"  c None",
 ". c #CFCFCF",
 "X c #9B9B9B",
 "o c #9F9F9F",
