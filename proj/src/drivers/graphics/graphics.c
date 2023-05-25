@@ -91,6 +91,8 @@ int (map_memory)(uint16_t mode) {
 }
 
 void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
+
+    if (color == xpm_transparency_color(XPM_8_8_8_8)) return;
     if (x < 0 || y < 0 || x >= hres || y >= vres) return;
     size_t i = (hres * y + x) * bytes_per_pixel;
      memcpy(&buffer[i], &color, bytes_per_pixel);
