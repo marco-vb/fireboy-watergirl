@@ -115,9 +115,13 @@ int game_loop() {
                         watergirl_move(k);
                         break;
 
-                    default:
+                    case KEY_A_BREAK: case KEY_D_BREAK:
                         fireboy_move(k);
+                        break;
+                    case KEY_LEFT_BREAK: case KEY_RIGHT_BREAK:
                         watergirl_move(k);
+                        break;
+                    default:
                         break;
                     }
                 }

@@ -30,6 +30,10 @@ typedef enum {
     KEY_Q = 0x10,
     KEY_E = 0x12,
     KEY_NONE = 0x00,
+    KEY_A_BREAK = 0x9E,
+    KEY_D_BREAK = 0xA0,
+    KEY_LEFT_BREAK = 0xCB,
+    KEY_RIGHT_BREAK = 0xCD,
 } keyboard_key;
 
 
