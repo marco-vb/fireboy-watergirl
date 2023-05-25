@@ -36,4 +36,5 @@ int(draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y);
 int (draw_background)();
 int (replace_with_background)(uint16_t x, uint16_t y);
 int (clear_background)();
+uint32_t * (load_img)(xpm_map_t img);
 #endif /* __GRAPHICS_H */
