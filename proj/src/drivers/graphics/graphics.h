@@ -2,6 +2,16 @@
 #define __GRAPHICS_H
 
 #include <lcom/lcf.h>
+#include "../../xpm/numbers/0.xpm"
+#include "../../xpm/numbers/1.xpm"
+#include "../../xpm/numbers/2.xpm"
+#include "../../xpm/numbers/3.xpm"
+#include "../../xpm/numbers/4.xpm"
+#include "../../xpm/numbers/5.xpm"
+#include "../../xpm/numbers/6.xpm"
+#include "../../xpm/numbers/7.xpm"
+#include "../../xpm/numbers/8.xpm"
+#include "../../xpm/numbers/9.xpm"
 
 #define VBE_VID_INT 0x10
 
@@ -36,4 +46,6 @@ int(draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y);
 int (draw_background)();
 int (replace_with_background)(uint16_t x, uint16_t y);
 int (clear_background)();
+int (draw_number)(uint16_t x, uint16_t y, uint32_t number);
+
 #endif /* __GRAPHICS_H */

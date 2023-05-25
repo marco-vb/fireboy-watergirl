@@ -6,6 +6,7 @@
 #include "game.h"
 #include "maps/map.h"
 #include "count_down/count_down.h"
+#include "drivers/rtc/rtc.h"
 int frames_per_second = 60;
 int current_frame = 0;
 extern Map* map1;
@@ -198,6 +199,7 @@ int draw_game() {
         current_frame = 0;
     }
     draw_counter();
+    draw_time();
 
     return 0;
 }

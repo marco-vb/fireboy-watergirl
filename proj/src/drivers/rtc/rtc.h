@@ -12,9 +12,7 @@
 
 
 #include <stdint.h>
-
-
-
+#include "../graphics/graphics.h"
 
 #define RTC_IRQ 8 /* @brief RTC IRQ Line on IRQ0 from PIC2*/
 #define RTC_ADDR_REG 0x70
@@ -100,6 +98,8 @@ int (read_year)(uint8_t *year);
 int (read_date)(uint8_t *day, uint8_t *month, uint8_t *year);
 
 int (read_time)(uint8_t *hours, uint8_t *minutes, uint8_t *seconds);
+
+int (draw_time)();
 
 
 /**

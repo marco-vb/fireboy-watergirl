@@ -140,3 +140,19 @@ int (clear_background)(){
     return 0;
 }
 
+xpm_map_t numbersxpm[10]={(xpm_map_t)n0_xpm,(xpm_map_t)n1_xpm,(xpm_map_t)n2_xpm,(xpm_map_t)n3_xpm,(xpm_map_t)n4_xpm,(xpm_map_t)n5_xpm,(xpm_map_t)n6_xpm,(xpm_map_t)n7_xpm,(xpm_map_t)n8_xpm,(xpm_map_t)n9_xpm};
+
+int(draw_number)(uint16_t x, uint16_t y, uint32_t number){
+
+    if (number>9) return 1;
+
+    for(int i=0; i<54;i++){
+        for(int j=0; j<54;j++){
+            replace_with_background(x+j,y+i);
+        }
+    }
+
+    draw_xpm(numbersxpm[0],x,y);
+
+    return 0;
+}
