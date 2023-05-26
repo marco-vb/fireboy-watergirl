@@ -25,8 +25,16 @@ uint8_t pop_byte() {
 }
 
 void push_byte(uint8_t byte) {
-    push(queue_receive, byte);
+    push(queue_send, byte);
 } 
+
+bool receive_queue_is_empty() {
+    return is_empty(queue_receive);
+}
+
+bool send_queue_is_empty() {
+    return is_empty(queue_send);
+}
 
 bool transmitter_ready() {
     return ready_to_send;
@@ -60,8 +68,6 @@ int ser_unsubscribe_int() {
 
 int ser_enable_interrupts() {
     uint8_t interrupts = SER_DATA_RECEIVE_INT | SER_RECEIVER_ERR_INT | SER_EMPTY_TRANSMIT_INT;
-
-    printf("Interrupts: %x", interrupts);
 
     if (sys_outb(SER_IER, interrupts)) {
         printf("Error while enabling serial port's interrupts\n");
@@ -97,6 +103,8 @@ int ser_conf(uint8_t bits, uint8_t stop, uint8_t par_mode) {
         conf |= BIT(4);
     if (par_mode > 2)
         conf |= BIT(5);
+
+    printf("Conf: %x\n", conf);
 
     if (write_lcr(conf))
         return 1;
@@ -250,11 +258,11 @@ int send_byte(uint8_t data) {
 }
 
 int send_bytes() {
-    for (int count = 0; count < SEND_FIFO_SIZE && !is_empty(queue_send), count++) {
+    for (int count = 0; count < SEND_FIFO_SIZE && !is_empty(queue_send); count++) {
         uint8_t data = front(queue_send);
 
         // TODO: might need small delay?
-        if (send_byte(&data)) {
+        if (send_byte(data)) {
             return 1;
         }
 
@@ -273,10 +281,10 @@ void ser_ih() {
     }
 
     int_orig = (iir_status & INT_ORIGIN_MASK) >> 1;
-    
+
     // TODO: Check if interrupt is from uart
     if (iir_status & IIR_INT_STATUS)
-        break;
+        return;
 
     switch(int_orig) {
         case IIR_DATA_ERR: {
@@ -293,12 +301,17 @@ void ser_ih() {
             uint8_t lsr, data;
 
             do {
-                if (read_lsr(&lsr))
+                if (read_lsr(&lsr)){
                     ih_err = 1;
-                
+                    return;
+                }
                 // TODO: Need to check if there is an error or wait for ACK even?
+                if (read_byte(&data)) {
+                    ih_err = 1;
+                    return;
+                }
 
-                push(queue_receive, read_byte(&data));
+                push(queue_receive, data);
             } while(lsr & LSR_RECEIVED_DATA);
 
             break;
@@ -307,7 +320,7 @@ void ser_ih() {
             // TODO: Check if this is necessary (although it most probably is since the interrupt is cleared only when you write to the THR register)
             if (is_empty(queue_send)) {
                 ready_to_send = true;
-                break;
+                return;
             }
 
             if (send_bytes()) 

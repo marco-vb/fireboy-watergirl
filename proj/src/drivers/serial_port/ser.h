@@ -5,6 +5,8 @@ void init_queues();
 void destroy_queues();
 uint8_t pop_byte();
 void push_byte(uint8_t byte);
+bool receive_queue_is_empty();
+bool send_queue_is_empty();
 int read_byte(uint8_t *data);
 int send_byte(uint8_t data);
 int send_bytes();

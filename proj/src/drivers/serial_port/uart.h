@@ -34,7 +34,7 @@
 #define IIR_DATA_ERR 3
 #define IIR_CHAR_TIMEOUT 4
 
-#define LSR_RECEIVED_DATA
+#define LSR_RECEIVED_DATA BIT(0)
 
 #define SEND_FIFO_SIZE 16
 
