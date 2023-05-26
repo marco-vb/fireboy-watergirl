@@ -17,7 +17,7 @@
 #include "../xpm/watergirl.xpm"
 
 typedef struct {
-    uint16_t x, y, xspeed, yspeed;
+    int x, y, xspeed, yspeed;
     uint16_t width, height;
     uint32_t* map;
 } Sprite;

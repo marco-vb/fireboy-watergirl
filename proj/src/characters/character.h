@@ -39,6 +39,7 @@ enum Direction { LEFT, RIGHT, UP, DEFAULT };
 #define GRAVITY 1
 #define DEFAULT_SPEED 6
 #define JUMP 15
+#define CHECKBOX_PADDING 10
 
 typedef struct {
     enum Direction direction;
@@ -67,7 +68,9 @@ int(draw_character)(Character* Character);
 int (create_characters)();
 int (set_position)(Character* Character, int x, int y);
 void (character_current_sprite)(Character* character);
-void update_character(Character* character, enum Direction dir);
+int (is_on_ground)(Character * character);
+void update_character(Character* character);
+int (update_direction)(Character * character, enum Direction dir);
 
 /* Movements due to 'gravity' */
 void move(Character* Character);
