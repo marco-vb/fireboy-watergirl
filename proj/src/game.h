@@ -20,7 +20,6 @@ extern Character* fireboy, * watergirl;
 
 typedef enum {
     MAIN_MENU,
-    SETTINGS_MENU,
     GAME,
     PAUSE_MENU,
     GAME_OVER,
@@ -32,7 +31,6 @@ int game_loop();
 int game_exit();
 int draw_screen();
 int draw_main_menu();
-int draw_settings_menu();
 int draw_game();
 int draw_pause_menu();
 int draw_game_over();
