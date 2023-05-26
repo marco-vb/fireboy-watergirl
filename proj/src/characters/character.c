@@ -10,7 +10,7 @@ int (create_characters)() {
     fireboy->animation_delay = 5;
     fireboy->current_sprite = 0;
     fireboy->frames_to_next_change = 0;
-    fireboy->element=FIRE;
+    fireboy->element = FIRE;
     fireboy->left[0] = load_img((xpm_map_t)fireL1_xpm);
     fireboy->left[1] = load_img((xpm_map_t)fireL2_xpm);
     fireboy->left[2] = load_img((xpm_map_t)fireL3_xpm);
@@ -46,7 +46,7 @@ int (create_characters)() {
     watergirl->right[4] = load_img((xpm_map_t)waterR5_xpm);
     watergirl->right[5] = load_img((xpm_map_t)waterR6_xpm);
     watergirl->front = load_img((xpm_map_t)water_default_xpm);
-    watergirl->element=WATER;
+    watergirl->element = WATER;
     return 0;
 }
 
@@ -69,9 +69,9 @@ int wall_down(Character* character) {
     char tile = get_tile(map1, x + CHECKBOX_PADDING, y);
 
 
-    if (tile == 'A' || tile=='L' || tile=='P') { return 1; }
-    tile=get_tile(map1,x + character->sprite->width - CHECKBOX_PADDING,y);
-    if (tile == 'A' || tile=='L' || tile=='P') { return 1; }
+    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    tile = get_tile(map1, x + character->sprite->width - CHECKBOX_PADDING, y);
+    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
 
 
     return 0;
@@ -114,27 +114,27 @@ int wall_up(Character* character) {
     return 0;
 }
 int on_fire(Character* character) {
-    uint32_t x = character->sprite->x ;
+    uint32_t x = character->sprite->x;
     uint32_t y = character->sprite->y + character->sprite->height;
 
-    char tile = get_tile(map1, x, y+1);
+    char tile = get_tile(map1, x, y + 1);
 
-    if ( tile=='L') { return 1; }
-    tile=get_tile(map1,x + character->sprite->width,y);
-    if( tile=='L') return 1;
+    if (tile == 'L') { return 1; }
+    tile = get_tile(map1, x + character->sprite->width, y);
+    if (tile == 'L') return 1;
 
     return 0;
 }
 
 int on_water(Character* character) {
-    uint32_t x = character->sprite->x ;
+    uint32_t x = character->sprite->x;
     uint32_t y = character->sprite->y + character->sprite->height;
 
-    char tile = get_tile(map1, x, y+1);
+    char tile = get_tile(map1, x, y + 1);
 
-    if ( tile=='P') { return 1; }
-    tile=get_tile(map1,x + character->sprite->width,y);
-    if( tile=='P') return 1;
+    if (tile == 'P') { return 1; }
+    tile = get_tile(map1, x + character->sprite->width, y);
+    if (tile == 'P') return 1;
 
     return 0;
 }
@@ -185,14 +185,9 @@ void move(Character* character) {
     if (wall_down(character)) {
         /* Boy is on the ground, chill out! */
         character->sprite->yspeed = 0;
-        while (!is_on_ground(character))
-        {
+        while (!is_on_ground(character)) {
             character->sprite->y++;
         }
-
-
-        /* Put character on top of the ground */
-        //character->sprite->y = (character->sprite->y / TILE_SIZE) * TILE_SIZE;
     }
     else {
         if (wall_up(character)) {
@@ -234,7 +229,6 @@ void (stop_moving)(Character* character) {
 
 void (jump)(Character* character) {
     /* Get him off the ground or else move() will prevent jump! */
-
     if (is_on_ground(character)) {
         character->sprite->yspeed = -JUMP;
     }
@@ -265,9 +259,9 @@ int (is_on_ground)(Character* character) {
 
     char tile = get_tile(map1, x, y + 1);
 
-    if (tile == 'A' || tile=='L' || tile=='P') { return 1; }
-    tile=get_tile(map1,x + character->sprite->width,y);
-    if(tile=='A' || tile=='L' || tile=='P') return 1;
+    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    tile = get_tile(map1, x + character->sprite->width, y);
+    if (tile == 'A' || tile == 'L' || tile == 'P') return 1;
 
 
     return 0;

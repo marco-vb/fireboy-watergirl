@@ -73,7 +73,7 @@ game_state state = MAIN_MENU;
 int game_loop() {
     int ipc_status, r;
     message msg;
-    
+
 
     do {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -94,8 +94,8 @@ int game_loop() {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
-                    if(on_fire(watergirl) || on_water(fireboy)) state=GAME_OVER;
-                   
+                    if (on_fire(watergirl) || on_water(fireboy)) state = GAME_OVER;
+
                     update_character(fireboy);
                     update_character(watergirl);
                     draw_screen();
@@ -112,8 +112,8 @@ int game_loop() {
                         else if (state == GAME) state = GAME_OVER;
                         else {
                             state = MAIN_MENU;
-                             watergirl->sprite->x=300;
-                            fireboy->sprite->x=300;
+                            watergirl->sprite->x = 300;
+                            fireboy->sprite->x = 300;
                             clear_background();
                         }
                         break;
@@ -206,6 +206,17 @@ int draw_main_menu() {
     return 0;
 }
 
+void draw_ropes() {
+    for (int i = 0; i < 100; i++) {
+        if (!ropes[i]) continue;
+        draw_sprite(ropes[i]);
+        if (mouse_lclick_sprite(ropes[i])) {
+            erase_sprite(ropes[i]);
+            destroy_sprite(ropes[i]);
+        }
+    }
+}
+
 int draw_game() {
     draw_sprite(cursor);
 
@@ -213,6 +224,8 @@ int draw_game() {
     move(watergirl);
     draw_character(fireboy);
     draw_character(watergirl);
+
+    draw_ropes();
 
     draw_buffer();
     erase_sprite(cursor);
@@ -223,6 +236,7 @@ int draw_game() {
         if (!decrement_counter())draw_counter();
         current_frame = 0;
     }
+
     draw_counter();
     draw_time();
     draw_date();
@@ -235,7 +249,7 @@ int draw_pause_menu() {
 }
 
 int draw_game_over() {
-    
+
     if (mouse_inside(190, 540, 240, 80) && mouse_packet.lb) {
         state = MAIN_MENU;
         clear_background();
@@ -246,8 +260,8 @@ int draw_game_over() {
         state = GAME;
         clear_background();
         start_counter(120);
-        fireboy->sprite->x=300;
-        watergirl->sprite->x=300;
+        fireboy->sprite->x = 300;
+        watergirl->sprite->x = 300;
         clear_background();
         draw_map(map1);
         return 0;

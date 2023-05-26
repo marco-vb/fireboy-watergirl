@@ -20,7 +20,6 @@ Map* (create_map)(int level) {
     Map* map = (Map*)malloc(sizeof(Map));
 
     if (!file || !map) { return NULL; }
-    printf("Hello");
     fscanf(file, "%u %u", &map->columns, &map->rows);
     map->map = (char*)malloc(map->rows * map->columns * sizeof(char));
 
@@ -33,7 +32,7 @@ Map* (create_map)(int level) {
 
             if (c != '\n') { map->map[i * map->columns + j] = c; }
         }
-        fscanf(file, "%c", &c); // Read the \n
+        //fscanf(file, "%c", &c); // Read the \n
     }
 
     map->x = map->y = 0;
@@ -61,12 +60,14 @@ int (draw_map)(Map* map) {
     unsigned int wall = 0;
     unsigned int lava = 0;
     unsigned int water = 0;
+    unsigned int rope = 0;
+
     for (uint32_t i = 0; i < map->rows; i++) {
         for (uint32_t j = 0; j < map->columns; j++) {
             uint32_t index = i * map->columns + j;
             uint32_t x = map->x + j * TILE_SIZE, y = map->y + i * TILE_SIZE;
 
-            if (map->map[index] == 'B') {
+            if (map->map[index] == 'B' || map->map[index] == 'R') {
                 switch (background % 3)
                 {
                 case 0:
@@ -82,6 +83,10 @@ int (draw_map)(Map* map) {
                 }
                 background++;
 
+                if (map->map[index] == 'R') {
+                    ropes[rope++] = create_sprite((xpm_map_t)rope_xpm, x, y, 0, 0);
+                    rope = rope > 100 ? 99 : rope;
+                }
             }
             if (map->map[index] == 'A') {
                 switch (wall % 2)
