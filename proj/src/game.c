@@ -103,6 +103,7 @@ int game_loop() {
                     switch (k) {
                     case KEY_ESC:
                         if (state == MAIN_MENU) state = EXIT;
+                        else if (state == GAME) state = PAUSE_MENU;
                         else {
                             state = MAIN_MENU;
                             clear_background();
@@ -141,12 +142,8 @@ int draw_screen() {
     case MAIN_MENU:
         draw_main_menu();
         break;
-    case SETTINGS_MENU:
-        draw_settings_menu();
-        break;
     case GAME:
         draw_game();
-
         break;
     case PAUSE_MENU:
         draw_pause_menu();
@@ -177,7 +174,7 @@ int draw_main_menu() {
         return 0;
     }
     if (mouse_lclick_sprite(coop)) {
-        state = SETTINGS_MENU;
+        state = GAME;
         return 0;
     }
     if (mouse_lclick_sprite(exit)) {
@@ -201,10 +198,6 @@ int draw_main_menu() {
     return 0;
 }
 
-int draw_settings_menu() {
-    return 0;
-}
-
 int draw_game() {
     draw_sprite(cursor);
 
@@ -219,21 +212,37 @@ int draw_game() {
     erase_sprite(watergirl->sprite);
 
     if ((current_frame++) == frames_per_second) {
-        if(!decrement_counter())draw_counter();
+        if (!decrement_counter())draw_counter();
         current_frame = 0;
     }
 
-    
-
     return 0;
 }
-
 
 int draw_pause_menu() {
     return 0;
 }
 
 int draw_game_over() {
+    if (mouse_inside(190, 540, 240, 80) && mouse_packet.lb) {
+        state = MAIN_MENU;
+        clear_background();
+        return 0;
+    }
+
+    if (mouse_inside(770, 540, 240, 80) && mouse_packet.lb) {
+        state = GAME;
+        clear_background();
+        return 0;
+    }
+
+    draw_sprite(game_over);
+    draw_sprite(cursor);
+    draw_buffer();
+
+    erase_sprite(game_over);
+    erase_sprite(cursor);
+
     return 0;
 }
 
@@ -252,7 +261,7 @@ int fireboy_move(keyboard_key key) {
         stop_moving(fireboy);
         break;
     }
-  
+
 
     return 0;
 }

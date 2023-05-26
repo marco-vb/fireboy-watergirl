@@ -34,6 +34,7 @@ int load_sprites() {
     coop_texth = create_sprite((xpm_map_t)cooph_xpm, 490, 470, 0, 0);
     exit_text = create_sprite((xpm_map_t)exit_xpm, 500, 560, 0, 0);
     exit_texth = create_sprite((xpm_map_t)exith_xpm, 500, 560, 0, 0);
+    game_over = create_sprite((xpm_map_t)game_over_xpm, 0, 100, 0, 0);
 
     return 0;
 }
