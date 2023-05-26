@@ -41,12 +41,12 @@ int (mouse_send_cmd)(uint8_t cmd) {
         }
 
         kbc_write_arg(cmd);
-
+        /*
         if (!obf_full()) {
             tickdelay(WAIT_KBC);
             continue;
         }
-
+        */
         if (kbc_read_data(&res)) {
             tickdelay(WAIT_KBC);
             continue;

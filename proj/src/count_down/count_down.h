@@ -3,16 +3,6 @@
 
 #include <lcom/lcf.h>
 #include "../drivers/graphics/graphics.h"
-#include "../xpm/numbers/0.xpm"
-#include "../xpm/numbers/1.xpm"
-#include "../xpm/numbers/2.xpm"
-#include "../xpm/numbers/3.xpm"
-#include "../xpm/numbers/4.xpm"
-#include "../xpm/numbers/5.xpm"
-#include "../xpm/numbers/6.xpm"
-#include "../xpm/numbers/7.xpm"
-#include "../xpm/numbers/8.xpm"
-#include "../xpm/numbers/9.xpm"
 
 
 int(start_counter)(int time);
