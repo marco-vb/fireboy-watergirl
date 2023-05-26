@@ -73,6 +73,7 @@ game_state state = MAIN_MENU;
 int game_loop() {
     int ipc_status, r;
     message msg;
+    
 
     do {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -93,6 +94,8 @@ int game_loop() {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
+                    if(on_fire(watergirl) || on_water(fireboy)) state=GAME_OVER;
+                   
                     update_character(fireboy);
                     update_character(watergirl);
                     draw_screen();
@@ -106,8 +109,11 @@ int game_loop() {
                     switch (k) {
                     case KEY_ESC:
                         if (state == MAIN_MENU) state = EXIT;
+                        else if (state == GAME) state = GAME_OVER;
                         else {
                             state = MAIN_MENU;
+                             watergirl->sprite->x=300;
+                            fireboy->sprite->x=300;
                             clear_background();
                         }
                         break;
@@ -144,12 +150,8 @@ int draw_screen() {
     case MAIN_MENU:
         draw_main_menu();
         break;
-    case SETTINGS_MENU:
-        draw_settings_menu();
-        break;
     case GAME:
         draw_game();
-
         break;
     case PAUSE_MENU:
         draw_pause_menu();
@@ -180,7 +182,7 @@ int draw_main_menu() {
         return 0;
     }
     if (mouse_lclick_sprite(coop)) {
-        state = SETTINGS_MENU;
+        state = GAME;
         return 0;
     }
     if (mouse_lclick_sprite(exit)) {
@@ -204,10 +206,6 @@ int draw_main_menu() {
     return 0;
 }
 
-int draw_settings_menu() {
-    return 0;
-}
-
 int draw_game() {
     draw_sprite(cursor);
 
@@ -222,21 +220,46 @@ int draw_game() {
     erase_sprite(watergirl->sprite);
 
     if ((current_frame++) == frames_per_second) {
-        if(!decrement_counter())draw_counter();
+        if (!decrement_counter())draw_counter();
         current_frame = 0;
     }
+    draw_counter();
     draw_time();
     draw_date();
 
     return 0;
 }
 
-
 int draw_pause_menu() {
     return 0;
 }
 
 int draw_game_over() {
+    
+    if (mouse_inside(190, 540, 240, 80) && mouse_packet.lb) {
+        state = MAIN_MENU;
+        clear_background();
+        return 0;
+    }
+
+    if (mouse_inside(770, 540, 240, 80) && mouse_packet.lb) {
+        state = GAME;
+        clear_background();
+        start_counter(120);
+        fireboy->sprite->x=300;
+        watergirl->sprite->x=300;
+        clear_background();
+        draw_map(map1);
+        return 0;
+    }
+
+    draw_sprite(game_over);
+    draw_sprite(cursor);
+    draw_buffer();
+
+    erase_sprite(game_over);
+    erase_sprite(cursor);
+
     return 0;
 }
 
@@ -255,7 +278,7 @@ int fireboy_move(keyboard_key key) {
         stop_moving(fireboy);
         break;
     }
-  
+
 
     return 0;
 }

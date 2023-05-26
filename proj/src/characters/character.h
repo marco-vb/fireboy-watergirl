@@ -36,6 +36,7 @@
 
 
 enum Direction { LEFT, RIGHT, UP, DEFAULT };
+enum Elements{FIRE,WATER};
 #define GRAVITY 1
 #define DEFAULT_SPEED 7
 #define JUMP 15
@@ -50,6 +51,7 @@ typedef struct {
     uint32_t* left[6];
     uint32_t* right[6];
     uint32_t* front;
+    enum Elements element;
 } Character;
 
 
@@ -82,5 +84,6 @@ void (jump)(Character* Character);
 
 /* 'Cancel' movement when user releases key */
 void (stop_moving)(Character* Character);
-
+int on_fire(Character* character);
+int on_water(Character* character);
 #endif /* __SPRITE_H */
