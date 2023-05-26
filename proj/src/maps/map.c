@@ -33,7 +33,7 @@ Map* (create_map)(int level) {
 
             if (c != '\n') { map->map[i * map->columns + j] = c; }
         }
-        fscanf(file, "%c", &c); // Read the \n
+        //fscanf(file, "%c", &c); // Read the \n
     }
 
     map->x = map->y = 0;

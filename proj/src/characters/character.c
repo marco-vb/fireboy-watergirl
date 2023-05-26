@@ -5,7 +5,7 @@ int (create_characters)() {
     fireboy = (Character*)malloc(sizeof(Character));
 
     if (fireboy == NULL) return 1;
-    fireboy->sprite = create_sprite((xpm_map_t)(fireL1_xpm), 1000, 700, 0, 0);
+    fireboy->sprite = create_sprite((xpm_map_t)(fireL1_xpm), 50, 750, 0, 0);
     fireboy->direction = DEFAULT;
     fireboy->animation_delay = 5;
     fireboy->current_sprite = 0;
@@ -28,7 +28,7 @@ int (create_characters)() {
     watergirl = (Character*)malloc(sizeof(Character));
 
     if (watergirl == NULL) return 1;
-    watergirl->sprite = create_sprite((xpm_map_t)(waterL1_xpm), 100, 700, 0, 0);
+    watergirl->sprite = create_sprite((xpm_map_t)(waterL1_xpm), 1000, 750, 0, 0);
     watergirl->direction = DEFAULT;
     watergirl->animation_delay = 5;
     watergirl->current_sprite = 0;

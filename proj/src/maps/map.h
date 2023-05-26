@@ -21,7 +21,7 @@
 #include "../xpm/background/water2.xpm"
 #include "../xpm/background/water3.xpm"
 
-#define MAPS_PATH "/home/lcom/labs/shared/proj/src/maps/map"
+#define MAPS_PATH "/home/lcom/labs/proj/src/maps/map"
 #define MAPS_EXT ".txt"
 #define TILE_SIZE 32
 
