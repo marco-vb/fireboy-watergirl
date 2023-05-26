@@ -20,6 +20,9 @@
 #include "../xpm/background/water1.xpm"
 #include "../xpm/background/water2.xpm"
 #include "../xpm/background/water3.xpm"
+#include "../xpm/background/poison1.xpm"
+#include "../xpm/background/poison2.xpm"
+#include "../xpm/background/poison3.xpm"
 
 #define MAPS_PATH "/home/lcom/labs/proj/src/maps/map"
 #define MAPS_EXT ".txt"
