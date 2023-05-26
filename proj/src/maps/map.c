@@ -20,9 +20,9 @@ Map* (create_map)(int level) {
     Map* map = (Map*)malloc(sizeof(Map));
 
     if (!file || !map) { return NULL; }
-    printf("Hello");
     fscanf(file, "%u %u", &map->columns, &map->rows);
     map->map = (char*)malloc(map->rows * map->columns * sizeof(char));
+    map->blocks = (Block* *)malloc(map->rows * map->columns * sizeof(Block *));
 
     char c;
     fscanf(file, "%c", &c); // Read the \n
@@ -37,6 +37,7 @@ Map* (create_map)(int level) {
     }
 
     map->x = map->y = 0;
+    map->n_blocks=0;
 
     fclose(file);
     free(path);
@@ -66,7 +67,7 @@ int (draw_map)(Map* map) {
             uint32_t index = i * map->columns + j;
             uint32_t x = map->x + j * TILE_SIZE, y = map->y + i * TILE_SIZE;
 
-            if (map->map[index] == 'B') {
+            if (map->map[index] == 'B' || map->map[index]=='C') {
                 switch (background % 3)
                 {
                 case 0:
@@ -108,8 +109,22 @@ int (draw_map)(Map* map) {
                 else draw_xpm((xpm_map_t)water2_xpm, x, y);
                 water++;
             }
+            if(map->map[index]=='C'){
+  
+                map->blocks[map->n_blocks]=create_block(j*32,i*32);
+                map->n_blocks+=1;
+              
+            
+            }
         }
         draw_background();
+    }
+    return 0;
+}
+int(draw_blocks)(Map * map){
+    for(int i=0;i<map->n_blocks;i++){
+        erase_sprite(map->blocks[i]->sprite);
+        draw_sprite(map->blocks[i]->sprite);
     }
     return 0;
 }

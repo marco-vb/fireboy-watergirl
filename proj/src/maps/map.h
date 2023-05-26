@@ -9,6 +9,7 @@
 
 #include "../drivers/graphics/graphics.h"
 #include "../sprites/sprite.h"
+#include "../objects/block.h"
 #include "../xpm/background/level_background1.xpm"
 #include "../xpm/background/level_background2.xpm"
 #include "../xpm/background/level_background3.xpm"
@@ -29,6 +30,8 @@ typedef struct {
     int x, y;
     uint32_t rows, columns;
     char* map;
+    Block * * blocks;
+    int n_blocks;
 } Map;
 
 Map* map1;
@@ -37,5 +40,7 @@ Map* map1;
 Map* (create_map)(int level);
 int (load_maps)();
 int (draw_map)(Map* map);
+int (update_blocks )(Map * map);
+int(draw_blocks)(Map * map);
 
 #endif

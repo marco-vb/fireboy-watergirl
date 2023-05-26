@@ -208,7 +208,7 @@ int draw_main_menu() {
 
 int draw_game() {
     draw_sprite(cursor);
-
+    draw_blocks(map1);
     move(fireboy);
     move(watergirl);
     draw_character(fireboy);
