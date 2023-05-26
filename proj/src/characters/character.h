@@ -38,7 +38,7 @@
 enum Direction { LEFT, RIGHT, UP, DEFAULT };
 enum Elements{FIRE,WATER};
 #define GRAVITY 1
-#define DEFAULT_SPEED 6
+#define DEFAULT_SPEED 7
 #define JUMP 15
 #define CHECKBOX_PADDING 10
 

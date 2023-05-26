@@ -33,7 +33,7 @@ Map* (create_map)(int level) {
 
             if (c != '\n') { map->map[i * map->columns + j] = c; }
         }
-        fscanf(file, "%c", &c); // Read the \n
+        //fscanf(file, "%c", &c); // Read the \n
     }
 
     map->x = map->y = 0;
@@ -46,7 +46,7 @@ Map* (create_map)(int level) {
 }
 
 int (load_maps)() {
-    map1 = create_map(1);
+    map1 = create_map(2);
 
     if (!map1) { return 1; }
 
@@ -61,6 +61,7 @@ int (draw_map)(Map* map) {
     unsigned int wall = 0;
     unsigned int lava = 0;
     unsigned int water = 0;
+    unsigned int poison = 0;
     for (uint32_t i = 0; i < map->rows; i++) {
         for (uint32_t j = 0; j < map->columns; j++) {
             uint32_t index = i * map->columns + j;
@@ -107,6 +108,12 @@ int (draw_map)(Map* map) {
                 else if (water % 5 == 4)draw_xpm((xpm_map_t)water3_xpm, x, y);
                 else draw_xpm((xpm_map_t)water2_xpm, x, y);
                 water++;
+            }
+            if(map->map[index] == 'V') {
+                if (poison % 5 == 0) draw_xpm((xpm_map_t)poison1_xpm, x, y);
+                else if (poison % 5 == 4) draw_xpm((xpm_map_t)poison3_xpm, x, y);
+                else draw_xpm((xpm_map_t)poison2_xpm, x, y);
+                poison++;
             }
         }
         draw_background();
