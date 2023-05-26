@@ -73,6 +73,7 @@ game_state state = MAIN_MENU;
 int game_loop() {
     int ipc_status, r;
     message msg;
+    
 
     do {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -93,6 +94,8 @@ int game_loop() {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
+                    if(on_fire(watergirl) || on_water(fireboy)) state=MAIN_MENU;
+                   
                     update_character(fireboy);
                     update_character(watergirl);
                     draw_screen();
@@ -108,6 +111,8 @@ int game_loop() {
                         if (state == MAIN_MENU) state = EXIT;
                         else {
                             state = MAIN_MENU;
+                             watergirl->sprite->x=300;
+                            fireboy->sprite->x=300;
                             clear_background();
                         }
                         break;
