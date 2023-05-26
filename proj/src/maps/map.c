@@ -14,7 +14,7 @@ Map* (create_map)(int level) {
     strcat(path, level_str);
     strcat(path, MAPS_EXT);
 
-    sprintf(path, "/home/lcom/labs/shared/proj/src/maps/map%d.txt", level);
+    sprintf(path, "/home/lcom/labs/proj/src/maps/map%d.txt", level);
     FILE* file = fopen(path, "r");
 
     Map* map = (Map*)malloc(sizeof(Map));
@@ -33,7 +33,7 @@ Map* (create_map)(int level) {
 
             if (c != '\n') { map->map[i * map->columns + j] = c; }
         }
-        fscanf(file, "%c", &c); // Read the \n
+        //fscanf(file, "%c", &c); // Read the \n
     }
 
     map->x = map->y = 0;

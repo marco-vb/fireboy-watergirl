@@ -10,6 +10,7 @@ static uint8_t* video_mem;
 uint8_t* buffer, *background_buffer;
 static uint16_t hres, vres, bytes_per_pixel;
 size_t frames;
+xpm_map_t charxpm[12]={(xpm_map_t)n0_xpm,(xpm_map_t)n1_xpm,(xpm_map_t)n2_xpm,(xpm_map_t)n3_xpm,(xpm_map_t)n4_xpm,(xpm_map_t)n5_xpm,(xpm_map_t)n6_xpm,(xpm_map_t)n7_xpm,(xpm_map_t)n8_xpm,(xpm_map_t)n9_xpm, (xpm_map_t)slash_xpm, (xpm_map_t)colon_xpm};
 
 int (video_set_mode)(uint16_t mode) {
     
@@ -149,3 +150,32 @@ uint32_t *(load_img)(xpm_map_t pic){
 
 }
 
+int(draw_number)(uint16_t x, uint16_t y, uint32_t number){
+
+    if (number>9) return 1;
+
+    for(int i=0; i<54;i++){
+        for(int j=0; j<54;j++){
+            replace_with_background(x+j,y+i);
+        }
+    }
+
+    draw_xpm(charxpm[number],x,y);
+
+    return 0;
+}
+
+int (draw_special_char)(uint16_t x, uint16_t y, uint32_t special_char){
+
+    if (special_char>11 || special_char <10) return 1;
+
+    for(int i=0; i<54;i++){
+        for(int j=0; j<54;j++){
+            replace_with_background(x+j,y+i);
+        }
+    }
+
+    draw_xpm(charxpm[special_char],x,y);
+
+    return 0;
+}

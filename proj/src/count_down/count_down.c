@@ -1,7 +1,6 @@
 #include "count_down.h"
 int seconds_left=0,first,second,third;
-int x=0,y=0;
-xpm_map_t numbersala[10]={(xpm_map_t)n0_xpm,(xpm_map_t)n1_xpm,(xpm_map_t)n2_xpm,(xpm_map_t)n3_xpm,(xpm_map_t)n4_xpm,(xpm_map_t)n5_xpm,(xpm_map_t)n6_xpm,(xpm_map_t)n7_xpm,(xpm_map_t)n8_xpm,(xpm_map_t)n9_xpm};
+int x=150,y=0;
 
 int(start_counter)(int time){
     if(time<0) return 1;
@@ -13,13 +12,12 @@ int(start_counter)(int time){
     return 0;
 }
 int(draw_counter)(){
-
-    clear_timer();
-    draw_xpm(numbersala[first],x,y);
-    draw_xpm(numbersala[second],x+18,y);
-    draw_xpm(numbersala[third],x+36,y);
+    draw_number((x+30),y, first);
+    draw_number((x+60),y, second);
+    draw_number((x+90),y, third);
     return 0;
 }
+
 int(decrement_counter)(){
     
     return start_counter(--seconds_left);
@@ -39,3 +37,4 @@ int(clear_timer)(){
     }
     return 0;
 }
+

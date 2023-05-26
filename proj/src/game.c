@@ -6,6 +6,7 @@
 #include "game.h"
 #include "maps/map.h"
 #include "count_down/count_down.h"
+#include "drivers/rtc/rtc.h"
 int frames_per_second = 60;
 int current_frame = 0;
 extern Map* map1;
@@ -42,6 +43,8 @@ int game_init() {
         printf("Error loading characters.\n");
         return 1;
     }
+
+    if (rtc_init()) return 1;
 
     return 0;
 }
@@ -222,8 +225,8 @@ int draw_game() {
         if(!decrement_counter())draw_counter();
         current_frame = 0;
     }
-
-    
+    draw_time();
+    draw_date();
 
     return 0;
 }
