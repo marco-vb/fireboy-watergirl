@@ -14,11 +14,7 @@ Map* (create_map)(int level) {
     strcat(path, level_str);
     strcat(path, MAPS_EXT);
 
-<<<<<<< proj/src/maps/map.c
     //sprintf(path, "/home/lcom/labs/shared/proj/src/maps/map%d.txt", level);
-=======
-    // sprintf(path, "/home/lcom/labs/proj/src/maps/map%d.txt", level);
->>>>>>> proj/src/maps/map.c
     FILE* file = fopen(path, "r");
 
     Map* map = (Map*)malloc(sizeof(Map));

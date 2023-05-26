@@ -215,11 +215,7 @@ int draw_game() {
     erase_sprite(watergirl->sprite);
 
     if ((current_frame++) == frames_per_second) {
-<<<<<<< proj/src/game.c
         if (!decrement_counter())draw_counter();
-=======
-        decrement_counter();
->>>>>>> proj/src/game.c
         current_frame = 0;
     }
     draw_counter();
