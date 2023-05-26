@@ -108,8 +108,9 @@ int wall_up(Character* character) {
 
     char tile = get_tile(map1, x + CHECKBOX_PADDING, y);
 
-    if (tile == 'A') { return 1; }
-    if (get_tile(map1, x + character->sprite->width - CHECKBOX_PADDING, y) == 'A') return 1;
+    if (tile == 'A' || tile=='P' || tile=='L') { return 1; }
+    tile=get_tile(map1, x + character->sprite->width - CHECKBOX_PADDING, y);
+    if (tile == 'A' || tile=='P' || tile=='L') { return 1; }
 
     return 0;
 }
@@ -117,10 +118,10 @@ int on_fire(Character* character) {
     uint32_t x = character->sprite->x ;
     uint32_t y = character->sprite->y + character->sprite->height;
 
-    char tile = get_tile(map1, x, y+1);
+    char tile = get_tile(map1, x +CHECKBOX_PADDING*2, y+1);
 
     if ( tile=='L') { return 1; }
-    tile=get_tile(map1,x + character->sprite->width,y);
+    tile=get_tile(map1,x + character->sprite->width - CHECKBOX_PADDING*2,y);
     if( tile=='L') return 1;
 
     return 0;
@@ -130,10 +131,10 @@ int on_water(Character* character) {
     uint32_t x = character->sprite->x ;
     uint32_t y = character->sprite->y + character->sprite->height;
 
-    char tile = get_tile(map1, x, y+1);
+    char tile = get_tile(map1, x+ 2*CHECKBOX_PADDING, y+1);
 
     if ( tile=='P') { return 1; }
-    tile=get_tile(map1,x + character->sprite->width,y);
+    tile=get_tile(map1,x + character->sprite->width- 2*CHECKBOX_PADDING,y);
     if( tile=='P') return 1;
 
     return 0;
