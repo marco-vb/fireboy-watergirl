@@ -222,9 +222,10 @@ int draw_game() {
     erase_sprite(watergirl->sprite);
 
     if ((current_frame++) == frames_per_second) {
-        if(!decrement_counter())draw_counter();
+        decrement_counter();
         current_frame = 0;
     }
+    draw_counter();
     draw_time();
     draw_date();
 
