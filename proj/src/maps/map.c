@@ -46,7 +46,7 @@ Map* (create_map)(int level) {
 }
 
 int (load_maps)() {
-    map1 = create_map(1);
+    map1 = create_map(2);
 
     if (!map1) { return 1; }
 
