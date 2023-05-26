@@ -1,8 +1,13 @@
 #ifndef SER_H
 #define SER_H
 
-int read_char(uint8_t *data);
-int write_char(uint8_t data);
+void init_queues();
+void destroy_queues();
+uint8_t pop_byte();
+void push_byte(uint8_t byte);
+int read_byte(uint8_t *data);
+int send_byte(uint8_t data);
+int send_bytes();
 int read_lsr(uint8_t *status);
 int write_lcr(uint8_t conf);
 int read_lcr(uint8_t *conf);
@@ -16,5 +21,7 @@ int get_data_errors(int errors[]);
 int handle_errors(int errors[]);
 void ser_ih();
 int check_ih_err();
+bool transmitter_ready();
+int init_fifos();
 
 #endif

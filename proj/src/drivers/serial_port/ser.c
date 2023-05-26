@@ -1,10 +1,36 @@
 #include <lcom/lcf.h>
 #include "ser.h"
 #include "uart.h"
+#include "../queue.h"
 
 static int hook_ser = 3;
 static int ih_err = 0;
-bool ready_to_send = false; // temp variable while queue isn't implemented 
+static bool ready_to_send = true;
+static struct Queue *queue_send = NULL, *queue_receive = NULL;
+
+void init_queues() {
+    queue_send = create_queue();
+    queue_receive = create_queue();
+}
+
+void destroy_queues() {
+    destroy_queue(queue_send);
+    destroy_queue(queue_receive);
+}
+
+uint8_t pop_byte() {
+    uint8_t byte = front(queue_receive);
+    pop(queue_receive);
+    return byte;
+}
+
+void push_byte(uint8_t byte) {
+    push(queue_receive, byte);
+} 
+
+bool transmitter_ready() {
+    return ready_to_send;
+}
 
 int check_ih_err() {
     int temp = ih_err;
@@ -39,24 +65,6 @@ int ser_enable_interrupts() {
 
     if (sys_outb(SER_IER, interrupts)) {
         printf("Error while enabling serial port's interrupts\n");
-        return 1;
-    }
-
-    return 0;
-}
-
-int read_lcr(uint8_t *conf) {
-    if (util_sys_inb(SER_LCR, conf)) {
-        printf("Error while reading from LCR\n");
-        return 1;
-    }
-
-    return 0;
-}
-
-int write_lcr(uint8_t conf) {
-    if (sys_outb(SER_LCR, conf)) {
-        printf("Error while writing to LCR\n");
         return 1;
     }
 
@@ -132,6 +140,36 @@ int bit_rate_conf(uint32_t bit_rate) {
     return 0;
 }
 
+int init_fifos() {
+    uint8_t config = FCR_ENABLE_FIFOS | FCR_CLEAR_FIFOS;
+
+    if (sys_outb(SER_FCR, config)) {
+        printf("Error while writing FIFOS configuration in fifo control register\n");
+        return 1;
+    }
+
+    return 0;
+}
+
+int read_lcr(uint8_t *conf) {
+    if (util_sys_inb(SER_LCR, conf)) {
+        printf("Error while reading from LCR\n");
+        return 1;
+    }
+
+    return 0;
+}
+
+int write_lcr(uint8_t conf) {
+    if (sys_outb(SER_LCR, conf)) {
+        printf("Error while writing to LCR\n");
+        return 1;
+    }
+
+    return 0;
+}
+
+
 int iir_status_read(uint8_t *irr_status) {
     if (util_sys_inb(SER_IIR, irr_status)) {
         printf("Error while reading interrupt identification register\n");
@@ -175,17 +213,17 @@ int handle_errors(int errors[]) {
     return 0;
 }
 
-int read_char(uint8_t *data) {
+int read_byte(uint8_t *data) {
     uint8_t conf;
 
     if (read_lcr(&conf))
         return 1;
     
-    if (conf & LCR_DLAB)
+    if (conf & LCR_DLAB) {
         conf = conf & ~LCR_DLAB;
-
-    if (write_lcr(conf))
-        return 1;
+        if (write_lcr(conf))
+            return 1;
+    }
 
     if (util_sys_inb(SER_RHR, data))
         return 1;
@@ -193,7 +231,7 @@ int read_char(uint8_t *data) {
     return 0;
 }
 
-int write_char(uint8_t data) {
+int send_byte(uint8_t data) {
     uint8_t conf;
 
     if (read_lcr(&conf))
@@ -208,9 +246,22 @@ int write_char(uint8_t data) {
     if (sys_outb(SER_THR, data))
         return 1;
 
-    // TODO: REMOVE THIS AFTER QUEUE IMPLEMENTATION!!!!
-    ready_to_send = false;
+    return 0;
+}
 
+int send_bytes() {
+    for (int count = 0; count < SEND_FIFO_SIZE && !is_empty(queue_send), count++) {
+        uint8_t data = front(queue_send);
+
+        // TODO: might need small delay?
+        if (send_byte(&data)) {
+            return 1;
+        }
+
+        pop(queue_send);
+    }
+
+    ready_to_send = false;
     return 0;
 }
 
@@ -223,10 +274,12 @@ void ser_ih() {
 
     int_orig = (iir_status & INT_ORIGIN_MASK) >> 1;
     
+    // TODO: Check if interrupt is from uart
+    if (iir_status & IIR_INT_STATUS)
+        break;
+
     switch(int_orig) {
         case IIR_DATA_ERR: {
-            // Ask if there can be more than one error at the same time
-            printf("lalau2\n");
             int errors[4] = {0, 0, 0, 0};
             if (get_data_errors(errors)) {
                 ih_err = 1;
@@ -235,18 +288,36 @@ void ser_ih() {
             handle_errors(errors);
             break;
         }
-        case IIR_DATA_RECEIVED: {
-            uint8_t data;
-            read_char(&data);
+        case IIR_DATA_RECEIVED:
+        case IIR_CHAR_TIMEOUT: {
+            uint8_t lsr, data;
+
+            do {
+                if (read_lsr(&lsr))
+                    ih_err = 1;
+                
+                // TODO: Need to check if there is an error or wait for ACK even?
+
+                push(queue_receive, read_byte(&data));
+            } while(lsr & LSR_RECEIVED_DATA);
+
             break;
         }
-        case IIR_CHAR_TIMEOUT:{
-            uint8_t data;
-            read_char(&data);
+        case IIR_TRANSMIT_EMPTY: {
+            // TODO: Check if this is necessary (although it most probably is since the interrupt is cleared only when you write to the THR register)
+            if (is_empty(queue_send)) {
+                ready_to_send = true;
+                break;
+            }
+
+            if (send_bytes()) 
+                ih_err = 1;
+
             break;
         }
-        case IIR_TRANSMIT_EMPTY:
-            ready_to_send = false;
+        default:
+            printf("Unknown interrupt code\n");
+            ih_err = 1;
             break;
     }
 }
