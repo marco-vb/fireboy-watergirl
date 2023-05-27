@@ -171,6 +171,9 @@ character.d character.ln character.o: /home/lcom/labs/shared/proj/src/characters
   /home/lcom/labs/shared/proj/src/characters/../maps/../xpm/background/water_door2.xpm \
   /home/lcom/labs/shared/proj/src/characters/../maps/../xpm/background/water_door3.xpm \
   /home/lcom/labs/shared/proj/src/characters/../maps/../xpm/background/water_door4.xpm \
+  /home/lcom/labs/shared/proj/src/characters/../maps/../xpm/background/poison1.xpm \
+  /home/lcom/labs/shared/proj/src/characters/../maps/../xpm/background/poison2.xpm \
+  /home/lcom/labs/shared/proj/src/characters/../maps/../xpm/background/poison3.xpm \
   /home/lcom/labs/shared/proj/src/characters/../xpm/zeldas/fireZelda/running_down_shield0.xpm \
   /home/lcom/labs/shared/proj/src/characters/../xpm/zeldas/fireZelda/shield_left/left_shield1.xpm \
   /home/lcom/labs/shared/proj/src/characters/../xpm/zeldas/fireZelda/shield_left/left_shield2.xpm \
@@ -356,6 +359,9 @@ game.d game.ln game.o: game.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   characters/../maps/../xpm/background/water_door2.xpm \
   characters/../maps/../xpm/background/water_door3.xpm \
   characters/../maps/../xpm/background/water_door4.xpm \
+  characters/../maps/../xpm/background/poison1.xpm \
+  characters/../maps/../xpm/background/poison2.xpm \
+  characters/../maps/../xpm/background/poison3.xpm \
   characters/../xpm/zeldas/fireZelda/running_down_shield0.xpm \
   characters/../xpm/zeldas/fireZelda/shield_left/left_shield1.xpm \
   characters/../xpm/zeldas/fireZelda/shield_left/left_shield2.xpm \
@@ -668,7 +674,10 @@ map.d map.ln map.o: /home/lcom/labs/shared/proj/src/maps/map.c /usr/include/lcom
   /home/lcom/labs/shared/proj/src/maps/../xpm/background/water_door1.xpm \
   /home/lcom/labs/shared/proj/src/maps/../xpm/background/water_door2.xpm \
   /home/lcom/labs/shared/proj/src/maps/../xpm/background/water_door3.xpm \
-  /home/lcom/labs/shared/proj/src/maps/../xpm/background/water_door4.xpm
+  /home/lcom/labs/shared/proj/src/maps/../xpm/background/water_door4.xpm \
+  /home/lcom/labs/shared/proj/src/maps/../xpm/background/poison1.xpm \
+  /home/lcom/labs/shared/proj/src/maps/../xpm/background/poison2.xpm \
+  /home/lcom/labs/shared/proj/src/maps/../xpm/background/poison3.xpm
 mouse.d mouse.ln mouse.o: /home/lcom/labs/shared/proj/src/drivers/kbc/mouse.c \
   /usr/include/lcom/lcf.h /usr/include/stdbool.h /usr/include/stdio.h \
   /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
@@ -843,6 +852,9 @@ proj.d proj.ln proj.o: proj.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   characters/../maps/../xpm/background/water_door2.xpm \
   characters/../maps/../xpm/background/water_door3.xpm \
   characters/../maps/../xpm/background/water_door4.xpm \
+  characters/../maps/../xpm/background/poison1.xpm \
+  characters/../maps/../xpm/background/poison2.xpm \
+  characters/../maps/../xpm/background/poison3.xpm \
   characters/../xpm/zeldas/fireZelda/running_down_shield0.xpm \
   characters/../xpm/zeldas/fireZelda/shield_left/left_shield1.xpm \
   characters/../xpm/zeldas/fireZelda/shield_left/left_shield2.xpm \

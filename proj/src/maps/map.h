@@ -21,6 +21,7 @@
 #include "../xpm/background/water1.xpm"
 #include "../xpm/background/water2.xpm"
 #include "../xpm/background/water3.xpm"
+
 #include "../xpm/background/fire_door1.xpm"
 #include "../xpm/background/fire_door2.xpm"
 #include "../xpm/background/fire_door3.xpm"
@@ -30,7 +31,12 @@
 #include "../xpm/background/water_door3.xpm"
 #include "../xpm/background/water_door4.xpm"
 
-#define MAPS_PATH "/home/lcom/labs/shared/proj/src/maps/map"
+#include "../xpm/background/poison1.xpm"
+#include "../xpm/background/poison2.xpm"
+#include "../xpm/background/poison3.xpm"
+
+
+#define MAPS_PATH "/home/lcom/labs/proj/src/maps/map"
 #define MAPS_EXT ".txt"
 #define TILE_SIZE 32
 
@@ -43,6 +49,8 @@ typedef struct {
 } Map;
 
 Map* map1;
+Map * map2;
+Map *current_map;
 
 
 Map* (create_map)(int level);
@@ -50,5 +58,5 @@ int (load_maps)();
 int (draw_map)(Map* map);
 int (update_blocks )(Map * map);
 int(draw_blocks)(Map * map);
-
+int (nextLevel)();
 #endif
