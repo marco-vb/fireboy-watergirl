@@ -25,15 +25,21 @@ Map* (create_map)(int level) {
 
     char c;
     fscanf(file, "%c", &c); // Read the \n
-
-    for (uint32_t i = 0; i < map->rows; i++) {
+    int j=0;
+    while (fscanf(file, "%c", &c) != EOF) {
+        if(c!='\n' && c!='\r'){ 
+            map->map[ j] = c;
+            j++;
+        }
+    }
+    /*for (uint32_t i = 0; i < map->rows; i++) {
         for (uint32_t j = 0; j < map->columns; j++) {
             fscanf(file, "%c", &c);
-
+             printf("Character: %c\n", c);
             if (c != '\n') { map->map[i * map->columns + j] = c; }
         }
         fscanf(file, "%c", &c); // Read the \n
-    }
+    }*/
 
     map->x = map->y = 0;
 
