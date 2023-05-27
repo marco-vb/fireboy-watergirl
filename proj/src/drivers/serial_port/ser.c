@@ -8,6 +8,14 @@ static int ih_err = 0;
 static bool ready_to_send = true;
 static struct Queue *queue_send = NULL, *queue_receive = NULL;
 
+int ser_init() {
+    ser_conf(8, 2, 2);
+    bit_rate_conf(9600);
+    ser_enable_interrupts();
+    init_queues();
+    init_fifos();
+}
+
 void init_queues() {
     queue_send = create_queue();
     queue_receive = create_queue();
@@ -261,7 +269,6 @@ int send_bytes() {
     for (int count = 0; count < SEND_FIFO_SIZE && !is_empty(queue_send); count++) {
         uint8_t data = front(queue_send);
 
-        // TODO: might need small delay?
         if (send_byte(data)) {
             return 1;
         }
@@ -282,7 +289,6 @@ void ser_ih() {
 
     int_orig = (iir_status & INT_ORIGIN_MASK) >> 1;
 
-    // TODO: Check if interrupt is from uart
     if (iir_status & IIR_INT_STATUS)
         return;
 
@@ -317,7 +323,6 @@ void ser_ih() {
             break;
         }
         case IIR_TRANSMIT_EMPTY: {
-            // TODO: Check if this is necessary (although it most probably is since the interrupt is cleared only when you write to the THR register)
             if (is_empty(queue_send)) {
                 ready_to_send = true;
                 return;

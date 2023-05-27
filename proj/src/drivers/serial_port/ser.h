@@ -15,6 +15,7 @@ int write_lcr(uint8_t conf);
 int read_lcr(uint8_t *conf);
 int ser_conf(uint8_t bits, uint8_t stop, uint8_t par_mode);
 int bit_rate_conf(uint32_t bit_rate);
+int ser_init();
 int ser_subscribe_int(uint8_t* bit_no);
 int ser_unsubscribe_int();
 int ser_enable_interrupts();
