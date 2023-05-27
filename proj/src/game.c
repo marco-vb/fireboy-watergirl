@@ -10,7 +10,7 @@
 int frames_per_second = 60;
 int current_frame = 0;
 extern Map* current_map;
-extern Map * map1;
+extern Map* map1;
 uint8_t irq_mouse, irq_timer, irq_keyboard;
 
 int game_init() {
@@ -74,7 +74,7 @@ game_state state = MAIN_MENU;
 int game_loop() {
     int ipc_status, r;
     message msg;
-    
+
 
     do {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -95,20 +95,20 @@ int game_loop() {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
-                    if(on_fire(watergirl) || on_water(fireboy)) state=GAME_OVER;
-                    if(door_fire(fireboy) && door_water(watergirl)){
-                         if(nextLevel()) state=MAIN_MENU;
-                         else{
+                    if (on_fire(watergirl) || on_water(fireboy)) state = GAME_OVER;
+                    if (door_fire(fireboy) && door_water(watergirl)) {
+                        if (nextLevel()) state = MAIN_MENU;
+                        else {
                             clear_background();
                             draw_map(current_map);
-                            
-                        if( current_map== map2){
-                            fireboy->sprite->x=60;
-                            fireboy->sprite->y=750;
-                            watergirl->sprite->x= 1000;
-                            watergirl->sprite->y=750;
+
+                            if (current_map == map2) {
+                                fireboy->sprite->x = 60;
+                                fireboy->sprite->y = 750;
+                                watergirl->sprite->x = 1000;
+                                watergirl->sprite->y = 750;
+                            }
                         }
-                         }
                     }
                     update_character(fireboy);
                     update_character(watergirl);
@@ -126,7 +126,6 @@ int game_loop() {
                         else if (state == GAME) state = GAME_OVER;
                         else {
                             state = MAIN_MENU;
-                            
                             clear_background();
                         }
                         break;
@@ -189,7 +188,7 @@ int draw_main_menu() {
 
     if (mouse_lclick_sprite(single_player)) {
         state = GAME;
-        
+
         start_counter(120);
         clear_background();
         draw_map(current_map);
@@ -220,6 +219,33 @@ int draw_main_menu() {
     return 0;
 }
 
+void draw_ropes() {
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (!ropes[i][j]) continue;
+            draw_sprite(ropes[i][j]);
+            int x_distf = abs(ropes[i][j]->x - fireboy->sprite->x);
+            int y_distf = abs(ropes[i][j]->y - fireboy->sprite->y);
+            int x_distw = abs(ropes[i][j]->x - watergirl->sprite->x);
+            int y_distw = abs(ropes[i][j]->y - watergirl->sprite->y);
+
+            if ((x_distf > 150 || y_distf > 150) &&
+                (x_distw > 150 || y_distw > 150)) {
+                continue;
+            }
+
+            if (mouse_lclick_sprite(ropes[i][j])) {
+                while (j < 10 && ropes[i][j]) {
+                    erase_sprite(ropes[i][j]);
+                    destroy_sprite(ropes[i][j]);
+                    ropes[i][j] = NULL;
+                    j++;
+                }
+            }
+        }
+    }
+}
+
 int draw_game() {
     draw_sprite(cursor);
     draw_blocks(current_map);
@@ -227,16 +253,22 @@ int draw_game() {
     move(watergirl);
     draw_character(fireboy);
     draw_character(watergirl);
+    draw_ropes();
+    draw_falling_blocks();
+    draw_sprite(cursor);
 
     draw_buffer();
     erase_sprite(cursor);
     erase_sprite(fireboy->sprite);
     erase_sprite(watergirl->sprite);
+    erase_blocks();
 
     if ((current_frame++) == frames_per_second) {
         if (!decrement_counter())draw_counter();
         current_frame = 0;
     }
+
+
     draw_counter();
     draw_time();
     draw_date();
@@ -249,7 +281,7 @@ int draw_pause_menu() {
 }
 
 int draw_game_over() {
-    
+
     if (mouse_inside(190, 540, 240, 80) && mouse_packet.lb) {
         state = MAIN_MENU;
         clear_background();
@@ -260,17 +292,17 @@ int draw_game_over() {
         state = GAME;
         clear_background();
         start_counter(120);
-        if(current_map==map1){
-            fireboy->sprite->x=60;
-            fireboy->sprite->y=750;
-            watergirl->sprite->x= 1000;
-            watergirl->sprite->y=750;
+        if (current_map == map1) {
+            fireboy->sprite->x = 60;
+            fireboy->sprite->y = 750;
+            watergirl->sprite->x = 120;
+            watergirl->sprite->y = 750;
         }
-        else if( current_map== map2){
-             fireboy->sprite->x=60;
-            fireboy->sprite->y=750;
-            watergirl->sprite->x= 1000;
-            watergirl->sprite->y=750;
+        else if (current_map == map2) {
+            fireboy->sprite->x = 60;
+            fireboy->sprite->y = 750;
+            watergirl->sprite->x = 1000;
+            watergirl->sprite->y = 750;
         }
         clear_background();
         draw_map(current_map);
@@ -302,7 +334,6 @@ int fireboy_move(keyboard_key key) {
         stop_moving(fireboy);
         break;
     }
-
 
     return 0;
 }

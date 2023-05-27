@@ -22,7 +22,7 @@ Map* (create_map)(int level) {
     if (!file || !map) { return NULL; }
     fscanf(file, "%u %u", &map->columns, &map->rows);
     map->map = (char*)malloc(map->rows * map->columns * sizeof(char));
-    map->blocks = (Block* *)malloc(map->rows * map->columns * sizeof(Block *));
+    map->blocks = (Block**)malloc(map->rows * map->columns * sizeof(Block*));
 
     char c;
     fscanf(file, "%c", &c); // Read the \n
@@ -33,11 +33,11 @@ Map* (create_map)(int level) {
 
             if (c != '\n') { map->map[i * map->columns + j] = c; }
         }
-        fscanf(file, "%c", &c); // Read the \n
+        //fscanf(file, "%c", &c); // Read the \n
     }
 
     map->x = map->y = 0;
-    map->n_blocks=0;
+    map->n_blocks = 0;
 
     fclose(file);
     free(path);
@@ -47,9 +47,9 @@ Map* (create_map)(int level) {
 }
 
 int (load_maps)() {
-    map1= create_map(1);
+    map1 = create_map(1);
     map2 = create_map(2);
-    current_map= map1;
+    current_map = map1;
 
     if (!map1 || !map2) { return 1; }
 
@@ -61,9 +61,11 @@ int (draw_map)(Map* map) {
     unsigned int wall = 0;
     unsigned int lava = 0;
     unsigned int water = 0;
+    unsigned int rope_count = 0;
+    unsigned int falling_block_count = 0;
 
-    unsigned int fire_door=0;
-    unsigned int water_door=0;
+    unsigned int fire_door = 0;
+    unsigned int water_door = 0;
 
     unsigned int poison = 0;
 
@@ -72,7 +74,7 @@ int (draw_map)(Map* map) {
             uint32_t index = i * map->columns + j;
             uint32_t x = map->x + j * TILE_SIZE, y = map->y + i * TILE_SIZE;
 
-            if (map->map[index] == 'B' || map->map[index]=='C') {
+            if (map->map[index] == 'B' || map->map[index] == 'R') {
                 switch (background % 3)
                 {
                 case 0:
@@ -88,6 +90,29 @@ int (draw_map)(Map* map) {
                 }
                 background++;
 
+                if (map->map[index] == 'R') {
+                    int i = 0;
+                    while (map->map[index] == 'R') {
+                        map->map[index] = 'B';
+                        ropes[rope_count][i++] = create_sprite((xpm_map_t)rope_xpm, x, y, 0, 0);
+                        index += map->columns;
+                        y += TILE_SIZE;
+                    }
+
+                    /* Falling Block */
+                    if (map->map[index] == 'X') {
+                        map->map[index] = 'B';
+                        Sprite* block = create_sprite((xpm_map_t)falling_block_xpm, x, y, 0, 0);
+                        Sprite* rope = ropes[rope_count][i - 1];
+                        Falling_Block* falling_block = (Falling_Block*)malloc(sizeof(Falling_Block));
+                        falling_block->sprite = block;
+                        falling_block->rope = rope;
+                        blocks[falling_block_count++] = falling_block;
+                    }
+
+                    rope_count++;
+                    continue;
+                }
             }
             if (map->map[index] == 'A') {
                 switch (wall % 2)
@@ -115,11 +140,11 @@ int (draw_map)(Map* map) {
                 water++;
             }
 
-            if(map->map[index]=='C'){
-                map->blocks[map->n_blocks]=create_block(j*32,i*32);
-                map->n_blocks+=1;
+            if (map->map[index] == 'C') {
+                map->blocks[map->n_blocks] = create_block(j * 32, i * 32);
+                map->n_blocks += 1;
             }
-            if(map->map[index]=='F'){
+            if (map->map[index] == 'F') {
                 switch (fire_door)
                 {
                 case 0:
@@ -133,14 +158,14 @@ int (draw_map)(Map* map) {
                     break;
                 case 3:
                     draw_xpm((xpm_map_t)fire_door4_xpm, x, y);
-                    break;          
+                    break;
 
                 default:
                     break;
                 }
                 fire_door++;
             }
-             if(map->map[index]=='W'){
+            if (map->map[index] == 'W') {
                 switch (water_door)
                 {
                 case 0:
@@ -154,38 +179,40 @@ int (draw_map)(Map* map) {
                     break;
                 case 3:
                     draw_xpm((xpm_map_t)water_door4_xpm, x, y);
-                    break;          
+                    break;
 
                 default:
                     break;
                 }
                 water_door++;
 
-            if(map->map[index] == 'V') {
-                if (poison % 5 == 0) draw_xpm((xpm_map_t)poison1_xpm, x, y);
-                else if (poison % 5 == 4) draw_xpm((xpm_map_t)poison3_xpm, x, y);
-                else draw_xpm((xpm_map_t)poison2_xpm, x, y);
-                poison++;
+                if (map->map[index] == 'V') {
+                    if (poison % 5 == 0) draw_xpm((xpm_map_t)poison1_xpm, x, y);
+                    else if (poison % 5 == 4) draw_xpm((xpm_map_t)poison3_xpm, x, y);
+                    else draw_xpm((xpm_map_t)poison2_xpm, x, y);
+                    poison++;
 
+                }
             }
         }
-        }
-        
+
     }
     draw_background();
     return 0;
 }
-int(draw_blocks)(Map * map){
-    for(int i=0;i<map->n_blocks;i++){
+
+int(draw_blocks)(Map* map) {
+    for (int i = 0;i < map->n_blocks;i++) {
         erase_sprite(map->blocks[i]->sprite);
         draw_sprite(map->blocks[i]->sprite);
     }
     return 0;
 }
-int  (nextLevel)(){
-    if(current_map==map1){ 
-        current_map= map2;
-        
+
+int  (nextLevel)() {
+    if (current_map == map1) {
+        current_map = map2;
+
         return 0;
     }
     return 1;

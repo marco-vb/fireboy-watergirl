@@ -9,6 +9,7 @@
 
 #include "../drivers/graphics/graphics.h"
 #include "../sprites/sprite.h"
+#include "../sprites/falling_block.h"
 #include "../objects/block.h"
 #include "../xpm/background/level_background1.xpm"
 #include "../xpm/background/level_background2.xpm"
@@ -21,6 +22,7 @@
 #include "../xpm/background/water1.xpm"
 #include "../xpm/background/water2.xpm"
 #include "../xpm/background/water3.xpm"
+#include "../xpm/background/rope.xpm"
 
 #include "../xpm/background/fire_door1.xpm"
 #include "../xpm/background/fire_door2.xpm"
@@ -39,6 +41,9 @@
 #define MAPS_PATH "/home/lcom/labs/proj/src/maps/map"
 #define MAPS_EXT ".txt"
 #define TILE_SIZE 32
+
+Sprite* ropes[10][10];
+extern Falling_Block* blocks[10];
 
 typedef struct {
     int x, y;
