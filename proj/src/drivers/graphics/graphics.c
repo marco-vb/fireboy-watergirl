@@ -105,18 +105,21 @@ uint16_t(get_hres)() {
 uint16_t(get_vres)() {
     return vres;
 }
-int(clear_buffer)(){
+void (clear_buffer)(){
     memset(buffer, 0, frames); 
-    return 0;
+
 }
-int (draw_buffer)(){
+void (draw_buffer)(){
     memcpy(video_mem, buffer, frames);
-     //memset(buffer, 0, frames); 
-    return 0;
+
 }
 int(draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y){
     xpm_image_t img;
     uint32_t *color=(uint32_t*)xpm_load(xpm, XPM_8_8_8_8, &img);
+    if (color==NULL) {
+        printf("Error drawing xpm!\n");
+        return 1;
+    }
     for(int i=0;i<img.height;i++){
         for(int j=0;j<img.width;j++){
          
@@ -126,21 +129,26 @@ int(draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y){
     }
     return 0;
 }
-int (draw_background)(){
+void (draw_background)(){
     memcpy(background_buffer, buffer, frames);
-    return 0;
+
 }
 int (replace_with_background)(uint16_t x, uint16_t y){
+     if(x>hres || y>vres){ 
+        printf("Position outside the screen\n");
+        return 1;
+    }
     size_t i = (hres * y + x) * bytes_per_pixel;
+   
     memcpy(&buffer[i], &background_buffer[i], bytes_per_pixel);
     return 0;
+
 }
-int (clear_background)(){
+void (clear_background)(){
     memset(background_buffer, 0, frames); 
     memset(buffer, 0, frames); 
     memset(video_mem, 0, frames); 
     draw_buffer();
-    return 0;
 }
 
 uint32_t *(load_img)(xpm_map_t pic){
@@ -152,7 +160,10 @@ uint32_t *(load_img)(xpm_map_t pic){
 
 int(draw_number)(uint16_t x, uint16_t y, uint32_t number){
 
-    if (number>9) return 1;
+    if (number>9 ){ 
+        printf("Invalid number in drawn_number\n");
+        return 1;
+    }
 
     for(int i=0; i<54;i++){
         for(int j=0; j<54;j++){
@@ -160,7 +171,10 @@ int(draw_number)(uint16_t x, uint16_t y, uint32_t number){
         }
     }
 
-    draw_xpm(charxpm[number],x,y);
+    if(draw_xpm(charxpm[number],x,y)){ 
+        printf("Could not load image corresponding to the number %d\n", number);
+        return 1;
+    }
 
     return 0;
 }
@@ -175,7 +189,7 @@ int (draw_special_char)(uint16_t x, uint16_t y, uint32_t special_char){
         }
     }
 
-    draw_xpm(charxpm[special_char],x,y);
+    if(draw_xpm(charxpm[special_char],x,y)) return 1;
 
     return 0;
 }

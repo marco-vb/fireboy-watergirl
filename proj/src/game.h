@@ -26,15 +26,76 @@ typedef enum {
     EXIT,
 } game_state;
 
+/** Load the sprites and maps, created the character, subscribes the drivers, changes the video mode
+ * @brief Initializes everything needed for the game 
+ * 
+ * @return int 1 if an error occur, 0 otherwise
+ */
 int game_init();
+
+/**
+ * @brief creates a loop where the game will be played and where it detects all the drivers interruptions and process them controlling all the elements and the states of the game
+ * 
+ * @return int 1 if an error occurs, 0 otherwise
+ */
 int game_loop();
+
+/** unsubscribes the drivers, change video mode to text mode, destroys pointers and clean alocated memory
+ * @brief exits the game mode 
+ * 
+ * @return int 1 if an error occurs 0 otherwise
+ */
 int game_exit();
+
+/**
+ * @brief call the functions to draw in the screen and controlls what needs to be drawn
+ * 
+ * @return int 1 if an error occurs, 0 otherwise
+ */
 int draw_screen();
+
+/**
+ * @brief draws the main menu and controlls if an option is chosen
+ * 
+ * @return int 1 if an error occur, 0 otherwise
+ */
 int draw_main_menu();
+
+/**
+ * @brief draws the elements of the game
+ * 
+ * @return int 1 if an error occurs, 0 otherwise
+ */
 int draw_game();
+
+/**
+ * @brief draws the pause menu
+ * 
+ * @return int 1 if an error occur, 0 otherwise
+ */
 int draw_pause_menu();
+
+/**
+ * @brief draws the game over screen and controlls if any of the options is chosen
+ * 
+ * @return int 1 if an error occurs, 0 otherwise
+ */
 int draw_game_over();
+
+/**
+ * @brief moves the fireboy depending of the keyborad key
+ * 
+ * @param key keyboard key pressed
+ * @return int 1 if an error occurs, 0 otherwise
+ */
 int fireboy_move(keyboard_key key);
+
+/**
+ * @brief moves the watergirl depending of the keyborad key
+ * 
+ * @param key keyboard key pressed
+ * @return int 1 if an error occurs, 0 otherwise
+ */
 int watergirl_move(keyboard_key key);
 
 #endif /* __GAME_H */

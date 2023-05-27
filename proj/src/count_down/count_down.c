@@ -11,10 +11,19 @@ int(start_counter)(int time){
     
     return 0;
 }
-int(draw_counter)(){
-    draw_number((x+30),y, first);
-    draw_number((x+60),y, second);
-    draw_number((x+90),y, third);
+int(draw_timer)(){
+    if(draw_number((x+30),y, first)){ 
+        printf("Error while drawing the timer first number");
+        return 1;
+    }
+    if(draw_number((x+60),y, second)){ 
+        printf("Error while drawing the second first number");
+        return 1;
+    }
+    if(draw_number((x+90),y, third)){ 
+        printf("Error while drawing the timer third number");
+        return 1;
+    }
     return 0;
 }
 
@@ -23,16 +32,15 @@ int(decrement_counter)(){
     return start_counter(--seconds_left);
 }
 
-int(set_timer_pos)(int x_, int y_){
+void(set_timer_pos)(int x_, int y_){
     x=x_;
     y=y_;
-    return 0;
 }
 
 int(clear_timer)(){
     for(int i=0; i<54;i++){
         for(int j=0; j<54;j++){
-            replace_with_background(x+j,y+i);
+            if(replace_with_background(x+j,y+i)) return 1;
         }
     }
     return 0;

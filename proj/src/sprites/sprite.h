@@ -23,19 +23,59 @@ typedef struct {
     uint32_t* map;
 } Sprite;
 
-Sprite* background, * cursor, * logo, * single_player_text, * coop_text, * exit_text;
-Sprite* single_player_texth, * coop_texth, * exit_texth;
-Sprite* block, * fzl;
+Sprite* background;
+Sprite* cursor;
+Sprite* logo;
+Sprite* single_player_text;
+Sprite* coop_text;
+Sprite* exit_text;
+Sprite* single_player_texth;
+Sprite* coop_texth;
+Sprite* exit_texth;
+Sprite* block;
+Sprite* fzl;
 Sprite* game_over;
 
+/**
+ * @brief Creates a sprite object.
+ *
+ * @param pic The xpm image.
+ * @param x The horizontal position of the sprite.
+ * @param y The vertical position of the sprite.
+ * @param xspeed The horizontal speed of the sprite.
+ * @param yspeed The vertical speed of the sprite.
+ * @return Sprite* The created sprite.
+ */
 Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, uint16_t xspeed, uint16_t yspeed);
 
+/**
+ * @brief Loads all the sprites needed.
+ * @return 1 if a sprite fails to load, 0 otherwise
+ */
 int load_sprites();
 
+/**
+ * @brief Destroys a sprite.
+ *
+ * @param sp The sprite to destroy.
+ * @return int 1 if the sprite is null, 0 otherwise.
+ */
 int destroy_sprite(Sprite* sp);
 
+/**
+ * @brief Draws a sprite.
+ *
+ * @param sp The sprite to be drawn.
+ * @return int 1 if the sprite does not exist, 0 otherwise.
+ */
 int draw_sprite(Sprite* sp);
 
+/**
+ * @brief Erases a sprite from the screen.
+ *
+ * @param sp The sprite to be erased.
+ * @return int 1 if the sprite does not exist, 0 otherwise.
+ */
 int erase_sprite(Sprite* sp);
 
 #endif /* __SPRITE_H */

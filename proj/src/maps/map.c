@@ -22,7 +22,6 @@ Map* (create_map)(int level) {
     if (!file || !map) { return NULL; }
     fscanf(file, "%u %u", &map->columns, &map->rows);
     map->map = (char*)malloc(map->rows * map->columns * sizeof(char));
-    map->blocks = (Block* *)malloc(map->rows * map->columns * sizeof(Block *));
 
     char c;
     fscanf(file, "%c", &c); // Read the \n
@@ -37,7 +36,7 @@ Map* (create_map)(int level) {
     }
 
     map->x = map->y = 0;
-    map->n_blocks=0;
+
 
     fclose(file);
     free(path);
@@ -76,14 +75,26 @@ int (draw_map)(Map* map) {
                 switch (background % 3)
                 {
                 case 0:
-                    draw_xpm((xpm_map_t)level_background1_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)level_background1_xpm, x, y)){
+                        printf("Failed to load first image of the background\n");
+                        return 1;
+                    }
                     break;
                 case 1:
-                    draw_xpm((xpm_map_t)level_background2_xpm, x, y);
+                   if( draw_xpm((xpm_map_t)level_background2_xpm, x, y)){
+                        printf("Failed to load second image of the background\n");
+                        return 1;
+                    }
                 case 2:
-                    draw_xpm((xpm_map_t)level_background3_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)level_background3_xpm, x, y)){
+                        printf("Failed to load third image of the background\n");
+                        return 1;
+                    }
                 default:
-                    draw_xpm((xpm_map_t)level_background1_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)level_background1_xpm, x, y)){
+                        printf("Failed to load fourth image of the background\n");
+                        return 1;
+                    }
                     break;
                 }
                 background++;
@@ -93,46 +104,90 @@ int (draw_map)(Map* map) {
                 switch (wall % 2)
                 {
                 case 1:
-                    draw_xpm((xpm_map_t)wall1_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)wall1_xpm, x, y)){
+                        printf("Failed to load first image of the wall\n");
+                        return 1;
+                    }
                     break;
 
                 default:
-                    draw_xpm((xpm_map_t)wall2_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)wall2_xpm, x, y)){
+                        printf("Failed to load second image of the wall\n");
+                        return 1;
+                    }
                     break;
                 }
                 wall++;
             }
             if (map->map[index] == 'L') {
-                if (lava % 5 == 0)draw_xpm((xpm_map_t)lava1_xpm, x, y);
-                else if (lava % 5 == 4)draw_xpm((xpm_map_t)lava3_xpm, x, y);
-                else draw_xpm((xpm_map_t)lava2_xpm, x, y);
+                if (lava % 5 == 0) {
+                    if(draw_xpm((xpm_map_t)lava1_xpm, x, y)){
+                            printf("Failed to load first image of the lava\n");
+                            return 1;
+                    }
+                }
+                else if (lava % 5 == 4){
+                    if(draw_xpm((xpm_map_t)lava3_xpm, x, y)){
+                        printf("Failed to load second image of the lava\n");
+                        return 1;
+                    }
+                }
+                else{ 
+                    if(draw_xpm((xpm_map_t)lava2_xpm, x, y)){
+                        printf("Failed to load third image of the lava\n");
+                        return 1;
+                    }
+                }
                 lava++;
             }
             if (map->map[index] == 'P') {
-                if (water % 5 == 0)draw_xpm((xpm_map_t)water1_xpm, x, y);
-                else if (water % 5 == 4)draw_xpm((xpm_map_t)water3_xpm, x, y);
-                else draw_xpm((xpm_map_t)water2_xpm, x, y);
+                if (water % 5 == 0){
+                    if(draw_xpm((xpm_map_t)water1_xpm, x, y)){
+                        printf("Failed to load first image of the water\n");
+                        return 1;
+                    }
+                }
+                else if (water % 5 == 4){
+                    if(draw_xpm((xpm_map_t)water3_xpm, x, y)){
+                        printf("Failed to load second image of the water\n");
+                        return 1;
+                    }
+                }
+                else{ 
+                    if(draw_xpm((xpm_map_t)water2_xpm, x, y)){
+                        printf("Failed to load third image of the water\n");
+                        return 1;
+                    }
+                }
                 water++;
             }
 
-            if(map->map[index]=='C'){
-                map->blocks[map->n_blocks]=create_block(j*32,i*32);
-                map->n_blocks+=1;
-            }
             if(map->map[index]=='F'){
                 switch (fire_door)
                 {
                 case 0:
-                    draw_xpm((xpm_map_t)fire_door1_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)fire_door1_xpm, x, y)){
+                        printf("Failed to load first image of the fire door\n");
+                        return 1;
+                    }
                     break;
                 case 1:
-                    draw_xpm((xpm_map_t)fire_door2_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)fire_door2_xpm, x, y)){
+                        printf("Failed to load second image of the fire door\n");
+                        return 1;
+                    }
                     break;
                 case 2:
-                    draw_xpm((xpm_map_t)fire_door3_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)fire_door3_xpm, x, y)){
+                        printf("Failed to load third image of the fire door\n");
+                        return 1;
+                    }
                     break;
                 case 3:
-                    draw_xpm((xpm_map_t)fire_door4_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)fire_door4_xpm, x, y)){
+                        printf("Failed to load fourth image of the fire door\n");
+                        return 1;
+                    }
                     break;          
 
                 default:
@@ -144,16 +199,28 @@ int (draw_map)(Map* map) {
                 switch (water_door)
                 {
                 case 0:
-                    draw_xpm((xpm_map_t)water_door1_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)water_door1_xpm, x, y)){
+                        printf("Failed to load first image of the water door\n");
+                        return 1;
+                    }
                     break;
                 case 1:
-                    draw_xpm((xpm_map_t)water_door2_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)water_door2_xpm, x, y)){
+                        printf("Failed to load second image of the water door\n");
+                        return 1;
+                    }
                     break;
                 case 2:
-                    draw_xpm((xpm_map_t)water_door3_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)water_door3_xpm, x, y)){
+                        printf("Failed to load third image of the water door\n");
+                        return 1;
+                    }
                     break;
                 case 3:
-                    draw_xpm((xpm_map_t)water_door4_xpm, x, y);
+                    if(draw_xpm((xpm_map_t)water_door4_xpm, x, y)){
+                        printf("Failed to load fourth image of the water door\n");
+                        return 1;
+                    }
                     break;          
 
                 default:
@@ -162,9 +229,24 @@ int (draw_map)(Map* map) {
                 water_door++;
 
             if(map->map[index] == 'V') {
-                if (poison % 5 == 0) draw_xpm((xpm_map_t)poison1_xpm, x, y);
-                else if (poison % 5 == 4) draw_xpm((xpm_map_t)poison3_xpm, x, y);
-                else draw_xpm((xpm_map_t)poison2_xpm, x, y);
+                if (poison % 5 == 0) {
+                    if(draw_xpm((xpm_map_t)poison1_xpm, x, y)){
+                        printf("Failed to load first image of the poison\n");
+                        return 1;
+                    }
+                    }
+                else if (poison % 5 == 4){ 
+                    if(draw_xpm((xpm_map_t)poison3_xpm, x, y)){
+                        printf("Failed to load second image of the poison\n");
+                        return 1;
+                    }
+                }
+                else{ 
+                    if(draw_xpm((xpm_map_t)poison2_xpm, x, y)){
+                        printf("Failed to load third image of the poison\n");
+                        return 1;
+                    }
+                }
                 poison++;
 
             }
@@ -175,18 +257,15 @@ int (draw_map)(Map* map) {
     draw_background();
     return 0;
 }
-int(draw_blocks)(Map * map){
-    for(int i=0;i<map->n_blocks;i++){
-        erase_sprite(map->blocks[i]->sprite);
-        draw_sprite(map->blocks[i]->sprite);
-    }
-    return 0;
-}
+
 int  (nextLevel)(){
     if(current_map==map1){ 
         current_map= map2;
-        
         return 0;
+    }
+    if(current_map==map2){
+        current_map=map1;
+        return 1;
     }
     return 1;
 }

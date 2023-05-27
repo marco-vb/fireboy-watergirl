@@ -1,5 +1,5 @@
-#ifndef __CHARECTER_H
-#define __CHARECTER_H
+#ifndef __CHARACTER_H
+#define __CHARACTER_H
 
 #include <lcom/lcf.h>
 
@@ -36,7 +36,7 @@
 
 
 enum Direction { LEFT, RIGHT, UP, DEFAULT };
-enum Elements{FIRE,WATER};
+enum Elements { FIRE, WATER };
 #define GRAVITY 1
 #define DEFAULT_SPEED 7
 #define JUMP 15
@@ -55,35 +55,173 @@ typedef struct {
 } Character;
 
 
-Character* fireboy, * watergirl;
+Character* fireboy;
+Character* watergirl;
 extern Map* map1;
 
+/**
+ * @brief Returns the letter corresponding to the tile at the given position on the map.
+ * 
+ * @param map The map from which to retrieve the tile.
+ * @param x The x position on the map.
+ * @param y The y position on the map.
+ * @return char The letter corresponding to the tile at the given coordinates.
+
+
+ */
 char get_tile(Map* map, u_int32_t x, u_int32_t y);
+
+/**
+ * @brief Checks if there is a wall below the character.
+ * 
+ * @param character The character to analyze.
+ * @return int Returns 1 if there is a wall below the character, 0 otherwise.
+ */
 int wall_down(Character* character);
+
+/**
+ * @brief Checks if there is a wall to the left of the character.
+ * 
+ * @param character The character to analyze.
+ * @return int Returns 1 if there is a wall to the left of the character, 0 otherwise.
+ */
 int wall_left(Character* character);
+
+/**
+ * @brief Checks if there is a wall to the right of the character.
+ * 
+ * @param character The character to analyze.
+ * @return int Returns 1 if there is a wall to the right of the character, 0 otherwise.
+ */
 int wall_right(Character* character);
+
+/**
+ * @brief Checks if there is a wall above the character.
+ * 
+ * @param character The character to analyze.
+ * @return int Returns 1 if there is a wall above the character, 0 otherwise.
+ */
 int wall_up(Character* character);
+
+/**
+ * @brief Checks if the character is in front of the fire door.
+ * 
+ * @param character The character to analyze.
+ * @return int Returns 1 if the character is in front of the fire door, 0 otherwise.
+ */
 int door_fire(Character* character);
+
+/**
+ * @brief Checks if the character is in front of the water door.
+ * 
+ * @param character The character to analyze.
+ * @return int Returns 1 if the character is in front of the water door, 0 otherwise.
+ */
 int door_water(Character* character);
 
-int(draw_character)(Character* Character);
-int (create_characters)();
-int (set_position)(Character* Character, int x, int y);
-void (character_current_sprite)(Character* character);
-int (is_on_ground)(Character * character);
+/**
+ * @brief Draws the character.
+ * 
+ * @param character The character to be drawn.
+ * @return int Returns 1 if an error occurs while drawing, 0 otherwise.
+ */
+int draw_character(Character* character);
+
+/**
+ * @brief Creates the characters.
+ */
+int create_characters();
+
+/**
+ * @brief Sets the character's position.
+ * 
+ * @param character The character to change the position.
+ * @param x The new x position of the character.
+ * @param y The new y position of the character.
+ */
+void set_position(Character* character, int x, int y);
+
+/**
+ * @brief Updates the current character's sprite.
+ * 
+ * @param character The character to be analyzed.
+ */
+void character_current_sprite(Character* character);
+
+/**
+ * @brief Checks if the character is on the ground.
+ * 
+ * @param character The character to be analyzed.
+ * @return int Returns 1 if the character is on the ground, 0 otherwise.
+ */
+int is_on_ground(Character* character);
+
+/**
+ * @brief Updates the sprite values of the character.
+ * 
+ * @param character The character to be updated.
+ */
 void update_character(Character* character);
-int (update_direction)(Character * character, enum Direction dir);
 
-/* Movements due to 'gravity' */
-void move(Character* Character);
+/**
+ * @brief Changes the character's direction.
+ * 
+ * @param character The character to change the direction.
+ * @param dir The new direction of the character.
+ * @return int Returns 1 if the new position is different from the previous position, 0 otherwise.
+ */
+int update_direction(Character* character, enum Direction dir);
 
-/* Movements due to user input */
-void (move_left)(Character* Character);
-void (move_right)(Character* Character);
-void (jump)(Character* Character);
+/**
+ * @brief Moves the character.
+ * 
+ * @param character The character to move.
+ */
+void move(Character* character);
 
-/* 'Cancel' movement when user releases key */
-void (stop_moving)(Character* Character);
+/**
+ * @brief Moves the character to the left.
+ * 
+ * @param character The character to be moved.
+ */
+void move_left(Character* character);
+
+/**
+ * @brief Moves the character to the right.
+ * 
+ * @param character The character to be moved.
+ */
+void move_right(Character* character);
+
+/**
+ * @brief Moves the character up.
+ * 
+ * @param character The character
+
+ to move.
+ */
+void jump(Character* character);
+
+/**
+ * @brief Makes the character stop moving.
+ * 
+ * @param character The character to stop.
+ */
+void stop_moving(Character* character);
+
+/**
+ * @brief Checks if the character is on fire.
+ * 
+ * @param character The character to be analyzed.
+ * @return int Returns 1 if the character is on fire, 0 otherwise.
+ */
 int on_fire(Character* character);
+
+/**
+ * @brief Checks if the character is on water.
+ * 
+ * @param character The character to be analyzed.
+ * @return int Returns 1 if the character is on water, 0 otherwise.
+ */
 int on_water(Character* character);
-#endif /* __SPRITE_H */
+#endif /* __CHARACTER_H */

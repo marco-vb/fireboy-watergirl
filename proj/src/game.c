@@ -95,19 +95,31 @@ int game_loop() {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
-                    if(on_fire(watergirl) || on_water(fireboy)) state=GAME_OVER;
+                    if ((current_frame++) == frames_per_second) {
+                        if( state==GAME && decrement_counter()){
+                            state=GAME_OVER;
+                        }
+                         current_frame = 0;
+                    }
+                    if((on_fire(watergirl) || on_water(fireboy)) && state==GAME){ state=GAME_OVER;}
                     if(door_fire(fireboy) && door_water(watergirl)){
                          if(nextLevel()) state=MAIN_MENU;
                          else{
                             clear_background();
                             draw_map(current_map);
-                            
+                        if( current_map==map1){
+                            fireboy->sprite->x=100;
+                            fireboy->sprite->y=750;
+                            watergirl->sprite->x= 100;
+                            watergirl->sprite->y=750;
+                        }
                         if( current_map== map2){
                             fireboy->sprite->x=60;
                             fireboy->sprite->y=750;
                             watergirl->sprite->x= 1000;
                             watergirl->sprite->y=750;
                         }
+                        
                          }
                     }
                     update_character(fireboy);
@@ -189,6 +201,11 @@ int draw_main_menu() {
 
     if (mouse_lclick_sprite(single_player)) {
         state = GAME;
+        current_map=map1;
+        fireboy->sprite->x=100;
+        fireboy->sprite->y=750;
+        watergirl->sprite->x= 100;
+        watergirl->sprite->y=750;
         
         start_counter(120);
         clear_background();
@@ -196,7 +213,15 @@ int draw_main_menu() {
         return 0;
     }
     if (mouse_lclick_sprite(coop)) {
-        state = GAME;
+        current_map=map1;
+        fireboy->sprite->x=100;
+        fireboy->sprite->y=750;
+        watergirl->sprite->x= 100;
+        watergirl->sprite->y=750;
+        
+        start_counter(120);
+        clear_background();
+        draw_map(current_map);
         return 0;
     }
     if (mouse_lclick_sprite(exit)) {
@@ -222,7 +247,6 @@ int draw_main_menu() {
 
 int draw_game() {
     draw_sprite(cursor);
-    draw_blocks(current_map);
     move(fireboy);
     move(watergirl);
     draw_character(fireboy);
@@ -233,11 +257,8 @@ int draw_game() {
     erase_sprite(fireboy->sprite);
     erase_sprite(watergirl->sprite);
 
-    if ((current_frame++) == frames_per_second) {
-        if (!decrement_counter())draw_counter();
-        current_frame = 0;
-    }
-    draw_counter();
+    
+    draw_timer();
     draw_time();
     draw_date();
 
@@ -261,10 +282,12 @@ int draw_game_over() {
         clear_background();
         start_counter(120);
         if(current_map==map1){
-            fireboy->sprite->x=60;
+           
+            fireboy->sprite->x=100;
             fireboy->sprite->y=750;
-            watergirl->sprite->x= 1000;
+            watergirl->sprite->x= 100;
             watergirl->sprite->y=750;
+            
         }
         else if( current_map== map2){
              fireboy->sprite->x=60;

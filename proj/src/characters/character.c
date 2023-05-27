@@ -50,10 +50,10 @@ int (create_characters)() {
     return 0;
 }
 
-int (set_position)(Character* character, int x, int y) {
+void (set_position)(Character* character, int x, int y) {
     character->sprite->x = x;
     character->sprite->y = y;
-    return 0;
+ 
 }
 
 char get_tile(Map* map, u_int32_t x, u_int32_t y) {
@@ -256,7 +256,7 @@ void (character_current_sprite)(Character* character) {
 
 int(draw_character)(Character* Character) {
     character_current_sprite(Character);
-    draw_sprite((Character->sprite));
+    if(draw_sprite((Character->sprite))) return 1;
     return 0;
 }
 

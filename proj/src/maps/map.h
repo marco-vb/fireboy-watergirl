@@ -2,11 +2,9 @@
 #define __MAP_H
 
 #include <lcom/lcf.h>
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
 #include "../drivers/graphics/graphics.h"
 #include "../sprites/sprite.h"
 #include "../objects/block.h"
@@ -21,7 +19,6 @@
 #include "../xpm/background/water1.xpm"
 #include "../xpm/background/water2.xpm"
 #include "../xpm/background/water3.xpm"
-
 #include "../xpm/background/fire_door1.xpm"
 #include "../xpm/background/fire_door2.xpm"
 #include "../xpm/background/fire_door3.xpm"
@@ -30,11 +27,9 @@
 #include "../xpm/background/water_door2.xpm"
 #include "../xpm/background/water_door3.xpm"
 #include "../xpm/background/water_door4.xpm"
-
 #include "../xpm/background/poison1.xpm"
 #include "../xpm/background/poison2.xpm"
 #include "../xpm/background/poison3.xpm"
-
 
 #define MAPS_PATH "/home/lcom/labs/proj/src/maps/map"
 #define MAPS_EXT ".txt"
@@ -44,19 +39,40 @@ typedef struct {
     int x, y;
     uint32_t rows, columns;
     char* map;
-    Block * * blocks;
-    int n_blocks;
 } Map;
 
 Map* map1;
-Map * map2;
-Map *current_map;
+Map* map2;
+Map* current_map;
 
+/**
+ * @brief Creates a map corresponding to the given level.
+ *
+ * @param level The level of the map.
+ * @return Map* The created map.
+ */
+Map* create_map(int level);
 
-Map* (create_map)(int level);
-int (load_maps)();
-int (draw_map)(Map* map);
-int (update_blocks )(Map * map);
-int(draw_blocks)(Map * map);
-int (nextLevel)();
-#endif
+/**
+ * @brief Loads all the maps.
+ *
+ * @return 1 if an error occurs while loading the maps, 0 otherwise.
+ */
+int load_maps();
+
+/**
+ * @brief Draws the given map.
+ *
+ * @param map The map to be drawn.
+ * @return 1 if an image fails to load, 0 otherwise.
+ */
+int draw_map(Map* map);
+
+/**
+ * @brief Changes the current level to the next level.
+ *
+ * @return 1 if the current level was the last, 0 otherwise.
+ */
+int nextLevel();
+
+#endif /* __MAP_H */

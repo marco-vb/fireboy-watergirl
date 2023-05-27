@@ -26,17 +26,57 @@ Sprite* create_sprite(xpm_map_t pic, uint16_t x, uint16_t y, uint16_t xspeed, ui
 
 int load_sprites() {
     background = create_sprite((xpm_map_t)background_xpm, 0, 0, 0, 0);
+    if(!background){
+        printf("Failed to load background.xpm\n");
+        return 1;
+    }
     cursor = create_sprite((xpm_map_t)cursor_xpm, 0, 0, 0, 0);
+     if(!cursor){
+        printf("Failed to load cursor.xpm\n");
+        return 1;
+    }
     logo = create_sprite((xpm_map_t)logo_xpm, 0, 100, 0, 0);
+     if(!logo){
+        printf("Failed to load logo.xpm\n");
+        return 1;
+    }
     single_player_text = create_sprite((xpm_map_t)single_player_xpm, 420, 400, 0, 0);
+     if(!single_player_text){
+        printf("Failed to load single_player.xpm\n");
+        return 1;
+    }
     single_player_texth = create_sprite((xpm_map_t)single_playerh_xpm, 430, 400, 0, 0);
+     if(!single_player_texth){
+        printf("Failed to load single_playerh.xpm\n");
+        return 1;
+    }
     coop_text = create_sprite((xpm_map_t)coop_xpm, 490, 470, 0, 0);
+     if(!coop_text){
+        printf("Failed to load coop.xpm\n");
+        return 1;
+    }
     coop_texth = create_sprite((xpm_map_t)cooph_xpm, 490, 470, 0, 0);
+     if(!coop_texth){
+        printf("Failed to load cooph.xpm\n");
+        return 1;
+    }
     exit_text = create_sprite((xpm_map_t)exit_xpm, 500, 560, 0, 0);
+     if(!exit_text){
+        printf("Failed to load exit.xpm\n");
+        return 1;
+    }
     exit_texth = create_sprite((xpm_map_t)exith_xpm, 500, 560, 0, 0);
+     if(!exit_texth){
+        printf("Failed to load exith.xpm\n");
+        return 1;
+    }
     game_over = create_sprite((xpm_map_t)game_over_xpm, 0, 100, 0, 0);
-
+     if(!game_over){
+        printf("Failed to load game_over.xpm\n");
+        return 1;
+    }
     return 0;
+    
 }
 
 int destroy_sprite(Sprite* sp) {
