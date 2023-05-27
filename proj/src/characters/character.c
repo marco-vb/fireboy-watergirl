@@ -258,12 +258,6 @@ int (is_on_ground)(Character* character) {
     uint32_t x = character->sprite->x;
     uint32_t y = character->sprite->y + character->sprite->height;
 
-    // char tile = get_tile(map1, x, y + 1);
-    // if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
-    // tile = get_tile(map1, x + character->sprite->width, y + 1);
-    // if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
-
-
     char tile = get_tile(current_map, x, y);
     if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
 
