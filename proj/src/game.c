@@ -212,6 +212,16 @@ void draw_ropes() {
         for (int j = 0; j < 10; j++) {
             if (!ropes[i][j]) continue;
             draw_sprite(ropes[i][j]);
+            int x_distf = abs(ropes[i][j]->x - fireboy->sprite->x);
+            int y_distf = abs(ropes[i][j]->y - fireboy->sprite->y);
+            int x_distw = abs(ropes[i][j]->x - watergirl->sprite->x);
+            int y_distw = abs(ropes[i][j]->y - watergirl->sprite->y);
+
+            if ((x_distf > 150 || y_distf > 150) &&
+                (x_distw > 150 || y_distw > 150)) {
+                continue;
+            }
+
             if (mouse_lclick_sprite(ropes[i][j])) {
                 while (j < 10 && ropes[i][j]) {
                     erase_sprite(ropes[i][j]);

@@ -258,7 +258,9 @@ int (is_on_ground)(Character* character) {
 
     char tile = get_tile(map1, x, y + 1);
     if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
-    tile = get_tile(map1, x + character->sprite->width, y);
+    tile = get_tile(map1, x + character->sprite->width, y + 1);
+    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    tile = get_tile(map1, x + character->sprite->width / 2, y + 1);
     if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
 
     return 0;
@@ -278,6 +280,7 @@ int hit_ground(Sprite* block) {
 }
 
 void draw_blocks() {
+    static bool on_ground = false;
     for (int i = 0; i < 10; i++) {
         if (!blocks[i]) continue;
 
@@ -289,13 +292,14 @@ void draw_blocks() {
             blocks[i]->sprite->y += blocks[i]->sprite->yspeed;
         }
 
-        if (hit_ground(blocks[i]->sprite)) {
+        if (hit_ground(blocks[i]->sprite) && !on_ground) {
             blocks[i]->sprite->yspeed = 0;
             while (hit_ground(blocks[i]->sprite)) {
                 blocks[i]->sprite->y--;
             }
-            uint32_t index = blocks[i]->sprite->y / TILE_SIZE * map1->columns + blocks[i]->sprite->x / TILE_SIZE;
+            uint32_t index = (blocks[i]->sprite->y / TILE_SIZE + 1) * map1->columns + blocks[i]->sprite->x / TILE_SIZE;
             map1->map[index] = 'A';
+            on_ground = true;
         }
 
         draw_sprite(blocks[i]->sprite);
