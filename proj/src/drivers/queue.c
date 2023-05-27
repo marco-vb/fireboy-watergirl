@@ -27,7 +27,7 @@ void destroy_queue(Queue *q) {
     free(q);
 }
 
-void push(Queue *q, uint8_t val) {
+void push_queue(Queue *q, uint8_t val) {
     Queue_val *q_val = malloc(sizeof(Queue_val));
     q_val->val = val;
     q_val->next = NULL;
@@ -41,7 +41,7 @@ void push(Queue *q, uint8_t val) {
     }
 }
 
-void pop(Queue *q) {
+void pop_queue(Queue *q) {
     if (is_empty(q))
         return;
     
@@ -61,6 +61,6 @@ bool is_empty(Queue *q) {
 
 void clear_queue(Queue *q) {
     while (!is_empty(q)) {
-        pop(q);
+        pop_queue(q);
     }
 }

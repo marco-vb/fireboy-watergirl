@@ -14,9 +14,9 @@ Queue* create_queue();
 
 void destroy_queue(Queue *q);
 
-void push(Queue *q, uint8_t val);
+void push_queue(Queue *q, uint8_t val);
 
-void pop(Queue *q);
+void pop_queue(Queue *q);
 
 uint8_t front(Queue *q);
 

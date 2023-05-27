@@ -9,11 +9,29 @@ static bool ready_to_send = true;
 static struct Queue *queue_send = NULL, *queue_receive = NULL;
 
 int ser_init() {
-    ser_conf(8, 2, 2);
-    bit_rate_conf(9600);
-    ser_enable_interrupts();
+    if (ser_conf(8, 2, 2)) {
+        printf("Error setting up serial port\n");
+        return 1;
+    }
+
+    if (bit_rate_conf(9600)) {
+        printf("Error setting up serial port's bit rate\n");
+        return 1;
+    }
+    
+    if (ser_enable_interrupts()) {
+        printf("Error enabling serial port's interrupts\n");
+        return 1;
+    }
+
+    if (init_fifos()) {
+        printf("Error enabling serial port's fifos\n");
+        return 1;
+    }
+
     init_queues();
-    init_fifos();
+
+    return 0;
 }
 
 void init_queues() {
@@ -28,12 +46,12 @@ void destroy_queues() {
 
 uint8_t pop_byte() {
     uint8_t byte = front(queue_receive);
-    pop(queue_receive);
+    pop_queue(queue_receive);
     return byte;
 }
 
 void push_byte(uint8_t byte) {
-    push(queue_send, byte);
+    push_queue(queue_send, byte);
 } 
 
 bool receive_queue_is_empty() {
@@ -273,7 +291,7 @@ int send_bytes() {
             return 1;
         }
 
-        pop(queue_send);
+        pop_queue(queue_send);
     }
 
     ready_to_send = false;
@@ -317,7 +335,7 @@ void ser_ih() {
                     return;
                 }
 
-                push(queue_receive, data);
+                push_queue(queue_receive, data);
             } while(lsr & LSR_RECEIVED_DATA);
 
             break;

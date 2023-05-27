@@ -12,8 +12,12 @@ int current_frame = 0;
 extern Map* current_map;
 extern Map* map1;
 uint8_t irq_mouse, irq_timer, irq_keyboard;
+static bool control_fireboy = true, control_watergirl = true, multiplayer = false;
+static int player;
 
-int game_init() {
+int game_init(int player_number) {
+    player = player_number;
+
     if (video_mode()) {
         printf("Error setting video mode.\n");
         return 1;
@@ -110,7 +114,10 @@ int game_loop() {
                         if(door_fire(fireboy) && door_water(watergirl)){
                             reset_falling_blocks();
                             clear_background();
-                            if(nextLevel()) state=MAIN_MENU;
+                            if (nextLevel()) {
+                                state = MAIN_MENU;
+                                control_fireboy = control_watergirl = true;
+                            }
                             else{
                                 start_counter(120);
                                 draw_map(current_map);
@@ -146,23 +153,24 @@ int game_loop() {
                         else if (state == GAME) state = PAUSE_MENU;
                         else {
                             state = MAIN_MENU;
+                            control_fireboy = control_watergirl = true;
                             clear_background();
                         }
                         break;
 
                     case KEY_A: case KEY_W: case KEY_S: case KEY_D:
-                        if(state==GAME)fireboy_move(k);
+                        if(state==GAME && control_fireboy)fireboy_move(k);
                         break;
 
                     case KEY_LEFT: case KEY_UP: case KEY_DOWN: case KEY_RIGHT:
-                        if(state==GAME)watergirl_move(k);
+                        if(state==GAME && control_watergirl)watergirl_move(k);
                         break;
 
                     case KEY_A_BREAK: case KEY_D_BREAK:
-                        if(state==GAME)fireboy_move(k);
+                        if(state==GAME && control_fireboy)fireboy_move(k);
                         break;
                     case KEY_LEFT_BREAK: case KEY_RIGHT_BREAK:
-                        if(state==GAME)watergirl_move(k);
+                        if(state==GAME && control_watergirl)watergirl_move(k);
                         break;
                     default:
                         break;
@@ -230,6 +238,12 @@ int draw_main_menu() {
         fireboy->sprite->y=750;
         watergirl->sprite->x= 100;
         watergirl->sprite->y=750;
+        state = GAME;
+        multiplayer = true;
+        if (player == 1)
+            control_watergirl = false;
+        else
+            control_fireboy = false;
         
         start_counter(120);
         clear_background();

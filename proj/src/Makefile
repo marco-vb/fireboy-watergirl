@@ -6,6 +6,8 @@ PROG=proj
 .PATH: ${.CURDIR}/drivers/kbc
 .PATH: ${.CURDIR}/drivers/timer
 .PATH: ${.CURDIR}/drivers/rtc
+.PATH: ${.CURDIR}/drivers/serial_port
+.PATH: ${.CURDIR}/drivers
 .PATH: ${.CURDIR}/sprites
 .PATH: ${.CURDIR}/maps
 .PATH: ${.CURDIR}/count_down
