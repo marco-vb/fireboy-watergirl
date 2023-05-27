@@ -24,4 +24,6 @@ bool is_empty(Queue *q);
 
 void clear_queue(Queue *q);
 
+uint8_t get_size(Queue *q);
+
 #endif

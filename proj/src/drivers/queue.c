@@ -1,3 +1,4 @@
+#include <lcom/lcf.h>
 #include "queue.h"
 #include <stddef.h>
 #include <stdlib.h>
@@ -10,6 +11,7 @@ struct Queue_val{
 struct Queue {
     Queue_val *front;
     Queue_val *back;
+    uint8_t size;
 };
 
 Queue* create_queue() {
@@ -17,6 +19,7 @@ Queue* create_queue() {
 
     q->front = NULL;
     q->back = NULL;
+    q->size = 0;
 
     return q;
 }
@@ -39,6 +42,8 @@ void push_queue(Queue *q, uint8_t val) {
         q->back->next = q_val;
         q->back = q->back->next;
     }
+
+    q->size++;
 }
 
 void pop_queue(Queue *q) {
@@ -47,6 +52,7 @@ void pop_queue(Queue *q) {
     
     Queue_val *tmp = q->front;
     q->front = q->front->next;
+    q->size--;
 
     free(tmp);
 }
@@ -56,11 +62,15 @@ uint8_t front(Queue *q) {
 }
 
 bool is_empty(Queue *q) {
-    return q->front == NULL;
+    return q->size == 0;
 }
 
 void clear_queue(Queue *q) {
     while (!is_empty(q)) {
         pop_queue(q);
     }
+}
+
+uint8_t get_size(Queue *q) {
+    return q->size;
 }
