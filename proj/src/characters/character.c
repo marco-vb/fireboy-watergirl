@@ -5,7 +5,7 @@ int (create_characters)() {
     fireboy = (Character*)malloc(sizeof(Character));
 
     if (fireboy == NULL) return 1;
-    fireboy->sprite = create_sprite((xpm_map_t)(fireL1_xpm), 600, 600, 0, 0);
+    fireboy->sprite = create_sprite((xpm_map_t)(fireL1_xpm), 50, 750, 0, 0);
     fireboy->direction = DEFAULT;
     fireboy->animation_delay = 5;
     fireboy->current_sprite = 0;
@@ -28,7 +28,7 @@ int (create_characters)() {
     watergirl = (Character*)malloc(sizeof(Character));
 
     if (watergirl == NULL) return 1;
-    watergirl->sprite = create_sprite((xpm_map_t)(waterL1_xpm), 600, 600, 0, 0);
+    watergirl->sprite = create_sprite((xpm_map_t)(waterL1_xpm), 150, 750, 0, 0);
     watergirl->direction = DEFAULT;
     watergirl->animation_delay = 5;
     watergirl->current_sprite = 0;
@@ -66,12 +66,13 @@ int wall_down(Character* character) {
     uint32_t x = character->sprite->x;
     uint32_t y = character->sprite->y + character->sprite->height + character->sprite->yspeed;
 
-    char tile = get_tile(map1, x + CHECKBOX_PADDING, y);
+    char tile = get_tile(current_map, x + CHECKBOX_PADDING, y);
 
 
     if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
-    tile = get_tile(map1, x + character->sprite->width - CHECKBOX_PADDING, y);
+    tile = get_tile(current_map, x + character->sprite->width - CHECKBOX_PADDING, y);
     if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+
 
     return 0;
 }
@@ -81,10 +82,10 @@ int wall_left(Character* character) {
     uint32_t x = character->sprite->x - character->sprite->xspeed;
     uint32_t y = character->sprite->y;
 
-    char tile = get_tile(map1, x, y + CHECKBOX_PADDING);
+    char tile = get_tile(current_map, x, y + CHECKBOX_PADDING);
 
     if (tile == 'A') { return 1; }
-    if (get_tile(map1, x, y + character->sprite->height - CHECKBOX_PADDING) == 'A') return 1;
+    if (get_tile(current_map, x, y + character->sprite->height - CHECKBOX_PADDING) == 'A') return 1;
 
     return 0;
 }
@@ -93,10 +94,10 @@ int wall_right(Character* character) {
     uint32_t x = character->sprite->x + character->sprite->width + character->sprite->xspeed;
     uint32_t y = character->sprite->y;
 
-    char tile = get_tile(map1, x, y + CHECKBOX_PADDING);
+    char tile = get_tile(current_map, x, y + CHECKBOX_PADDING);
 
     if (tile == 'A') { return 1; }
-    if (get_tile(map1, x, y + character->sprite->height - CHECKBOX_PADDING) == 'A') return 1;
+    if (get_tile(current_map, x, y + character->sprite->height - CHECKBOX_PADDING) == 'A') return 1;
 
     return 0;
 }
@@ -105,10 +106,11 @@ int wall_up(Character* character) {
     uint32_t x = character->sprite->x;
     uint32_t y = character->sprite->y - character->sprite->yspeed;
 
-    char tile = get_tile(map1, x + CHECKBOX_PADDING, y);
+    char tile = get_tile(current_map, x + CHECKBOX_PADDING, y);
 
-    if (tile == 'A') { return 1; }
-    if (get_tile(map1, x + character->sprite->width - CHECKBOX_PADDING, y) == 'A') return 1;
+    if (tile == 'A' || tile == 'P' || tile == 'L') { return 1; }
+    tile = get_tile(current_map, x + character->sprite->width - CHECKBOX_PADDING, y);
+    if (tile == 'A' || tile == 'P' || tile == 'L') { return 1; }
 
     return 0;
 }
@@ -116,10 +118,10 @@ int on_fire(Character* character) {
     uint32_t x = character->sprite->x;
     uint32_t y = character->sprite->y + character->sprite->height;
 
-    char tile = get_tile(map1, x, y + 1);
+    char tile = get_tile(current_map, x + CHECKBOX_PADDING * 2, y + 1);
 
     if (tile == 'L') { return 1; }
-    tile = get_tile(map1, x + character->sprite->width, y);
+    tile = get_tile(current_map, x + character->sprite->width - CHECKBOX_PADDING * 2, y);
     if (tile == 'L') return 1;
 
     return 0;
@@ -129,10 +131,10 @@ int on_water(Character* character) {
     uint32_t x = character->sprite->x;
     uint32_t y = character->sprite->y + character->sprite->height;
 
-    char tile = get_tile(map1, x, y + 1);
+    char tile = get_tile(current_map, x + 2 * CHECKBOX_PADDING, y + 1);
 
     if (tile == 'P') { return 1; }
-    tile = get_tile(map1, x + character->sprite->width, y);
+    tile = get_tile(current_map, x + character->sprite->width - 2 * CHECKBOX_PADDING, y);
     if (tile == 'P') return 1;
 
     return 0;
@@ -141,7 +143,7 @@ int door_fire(Character* character) {
     uint32_t x = character->sprite->x + character->sprite->width / 2;
     uint32_t y = character->sprite->y + character->sprite->height / 2;
 
-    char tile = get_tile(map1, x, y);
+    char tile = get_tile(current_map, x, y);
 
     if (tile == 'F') { return 1; }
 
@@ -152,7 +154,7 @@ int door_water(Character* character) {
     uint32_t x = character->sprite->x + character->sprite->width / 2;
     uint32_t y = character->sprite->y + character->sprite->height / 2;
 
-    char tile = get_tile(map1, x, y);
+    char tile = get_tile(current_map, x, y);
 
     if (tile == 'W') { return 1; }
 
@@ -256,11 +258,19 @@ int (is_on_ground)(Character* character) {
     uint32_t x = character->sprite->x;
     uint32_t y = character->sprite->y + character->sprite->height;
 
-    char tile = get_tile(map1, x, y + 1);
+    // char tile = get_tile(map1, x, y + 1);
+    // if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    // tile = get_tile(map1, x + character->sprite->width, y + 1);
+    // if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+
+
+    char tile = get_tile(current_map, x, y);
     if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
-    tile = get_tile(map1, x + character->sprite->width, y + 1);
-    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
-    tile = get_tile(map1, x + character->sprite->width / 2, y + 1);
+
+    tile = get_tile(current_map, x + character->sprite->width, y);
+    if (tile == 'A' || tile == 'L' || tile == 'P') return 1;
+
+    tile = get_tile(current_map, x + character->sprite->width / 2, y);
     if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
 
     return 0;
@@ -279,7 +289,7 @@ int hit_ground(Sprite* block) {
     return 0;
 }
 
-void draw_blocks() {
+void draw_falling_blocks() {
     static bool on_ground = false;
     for (int i = 0; i < 10; i++) {
         if (!blocks[i]) continue;

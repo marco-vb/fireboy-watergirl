@@ -9,6 +9,7 @@
 #include "drivers/rtc/rtc.h"
 int frames_per_second = 60;
 int current_frame = 0;
+extern Map* current_map;
 extern Map* map1;
 uint8_t irq_mouse, irq_timer, irq_keyboard;
 
@@ -95,7 +96,20 @@ int game_loop() {
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
                     if (on_fire(watergirl) || on_water(fireboy)) state = GAME_OVER;
+                    if (door_fire(fireboy) && door_water(watergirl)) {
+                        if (nextLevel()) state = MAIN_MENU;
+                        else {
+                            clear_background();
+                            draw_map(current_map);
 
+                            if (current_map == map2) {
+                                fireboy->sprite->x = 60;
+                                fireboy->sprite->y = 750;
+                                watergirl->sprite->x = 1000;
+                                watergirl->sprite->y = 750;
+                            }
+                        }
+                    }
                     update_character(fireboy);
                     update_character(watergirl);
                     draw_screen();
@@ -112,8 +126,6 @@ int game_loop() {
                         else if (state == GAME) state = GAME_OVER;
                         else {
                             state = MAIN_MENU;
-                            watergirl->sprite->x = 300;
-                            fireboy->sprite->x = 300;
                             clear_background();
                         }
                         break;
@@ -176,10 +188,10 @@ int draw_main_menu() {
 
     if (mouse_lclick_sprite(single_player)) {
         state = GAME;
+
         start_counter(120);
         clear_background();
-        map1 = create_map(1);
-        draw_map(map1);
+        draw_map(current_map);
         return 0;
     }
     if (mouse_lclick_sprite(coop)) {
@@ -235,12 +247,14 @@ void draw_ropes() {
 }
 
 int draw_game() {
+    draw_sprite(cursor);
+    draw_blocks(current_map);
     move(fireboy);
     move(watergirl);
     draw_character(fireboy);
     draw_character(watergirl);
     draw_ropes();
-    draw_blocks();
+    draw_falling_blocks();
     draw_sprite(cursor);
 
     draw_buffer();
@@ -278,11 +292,20 @@ int draw_game_over() {
         state = GAME;
         clear_background();
         start_counter(120);
+        if (current_map == map1) {
+            fireboy->sprite->x = 60;
+            fireboy->sprite->y = 750;
+            watergirl->sprite->x = 120;
+            watergirl->sprite->y = 750;
+        }
+        else if (current_map == map2) {
+            fireboy->sprite->x = 60;
+            fireboy->sprite->y = 750;
+            watergirl->sprite->x = 1000;
+            watergirl->sprite->y = 750;
+        }
         clear_background();
-        map1 = create_map(1);
-        draw_map(map1);
-        fireboy->sprite->x = 300;
-        watergirl->sprite->x = 300;
+        draw_map(current_map);
         return 0;
     }
 

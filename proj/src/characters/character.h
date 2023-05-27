@@ -39,7 +39,7 @@
 enum Direction { LEFT, RIGHT, UP, DEFAULT };
 enum Elements { FIRE, WATER };
 #define GRAVITY 1
-#define DEFAULT_SPEED 6
+#define DEFAULT_SPEED 7
 #define JUMP 15
 #define CHECKBOX_PADDING 10
 
@@ -60,7 +60,7 @@ extern Map* map1;
 extern Falling_Block* blocks[10];
 
 int hit_ground(Sprite* block);
-void draw_blocks();
+void draw_falling_blocks();
 void erase_blocks();
 
 char get_tile(Map* map, u_int32_t x, u_int32_t y);
