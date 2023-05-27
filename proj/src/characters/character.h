@@ -61,8 +61,24 @@ Character* watergirl;
 extern Map* map1;
 extern Falling_Block* blocks[10];
 
+/**
+ * @brief Checks if block hit the ground
+ * 
+ * @param block block to check
+ * @return int 1 if block has it the ground, 0 otherwise
+ */
 int hit_ground(Sprite* block);
+
+/**
+ * @brief Moves blocks that are falling, stops all blocks that have hit the ground and draws all the blocks
+ * 
+ */
 void draw_falling_blocks();
+
+/**
+ * @brief Erases all the blocks from the screen
+ * 
+ */
 void erase_blocks();
 
 /**

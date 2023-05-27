@@ -99,6 +99,10 @@ int fireboy_move(keyboard_key key);
  * @return int 1 if an error occurs, 0 otherwise
  */
 int watergirl_move(keyboard_key key);
+
+/**
+ * @brief Draws the ropes on the screen. And controlls whether or not the characters can or have cut them.
+ */
 void draw_ropes();
 
 #endif /* __GAME_H */

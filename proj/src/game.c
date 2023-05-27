@@ -95,35 +95,41 @@ int game_loop() {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
-                    if ((current_frame++) == frames_per_second) {
-                        if( state==GAME && decrement_counter()){
+                    if(state==GAME){
+                        if ((current_frame++) == frames_per_second) {
+                            if(  decrement_counter()){
+                                state=GAME_OVER;
+                            }
+                            current_frame = 0;
+                        }
+                        if((on_fire(watergirl) || on_water(fireboy)) ){ 
                             state=GAME_OVER;
+                            stop_moving(fireboy);
+                            stop_moving(watergirl);
                         }
-                         current_frame = 0;
+                        if(door_fire(fireboy) && door_water(watergirl)){
+                            if(nextLevel()) state=MAIN_MENU;
+                            else{
+                                clear_background();
+                                draw_map(current_map);
+                            if( current_map==map1){
+                                fireboy->sprite->x=100;
+                                fireboy->sprite->y=750;
+                                watergirl->sprite->x= 100;
+                                watergirl->sprite->y=750;
+                            }
+                            if( current_map== map2){
+                                fireboy->sprite->x=60;
+                                fireboy->sprite->y=750;
+                                watergirl->sprite->x= 1000;
+                                watergirl->sprite->y=750;
+                            }
+                            
+                            }
+                        }
+                        update_character(fireboy);
+                        update_character(watergirl);
                     }
-                    if((on_fire(watergirl) || on_water(fireboy)) && state==GAME){ state=GAME_OVER;}
-                    if(door_fire(fireboy) && door_water(watergirl)){
-                         if(nextLevel()) state=MAIN_MENU;
-                         else{
-                            clear_background();
-                            draw_map(current_map);
-                        if( current_map==map1){
-                            fireboy->sprite->x=100;
-                            fireboy->sprite->y=750;
-                            watergirl->sprite->x= 100;
-                            watergirl->sprite->y=750;
-                        }
-                        if( current_map== map2){
-                            fireboy->sprite->x=60;
-                            fireboy->sprite->y=750;
-                            watergirl->sprite->x= 1000;
-                            watergirl->sprite->y=750;
-                        }
-                        
-                         }
-                    }
-                    update_character(fireboy);
-                    update_character(watergirl);
                     draw_screen();
                 }
 
@@ -143,18 +149,18 @@ int game_loop() {
                         break;
 
                     case KEY_A: case KEY_W: case KEY_S: case KEY_D:
-                        fireboy_move(k);
+                        if(state==GAME)fireboy_move(k);
                         break;
 
                     case KEY_LEFT: case KEY_UP: case KEY_DOWN: case KEY_RIGHT:
-                        watergirl_move(k);
+                        if(state==GAME)watergirl_move(k);
                         break;
 
                     case KEY_A_BREAK: case KEY_D_BREAK:
-                        fireboy_move(k);
+                        if(state==GAME)fireboy_move(k);
                         break;
                     case KEY_LEFT_BREAK: case KEY_RIGHT_BREAK:
-                        watergirl_move(k);
+                        if(state==GAME)watergirl_move(k);
                         break;
                     default:
                         break;
