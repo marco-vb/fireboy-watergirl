@@ -62,6 +62,8 @@ int (draw_map)(Map* map) {
     unsigned int wall = 0;
     unsigned int lava = 0;
     unsigned int water = 0;
+    unsigned int fire_door=0;
+    unsigned int water_door=0;
     for (uint32_t i = 0; i < map->rows; i++) {
         for (uint32_t j = 0; j < map->columns; j++) {
             uint32_t index = i * map->columns + j;
@@ -110,11 +112,50 @@ int (draw_map)(Map* map) {
                 water++;
             }
             if(map->map[index]=='C'){
-  
                 map->blocks[map->n_blocks]=create_block(j*32,i*32);
                 map->n_blocks+=1;
-              
-            
+            }
+            if(map->map[index]=='F'){
+                switch (fire_door)
+                {
+                case 0:
+                    draw_xpm((xpm_map_t)fire_door1_xpm, x, y);
+                    break;
+                case 1:
+                    draw_xpm((xpm_map_t)fire_door2_xpm, x, y);
+                    break;
+                case 2:
+                    draw_xpm((xpm_map_t)fire_door3_xpm, x, y);
+                    break;
+                case 3:
+                    draw_xpm((xpm_map_t)fire_door4_xpm, x, y);
+                    break;          
+
+                default:
+                    break;
+                }
+                fire_door++;
+            }
+             if(map->map[index]=='W'){
+                switch (water_door)
+                {
+                case 0:
+                    draw_xpm((xpm_map_t)water_door1_xpm, x, y);
+                    break;
+                case 1:
+                    draw_xpm((xpm_map_t)water_door2_xpm, x, y);
+                    break;
+                case 2:
+                    draw_xpm((xpm_map_t)water_door3_xpm, x, y);
+                    break;
+                case 3:
+                    draw_xpm((xpm_map_t)water_door4_xpm, x, y);
+                    break;          
+
+                default:
+                    break;
+                }
+                water_door++;
             }
         }
         draw_background();
