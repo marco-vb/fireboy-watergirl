@@ -75,6 +75,11 @@ int load_sprites() {
         printf("Failed to load game_over.xpm\n");
         return 1;
     }
+    pause_menu = create_sprite((xpm_map_t)pause_xpm, 0, 100, 0, 0);
+     if(!pause_menu){
+        printf("Failed to load pause.xpm\n");
+        return 1;
+    }
     return 0;
     
 }

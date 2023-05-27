@@ -16,6 +16,7 @@
 #include "../xpm/fireboy.xpm"
 #include "../xpm/watergirl.xpm"
 #include "../xpm/game-over.xpm"
+#include "../xpm/pause.xpm"
 
 typedef struct {
     int x, y, xspeed, yspeed;
@@ -35,6 +36,7 @@ Sprite* exit_texth;
 Sprite* block;
 Sprite* fzl;
 Sprite* game_over;
+Sprite * pause_menu;
 
 /**
  * @brief Creates a sprite object.

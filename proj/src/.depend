@@ -73,6 +73,7 @@ block.d block.ln block.o: /home/lcom/labs/shared/proj/src/objects/block.c \
   /home/lcom/labs/shared/proj/src/objects/../sprites/../xpm/fireboy.xpm \
   /home/lcom/labs/shared/proj/src/objects/../sprites/../xpm/watergirl.xpm \
   /home/lcom/labs/shared/proj/src/objects/../sprites/../xpm/game-over.xpm \
+  /home/lcom/labs/shared/proj/src/objects/../sprites/../xpm/pause.xpm \
   /home/lcom/labs/shared/proj/src/objects/../xpm/background/block.xpm
 character.d character.ln character.o: /home/lcom/labs/shared/proj/src/characters/character.c \
   /home/lcom/labs/shared/proj/src/characters/character.h \
@@ -150,6 +151,7 @@ character.d character.ln character.o: /home/lcom/labs/shared/proj/src/characters
   /home/lcom/labs/shared/proj/src/characters/../sprites/../xpm/fireboy.xpm \
   /home/lcom/labs/shared/proj/src/characters/../sprites/../xpm/watergirl.xpm \
   /home/lcom/labs/shared/proj/src/characters/../sprites/../xpm/game-over.xpm \
+  /home/lcom/labs/shared/proj/src/characters/../sprites/../xpm/pause.xpm \
   /home/lcom/labs/shared/proj/src/characters/../sprites/../xpm/falling_block.xpm \
   /home/lcom/labs/shared/proj/src/characters/../maps/map.h \
   /home/lcom/labs/shared/proj/src/characters/../maps/../objects/block.h \
@@ -340,7 +342,8 @@ game.d game.ln game.o: game.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   drivers/kbc/../../sprites/../xpm/exitH.xpm \
   drivers/kbc/../../sprites/../xpm/fireboy.xpm \
   drivers/kbc/../../sprites/../xpm/watergirl.xpm \
-  drivers/kbc/../../sprites/../xpm/game-over.xpm characters/character.h \
+  drivers/kbc/../../sprites/../xpm/game-over.xpm \
+  drivers/kbc/../../sprites/../xpm/pause.xpm characters/character.h \
   characters/../sprites/falling_block.h \
   drivers/kbc/../../sprites/../xpm/falling_block.xpm \
   characters/../maps/map.h characters/../maps/../objects/block.h \
@@ -533,7 +536,8 @@ kbc.d kbc.ln kbc.o: /home/lcom/labs/shared/proj/src/drivers/kbc/kbc.c \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exitH.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/fireboy.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/watergirl.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/game-over.xpm
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/game-over.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/pause.xpm
 keyboard.d keyboard.ln keyboard.o: /home/lcom/labs/shared/proj/src/drivers/kbc/keyboard.c \
   /usr/include/lcom/lcf.h /usr/include/stdbool.h /usr/include/stdio.h \
   /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
@@ -660,6 +664,7 @@ map.d map.ln map.o: /home/lcom/labs/shared/proj/src/maps/map.c /usr/include/lcom
   /home/lcom/labs/shared/proj/src/maps/../sprites/../xpm/fireboy.xpm \
   /home/lcom/labs/shared/proj/src/maps/../sprites/../xpm/watergirl.xpm \
   /home/lcom/labs/shared/proj/src/maps/../sprites/../xpm/game-over.xpm \
+  /home/lcom/labs/shared/proj/src/maps/../sprites/../xpm/pause.xpm \
   /home/lcom/labs/shared/proj/src/maps/../sprites/falling_block.h \
   /home/lcom/labs/shared/proj/src/maps/../sprites/../xpm/falling_block.xpm \
   /home/lcom/labs/shared/proj/src/maps/../objects/block.h \
@@ -763,7 +768,8 @@ mouse.d mouse.ln mouse.o: /home/lcom/labs/shared/proj/src/drivers/kbc/mouse.c \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/exitH.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/fireboy.xpm \
   /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/watergirl.xpm \
-  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/game-over.xpm
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/game-over.xpm \
+  /home/lcom/labs/shared/proj/src/drivers/kbc/../../sprites/../xpm/pause.xpm
 proj.d proj.ln proj.o: proj.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   /usr/include/stdio.h /usr/include/sys/cdefs.h \
   /usr/include/machine/cdefs.h /usr/include/sys/cdefs_elf.h \
@@ -839,7 +845,8 @@ proj.d proj.ln proj.o: proj.c /usr/include/lcom/lcf.h /usr/include/stdbool.h \
   drivers/kbc/../../sprites/../xpm/exitH.xpm \
   drivers/kbc/../../sprites/../xpm/fireboy.xpm \
   drivers/kbc/../../sprites/../xpm/watergirl.xpm \
-  drivers/kbc/../../sprites/../xpm/game-over.xpm characters/character.h \
+  drivers/kbc/../../sprites/../xpm/game-over.xpm \
+  drivers/kbc/../../sprites/../xpm/pause.xpm characters/character.h \
   characters/../sprites/falling_block.h \
   drivers/kbc/../../sprites/../xpm/falling_block.xpm \
   characters/../maps/map.h characters/../maps/../objects/block.h \
@@ -1028,7 +1035,8 @@ sprite.d sprite.ln sprite.o: /home/lcom/labs/shared/proj/src/sprites/sprite.c \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/exitH.xpm \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/fireboy.xpm \
   /home/lcom/labs/shared/proj/src/sprites/../xpm/watergirl.xpm \
-  /home/lcom/labs/shared/proj/src/sprites/../xpm/game-over.xpm
+  /home/lcom/labs/shared/proj/src/sprites/../xpm/game-over.xpm \
+  /home/lcom/labs/shared/proj/src/sprites/../xpm/pause.xpm
 timer.d timer.ln timer.o: /home/lcom/labs/shared/proj/src/drivers/timer/timer.c \
   /usr/include/lcom/lcf.h /usr/include/stdbool.h /usr/include/stdio.h \
   /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \

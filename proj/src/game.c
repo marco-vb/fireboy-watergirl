@@ -111,6 +111,7 @@ int game_loop() {
                             if(nextLevel()) state=MAIN_MENU;
                             else{
                                 clear_background();
+                                start_counter(120);
                                 draw_map(current_map);
                             if( current_map==map1){
                                 fireboy->sprite->x=100;
@@ -141,7 +142,7 @@ int game_loop() {
                     switch (k) {
                     case KEY_ESC:
                         if (state == MAIN_MENU) state = EXIT;
-                        else if (state == GAME) state = GAME_OVER;
+                        else if (state == GAME) state = PAUSE_MENU;
                         else {
                             state = MAIN_MENU;
                             clear_background();
@@ -302,6 +303,46 @@ int draw_game() {
 }
 
 int draw_pause_menu() {
+     if (mouse_inside(310, 452, 240, 80) && mouse_packet.lb) {
+        state = MAIN_MENU;
+        clear_background();
+        return 0;
+    }
+
+    if (mouse_inside(663, 452, 240, 80) && mouse_packet.lb) {
+        state = GAME;
+        clear_background();
+        start_counter(120);
+        if(current_map==map1){
+           
+            fireboy->sprite->x=100;
+            fireboy->sprite->y=750;
+            watergirl->sprite->x= 100;
+            watergirl->sprite->y=750;
+            
+        }
+        else if (current_map == map2) {
+            fireboy->sprite->x = 60;
+            fireboy->sprite->y = 750;
+            watergirl->sprite->x = 1000;
+            watergirl->sprite->y = 750;
+        }
+        clear_background();
+        draw_map(current_map);
+        return 0;
+    }
+    if (mouse_inside(468, 579, 240, 80) && mouse_packet.lb) {
+        state = GAME;
+        return 0;
+    }
+
+    draw_sprite(pause_menu);
+    draw_sprite(cursor);
+    draw_buffer();
+
+    erase_sprite(pause_menu);
+    erase_sprite(cursor);
+
     return 0;
 }
 
