@@ -178,6 +178,7 @@ int draw_main_menu() {
         state = GAME;
         start_counter(120);
         clear_background();
+        map1 = create_map(1);
         draw_map(map1);
         return 0;
     }
@@ -207,35 +208,42 @@ int draw_main_menu() {
 }
 
 void draw_ropes() {
-    for (int i = 0; i < 100; i++) {
-        if (!ropes[i]) continue;
-        draw_sprite(ropes[i]);
-        if (mouse_lclick_sprite(ropes[i])) {
-            erase_sprite(ropes[i]);
-            destroy_sprite(ropes[i]);
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (!ropes[i][j]) continue;
+            draw_sprite(ropes[i][j]);
+            if (mouse_lclick_sprite(ropes[i][j])) {
+                while (j < 10 && ropes[i][j]) {
+                    erase_sprite(ropes[i][j]);
+                    destroy_sprite(ropes[i][j]);
+                    ropes[i][j] = NULL;
+                    j++;
+                }
+            }
         }
     }
 }
 
 int draw_game() {
-    draw_sprite(cursor);
-
     move(fireboy);
     move(watergirl);
     draw_character(fireboy);
     draw_character(watergirl);
-
     draw_ropes();
+    draw_blocks();
+    draw_sprite(cursor);
 
     draw_buffer();
     erase_sprite(cursor);
     erase_sprite(fireboy->sprite);
     erase_sprite(watergirl->sprite);
+    erase_blocks();
 
     if ((current_frame++) == frames_per_second) {
         if (!decrement_counter())draw_counter();
         current_frame = 0;
     }
+
 
     draw_counter();
     draw_time();
@@ -260,10 +268,11 @@ int draw_game_over() {
         state = GAME;
         clear_background();
         start_counter(120);
+        clear_background();
+        map1 = create_map(1);
+        draw_map(map1);
         fireboy->sprite->x = 300;
         watergirl->sprite->x = 300;
-        clear_background();
-        draw_map(map1);
         return 0;
     }
 
@@ -292,7 +301,6 @@ int fireboy_move(keyboard_key key) {
         stop_moving(fireboy);
         break;
     }
-
 
     return 0;
 }

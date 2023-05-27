@@ -45,6 +45,8 @@ int destroy_sprite(Sprite* sp) {
     if (sp->map) free(sp->map);
 
     free(sp);
+    sp = NULL;
+
     return 0;
 }
 

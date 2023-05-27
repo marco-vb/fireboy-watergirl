@@ -4,6 +4,7 @@
 #include <lcom/lcf.h>
 
 #include "../drivers/graphics/graphics.h"
+#include "../sprites/falling_block.h"
 #include "../sprites/sprite.h"
 #include "../maps/map.h"
 
@@ -36,7 +37,7 @@
 
 
 enum Direction { LEFT, RIGHT, UP, DEFAULT };
-enum Elements{FIRE,WATER};
+enum Elements { FIRE, WATER };
 #define GRAVITY 1
 #define DEFAULT_SPEED 6
 #define JUMP 15
@@ -54,9 +55,13 @@ typedef struct {
     enum Elements element;
 } Character;
 
-
 Character* fireboy, * watergirl;
 extern Map* map1;
+extern Falling_Block* blocks[10];
+
+int hit_ground(Sprite* block);
+void draw_blocks();
+void erase_blocks();
 
 char get_tile(Map* map, u_int32_t x, u_int32_t y);
 int wall_down(Character* character);
@@ -70,9 +75,9 @@ int(draw_character)(Character* Character);
 int (create_characters)();
 int (set_position)(Character* Character, int x, int y);
 void (character_current_sprite)(Character* character);
-int (is_on_ground)(Character * character);
+int (is_on_ground)(Character* character);
 void update_character(Character* character);
-int (update_direction)(Character * character, enum Direction dir);
+int (update_direction)(Character* character, enum Direction dir);
 
 /* Movements due to 'gravity' */
 void move(Character* Character);
@@ -86,4 +91,5 @@ void (jump)(Character* Character);
 void (stop_moving)(Character* Character);
 int on_fire(Character* character);
 int on_water(Character* character);
+
 #endif /* __SPRITE_H */

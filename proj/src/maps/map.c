@@ -60,7 +60,8 @@ int (draw_map)(Map* map) {
     unsigned int wall = 0;
     unsigned int lava = 0;
     unsigned int water = 0;
-    unsigned int rope = 0;
+    unsigned int rope_count = 0;
+    unsigned int falling_block_count = 0;
 
     for (uint32_t i = 0; i < map->rows; i++) {
         for (uint32_t j = 0; j < map->columns; j++) {
@@ -84,8 +85,27 @@ int (draw_map)(Map* map) {
                 background++;
 
                 if (map->map[index] == 'R') {
-                    ropes[rope++] = create_sprite((xpm_map_t)rope_xpm, x, y, 0, 0);
-                    rope = rope > 100 ? 99 : rope;
+                    int i = 0;
+                    while (map->map[index] == 'R') {
+                        map->map[index] = 'B';
+                        ropes[rope_count][i++] = create_sprite((xpm_map_t)rope_xpm, x, y, 0, 0);
+                        index += map->columns;
+                        y += TILE_SIZE;
+                    }
+
+                    /* Falling Block */
+                    if (map->map[index] == 'X') {
+                        map->map[index] = 'B';
+                        Sprite* block = create_sprite((xpm_map_t)falling_block_xpm, x, y, 0, 0);
+                        Sprite* rope = ropes[rope_count][i - 1];
+                        Falling_Block* falling_block = (Falling_Block*)malloc(sizeof(Falling_Block));
+                        falling_block->sprite = block;
+                        falling_block->rope = rope;
+                        blocks[falling_block_count++] = falling_block;
+                    }
+
+                    rope_count++;
+                    continue;
                 }
             }
             if (map->map[index] == 'A') {

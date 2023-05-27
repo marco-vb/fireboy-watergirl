@@ -9,6 +9,7 @@
 
 #include "../drivers/graphics/graphics.h"
 #include "../sprites/sprite.h"
+#include "../sprites/falling_block.h"
 #include "../xpm/background/level_background1.xpm"
 #include "../xpm/background/level_background2.xpm"
 #include "../xpm/background/level_background3.xpm"
@@ -26,7 +27,8 @@
 #define MAPS_EXT ".txt"
 #define TILE_SIZE 32
 
-Sprite* ropes[100];
+Sprite* ropes[10][10];
+extern Falling_Block* blocks[10];
 
 typedef struct {
     int x, y;
