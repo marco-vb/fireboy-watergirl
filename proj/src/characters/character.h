@@ -4,6 +4,7 @@
 #include <lcom/lcf.h>
 
 #include "../drivers/graphics/graphics.h"
+#include "../sprites/falling_block.h"
 #include "../sprites/sprite.h"
 #include "../maps/map.h"
 
@@ -58,6 +59,11 @@ typedef struct {
 Character* fireboy;
 Character* watergirl;
 extern Map* map1;
+extern Falling_Block* blocks[10];
+
+int hit_ground(Sprite* block);
+void draw_falling_blocks();
+void erase_blocks();
 
 /**
  * @brief Returns the letter corresponding to the tile at the given position on the map.

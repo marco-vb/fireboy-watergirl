@@ -17,6 +17,8 @@ extern keyboard_packet_t keyboard_packet;
 extern Sprite* background, * cursor, * logo, * play_text, * settings_text, * exit_text;
 extern Sprite* play_texth, * settings_texth, * exit_texth;
 extern Character* fireboy, * watergirl;
+extern Sprite* ropes[10][10];
+
 
 typedef enum {
     MAIN_MENU,
@@ -97,5 +99,6 @@ int fireboy_move(keyboard_key key);
  * @return int 1 if an error occurs, 0 otherwise
  */
 int watergirl_move(keyboard_key key);
+void draw_ropes();
 
 #endif /* __GAME_H */

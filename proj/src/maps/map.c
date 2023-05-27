@@ -37,7 +37,6 @@ Map* (create_map)(int level) {
 
     map->x = map->y = 0;
 
-
     fclose(file);
     free(path);
     free(level_str);
@@ -46,9 +45,9 @@ Map* (create_map)(int level) {
 }
 
 int (load_maps)() {
-    map1= create_map(1);
+    map1 = create_map(1);
     map2 = create_map(2);
-    current_map= map1;
+    current_map = map1;
 
     if (!map1 || !map2) { return 1; }
 
@@ -60,9 +59,11 @@ int (draw_map)(Map* map) {
     unsigned int wall = 0;
     unsigned int lava = 0;
     unsigned int water = 0;
+    unsigned int rope_count = 0;
+    unsigned int falling_block_count = 0;
 
-    unsigned int fire_door=0;
-    unsigned int water_door=0;
+    unsigned int fire_door = 0;
+    unsigned int water_door = 0;
 
     unsigned int poison = 0;
 
@@ -71,7 +72,7 @@ int (draw_map)(Map* map) {
             uint32_t index = i * map->columns + j;
             uint32_t x = map->x + j * TILE_SIZE, y = map->y + i * TILE_SIZE;
 
-            if (map->map[index] == 'B' || map->map[index]=='C') {
+            if (map->map[index] == 'B' || map->map[index] == 'R') {
                 switch (background % 3)
                 {
                 case 0:
@@ -99,6 +100,29 @@ int (draw_map)(Map* map) {
                 }
                 background++;
 
+                if (map->map[index] == 'R') {
+                    int i = 0;
+                    while (map->map[index] == 'R') {
+                        map->map[index] = 'B';
+                        ropes[rope_count][i++] = create_sprite((xpm_map_t)rope_xpm, x, y, 0, 0);
+                        index += map->columns;
+                        y += TILE_SIZE;
+                    }
+
+                    /* Falling Block */
+                    if (map->map[index] == 'X') {
+                        map->map[index] = 'B';
+                        Sprite* block = create_sprite((xpm_map_t)falling_block_xpm, x, y, 0, 0);
+                        Sprite* rope = ropes[rope_count][i - 1];
+                        Falling_Block* falling_block = (Falling_Block*)malloc(sizeof(Falling_Block));
+                        falling_block->sprite = block;
+                        falling_block->rope = rope;
+                        blocks[falling_block_count++] = falling_block;
+                    }
+
+                    rope_count++;
+                    continue;
+                }
             }
             if (map->map[index] == 'A') {
                 switch (wall % 2)
@@ -195,7 +219,7 @@ int (draw_map)(Map* map) {
                 }
                 fire_door++;
             }
-             if(map->map[index]=='W'){
+            if (map->map[index] == 'W') {
                 switch (water_door)
                 {
                 case 0:
@@ -249,10 +273,10 @@ int (draw_map)(Map* map) {
                 }
                 poison++;
 
+                }
             }
         }
-        }
-        
+
     }
     draw_background();
     return 0;
