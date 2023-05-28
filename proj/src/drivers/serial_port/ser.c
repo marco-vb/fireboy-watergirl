@@ -270,8 +270,12 @@ int read_byte(uint8_t *data) {
             return 1;
     }
 
-    if (util_sys_inb(SER_RHR, data))
+    if (util_sys_inb(SER_RHR, data)) {
+        printf("Error getting data from uart fifo\n");
         return 1;
+    }
+
+    printf("Read data: %x\n", *data);
 
     micro_delay(500);
 
@@ -290,8 +294,10 @@ int send_byte(uint8_t data) {
     if (write_lcr(conf))
         return 1;
 
-    if (sys_outb(SER_THR, data))
+    if (sys_outb(SER_THR, data)) {
+        printf("Error writing to uart fifo\n");
         return 1;
+    }
 
     printf("Sent %x\n", data);
 
@@ -305,6 +311,7 @@ int send_bytes() {
         uint8_t data = front(queue_send);
 
         if (send_byte(data)) {
+            printf("Error while sending byte throught uart fifo\n");
             return 1;
         }
 
@@ -388,4 +395,18 @@ int clear_fifos() {
 
 void receive_queue_push(uint8_t data) {
     push_queue(queue_receive, data);
+}
+
+int check_transmitter() {
+    uint8_t lsr;
+
+    if (read_lsr(&lsr)) {
+        printf("Error while reading lsr\n");
+        return 1;
+    }
+
+    if (lsr & LSR_TRANSMITTER_EMPTY)
+        ready_to_send = true;
+
+    return 0;
 }

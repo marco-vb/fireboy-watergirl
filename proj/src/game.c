@@ -95,7 +95,6 @@ int game_exit() {
 }
 
 game_state state = MAIN_MENU;
-uint32_t i = 0;
 
 int game_loop() {
     int ipc_status, r;
@@ -121,13 +120,13 @@ int game_loop() {
 
                 if (msg.m_notify.interrupts & irq_timer) {
                     timer_ih();
-                    i++;
                     if(state==GAME){
                         if ((current_frame++) == frames_per_second) {
                             if(  decrement_counter()){
                                 state=GAME_OVER;
                                 send_game_over();
-                                send_bytes();
+                                if (check_transmitter()) return 1;
+                                if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
                             }
                             current_frame = 0;
                         }
@@ -136,9 +135,13 @@ int game_loop() {
                             stop_moving(fireboy);
                             stop_moving(watergirl);
                             send_game_over();
-                            send_bytes();
+                            if (check_transmitter()) return 1;
+                            if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
                         }
                         if(door_fire(fireboy) && door_water(watergirl)){
+                            send_next_level();
+                            if (check_transmitter()) return 1;
+                            if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
                             reset_falling_blocks();
                             clear_background();
                             if (nextLevel()) {
@@ -149,18 +152,18 @@ int game_loop() {
                             else{
                                 start_counter(120);
                                 draw_map(current_map);
-                            if( current_map==map1 || current_map==map3){
-                                fireboy->sprite->x=100;
-                                fireboy->sprite->y=750;
-                                watergirl->sprite->x= 100;
-                                watergirl->sprite->y=750;
-                            }
-                            if( current_map== map2){
-                                fireboy->sprite->x=60;
-                                fireboy->sprite->y=750;
-                                watergirl->sprite->x= 1000;
-                                watergirl->sprite->y=750;
-                            }
+                                if( current_map==map1 || current_map==map3){
+                                    fireboy->sprite->x=100;
+                                    fireboy->sprite->y=750;
+                                    watergirl->sprite->x= 100;
+                                    watergirl->sprite->y=750;
+                                }
+                                if( current_map== map2){
+                                    fireboy->sprite->x=60;
+                                    fireboy->sprite->y=750;
+                                    watergirl->sprite->x= 1000;
+                                    watergirl->sprite->y=750;
+                                }
                             
                             }
                         }
@@ -170,6 +173,7 @@ int game_loop() {
 
                     if (state == WAITING_PLAYER && !multiplayer) {
                         if (check_connection()) {
+                            if (check_transmitter()) return 1;
                             if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
                             send_ready_connection();
                             start_multiplayer();
@@ -187,7 +191,9 @@ int game_loop() {
                         }
                     }
 
-                    if (i % 2 == 0 && multiplayer && state == GAME) handle_remote_player();
+                    if (multiplayer && (state == GAME || state == PAUSE_MENU || state == GAME_OVER)) handle_remote_player();
+
+                    if (check_transmitter()) return 1;
 
                     if (transmitter_ready() && !send_queue_is_empty()) {
                         send_bytes();
@@ -217,8 +223,18 @@ int game_loop() {
                     keyboard_key k = keyboard_get_key();
 
                     if (k == KEY_ESC) {
-                        if (state == MAIN_MENU) state = EXIT;
-                        else if (state == GAME) state = PAUSE_MENU;
+                        if (state == MAIN_MENU) {
+                            state = EXIT; 
+                            send_exit_game();
+                            if (check_transmitter()) return 1;
+                            if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
+                        }
+                        else if (state == GAME) {
+                            state = PAUSE_MENU; 
+                            send_pause_game();
+                            if (check_transmitter()) return 1;
+                            if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
+                        }
                         else if (state == WAITING_PLAYER) state = MAIN_MENU;
                         else {
                             exit_multiplayer();
@@ -239,7 +255,6 @@ int game_loop() {
                     ser_ih();
 
                     if (check_ih_err()) {
-                        // TODO: Check/Remove this
                         printf("Error?\n");
                         break;
                     }
@@ -306,6 +321,8 @@ int draw_main_menu() {
     if (mouse_lclick_sprite(coop)) {
         state = WAITING_PLAYER;
         send_start_connection();
+        if (check_transmitter()) return 1;
+        if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
         
         return 0;
     }
@@ -331,7 +348,20 @@ int draw_main_menu() {
 }
 
 int draw_waiting_player_background() {
+    /*if (mouse_inside(420, 540, 240, 80) && mouse_packet.lb) {
+       state=MAIN_MENU;
+       clear_background();
+       printf("State: %d\n", state);
+    }*/
+
+    draw_sprite(waiting);
+    draw_sprite(cursor);
+    draw_buffer();
+
+    erase_sprite(waiting);
+    erase_sprite(cursor);
     clear_background();
+    
     return 0;
 }
 
@@ -400,37 +430,21 @@ int draw_game() {
 
 int draw_pause_menu() {
      if (mouse_inside(310, 452, 240, 80) && mouse_packet.lb) {
-        state = MAIN_MENU;
-        reset_falling_blocks();
-        clear_background();
-        return 0;
+        exit_game();
+        if (check_transmitter()) return 1;
+        if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
     }
 
     if (mouse_inside(663, 452, 240, 80) && mouse_packet.lb) {
-        state = GAME;
-        reset_falling_blocks();
-        clear_background();
-        start_counter(120);
-        if(current_map==map1 || current_map==map3){
-           
-            fireboy->sprite->x=100;
-            fireboy->sprite->y=750;
-            watergirl->sprite->x= 100;
-            watergirl->sprite->y=750;
-            
-        }
-        else if (current_map == map2) {
-            fireboy->sprite->x = 60;
-            fireboy->sprite->y = 750;
-            watergirl->sprite->x = 1000;
-            watergirl->sprite->y = 750;
-        }
-        clear_background();
-        draw_map(current_map);
-        return 0;
+        restart_game();
+        if (check_transmitter()) return 1;
+        if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
     }
     if (mouse_inside(468, 579, 240, 80) && mouse_packet.lb) {
         state = GAME;
+        send_resume_game();
+        if (check_transmitter()) return 1;
+        if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
         return 0;
     }
 
@@ -447,36 +461,15 @@ int draw_pause_menu() {
 int draw_game_over() {
 
     if (mouse_inside(190, 540, 240, 80) && mouse_packet.lb) {
-        if (multiplayer) exit_multiplayer();
-        
-        state = MAIN_MENU;
-        reset_falling_blocks();
-        clear_background();
-        return 0;
+        exit_game();
+        if (check_transmitter()) return 1;
+        if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
     }
 
     if (mouse_inside(770, 540, 240, 80) && mouse_packet.lb) {
-        state = GAME;
-        reset_falling_blocks();
-        clear_background();
-        start_counter(120);
-        if(current_map==map1 || current_map==map3){
-           
-            fireboy->sprite->x=100;
-            fireboy->sprite->y=750;
-            watergirl->sprite->x= 100;
-            watergirl->sprite->y=750;
-            
-        }
-        else if (current_map == map2) {
-            fireboy->sprite->x = 60;
-            fireboy->sprite->y = 750;
-            watergirl->sprite->x = 1000;
-            watergirl->sprite->y = 750;
-        }
-        clear_background();
-        draw_map(current_map);
-        return 0;
+        restart_game();
+        if (check_transmitter()) return 1;
+        if (transmitter_ready() && !send_queue_is_empty()) send_bytes();
     }
 
     draw_sprite(game_over);
@@ -532,7 +525,7 @@ int watergirl_move(keyboard_key key) {
 }
 
 void exit_multiplayer() {
-    destroy_queues();
+    clear_queues();
     control_fireboy = control_watergirl = true;
 }
 
@@ -579,6 +572,44 @@ void handle_remote_player() {
                     stop_moving(fireboy);
                     stop_moving(watergirl);
                 }
+                else if (change == RESTART_GAME) {
+                    restart_game();
+                }
+                else if (change == RESUME_GAME) {
+                    state = GAME;
+                }
+                else if (change == EXIT_GAME) {
+                    exit_game();
+                }
+                else if (change == NEXT_LEVEL) {
+                    reset_falling_blocks();
+                    clear_background();
+                    if (nextLevel()) {
+                        exit_multiplayer();
+                        state = MAIN_MENU;
+                        control_fireboy = control_watergirl = true;
+                    }
+                    else{
+                        start_counter(120);
+                        draw_map(current_map);
+                        if( current_map==map1 || current_map==map3){
+                            fireboy->sprite->x=100;
+                            fireboy->sprite->y=750;
+                            watergirl->sprite->x= 100;
+                            watergirl->sprite->y=750;
+                        }
+                        if( current_map== map2){
+                            fireboy->sprite->x=60;
+                            fireboy->sprite->y=750;
+                            watergirl->sprite->x= 1000;
+                            watergirl->sprite->y=750;
+                        }
+                    
+                    }
+                }
+                else if (change == PAUSE_GAME) {
+                    state = PAUSE_MENU;
+                }
 
                 break;
             }
@@ -596,4 +627,39 @@ void start_multiplayer() {
     else
         control_fireboy = false;
     multiplayer = true;
+}
+
+int exit_game() {
+    if (multiplayer) exit_multiplayer();
+    
+    state = MAIN_MENU;
+    reset_falling_blocks();
+    clear_background();
+    send_exit_game();
+    return 0;
+}
+
+int restart_game() {
+    state = GAME;
+    reset_falling_blocks();
+    clear_background();
+    start_counter(120);
+    if(current_map==map1 || current_map==map3){
+        
+        fireboy->sprite->x=100;
+        fireboy->sprite->y=750;
+        watergirl->sprite->x= 100;
+        watergirl->sprite->y=750;
+        
+    }
+    else if (current_map == map2) {
+        fireboy->sprite->x = 60;
+        fireboy->sprite->y = 750;
+        watergirl->sprite->x = 1000;
+        watergirl->sprite->y = 750;
+    }
+    clear_background();
+    draw_map(current_map);
+    send_restart_game();
+    return 0;
 }

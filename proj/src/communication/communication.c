@@ -34,6 +34,31 @@ void send_game_over() {
     send_queue_push(GAME_OVER_ID);
 }
 
+void send_resume_game() {
+    send_queue_push(CHANGE_ID);
+    send_queue_push(RESUME_GAME);
+}
+
+void send_restart_game() {
+    send_queue_push(CHANGE_ID);
+    send_queue_push(RESTART_GAME);
+}
+
+void send_exit_game() {
+    send_queue_push(CHANGE_ID);
+    send_queue_push(EXIT_GAME);
+}
+
+void send_next_level() {
+    send_queue_push(CHANGE_ID);
+    send_queue_push(NEXT_LEVEL);
+}
+
+void send_pause_game() {
+    send_queue_push(CHANGE_ID);
+    send_queue_push(PAUSE_GAME);
+}
+
 bool check_connection() {
     while (!receive_queue_is_empty()) {
         printf("Queue Front: %x\n", receive_queue_front());

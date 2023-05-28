@@ -17,6 +17,7 @@
 #include "../xpm/watergirl.xpm"
 #include "../xpm/game-over.xpm"
 #include "../xpm/pause.xpm"
+#include "../xpm/waiting.xpm"
 
 typedef struct {
     int x, y, xspeed, yspeed;
@@ -37,6 +38,7 @@ Sprite* block;
 Sprite* fzl;
 Sprite* game_over;
 Sprite * pause_menu;
+Sprite * waiting;
 
 /**
  * @brief Creates a sprite object.

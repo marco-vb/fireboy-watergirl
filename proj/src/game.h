@@ -12,6 +12,7 @@
 #include "sprites/sprite.h"
 #include "characters/character.h"
 
+
 extern mouse_packet_t mouse_packet;
 extern keyboard_packet_t keyboard_packet;
 extern Sprite* background, * cursor, * logo, * play_text, * settings_text, * exit_text;
@@ -107,8 +108,30 @@ int watergirl_move(keyboard_key key);
  * @brief Draws the ropes on the screen. And controlls whether or not the characters can or have cut them.
  */
 void draw_ropes();
+
+/**
+* @brief Exists multiplayer mode
+*/
 void exit_multiplayer();
+
+/**
+* @brief Retrives information from the serial port to check what the remote player has done and replicates it
+*/
 void handle_remote_player();
+
+/**
+*@brief Starts multiplayer session
+*/
 void start_multiplayer();
+
+/**
+* @brief Exists the game
+*/
+int exit_game();
+
+/**
+*@brief Restarts the game
+*/
+int restart_game();
 
 #endif /* __GAME_H */

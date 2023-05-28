@@ -80,6 +80,11 @@ int load_sprites() {
         printf("Failed to load pause.xpm\n");
         return 1;
     }
+     waiting = create_sprite((xpm_map_t)waiting_xpm, 0, 100, 0, 0);
+     if(!waiting){
+        printf("Failed to load waiting.xpm\n");
+        return 1;
+    }
     return 0;
     
 }
