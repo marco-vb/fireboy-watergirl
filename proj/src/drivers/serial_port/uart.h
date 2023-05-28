@@ -44,5 +44,7 @@
 #define FCR_TRIGGER_8 BIT(7)
 #define FCR_TRIGGER_14 (BIT(6) | BIT(7))
 
+#define ACK 0xFA
+#define NACK 0xFE
 
 #endif

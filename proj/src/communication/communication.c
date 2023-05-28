@@ -4,12 +4,80 @@
 #include "communication.h"
 
 void send_keyboard_key(keyboard_key key) {
-    send_queue_push('k');
+    send_queue_push(KEYBOARD_ID);
     send_queue_push(key);
 }
 
 void send_destroyed_rope(uint8_t x, uint8_t y) {
-    send_queue_push('r');
+    send_queue_push(ROPE_ID);
     send_queue_push(x);
     send_queue_push(y);
+}
+
+void send_start_connection() {
+    send_queue_push(CONNECT_ID);
+    send_queue_push(CONNECT_START);
+}
+
+void send_accept_connection() {
+    send_queue_push(CONNECT_ID);
+    send_queue_push(CONNECT_ACK);
+}
+
+void send_ready_connection() {
+    send_queue_push(CONNECT_ID);
+    send_queue_push(CONNECT_READY);
+}
+
+bool check_connection() {
+    while (!receive_queue_is_empty()) {
+        printf("Queue Front: %x\n", receive_queue_front());
+        if (receive_queue_front() == CONNECT_ID) {
+            if (receive_queue_size() < 2) return false;
+            receive_queue_pop();
+            uint8_t connection = receive_queue_pop();
+
+            printf("Connection byte: %x\n", connection);
+
+            if (connection == CONNECT_START) {
+                printf("Received!\n");
+                send_accept_connection();
+                return true;
+            }
+
+            else if (connection == CONNECT_ACK) {
+                printf("Acknowledged!\n");
+                return true;
+            }
+
+            else {
+                printf("Unknown connection byte\n");
+                return false;
+            }
+        }
+
+        else
+            receive_queue_pop();
+    }
+
+    return false;
+}
+
+bool check_ready() {
+    while (!receive_queue_is_empty()) {
+        printf("Queue Front: %x\n", receive_queue_front());
+        if (receive_queue_front() == CONNECT_ID) {
+            if (receive_queue_size() < 2) return false;
+            receive_queue_pop();
+            if (receive_queue_pop() == CONNECT_READY) {
+                printf("Received 2\n");
+                return true;
+            }
+        }
+
+        else
+            receive_queue_pop();
+    }
+
+    return false;
 }

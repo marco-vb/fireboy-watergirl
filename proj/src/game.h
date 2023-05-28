@@ -22,6 +22,7 @@ extern Sprite* ropes[10][10];
 
 typedef enum {
     MAIN_MENU,
+    WAITING_PLAYER,
     GAME,
     PAUSE_MENU,
     GAME_OVER,
@@ -70,6 +71,8 @@ int draw_main_menu();
  */
 int draw_game();
 
+int draw_waiting_player_background();
+
 /**
  * @brief draws the pause menu
  * 
@@ -106,5 +109,6 @@ int watergirl_move(keyboard_key key);
 void draw_ropes();
 void exit_multiplayer();
 void handle_remote_player();
+void start_multiplayer();
 
 #endif /* __GAME_H */

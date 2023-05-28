@@ -10,6 +10,7 @@ bool receive_queue_is_empty();
 bool send_queue_is_empty();
 uint8_t receive_queue_front();
 uint8_t receive_queue_size();
+void receive_queue_push(uint8_t data);
 int read_byte(uint8_t *data);
 int send_byte(uint8_t data);
 int send_bytes();
@@ -29,5 +30,6 @@ void ser_ih();
 int check_ih_err();
 bool transmitter_ready();
 int init_fifos();
+int clear_fifos();
 
 #endif

@@ -9,7 +9,7 @@ static bool ready_to_send = true;
 static struct Queue *queue_send = NULL, *queue_receive = NULL;
 
 int ser_init() {
-    if (ser_conf(8, 2, 2)) {
+    if (ser_conf(8, 1, 1)) {
         printf("Error setting up serial port\n");
         return 1;
     }
@@ -273,6 +273,12 @@ int read_byte(uint8_t *data) {
     if (util_sys_inb(SER_RHR, data))
         return 1;
 
+    micro_delay(500);
+
+    /*if (sys_outb(SER_THR, ACK))
+        return 1;
+    */
+
     return 0;
 }
 
@@ -290,6 +296,33 @@ int send_byte(uint8_t data) {
 
     if (sys_outb(SER_THR, data))
         return 1;
+
+    micro_delay(500);
+
+    //printf("Sent %x\n", data);
+
+    /*
+    while (true) {
+        uint8_t lsr, byte;
+
+        if (read_lsr(&lsr))
+            return 1;
+
+        if (lsr & LSR_RECEIVED_DATA) {
+            if(read_byte(&byte))
+                return 1;
+            
+            if (byte == ACK)
+                return 0;
+        }
+
+        if (tries == 0)
+            if (sys_outb(SER_THR, data))
+                return 1;
+        
+        tries--;
+    }
+    */
 
     return 0;
 }
@@ -346,7 +379,7 @@ void ser_ih() {
                     return;
                 }
 
-                push_queue(queue_receive, data);
+                if (data != 0) push_queue(queue_receive, data);
             } while(lsr & LSR_RECEIVED_DATA);
 
             break;
@@ -367,4 +400,19 @@ void ser_ih() {
             ih_err = 1;
             break;
     }
+}
+
+int clear_fifos() {
+    uint8_t config = FCR_CLEAR_FIFOS;
+
+    if (sys_outb(SER_FCR, config)) {
+        printf("Error while writing FIFOS configuration in fifo control register\n");
+        return 1;
+    }
+
+    return 0;
+}
+
+void receive_queue_push(uint8_t data) {
+    push_queue(queue_receive, data);
 }
