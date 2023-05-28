@@ -275,10 +275,6 @@ int read_byte(uint8_t *data) {
 
     micro_delay(500);
 
-    /*if (sys_outb(SER_THR, ACK))
-        return 1;
-    */
-
     return 0;
 }
 
@@ -297,32 +293,9 @@ int send_byte(uint8_t data) {
     if (sys_outb(SER_THR, data))
         return 1;
 
+    printf("Sent %x\n", data);
+
     micro_delay(500);
-
-    //printf("Sent %x\n", data);
-
-    /*
-    while (true) {
-        uint8_t lsr, byte;
-
-        if (read_lsr(&lsr))
-            return 1;
-
-        if (lsr & LSR_RECEIVED_DATA) {
-            if(read_byte(&byte))
-                return 1;
-            
-            if (byte == ACK)
-                return 0;
-        }
-
-        if (tries == 0)
-            if (sys_outb(SER_THR, data))
-                return 1;
-        
-        tries--;
-    }
-    */
 
     return 0;
 }

@@ -126,6 +126,8 @@ int game_loop() {
                         if ((current_frame++) == frames_per_second) {
                             if(  decrement_counter()){
                                 state=GAME_OVER;
+                                send_game_over();
+                                send_bytes();
                             }
                             current_frame = 0;
                         }
@@ -133,6 +135,8 @@ int game_loop() {
                             state=GAME_OVER;
                             stop_moving(fireboy);
                             stop_moving(watergirl);
+                            send_game_over();
+                            send_bytes();
                         }
                         if(door_fire(fireboy) && door_water(watergirl)){
                             reset_falling_blocks();
@@ -173,14 +177,17 @@ int game_loop() {
                             clear_fifos();
                             start_counter(120);
                             clear_background();
+                            current_map=map1;
+                            fireboy->sprite->x=100;
+                            fireboy->sprite->y=750;
+                            watergirl->sprite->x= 100;
+                            watergirl->sprite->y=750;
                             draw_map(current_map);
                             state = GAME;
-
-                            printf("State: %d\n", state);
                         }
                     }
 
-                    if ((i % 2 == 0) && multiplayer && state == GAME) handle_remote_player();
+                    if (i % 2 == 0 && multiplayer && state == GAME) handle_remote_player();
 
                     if (transmitter_ready() && !send_queue_is_empty()) {
                         send_bytes();
@@ -212,7 +219,7 @@ int game_loop() {
                     if (k == KEY_ESC) {
                         if (state == MAIN_MENU) state = EXIT;
                         else if (state == GAME) state = PAUSE_MENU;
-                        if (state == WAITING_PLAYER) state = MAIN_MENU;
+                        else if (state == WAITING_PLAYER) state = MAIN_MENU;
                         else {
                             exit_multiplayer();
                             state = MAIN_MENU;
@@ -297,12 +304,8 @@ int draw_main_menu() {
         return 0;
     }
     if (mouse_lclick_sprite(coop)) {
-        current_map=map1;
-        fireboy->sprite->x=100;
-        fireboy->sprite->y=750;
-        watergirl->sprite->x= 100;
-        watergirl->sprite->y=750;
         state = WAITING_PLAYER;
+        send_start_connection();
         
         return 0;
     }
@@ -537,7 +540,6 @@ void handle_remote_player() {
     micro_delay(500);
     while (!receive_queue_is_empty()) {
         //printf("Queue front: %x\n", receive_queue_front());
-        printf("Hello\n");
         switch(receive_queue_front()) {
             case KEYBOARD_ID: {
                 uint8_t key;
@@ -559,6 +561,28 @@ void handle_remote_player() {
 
                 break;
             }
+
+            case CHANGE_ID: {
+                uint8_t change;
+                if (receive_queue_size() < 2) {
+                    printf("Change hasn't been received\n");
+                    return;
+                }
+
+                receive_queue_pop();
+
+                change = receive_queue_pop();
+
+                if (change == GAME_OVER_ID){
+                    printf("Got here\n");
+                    state = GAME_OVER;
+                    stop_moving(fireboy);
+                    stop_moving(watergirl);
+                }
+
+                break;
+            }
+
             default:
                 receive_queue_pop();
                 break;

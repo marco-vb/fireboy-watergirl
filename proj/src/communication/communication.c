@@ -29,6 +29,11 @@ void send_ready_connection() {
     send_queue_push(CONNECT_READY);
 }
 
+void send_game_over() {
+    send_queue_push(CHANGE_ID);
+    send_queue_push(GAME_OVER_ID);
+}
+
 bool check_connection() {
     while (!receive_queue_is_empty()) {
         printf("Queue Front: %x\n", receive_queue_front());
