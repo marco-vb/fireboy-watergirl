@@ -1,0 +1,322 @@
+\doxysection{sprites/sprite.h File Reference}
+\hypertarget{sprite_8h}{}\label{sprite_8h}\index{sprites/sprite.h@{sprites/sprite.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \"{}../drivers/graphics/graphics.\+h\"{}}\newline
+{\ttfamily \#include \"{}../xpm/cursor.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/logo.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/single\+\_\+player.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/single\+\_\+playerh.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/coop.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/cooph.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/exit.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/exit\+H.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/fireboy.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/watergirl.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/game-\/over.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/pause.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/waiting.\+xpm\"{}}\newline
+Include dependency graph for sprite.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSprite}{Sprite}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_aeb91b0831a9bc988b1c041836318001b}{create\+\_\+sprite}} (xpm\+\_\+map\+\_\+t pic, uint16\+\_\+t \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, uint16\+\_\+t \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint16\+\_\+t xspeed, uint16\+\_\+t yspeed)
+\begin{DoxyCompactList}\small\item\em Creates a sprite object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8h_a3d39d1edf4dd00233efcecf5a3f6507e}{load\+\_\+sprites}} ()
+\begin{DoxyCompactList}\small\item\em Loads all the sprites needed. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8h_ae10de51e6ec23c1eb987551e7ec4a0e9}{destroy\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\begin{DoxyCompactList}\small\item\em Destroys a sprite. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8h_a6c75fbf31230126d2f19b29deaf24b2f}{draw\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\begin{DoxyCompactList}\small\item\em Draws a sprite. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8h_a92dc8c9632f56d3d3bde58d592e4ca84}{erase\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\begin{DoxyCompactList}\small\item\em Erases a sprite from the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_a69a7242ee147decd9b827b0c721a728c}{background}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_a3a7ea4305773abf5347bb261a8a5c16b}{cursor}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_a128ae586c5fbd6f3347f466a69a01ba1}{logo}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_aa7ccfc303e8b38c98ed26bda8481af19}{single\+\_\+player\+\_\+text}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_a695f7bf6dc44bb9076ae366a06be2508}{coop\+\_\+text}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_ac3fa1f11ef4ed3e5d3dad2cb1e643436}{exit\+\_\+text}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_abdef9fa8a27526e2cdcf3b9bc5bb945e}{single\+\_\+player\+\_\+texth}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_ae0a875d16001ccca7f54f34ab6b5b600}{coop\+\_\+texth}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_afab30dc6f8ef6760c2cb6b94886e22ce}{exit\+\_\+texth}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_a204005cfc4a4ffd8ba457f9266800714}{block}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_a09946ccf6f059580fd441db722f31f0f}{fzl}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_a0f98ef1e82accf0c47c2952a6ab99639}{game\+\_\+over}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_a366ef7645bc15cd218799765f9ad701f}{pause\+\_\+menu}}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8h_a077d59142655370e617c4c4af6c84453}{waiting}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sprite_8h_aeb91b0831a9bc988b1c041836318001b}\label{sprite_8h_aeb91b0831a9bc988b1c041836318001b} 
+\index{sprite.h@{sprite.h}!create\_sprite@{create\_sprite}}
+\index{create\_sprite@{create\_sprite}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{create\_sprite()}{create\_sprite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} create\+\_\+sprite (\begin{DoxyParamCaption}\item[{xpm\+\_\+map\+\_\+t}]{pic,  }\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{xspeed,  }\item[{uint16\+\_\+t}]{yspeed }\end{DoxyParamCaption})}
+
+
+
+Creates a sprite object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pic} & The xpm image. \\
+\hline
+{\em x} & The horizontal position of the sprite. \\
+\hline
+{\em y} & The vertical position of the sprite. \\
+\hline
+{\em xspeed} & The horizontal speed of the sprite. \\
+\hline
+{\em yspeed} & The vertical speed of the sprite. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sprite\texorpdfstring{$\ast$}{*} The created sprite. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8h_aeb91b0831a9bc988b1c041836318001b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sprite_8h_ae10de51e6ec23c1eb987551e7ec4a0e9}\label{sprite_8h_ae10de51e6ec23c1eb987551e7ec4a0e9} 
+\index{sprite.h@{sprite.h}!destroy\_sprite@{destroy\_sprite}}
+\index{destroy\_sprite@{destroy\_sprite}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{destroy\_sprite()}{destroy\_sprite()}}
+{\footnotesize\ttfamily int destroy\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+
+
+Destroys a sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite to destroy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if the sprite is null, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{sprite_8h_a6c75fbf31230126d2f19b29deaf24b2f}\label{sprite_8h_a6c75fbf31230126d2f19b29deaf24b2f} 
+\index{sprite.h@{sprite.h}!draw\_sprite@{draw\_sprite}}
+\index{draw\_sprite@{draw\_sprite}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{draw\_sprite()}{draw\_sprite()}}
+{\footnotesize\ttfamily int draw\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+
+
+Draws a sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite to be drawn. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if the sprite does not exist, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{sprite_8h_a6c75fbf31230126d2f19b29deaf24b2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8h_a6c75fbf31230126d2f19b29deaf24b2f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sprite_8h_a92dc8c9632f56d3d3bde58d592e4ca84}\label{sprite_8h_a92dc8c9632f56d3d3bde58d592e4ca84} 
+\index{sprite.h@{sprite.h}!erase\_sprite@{erase\_sprite}}
+\index{erase\_sprite@{erase\_sprite}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{erase\_sprite()}{erase\_sprite()}}
+{\footnotesize\ttfamily int erase\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+
+
+Erases a sprite from the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite to be erased. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if the sprite does not exist, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{sprite_8h_a92dc8c9632f56d3d3bde58d592e4ca84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8h_a92dc8c9632f56d3d3bde58d592e4ca84_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sprite_8h_a3d39d1edf4dd00233efcecf5a3f6507e}\label{sprite_8h_a3d39d1edf4dd00233efcecf5a3f6507e} 
+\index{sprite.h@{sprite.h}!load\_sprites@{load\_sprites}}
+\index{load\_sprites@{load\_sprites}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{load\_sprites()}{load\_sprites()}}
+{\footnotesize\ttfamily int load\+\_\+sprites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads all the sprites needed. 
+
+\begin{DoxyReturn}{Returns}
+1 if a sprite fails to load, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{sprite_8h_a3d39d1edf4dd00233efcecf5a3f6507e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{sprite_8h_a3d39d1edf4dd00233efcecf5a3f6507e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{sprite_8h_a69a7242ee147decd9b827b0c721a728c}\label{sprite_8h_a69a7242ee147decd9b827b0c721a728c} 
+\index{sprite.h@{sprite.h}!background@{background}}
+\index{background@{background}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{background}{background}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} background}
+
+\Hypertarget{sprite_8h_a204005cfc4a4ffd8ba457f9266800714}\label{sprite_8h_a204005cfc4a4ffd8ba457f9266800714} 
+\index{sprite.h@{sprite.h}!block@{block}}
+\index{block@{block}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{block}{block}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} block}
+
+\Hypertarget{sprite_8h_a695f7bf6dc44bb9076ae366a06be2508}\label{sprite_8h_a695f7bf6dc44bb9076ae366a06be2508} 
+\index{sprite.h@{sprite.h}!coop\_text@{coop\_text}}
+\index{coop\_text@{coop\_text}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{coop\_text}{coop\_text}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} coop\+\_\+text}
+
+\Hypertarget{sprite_8h_ae0a875d16001ccca7f54f34ab6b5b600}\label{sprite_8h_ae0a875d16001ccca7f54f34ab6b5b600} 
+\index{sprite.h@{sprite.h}!coop\_texth@{coop\_texth}}
+\index{coop\_texth@{coop\_texth}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{coop\_texth}{coop\_texth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} coop\+\_\+texth}
+
+\Hypertarget{sprite_8h_a3a7ea4305773abf5347bb261a8a5c16b}\label{sprite_8h_a3a7ea4305773abf5347bb261a8a5c16b} 
+\index{sprite.h@{sprite.h}!cursor@{cursor}}
+\index{cursor@{cursor}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{cursor}{cursor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} cursor}
+
+\Hypertarget{sprite_8h_ac3fa1f11ef4ed3e5d3dad2cb1e643436}\label{sprite_8h_ac3fa1f11ef4ed3e5d3dad2cb1e643436} 
+\index{sprite.h@{sprite.h}!exit\_text@{exit\_text}}
+\index{exit\_text@{exit\_text}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{exit\_text}{exit\_text}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} exit\+\_\+text}
+
+\Hypertarget{sprite_8h_afab30dc6f8ef6760c2cb6b94886e22ce}\label{sprite_8h_afab30dc6f8ef6760c2cb6b94886e22ce} 
+\index{sprite.h@{sprite.h}!exit\_texth@{exit\_texth}}
+\index{exit\_texth@{exit\_texth}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{exit\_texth}{exit\_texth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} exit\+\_\+texth}
+
+\Hypertarget{sprite_8h_a09946ccf6f059580fd441db722f31f0f}\label{sprite_8h_a09946ccf6f059580fd441db722f31f0f} 
+\index{sprite.h@{sprite.h}!fzl@{fzl}}
+\index{fzl@{fzl}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{fzl}{fzl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} fzl}
+
+\Hypertarget{sprite_8h_a0f98ef1e82accf0c47c2952a6ab99639}\label{sprite_8h_a0f98ef1e82accf0c47c2952a6ab99639} 
+\index{sprite.h@{sprite.h}!game\_over@{game\_over}}
+\index{game\_over@{game\_over}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{game\_over}{game\_over}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} game\+\_\+over}
+
+\Hypertarget{sprite_8h_a128ae586c5fbd6f3347f466a69a01ba1}\label{sprite_8h_a128ae586c5fbd6f3347f466a69a01ba1} 
+\index{sprite.h@{sprite.h}!logo@{logo}}
+\index{logo@{logo}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{logo}{logo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} logo}
+
+\Hypertarget{sprite_8h_a366ef7645bc15cd218799765f9ad701f}\label{sprite_8h_a366ef7645bc15cd218799765f9ad701f} 
+\index{sprite.h@{sprite.h}!pause\_menu@{pause\_menu}}
+\index{pause\_menu@{pause\_menu}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{pause\_menu}{pause\_menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} pause\+\_\+menu}
+
+\Hypertarget{sprite_8h_aa7ccfc303e8b38c98ed26bda8481af19}\label{sprite_8h_aa7ccfc303e8b38c98ed26bda8481af19} 
+\index{sprite.h@{sprite.h}!single\_player\_text@{single\_player\_text}}
+\index{single\_player\_text@{single\_player\_text}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{single\_player\_text}{single\_player\_text}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} single\+\_\+player\+\_\+text}
+
+\Hypertarget{sprite_8h_abdef9fa8a27526e2cdcf3b9bc5bb945e}\label{sprite_8h_abdef9fa8a27526e2cdcf3b9bc5bb945e} 
+\index{sprite.h@{sprite.h}!single\_player\_texth@{single\_player\_texth}}
+\index{single\_player\_texth@{single\_player\_texth}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{single\_player\_texth}{single\_player\_texth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} single\+\_\+player\+\_\+texth}
+
+\Hypertarget{sprite_8h_a077d59142655370e617c4c4af6c84453}\label{sprite_8h_a077d59142655370e617c4c4af6c84453} 
+\index{sprite.h@{sprite.h}!waiting@{waiting}}
+\index{waiting@{waiting}!sprite.h@{sprite.h}}
+\doxysubsubsection{\texorpdfstring{waiting}{waiting}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} waiting}
+

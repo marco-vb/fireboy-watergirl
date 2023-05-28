@@ -1,0 +1,7 @@
+<map id="read_month" name="read_month">
+<area shape="rect" id="Node000001" title="Reads the month from the RTC." alt="" coords="5,5,105,33"/>
+<area shape="rect" id="Node000002" href="$rtc_8c.html#ae29bac2e634d591d0a31eef4deb72ced" title="Reads a value from a RTC register." alt="" coords="153,5,255,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,17,137,17,137,22,105,22"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="303,5,401,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="255,17,288,17,288,22,255,22"/>
+</map>

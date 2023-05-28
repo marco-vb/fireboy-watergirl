@@ -1,0 +1,51 @@
+<map id="pop_queue" name="pop_queue">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1402,170,1494,198"/>
+<area shape="rect" id="Node000002" href="$queue_8c.html#a119efee68b4d232dd411a5ca2ca3327b" title=" " alt="" coords="1254,120,1354,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1392,167,1345,150,1346,145,1394,162"/>
+<area shape="rect" id="Node000014" href="$ser_8c.html#ae569d91a2c2daa3f70035e54f5734340" title="Removes and returns the front element from the receive queue." alt="" coords="717,156,864,183"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="1387,185,865,174,865,168,1387,180"/>
+<area shape="rect" id="Node000017" href="$ser_8c.html#afbefc34bc41c323555ca4f834fc7eb7a" title="Sends bytes from the send queue to the UART transmit buffer." alt="" coords="743,324,838,351"/>
+<area shape="poly" id="edge23_Node000001_Node000017" title=" " alt="" coords="1388,200,839,329,838,324,1387,195"/>
+<area shape="rect" id="Node000003" href="$ser_8c.html#a6d0537e7d115b0aa6bf6961f4a9a28dd" title="Clears the send and receive queues." alt="" coords="1093,68,1201,95"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1245,117,1190,98,1192,93,1247,112"/>
+<area shape="rect" id="Node000012" href="$queue_8c.html#a46a50b33e476d55cabbb406086bf2cda" title=" " alt="" coords="1088,120,1206,147"/>
+<area shape="poly" id="edge16_Node000002_Node000012" title=" " alt="" coords="1239,136,1206,136,1206,131,1239,131"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a49f6d45fc3b252adda8895f21180ec70" title="Exists multiplayer mode." alt="" coords="912,68,1040,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1079,84,1041,84,1041,79,1079,79"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,144,268,171"/>
+<area shape="poly" id="edge15_Node000003_Node000008" title=" " alt="" coords="1091,65,1030,46,956,28,874,14,792,8,584,8,506,10,445,19,387,38,317,73,292,89,270,109,236,145,232,141,266,105,289,85,315,68,385,34,444,14,505,5,584,3,792,3,875,8,957,23,1032,41,1092,60"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#afd7728c9e6ae89e5932e641b54556aba" title="Exists the game." alt="" coords="745,233,836,261"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="920,105,914,110,897,131,889,151,882,173,866,196,843,218,819,234,816,230,840,213,862,193,877,170,884,149,893,128,910,106,917,101"/>
+<area shape="poly" id="edge13_Node000004_Node000008" title=" " alt="" coords="897,73,781,63,635,60,555,64,474,73,394,87,317,108,278,125,244,145,242,141,275,121,315,103,393,82,474,67,555,59,635,55,782,58,897,68"/>
+<area shape="rect" id="Node000011" href="$game_8c.html#a0520354a211cab81d76e08490253c0c4" title="Retrives information from the serial port to check what the remote player has done and replicates it." alt="" coords="501,93,669,121"/>
+<area shape="poly" id="edge14_Node000004_Node000011" title=" " alt="" coords="897,89,669,104,669,99,897,84"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#adb16266bac82ba2376f626661c75a3ff" title="draws the game over screen and controlls if any of the options is chosen" alt="" coords="518,246,652,274"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="730,253,652,258,652,253,730,248"/>
+<area shape="rect" id="Node000010" href="$game_8c.html#ac581b9d6af85c4c35f9d423a966cba8e" title="draws the pause menu" alt="" coords="513,298,657,326"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="732,268,632,300,630,295,730,263"/>
+<area shape="poly" id="edge11_Node000005_Node000011" title=" " alt="" coords="755,226,605,123,608,119,758,222"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="333,273,436,301"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="504,273,437,282,436,277,504,268"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="353,265,239,174,242,170,356,261"/>
+<area shape="rect" id="Node000009" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,144,127,171"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="160,160,127,160,127,155,160,155"/>
+<area shape="poly" id="edge10_Node000010_Node000007" title=" " alt="" coords="498,304,436,296,437,290,499,298"/>
+<area shape="poly" id="edge12_Node000011_Node000008" title=" " alt="" coords="487,114,404,122,316,135,269,146,268,141,316,129,403,117,487,109"/>
+<area shape="rect" id="Node000013" href="$ser_8c.html#a7ba113911835a0150f712dd95fd2f7f4" title="Destroys the send and receive queues." alt="" coords="914,120,1038,147"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="1073,136,1039,136,1039,131,1073,131"/>
+<area shape="poly" id="edge22_Node000014_Node000011" title=" " alt="" coords="728,153,632,124,634,119,730,148"/>
+<area shape="rect" id="Node000015" href="$communication_8c.html#ae2f67f196a873692fbf1d16029877abc" title=" " alt="" coords="316,144,453,171"/>
+<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="701,169,454,162,454,157,702,164"/>
+<area shape="rect" id="Node000016" href="$communication_8c.html#a16f9b03aed26f7c954b8ab5e697d4dd1" title=" " alt="" coords="533,194,637,222"/>
+<area shape="poly" id="edge21_Node000014_Node000016" title=" " alt="" coords="703,188,637,201,636,196,702,183"/>
+<area shape="poly" id="edge20_Node000015_Node000008" title=" " alt="" coords="301,160,268,160,268,155,301,155"/>
+<area shape="poly" id="edge24_Node000017_Node000006" title=" " alt="" coords="743,320,668,289,632,277,634,272,670,284,745,315"/>
+<area shape="poly" id="edge28_Node000017_Node000008" title=" " alt="" coords="759,362,718,386,669,404,568,431,524,441,483,447,443,446,403,438,360,420,314,391,289,368,268,340,252,309,240,277,226,216,221,172,226,171,231,215,246,275,257,307,273,337,293,364,318,387,363,415,404,433,444,441,483,441,523,436,567,426,668,399,715,381,756,357"/>
+<area shape="poly" id="edge27_Node000017_Node000010" title=" " alt="" coords="728,332,657,324,658,318,729,327"/>
+<area shape="rect" id="Node000018" href="$game_8c.html#ad7ca2d21a727f7d55afef2392de3b5f8" title="draws the main menu and controlls if an option is chosen" alt="" coords="516,350,654,378"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="729,348,654,358,654,352,728,343"/>
+<area shape="rect" id="Node000019" href="$ser_8c.html#a9353fabdd05ea291e02243dace57ae1c" title="Interrupt handler for the serial port." alt="" coords="355,350,415,378"/>
+<area shape="poly" id="edge29_Node000017_Node000019" title=" " alt="" coords="753,361,713,378,669,392,598,399,527,395,463,386,415,375,416,370,464,380,527,390,598,394,668,387,711,373,750,356"/>
+<area shape="poly" id="edge26_Node000018_Node000007" title=" " alt="" coords="522,347,500,340,415,304,418,299,502,335,524,342"/>
+<area shape="poly" id="edge30_Node000019_Node000008" title=" " alt="" coords="347,343,314,314,285,276,260,237,227,173,231,170,265,234,289,273,318,310,351,339"/>
+</map>

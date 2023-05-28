@@ -1,0 +1,5 @@
+<map id="send_queue_is_empty" name="send_queue_is_empty">
+<area shape="rect" id="Node000001" title="Checks if the send queue is empty." alt="" coords="5,5,172,33"/>
+<area shape="rect" id="Node000002" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="220,5,301,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,17,205,17,205,22,172,22"/>
+</map>

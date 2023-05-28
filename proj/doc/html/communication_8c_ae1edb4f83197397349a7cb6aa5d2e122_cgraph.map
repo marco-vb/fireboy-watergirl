@@ -1,0 +1,9 @@
+<map id="send_restart_game" name="send_restart_game">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,152,33"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a7c232bfe6e9ff822db3f9135e41bb623" title="Adds a byte to the send queue." alt="" coords="200,5,337,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,17,185,17,185,22,152,22"/>
+<area shape="rect" id="Node000003" href="$queue_8c.html#aa7982825b04c812a55cf357852d83207" title=" " alt="" coords="385,5,484,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,17,370,17,370,22,338,22"/>
+<area shape="rect" id="Node000004" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="532,5,614,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="485,17,517,17,517,22,485,22"/>
+</map>

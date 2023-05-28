@@ -1,0 +1,628 @@
+\doxysection{game.\+c File Reference}
+\hypertarget{game_8c}{}\label{game_8c}\index{game.c@{game.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \"{}game.\+h\"{}}\newline
+{\ttfamily \#include \"{}maps/map.\+h\"{}}\newline
+{\ttfamily \#include \"{}count\+\_\+down/count\+\_\+down.\+h\"{}}\newline
+{\ttfamily \#include \"{}drivers/rtc/rtc.\+h\"{}}\newline
+{\ttfamily \#include \"{}drivers/serial\+\_\+port/ser.\+h\"{}}\newline
+{\ttfamily \#include \"{}characters/character.\+h\"{}}\newline
+{\ttfamily \#include \"{}communication/communication.\+h\"{}}\newline
+{\ttfamily \#include \"{}drivers/serial\+\_\+port/uart.\+h\"{}}\newline
+Include dependency graph for game.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game_8c_aa19b202ec8bfc484a80caa3b5d445663}{game\+\_\+init}} (int player\+\_\+number)
+\item 
+int \mbox{\hyperlink{game_8c_abc1fb57f21dfdfe8414ed5ff0c744a10}{game\+\_\+exit}} ()
+\begin{DoxyCompactList}\small\item\em exits the game mode \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_a04e415c2c57bcb7efab2055169302eed}{game\+\_\+loop}} ()
+\begin{DoxyCompactList}\small\item\em creates a loop where the game will be played and where it detects all the drivers interruptions and process them controlling all the elements and the states of the game \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_a7c067f553f23ef1112d1a30aa6124cd1}{draw\+\_\+screen}} ()
+\begin{DoxyCompactList}\small\item\em call the functions to draw in the screen and controlls what needs to be drawn \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_ad7ca2d21a727f7d55afef2392de3b5f8}{draw\+\_\+main\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em draws the main menu and controlls if an option is chosen \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_ab3b5065e46ff95e9c36bcf387ae65ce2}{draw\+\_\+waiting\+\_\+player\+\_\+background}} ()
+\item 
+void \mbox{\hyperlink{game_8c_ab323971701b6e01aff44feeaa9475735}{draw\+\_\+ropes}} ()
+\begin{DoxyCompactList}\small\item\em Draws the ropes on the screen. And controlls whether or not the characters can or have cut them. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_a3cef68220fcc611902108d6f0159e50f}{draw\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em draws the elements of the game \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_ac581b9d6af85c4c35f9d423a966cba8e}{draw\+\_\+pause\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em draws the pause menu \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_adb16266bac82ba2376f626661c75a3ff}{draw\+\_\+game\+\_\+over}} ()
+\begin{DoxyCompactList}\small\item\em draws the game over screen and controlls if any of the options is chosen \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_a9b28a5527b28478822d9e3057018a991}{fireboy\+\_\+move}} (\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}} key)
+\begin{DoxyCompactList}\small\item\em moves the fireboy depending of the keyborad key \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_a20eb9add0344df232c6b9e6883506f65}{watergirl\+\_\+move}} (\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}} key)
+\begin{DoxyCompactList}\small\item\em moves the watergirl depending of the keyborad key \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a49f6d45fc3b252adda8895f21180ec70}{exit\+\_\+multiplayer}} ()
+\begin{DoxyCompactList}\small\item\em Exists multiplayer mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a0520354a211cab81d76e08490253c0c4}{handle\+\_\+remote\+\_\+player}} ()
+\begin{DoxyCompactList}\small\item\em Retrives information from the serial port to check what the remote player has done and replicates it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a474fd053b8445c36f24261dde7ae17cb}{start\+\_\+multiplayer}} ()
+\begin{DoxyCompactList}\small\item\em Starts multiplayer session. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_afd7728c9e6ae89e5932e641b54556aba}{exit\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Exists the game. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_ac979eefd2829522e5bde292d66cc2f23}{restart\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Restarts the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game_8c_a173b04e23cf4a7adefd6270ae84ec1cb}{frames\+\_\+per\+\_\+second}} = 60
+\item 
+int \mbox{\hyperlink{game_8c_a612981dddda556478c74123512c5fd1f}{current\+\_\+frame}} = 0
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{game_8c_a6f7e766d44058178f28200bc1fbdd7c4}{current\+\_\+map}}
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{game_8c_a31b58054ba61e6d08a8cc085d3719753}{map1}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{game_8c_a3c3f9b11f30efcaaea7455fd72ea7491}{irq\+\_\+mouse}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{game_8c_ac85fe64c6a12697cafee2e1a3e1de4c1}{irq\+\_\+timer}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{game_8c_ad94de15d99fb7e7c59ceaf11b348a26c}{irq\+\_\+keyboard}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{game_8c_a88c4246035b72d19a37fef92bb44deff}{irq\+\_\+ser}}
+\item 
+static bool \mbox{\hyperlink{game_8c_aacdb9743f34aaf8b1171d0544e6cb4bf}{control\+\_\+fireboy}} = true
+\item 
+static bool \mbox{\hyperlink{game_8c_a6ca9ab3ff201d095c7a555b357ec47c9}{control\+\_\+watergirl}} = true
+\item 
+static bool \mbox{\hyperlink{game_8c_ac9877f073f73ae2f5ec185b874468758}{multiplayer}} = false
+\item 
+static int \mbox{\hyperlink{game_8c_ae78f447e0fc84c538b91b0cc8c8a34fa}{player}}
+\item 
+\mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2}{game\+\_\+state}} \mbox{\hyperlink{game_8c_aa695ed09e3998fb66889f148925a12aa}{state}} = \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2ac22743f1fc74de09544ecc9bab74a17b}{MAIN\+\_\+\+MENU}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{game_8c_a3cef68220fcc611902108d6f0159e50f}\label{game_8c_a3cef68220fcc611902108d6f0159e50f} 
+\index{game.c@{game.c}!draw\_game@{draw\_game}}
+\index{draw\_game@{draw\_game}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_game()}{draw\_game()}}
+{\footnotesize\ttfamily int draw\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+draws the elements of the game 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a3cef68220fcc611902108d6f0159e50f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a3cef68220fcc611902108d6f0159e50f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_adb16266bac82ba2376f626661c75a3ff}\label{game_8c_adb16266bac82ba2376f626661c75a3ff} 
+\index{game.c@{game.c}!draw\_game\_over@{draw\_game\_over}}
+\index{draw\_game\_over@{draw\_game\_over}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_over()}{draw\_game\_over()}}
+{\footnotesize\ttfamily int draw\+\_\+game\+\_\+over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+draws the game over screen and controlls if any of the options is chosen 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_adb16266bac82ba2376f626661c75a3ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_adb16266bac82ba2376f626661c75a3ff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_ad7ca2d21a727f7d55afef2392de3b5f8}\label{game_8c_ad7ca2d21a727f7d55afef2392de3b5f8} 
+\index{game.c@{game.c}!draw\_main\_menu@{draw\_main\_menu}}
+\index{draw\_main\_menu@{draw\_main\_menu}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_main\_menu()}{draw\_main\_menu()}}
+{\footnotesize\ttfamily int draw\+\_\+main\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+draws the main menu and controlls if an option is chosen 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occur, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ad7ca2d21a727f7d55afef2392de3b5f8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ad7ca2d21a727f7d55afef2392de3b5f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_ac581b9d6af85c4c35f9d423a966cba8e}\label{game_8c_ac581b9d6af85c4c35f9d423a966cba8e} 
+\index{game.c@{game.c}!draw\_pause\_menu@{draw\_pause\_menu}}
+\index{draw\_pause\_menu@{draw\_pause\_menu}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_pause\_menu()}{draw\_pause\_menu()}}
+{\footnotesize\ttfamily int draw\+\_\+pause\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+draws the pause menu 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occur, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ac581b9d6af85c4c35f9d423a966cba8e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ac581b9d6af85c4c35f9d423a966cba8e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_ab323971701b6e01aff44feeaa9475735}\label{game_8c_ab323971701b6e01aff44feeaa9475735} 
+\index{game.c@{game.c}!draw\_ropes@{draw\_ropes}}
+\index{draw\_ropes@{draw\_ropes}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_ropes()}{draw\_ropes()}}
+{\footnotesize\ttfamily void draw\+\_\+ropes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the ropes on the screen. And controlls whether or not the characters can or have cut them. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ab323971701b6e01aff44feeaa9475735_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ab323971701b6e01aff44feeaa9475735_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_a7c067f553f23ef1112d1a30aa6124cd1}\label{game_8c_a7c067f553f23ef1112d1a30aa6124cd1} 
+\index{game.c@{game.c}!draw\_screen@{draw\_screen}}
+\index{draw\_screen@{draw\_screen}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_screen()}{draw\_screen()}}
+{\footnotesize\ttfamily int draw\+\_\+screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+call the functions to draw in the screen and controlls what needs to be drawn 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{game_8c_a7c067f553f23ef1112d1a30aa6124cd1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a7c067f553f23ef1112d1a30aa6124cd1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_ab3b5065e46ff95e9c36bcf387ae65ce2}\label{game_8c_ab3b5065e46ff95e9c36bcf387ae65ce2} 
+\index{game.c@{game.c}!draw\_waiting\_player\_background@{draw\_waiting\_player\_background}}
+\index{draw\_waiting\_player\_background@{draw\_waiting\_player\_background}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_waiting\_player\_background()}{draw\_waiting\_player\_background()}}
+{\footnotesize\ttfamily int draw\+\_\+waiting\+\_\+player\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ab3b5065e46ff95e9c36bcf387ae65ce2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ab3b5065e46ff95e9c36bcf387ae65ce2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_afd7728c9e6ae89e5932e641b54556aba}\label{game_8c_afd7728c9e6ae89e5932e641b54556aba} 
+\index{game.c@{game.c}!exit\_game@{exit\_game}}
+\index{exit\_game@{exit\_game}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{exit\_game()}{exit\_game()}}
+{\footnotesize\ttfamily int exit\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exists the game. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_afd7728c9e6ae89e5932e641b54556aba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_afd7728c9e6ae89e5932e641b54556aba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_a49f6d45fc3b252adda8895f21180ec70}\label{game_8c_a49f6d45fc3b252adda8895f21180ec70} 
+\index{game.c@{game.c}!exit\_multiplayer@{exit\_multiplayer}}
+\index{exit\_multiplayer@{exit\_multiplayer}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{exit\_multiplayer()}{exit\_multiplayer()}}
+{\footnotesize\ttfamily void exit\+\_\+multiplayer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exists multiplayer mode. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a49f6d45fc3b252adda8895f21180ec70_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a49f6d45fc3b252adda8895f21180ec70_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_a9b28a5527b28478822d9e3057018a991}\label{game_8c_a9b28a5527b28478822d9e3057018a991} 
+\index{game.c@{game.c}!fireboy\_move@{fireboy\_move}}
+\index{fireboy\_move@{fireboy\_move}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{fireboy\_move()}{fireboy\_move()}}
+{\footnotesize\ttfamily int fireboy\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}}}]{key }\end{DoxyParamCaption})}
+
+
+
+moves the fireboy depending of the keyborad key 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & keyboard key pressed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a9b28a5527b28478822d9e3057018a991_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a9b28a5527b28478822d9e3057018a991_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_abc1fb57f21dfdfe8414ed5ff0c744a10}\label{game_8c_abc1fb57f21dfdfe8414ed5ff0c744a10} 
+\index{game.c@{game.c}!game\_exit@{game\_exit}}
+\index{game\_exit@{game\_exit}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{game\_exit()}{game\_exit()}}
+{\footnotesize\ttfamily int game\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+exits the game mode 
+
+unsubscribes the drivers, change video mode to text mode, destroys pointers and clean alocated memory 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_abc1fb57f21dfdfe8414ed5ff0c744a10_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{game_8c_abc1fb57f21dfdfe8414ed5ff0c744a10_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_aa19b202ec8bfc484a80caa3b5d445663}\label{game_8c_aa19b202ec8bfc484a80caa3b5d445663} 
+\index{game.c@{game.c}!game\_init@{game\_init}}
+\index{game\_init@{game\_init}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{game\_init()}{game\_init()}}
+{\footnotesize\ttfamily int game\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+number }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_aa19b202ec8bfc484a80caa3b5d445663_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_a04e415c2c57bcb7efab2055169302eed}\label{game_8c_a04e415c2c57bcb7efab2055169302eed} 
+\index{game.c@{game.c}!game\_loop@{game\_loop}}
+\index{game\_loop@{game\_loop}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{game\_loop()}{game\_loop()}}
+{\footnotesize\ttfamily int game\+\_\+loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creates a loop where the game will be played and where it detects all the drivers interruptions and process them controlling all the elements and the states of the game 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{game_8c_a04e415c2c57bcb7efab2055169302eed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{game_8c_a04e415c2c57bcb7efab2055169302eed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_a0520354a211cab81d76e08490253c0c4}\label{game_8c_a0520354a211cab81d76e08490253c0c4} 
+\index{game.c@{game.c}!handle\_remote\_player@{handle\_remote\_player}}
+\index{handle\_remote\_player@{handle\_remote\_player}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{handle\_remote\_player()}{handle\_remote\_player()}}
+{\footnotesize\ttfamily void handle\+\_\+remote\+\_\+player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrives information from the serial port to check what the remote player has done and replicates it. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a0520354a211cab81d76e08490253c0c4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a0520354a211cab81d76e08490253c0c4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_ac979eefd2829522e5bde292d66cc2f23}\label{game_8c_ac979eefd2829522e5bde292d66cc2f23} 
+\index{game.c@{game.c}!restart\_game@{restart\_game}}
+\index{restart\_game@{restart\_game}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{restart\_game()}{restart\_game()}}
+{\footnotesize\ttfamily int restart\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Restarts the game. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ac979eefd2829522e5bde292d66cc2f23_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_ac979eefd2829522e5bde292d66cc2f23_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_a474fd053b8445c36f24261dde7ae17cb}\label{game_8c_a474fd053b8445c36f24261dde7ae17cb} 
+\index{game.c@{game.c}!start\_multiplayer@{start\_multiplayer}}
+\index{start\_multiplayer@{start\_multiplayer}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{start\_multiplayer()}{start\_multiplayer()}}
+{\footnotesize\ttfamily void start\+\_\+multiplayer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts multiplayer session. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a474fd053b8445c36f24261dde7ae17cb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{game_8c_a20eb9add0344df232c6b9e6883506f65}\label{game_8c_a20eb9add0344df232c6b9e6883506f65} 
+\index{game.c@{game.c}!watergirl\_move@{watergirl\_move}}
+\index{watergirl\_move@{watergirl\_move}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{watergirl\_move()}{watergirl\_move()}}
+{\footnotesize\ttfamily int watergirl\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}}}]{key }\end{DoxyParamCaption})}
+
+
+
+moves the watergirl depending of the keyborad key 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & keyboard key pressed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a20eb9add0344df232c6b9e6883506f65_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c_a20eb9add0344df232c6b9e6883506f65_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{game_8c_aacdb9743f34aaf8b1171d0544e6cb4bf}\label{game_8c_aacdb9743f34aaf8b1171d0544e6cb4bf} 
+\index{game.c@{game.c}!control\_fireboy@{control\_fireboy}}
+\index{control\_fireboy@{control\_fireboy}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{control\_fireboy}{control\_fireboy}}
+{\footnotesize\ttfamily bool control\+\_\+fireboy = true\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{game_8c_a6ca9ab3ff201d095c7a555b357ec47c9}\label{game_8c_a6ca9ab3ff201d095c7a555b357ec47c9} 
+\index{game.c@{game.c}!control\_watergirl@{control\_watergirl}}
+\index{control\_watergirl@{control\_watergirl}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{control\_watergirl}{control\_watergirl}}
+{\footnotesize\ttfamily bool control\+\_\+watergirl = true\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{game_8c_a612981dddda556478c74123512c5fd1f}\label{game_8c_a612981dddda556478c74123512c5fd1f} 
+\index{game.c@{game.c}!current\_frame@{current\_frame}}
+\index{current\_frame@{current\_frame}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{current\_frame}{current\_frame}}
+{\footnotesize\ttfamily int current\+\_\+frame = 0}
+
+\Hypertarget{game_8c_a6f7e766d44058178f28200bc1fbdd7c4}\label{game_8c_a6f7e766d44058178f28200bc1fbdd7c4} 
+\index{game.c@{game.c}!current\_map@{current\_map}}
+\index{current\_map@{current\_map}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{current\_map}{current\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}}\texorpdfstring{$\ast$}{*} current\+\_\+map\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{game_8c_a173b04e23cf4a7adefd6270ae84ec1cb}\label{game_8c_a173b04e23cf4a7adefd6270ae84ec1cb} 
+\index{game.c@{game.c}!frames\_per\_second@{frames\_per\_second}}
+\index{frames\_per\_second@{frames\_per\_second}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{frames\_per\_second}{frames\_per\_second}}
+{\footnotesize\ttfamily int frames\+\_\+per\+\_\+second = 60}
+
+\Hypertarget{game_8c_ad94de15d99fb7e7c59ceaf11b348a26c}\label{game_8c_ad94de15d99fb7e7c59ceaf11b348a26c} 
+\index{game.c@{game.c}!irq\_keyboard@{irq\_keyboard}}
+\index{irq\_keyboard@{irq\_keyboard}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{irq\_keyboard}{irq\_keyboard}}
+{\footnotesize\ttfamily uint8\+\_\+t irq\+\_\+keyboard}
+
+\Hypertarget{game_8c_a3c3f9b11f30efcaaea7455fd72ea7491}\label{game_8c_a3c3f9b11f30efcaaea7455fd72ea7491} 
+\index{game.c@{game.c}!irq\_mouse@{irq\_mouse}}
+\index{irq\_mouse@{irq\_mouse}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{irq\_mouse}{irq\_mouse}}
+{\footnotesize\ttfamily uint8\+\_\+t irq\+\_\+mouse}
+
+\Hypertarget{game_8c_a88c4246035b72d19a37fef92bb44deff}\label{game_8c_a88c4246035b72d19a37fef92bb44deff} 
+\index{game.c@{game.c}!irq\_ser@{irq\_ser}}
+\index{irq\_ser@{irq\_ser}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{irq\_ser}{irq\_ser}}
+{\footnotesize\ttfamily uint8\+\_\+t irq\+\_\+ser}
+
+\Hypertarget{game_8c_ac85fe64c6a12697cafee2e1a3e1de4c1}\label{game_8c_ac85fe64c6a12697cafee2e1a3e1de4c1} 
+\index{game.c@{game.c}!irq\_timer@{irq\_timer}}
+\index{irq\_timer@{irq\_timer}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{irq\_timer}{irq\_timer}}
+{\footnotesize\ttfamily uint8\+\_\+t irq\+\_\+timer}
+
+\Hypertarget{game_8c_a31b58054ba61e6d08a8cc085d3719753}\label{game_8c_a31b58054ba61e6d08a8cc085d3719753} 
+\index{game.c@{game.c}!map1@{map1}}
+\index{map1@{map1}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{map1}{map1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}}\texorpdfstring{$\ast$}{*} map1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{game_8c_ac9877f073f73ae2f5ec185b874468758}\label{game_8c_ac9877f073f73ae2f5ec185b874468758} 
+\index{game.c@{game.c}!multiplayer@{multiplayer}}
+\index{multiplayer@{multiplayer}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{multiplayer}{multiplayer}}
+{\footnotesize\ttfamily bool multiplayer = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{game_8c_ae78f447e0fc84c538b91b0cc8c8a34fa}\label{game_8c_ae78f447e0fc84c538b91b0cc8c8a34fa} 
+\index{game.c@{game.c}!player@{player}}
+\index{player@{player}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily int player\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{game_8c_aa695ed09e3998fb66889f148925a12aa}\label{game_8c_aa695ed09e3998fb66889f148925a12aa} 
+\index{game.c@{game.c}!state@{state}}
+\index{state@{state}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2}{game\+\_\+state}} state = \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2ac22743f1fc74de09544ecc9bab74a17b}{MAIN\+\_\+\+MENU}}}
+

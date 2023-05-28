@@ -1,0 +1,9 @@
+<map id="draw_character" name="draw_character">
+<area shape="rect" id="Node000001" title="Draws the character." alt="" coords="5,32,127,60"/>
+<area shape="rect" id="Node000002" href="$character_8c.html#a8b169546cf7af139aebb8d1983003e37" title="Updates the current character&#39;s sprite." alt="" coords="175,5,354,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,35,159,31,160,36,127,40"/>
+<area shape="rect" id="Node000003" href="$sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws a sprite." alt="" coords="216,57,313,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,51,201,61,201,66,127,56"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="402,57,537,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="313,69,387,69,387,74,313,74"/>
+</map>

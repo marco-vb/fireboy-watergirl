@@ -1,0 +1,5 @@
+<map id="clear_background" name="clear_background">
+<area shape="rect" id="Node000001" title="Clears all the buffers and the video memory." alt="" coords="5,5,142,33"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#ad4bb9a6cbe9640cf7f11f5ee54328ab9" title="Copies the information from the buffer to the video memory (double buffering technique)." alt="" coords="190,5,289,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,17,175,17,175,22,142,22"/>
+</map>

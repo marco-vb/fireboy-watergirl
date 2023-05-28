@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['i8042_2eh_0',['i8042.h',['../i8042_8h.html',1,'']]],
+  ['i8254_1',['i8254',['../group__i8254.html',1,'']]],
+  ['i8254_2eh_2',['i8254.h',['../i8254_8h.html',1,'']]],
+  ['ibf_5fempty_3',['ibf_empty',['../kbc_8c.html#ad50f5ccbc78138645f732dbd7a58a269',1,'ibf_empty():&#160;kbc.c'],['../kbc_8h.html#a033ac1e524d28bf42fbd9d9a83466a10',1,'ibf_empty():&#160;kbc.c']]],
+  ['ih_5ferr_4',['ih_err',['../ser_8c.html#a122d097cf75950366da57f5362d9d97a',1,'ser.c']]],
+  ['iir_5fchar_5ftimeout_5',['IIR_CHAR_TIMEOUT',['../uart_8h.html#a5ab0dd570adb416ffc4465c9a936bb09',1,'uart.h']]],
+  ['iir_5fdata_5ferr_6',['IIR_DATA_ERR',['../uart_8h.html#a86463d157e859f2bc966434d63c15bfd',1,'uart.h']]],
+  ['iir_5fdata_5freceived_7',['IIR_DATA_RECEIVED',['../uart_8h.html#ae2d663d55a363481336cd2ee71e77c83',1,'uart.h']]],
+  ['iir_5fint_5fstatus_8',['IIR_INT_STATUS',['../uart_8h.html#ac65813c244ad2f790ae499d066bdcbe6',1,'uart.h']]],
+  ['iir_5fstatus_5fread_9',['iir_status_read',['../ser_8c.html#a86d3431b0be2bb9050a984b6e1c2f312',1,'iir_status_read(uint8_t *irr_status):&#160;ser.c'],['../ser_8h.html#a86d3431b0be2bb9050a984b6e1c2f312',1,'iir_status_read(uint8_t *irr_status):&#160;ser.c']]],
+  ['iir_5ftransmit_5fempty_10',['IIR_TRANSMIT_EMPTY',['../uart_8h.html#a16cea583a03ef69b4cae9f8121338c87',1,'uart.h']]],
+  ['init_5ffifos_11',['init_fifos',['../ser_8c.html#a37cbaa2ee8bd0f17124505a0405caf12',1,'init_fifos():&#160;ser.c'],['../ser_8h.html#a37cbaa2ee8bd0f17124505a0405caf12',1,'init_fifos():&#160;ser.c']]],
+  ['init_5fqueues_12',['init_queues',['../ser_8c.html#a54c5c870213646cc6461a98208990d7e',1,'init_queues():&#160;ser.c'],['../ser_8h.html#a54c5c870213646cc6461a98208990d7e',1,'init_queues():&#160;ser.c']]],
+  ['int_5forigin_5fmask_13',['INT_ORIGIN_MASK',['../uart_8h.html#a40e0ff307445440efb3926d4975f8c54',1,'uart.h']]],
+  ['irq_5fkeyboard_14',['irq_keyboard',['../game_8c.html#ad94de15d99fb7e7c59ceaf11b348a26c',1,'game.c']]],
+  ['irq_5fmouse_15',['irq_mouse',['../game_8c.html#a3c3f9b11f30efcaaea7455fd72ea7491',1,'game.c']]],
+  ['irq_5fser_16',['irq_ser',['../game_8c.html#a88c4246035b72d19a37fef92bb44deff',1,'game.c']]],
+  ['irq_5ftimer_17',['irq_timer',['../game_8c.html#ac85fe64c6a12697cafee2e1a3e1de4c1',1,'game.c']]],
+  ['irqf_18',['IRQF',['../rtc_8h.html#a8565773f11252b9d615f1b12ac73032d',1,'rtc.h']]],
+  ['is_5fcut_19',['is_cut',['../structFalling__Block.html#a58edbf2aae437fac7237f1233dcf40e4',1,'Falling_Block']]],
+  ['is_5fempty_20',['is_empty',['../queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80',1,'is_empty(Queue *q):&#160;queue.c'],['../queue_8h.html#a1a03a0cff8f6b685beee30e08f3a3b80',1,'is_empty(Queue *q):&#160;queue.c']]],
+  ['is_5fon_5fground_21',['is_on_ground',['../structFalling__Block.html#ac8d8956cce1648a0757e431fd75e0953',1,'Falling_Block::is_on_ground'],['../character_8c.html#a1c090412145267c0cd7b206bf1748fce',1,'is_on_ground(Character *character):&#160;character.c'],['../character_8h.html#a6db7e6d4cce636393abc416e1186fa6d',1,'is_on_ground(Character *character):&#160;character.c']]]
+];

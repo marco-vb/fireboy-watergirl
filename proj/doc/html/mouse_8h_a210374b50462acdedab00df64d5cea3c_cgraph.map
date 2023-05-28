@@ -1,0 +1,20 @@
+<map id="mouse_ih" name="mouse_ih">
+<area shape="rect" id="Node000001" title="Mouse interrupt handler. Reads data from the mouse and updates the packet." alt="" coords="5,57,90,85"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html#a478e9d9e6e396379599060715e26730a" title="Gets the status from the keyboard register." alt="" coords="138,5,257,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,54,141,36,143,41,91,59"/>
+<area shape="rect" id="Node000004" href="$kbc_8c.html#a638e7f85ff3800aaf17c95cde1760865" title="Reads a byte from the output buffer." alt="" coords="139,57,256,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="90,69,125,69,125,74,90,74"/>
+<area shape="rect" id="Node000005" href="$mouse_8c.html#a42b4a9251d4782a0ee0fd5ccaa9fc809" title="Reads a byte received from the mouse and updates the packet accordingly." alt="" coords="144,109,251,137"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="91,83,143,102,141,107,89,88"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="333,19,431,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="258,21,318,25,318,31,257,26"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="255,56,318,43,319,48,256,62"/>
+<area shape="rect" id="Node000006" href="$mouse_8c.html#a96ec8f04c0a326b8c26c498b98f5244a" title="Builds the mouse packet from the received bytes." alt="" coords="305,96,459,124"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="251,117,290,114,290,119,251,122"/>
+<area shape="rect" id="Node000007" href="$mouse_8c.html#ac171a0597dea4c379525d0c922ff1ce5" title="Updates the mouse position based on the delta values." alt="" coords="309,148,456,176"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="251,132,299,142,298,147,250,137"/>
+<area shape="rect" id="Node000008" href="$graphics_8c.html#a96831d611df1b6f4402dec1da8eaaef5" title="Returns the horizontal resolution of the screen." alt="" coords="507,121,585,149"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="456,147,492,141,493,146,457,152"/>
+<area shape="rect" id="Node000009" href="$graphics_8c.html#adbb976e8111bdebbf31503894844e592" title="Returns the vertical resolution of the screen." alt="" coords="507,173,585,201"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="456,171,493,176,492,182,456,176"/>
+</map>

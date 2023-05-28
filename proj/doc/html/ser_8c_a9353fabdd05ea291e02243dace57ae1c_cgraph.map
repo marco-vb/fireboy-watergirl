@@ -1,0 +1,40 @@
+<map id="ser_ih" name="ser_ih">
+<area shape="rect" id="Node000001" title="Interrupt handler for the serial port." alt="" coords="5,194,66,222"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a221cfb1ba6e15d4bb8846a9222d1348a" title="Retrieves the data errors from the Line Status Register (LSR)." alt="" coords="114,41,237,68"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="41,192,67,141,88,112,112,85,125,74,128,78,115,88,92,115,72,144,45,195"/>
+<area shape="rect" id="Node000003" href="$ser_8c.html#a0a213756c8e2f84975a76c4bc6e2933c" title="Reads the Line Status Register (LSR) value." alt="" coords="295,15,368,43"/>
+<area shape="poly" id="edge15_Node000001_Node000003" title=" " alt="" coords="35,193,41,158,53,111,76,64,92,44,112,27,153,9,198,3,242,5,281,12,280,17,241,11,198,8,155,14,115,31,96,47,80,67,58,113,46,159,41,194"/>
+<area shape="rect" id="Node000005" href="$ser_8c.html#a20eeb3a045e5f52f12061c2cdf22c9c2" title="Handles errors encountered during communication." alt="" coords="120,399,231,427"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="42,221,49,254,63,297,85,344,116,385,120,389,117,393,112,388,80,346,58,299,44,255,37,222"/>
+<area shape="rect" id="Node000006" href="$ser_8c.html#a86d3431b0be2bb9050a984b6e1c2f312" title="Reads the interrupt identification register (IIR) status." alt="" coords="425,66,543,94"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="56,191,113,161,191,135,271,114,410,87,411,92,272,119,192,140,115,166,59,196"/>
+<area shape="rect" id="Node000007" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="443,322,525,350"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="67,209,203,234,291,255,378,281,446,312,444,317,376,286,289,260,202,239,66,215"/>
+<area shape="rect" id="Node000008" href="$queue_8c.html#aa7982825b04c812a55cf357852d83207" title=" " alt="" coords="126,347,225,375"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="45,221,70,275,91,305,115,333,122,338,119,342,112,336,86,309,66,277,40,223"/>
+<area shape="rect" id="Node000009" href="$ser_8c.html#ad6ce7fc337012f7a60f51e0747291ada" title="Reads a byte from the UART receive buffer." alt="" coords="288,142,374,170"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="66,200,273,163,274,168,66,205"/>
+<area shape="rect" id="Node000012" href="$ser_8c.html#afbefc34bc41c323555ca4f834fc7eb7a" title="Sends bytes from the send queue to the UART transmit buffer." alt="" coords="128,295,223,323"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="52,220,81,247,115,275,132,286,129,290,112,279,77,251,49,224"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,42,280,35,281,40,238,47"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="591,91,689,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="368,27,449,33,497,40,543,52,576,65,606,81,604,86,574,70,542,57,496,46,449,38,368,32"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="544,87,576,92,575,97,543,92"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="215,373,239,386,253,398,262,409,271,420,286,428,311,436,331,439,352,436,376,428,402,415,425,397,462,359,466,363,429,401,405,419,378,433,353,441,331,444,310,441,284,433,268,424,258,413,249,401,235,390,213,378"/>
+<area shape="poly" id="edge13_Node000009_Node000004" title=" " alt="" coords="374,146,575,113,576,118,375,152"/>
+<area shape="rect" id="Node000010" href="$ser_8c.html#ad96ee630b8a3c428a3ac10c3b8bad01d" title="Reads the Line Control Register (LCR) value." alt="" coords="447,167,521,195"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="375,160,433,170,432,175,374,166"/>
+<area shape="rect" id="Node000011" href="$ser_8c.html#a406e6517544d394bb3b98ec862d96296" title="Writes a value to the Line Control Register (LCR)." alt="" coords="445,219,523,247"/>
+<area shape="poly" id="edge14_Node000009_Node000011" title=" " alt="" coords="359,168,427,204,439,210,437,215,424,209,357,173"/>
+<area shape="poly" id="edge12_Node000010_Node000004" title=" " alt="" coords="513,164,595,124,598,128,516,169"/>
+<area shape="poly" id="edge18_Node000012_Node000007" title=" " alt="" coords="217,321,239,334,253,348,262,362,271,374,286,384,307,390,328,392,372,387,413,373,447,355,450,360,415,378,373,392,328,398,306,396,284,389,267,378,258,365,249,351,235,338,214,326"/>
+<area shape="rect" id="Node000013" href="$queue_8c.html#a32df32dccfc5eadc233531804f0cb305" title=" " alt="" coords="305,347,357,375"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="220,321,292,345,290,351,218,326"/>
+<area shape="rect" id="Node000014" href="$queue_8c.html#adf4516721a62bf0453cab358d2491f25" title=" " alt="" coords="285,295,377,323"/>
+<area shape="poly" id="edge19_Node000012_Node000014" title=" " alt="" coords="223,306,270,306,270,312,223,312"/>
+<area shape="rect" id="Node000015" href="$ser_8c.html#a7d5928b9bc756afa235f21d8532b0a1e" title="Sends a byte through the UART transmit buffer." alt="" coords="287,194,375,222"/>
+<area shape="poly" id="edge21_Node000012_Node000015" title=" " alt="" coords="196,293,295,228,298,232,199,297"/>
+<area shape="poly" id="edge20_Node000014_Node000007" title=" " alt="" coords="378,315,429,324,428,329,377,320"/>
+<area shape="poly" id="edge22_Node000015_Node000010" title=" " alt="" coords="375,197,432,187,433,193,376,203"/>
+<area shape="poly" id="edge23_Node000015_Node000011" title=" " alt="" coords="376,213,431,222,430,227,375,218"/>
+</map>

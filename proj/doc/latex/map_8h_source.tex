@@ -1,0 +1,75 @@
+\doxysection{map.\+h}
+\hypertarget{map_8h_source}{}\label{map_8h_source}\index{maps/map.h@{maps/map.h}}
+\mbox{\hyperlink{map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_MAP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_MAP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../drivers/graphics/graphics.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../sprites/sprite.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../sprites/falling\_block.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../objects/block.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/level\_background1.xpm"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/level\_background2.xpm"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/level\_background3.xpm"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/wall1.xpm"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/wall2.xpm"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/lava1.xpm"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/lava2.xpm"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/lava3.xpm"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/water1.xpm"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/water2.xpm"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/water3.xpm"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/rope.xpm"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/fire\_door1.xpm"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/fire\_door2.xpm"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/fire\_door3.xpm"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/fire\_door4.xpm"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/water\_door1.xpm"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/water\_door2.xpm"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/water\_door3.xpm"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/water\_door4.xpm"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/poison1.xpm"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/poison2.xpm"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}../xpm/background/poison3.xpm"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ MAPS\_PATH\ "{}/home/lcom/labs/proj/src/maps/map"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ MAPS\_EXT\ "{}.txt"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ TILE\_SIZE\ 32}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{map_8h_ad22af15c559f183da6e5602edb9a215a}{ropes}}[10][10];}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMap_a6b8ab15ba5a4d4b50e17ce50e83a66cb}{x}},\ \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}};}
+\DoxyCodeLine{00046\ \ \ \ \ uint32\_t\ rows,\ \mbox{\hyperlink{structMap_a663ef5b4294b16964081f3cd3e2a0c88}{columns}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structMap_a024a9dac09e13b4e2f062543ce0bf960}{map}};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{structFalling__Block}{Falling\_Block}}*\ blocks[10];}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMap_a241e26c44b88da2b42b54907d0fa4504}{n\_blocks}};}
+\DoxyCodeLine{00050\ \}\ \mbox{\hyperlink{structMap}{Map}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \mbox{\hyperlink{structMap}{Map}}*\ \mbox{\hyperlink{map_8h_a31b58054ba61e6d08a8cc085d3719753}{map1}};}
+\DoxyCodeLine{00053\ \mbox{\hyperlink{structMap}{Map}}*\ \mbox{\hyperlink{map_8h_a9068c7b10e396fb7e675b7c9ee407e69}{map2}};}
+\DoxyCodeLine{00054\ \mbox{\hyperlink{structMap}{Map}}*\ \mbox{\hyperlink{map_8h_a9d9924b9069ebff409f482b1ced80349}{map3}};}
+\DoxyCodeLine{00055\ \mbox{\hyperlink{structMap}{Map}}*\ \mbox{\hyperlink{map_8h_a6f7e766d44058178f28200bc1fbdd7c4}{current\_map}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00063\ \mbox{\hyperlink{structMap}{Map}}*\ \mbox{\hyperlink{map_8h_a7533eb7fa274ce37104956f58a8fe0e9}{create\_map}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{map_8h_a5d4b5327269cf4e9b9bbad4265e5b922}{load\_maps}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{map_8h_a731238211da72ff2ea121384fa10039b}{draw\_map}}(\mbox{\hyperlink{structMap}{Map}}*\ map);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{map_8h_ad7d1e2595412e612be34597c3fb8db8d}{nextLevel}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{map_8h_a2117f266cf32d37631770302fe987115}{get\_tile}}(\mbox{\hyperlink{structMap}{Map}}*\ map,\ u\_int32\_t\ \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ u\_int32\_t\ \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ void\ (\mbox{\hyperlink{map_8h_a1d1326355ebc52cb1eaca3531963e323}{reset\_falling\_blocks}})();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_MAP\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

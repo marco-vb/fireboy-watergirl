@@ -1,0 +1,12 @@
+<map id="destroy_queues" name="destroy_queues">
+<area shape="rect" id="Node000001" title="Destroys the send and receive queues." alt="" coords="5,5,130,33"/>
+<area shape="rect" id="Node000002" href="$queue_8c.html#a46a50b33e476d55cabbb406086bf2cda" title=" " alt="" coords="178,5,295,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,17,163,17,163,22,130,22"/>
+<area shape="rect" id="Node000003" href="$queue_8c.html#a119efee68b4d232dd411a5ca2ca3327b" title=" " alt="" coords="343,5,443,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,17,328,17,328,22,296,22"/>
+<area shape="rect" id="Node000004" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="632,5,713,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="444,17,617,17,617,22,444,22"/>
+<area shape="rect" id="Node000005" href="$queue_8c.html#adf4516721a62bf0453cab358d2491f25" title=" " alt="" coords="491,31,584,58"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="444,25,477,31,476,36,443,31"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="584,33,616,27,617,32,585,38"/>
+</map>

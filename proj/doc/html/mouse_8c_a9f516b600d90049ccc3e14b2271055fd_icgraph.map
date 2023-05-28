@@ -1,0 +1,16 @@
+<map id="mouse_lclick_sprite" name="mouse_lclick_sprite">
+<area shape="rect" id="Node000001" title="Checks if the left mouse button is clicked while over the specified sprite." alt="" coords="797,32,947,60"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#ad7ca2d21a727f7d55afef2392de3b5f8" title="draws the main menu and controlls if an option is chosen" alt="" coords="467,5,605,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="782,41,605,27,606,22,782,36"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#ab323971701b6e01aff44feeaa9475735" title="Draws the ropes on the screen. And controlls whether or not the characters can or have cut them." alt="" coords="653,57,749,85"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="783,62,750,67,749,61,782,57"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,32,419,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="453,35,420,40,419,35,452,30"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,32,268,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="301,49,269,49,269,43,301,43"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,32,127,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="160,49,127,49,127,43,160,43"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#a3cef68220fcc611902108d6f0159e50f" title="draws the elements of the game" alt="" coords="487,57,585,85"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="638,74,585,74,585,69,638,69"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="472,64,419,56,420,51,473,59"/>
+</map>

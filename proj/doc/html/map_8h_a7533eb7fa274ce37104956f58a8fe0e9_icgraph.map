@@ -1,0 +1,7 @@
+<map id="create_map" name="create_map">
+<area shape="rect" id="Node000001" title="Creates a map corresponding to the given level." alt="" coords="280,5,378,33"/>
+<area shape="rect" id="Node000002" href="$map_8c.html#a8ff7ff301aba3547f286e2e04fac812b" title="Loads all the maps." alt="" coords="140,5,232,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="265,22,232,22,232,17,265,17"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#aa19b202ec8bfc484a80caa3b5d445663" title=" " alt="" coords="5,5,92,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="125,22,92,22,92,17,125,17"/>
+</map>

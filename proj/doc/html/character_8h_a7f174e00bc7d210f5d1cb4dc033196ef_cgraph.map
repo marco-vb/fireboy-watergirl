@@ -1,0 +1,11 @@
+<map id="draw_falling_blocks" name="draw_falling_blocks">
+<area shape="rect" id="Node000001" title="Moves blocks that are falling, stops all blocks that have hit the ground and draws all the blocks." alt="" coords="5,32,156,60"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws a sprite." alt="" coords="204,5,301,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,32,189,26,189,32,156,37"/>
+<area shape="rect" id="Node000004" href="$character_8c.html#af1f79d19ce37d907109cac4428d1a9e9" title="Checks if block hit the ground." alt="" coords="207,57,298,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="156,54,193,60,192,65,156,60"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="349,5,484,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,17,335,17,335,22,301,22"/>
+<area shape="rect" id="Node000005" href="$map_8c.html#a2117f266cf32d37631770302fe987115" title="Returns the letter corresponding to the tile at the given position on the map." alt="" coords="382,57,452,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="298,69,367,69,367,74,298,74"/>
+</map>

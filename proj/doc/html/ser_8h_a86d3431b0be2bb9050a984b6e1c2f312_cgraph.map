@@ -1,0 +1,5 @@
+<map id="iir_status_read" name="iir_status_read">
+<area shape="rect" id="Node000001" title="Reads the interrupt identification register (IIR) status." alt="" coords="5,5,123,33"/>
+<area shape="rect" id="Node000002" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="171,5,269,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,17,156,17,156,22,123,22"/>
+</map>

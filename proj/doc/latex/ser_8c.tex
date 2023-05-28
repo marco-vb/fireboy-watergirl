@@ -1,0 +1,984 @@
+\doxysection{drivers/serial\+\_\+port/ser.c File Reference}
+\hypertarget{ser_8c}{}\label{ser_8c}\index{drivers/serial\_port/ser.c@{drivers/serial\_port/ser.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \"{}ser.\+h\"{}}\newline
+{\ttfamily \#include \"{}uart.\+h\"{}}\newline
+{\ttfamily \#include \"{}../queue.\+h\"{}}\newline
+Include dependency graph for ser.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{ser_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ser_8c_a828235322fd790c645629859eace5270}{ser\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the serial port by setting up its parameters, bit rate, interrupts, and FIFOs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ser_8c_a54c5c870213646cc6461a98208990d7e}{init\+\_\+queues}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the send and receive queues. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ser_8c_a6d0537e7d115b0aa6bf6961f4a9a28dd}{clear\+\_\+queues}} ()
+\begin{DoxyCompactList}\small\item\em Clears the send and receive queues. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ser_8c_a7ba113911835a0150f712dd95fd2f7f4}{destroy\+\_\+queues}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the send and receive queues. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{ser_8c_ae569d91a2c2daa3f70035e54f5734340}{receive\+\_\+queue\+\_\+pop}} ()
+\begin{DoxyCompactList}\small\item\em Removes and returns the front element from the receive queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ser_8c_a7c232bfe6e9ff822db3f9135e41bb623}{send\+\_\+queue\+\_\+push}} (uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Adds a byte to the send queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ser_8c_ac744c756a04d5f3baf68ea0ffa5dff21}{receive\+\_\+queue\+\_\+is\+\_\+empty}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the receive queue is empty. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ser_8c_aed2f6f42744701ff0ad54a7638018721}{send\+\_\+queue\+\_\+is\+\_\+empty}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the send queue is empty. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{ser_8c_a2eff397867945c80b90829c73420b9dd}{receive\+\_\+queue\+\_\+front}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the value of the front element in the receive queue without removing it. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{ser_8c_a2c7f265ecac6d3de66c68d291b3271a6}{receive\+\_\+queue\+\_\+size}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of elements in the receive queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ser_8c_a44f70f30a4b7f976edc9db4a54782207}{transmitter\+\_\+ready}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the transmitter is ready to send data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_aeaaafa26a7c61a49c53eb73daa5b0c83}{check\+\_\+ih\+\_\+err}} ()
+\item 
+int \mbox{\hyperlink{ser_8c_ad9df9c87c58c3846836ae0a9b365d573}{ser\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes to interrupts from the serial port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a7d7df555d50a59b9ee60efb23e95d550}{ser\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes from interrupts from the serial port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a1cafe9a07f13a56805639db7c5d6f273}{ser\+\_\+enable\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Enables interrupts for the serial port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a61d67b678980744a1e3e51dd13f51ac0}{ser\+\_\+conf}} (uint8\+\_\+t bits, uint8\+\_\+t stop, uint8\+\_\+t par\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Configures the serial port parameters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a34638d3bf7213fabe13ebe6909bf0df6}{bit\+\_\+rate\+\_\+conf}} (uint32\+\_\+t bit\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Configures the bit rate for the serial port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a37cbaa2ee8bd0f17124505a0405caf12}{init\+\_\+fifos}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the FIFOs of the serial port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_ad96ee630b8a3c428a3ac10c3b8bad01d}{read\+\_\+lcr}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}conf)
+\begin{DoxyCompactList}\small\item\em Reads the Line Control Register (LCR) value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a406e6517544d394bb3b98ec862d96296}{write\+\_\+lcr}} (uint8\+\_\+t conf)
+\begin{DoxyCompactList}\small\item\em Writes a value to the Line Control Register (LCR). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a86d3431b0be2bb9050a984b6e1c2f312}{iir\+\_\+status\+\_\+read}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}irr\+\_\+status)
+\begin{DoxyCompactList}\small\item\em Reads the interrupt identification register (IIR) status. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a0a213756c8e2f84975a76c4bc6e2933c}{read\+\_\+lsr}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}status)
+\begin{DoxyCompactList}\small\item\em Reads the Line Status Register (LSR) value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a221cfb1ba6e15d4bb8846a9222d1348a}{get\+\_\+data\+\_\+errors}} (int errors\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Retrieves the data errors from the Line Status Register (LSR). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a20eeb3a045e5f52f12061c2cdf22c9c2}{handle\+\_\+errors}} (int errors\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Handles errors encountered during communication. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_ad6ce7fc337012f7a60f51e0747291ada}{read\+\_\+byte}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Reads a byte from the UART receive buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a7d5928b9bc756afa235f21d8532b0a1e}{send\+\_\+byte}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Sends a byte through the UART transmit buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_afbefc34bc41c323555ca4f834fc7eb7a}{send\+\_\+bytes}} ()
+\begin{DoxyCompactList}\small\item\em Sends bytes from the send queue to the UART transmit buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ser_8c_a9353fabdd05ea291e02243dace57ae1c}{ser\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Interrupt handler for the serial port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a5877d372532a0bf80d6322c885655089}{clear\+\_\+fifos}} ()
+\begin{DoxyCompactList}\small\item\em Clears the FIFOs of the serial port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ser_8c_a6ad4b00058cc8eb30187b95d34edd3f9}{receive\+\_\+queue\+\_\+push}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Adds a byte to the receive queue. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ser_8c_a04849a384fadcd26c6c1dc5814d97a37}{check\+\_\+transmitter}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{ser_8c_a7754579d4c88282fd9047ac5adfc447b}{hook\+\_\+ser}} = 3
+\item 
+static int \mbox{\hyperlink{ser_8c_a122d097cf75950366da57f5362d9d97a}{ih\+\_\+err}} = 0
+\item 
+static bool \mbox{\hyperlink{ser_8c_a1b20a7c2dd7dfebe93282fc9816e7cd4}{ready\+\_\+to\+\_\+send}} = true
+\item 
+static struct \mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ser_8c_aa361a3d64df3902ba6df804eef24ca94}{queue\+\_\+send}} = NULL
+\item 
+static struct \mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{ser_8c_aafb265d77380923c46f802f185798947}{queue\+\_\+receive}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ser_8c_a34638d3bf7213fabe13ebe6909bf0df6}\label{ser_8c_a34638d3bf7213fabe13ebe6909bf0df6} 
+\index{ser.c@{ser.c}!bit\_rate\_conf@{bit\_rate\_conf}}
+\index{bit\_rate\_conf@{bit\_rate\_conf}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{bit\_rate\_conf()}{bit\_rate\_conf()}}
+{\footnotesize\ttfamily int bit\+\_\+rate\+\_\+conf (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{bit\+\_\+rate }\end{DoxyParamCaption})}
+
+
+
+Configures the bit rate for the serial port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+rate} & The desired bit rate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a34638d3bf7213fabe13ebe6909bf0df6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{ser_8c_a34638d3bf7213fabe13ebe6909bf0df6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_aeaaafa26a7c61a49c53eb73daa5b0c83}\label{ser_8c_aeaaafa26a7c61a49c53eb73daa5b0c83} 
+\index{ser.c@{ser.c}!check\_ih\_err@{check\_ih\_err}}
+\index{check\_ih\_err@{check\_ih\_err}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{check\_ih\_err()}{check\_ih\_err()}}
+{\footnotesize\ttfamily int check\+\_\+ih\+\_\+err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_aeaaafa26a7c61a49c53eb73daa5b0c83_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a04849a384fadcd26c6c1dc5814d97a37}\label{ser_8c_a04849a384fadcd26c6c1dc5814d97a37} 
+\index{ser.c@{ser.c}!check\_transmitter@{check\_transmitter}}
+\index{check\_transmitter@{check\_transmitter}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{check\_transmitter()}{check\_transmitter()}}
+{\footnotesize\ttfamily int check\+\_\+transmitter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a04849a384fadcd26c6c1dc5814d97a37_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a04849a384fadcd26c6c1dc5814d97a37_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a5877d372532a0bf80d6322c885655089}\label{ser_8c_a5877d372532a0bf80d6322c885655089} 
+\index{ser.c@{ser.c}!clear\_fifos@{clear\_fifos}}
+\index{clear\_fifos@{clear\_fifos}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{clear\_fifos()}{clear\_fifos()}}
+{\footnotesize\ttfamily int clear\+\_\+fifos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the FIFOs of the serial port. 
+
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a5877d372532a0bf80d6322c885655089_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a6d0537e7d115b0aa6bf6961f4a9a28dd}\label{ser_8c_a6d0537e7d115b0aa6bf6961f4a9a28dd} 
+\index{ser.c@{ser.c}!clear\_queues@{clear\_queues}}
+\index{clear\_queues@{clear\_queues}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{clear\_queues()}{clear\_queues()}}
+{\footnotesize\ttfamily void clear\+\_\+queues (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the send and receive queues. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a6d0537e7d115b0aa6bf6961f4a9a28dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a6d0537e7d115b0aa6bf6961f4a9a28dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a7ba113911835a0150f712dd95fd2f7f4}\label{ser_8c_a7ba113911835a0150f712dd95fd2f7f4} 
+\index{ser.c@{ser.c}!destroy\_queues@{destroy\_queues}}
+\index{destroy\_queues@{destroy\_queues}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_queues()}{destroy\_queues()}}
+{\footnotesize\ttfamily void destroy\+\_\+queues (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the send and receive queues. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a7ba113911835a0150f712dd95fd2f7f4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a221cfb1ba6e15d4bb8846a9222d1348a}\label{ser_8c_a221cfb1ba6e15d4bb8846a9222d1348a} 
+\index{ser.c@{ser.c}!get\_data\_errors@{get\_data\_errors}}
+\index{get\_data\_errors@{get\_data\_errors}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{get\_data\_errors()}{get\_data\_errors()}}
+{\footnotesize\ttfamily int get\+\_\+data\+\_\+errors (\begin{DoxyParamCaption}\item[{int}]{errors\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Retrieves the data errors from the Line Status Register (LSR). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em errors} & Array to store the data errors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a221cfb1ba6e15d4bb8846a9222d1348a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a221cfb1ba6e15d4bb8846a9222d1348a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a20eeb3a045e5f52f12061c2cdf22c9c2}\label{ser_8c_a20eeb3a045e5f52f12061c2cdf22c9c2} 
+\index{ser.c@{ser.c}!handle\_errors@{handle\_errors}}
+\index{handle\_errors@{handle\_errors}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{handle\_errors()}{handle\_errors()}}
+{\footnotesize\ttfamily int handle\+\_\+errors (\begin{DoxyParamCaption}\item[{int}]{errors\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Handles errors encountered during communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em errors} & Array of data errors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a20eeb3a045e5f52f12061c2cdf22c9c2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a86d3431b0be2bb9050a984b6e1c2f312}\label{ser_8c_a86d3431b0be2bb9050a984b6e1c2f312} 
+\index{ser.c@{ser.c}!iir\_status\_read@{iir\_status\_read}}
+\index{iir\_status\_read@{iir\_status\_read}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{iir\_status\_read()}{iir\_status\_read()}}
+{\footnotesize\ttfamily int iir\+\_\+status\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{irr\+\_\+status }\end{DoxyParamCaption})}
+
+
+
+Reads the interrupt identification register (IIR) status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em irr\+\_\+status} & Pointer to store the read IIR status. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{ser_8c_a86d3431b0be2bb9050a984b6e1c2f312_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a86d3431b0be2bb9050a984b6e1c2f312_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a37cbaa2ee8bd0f17124505a0405caf12}\label{ser_8c_a37cbaa2ee8bd0f17124505a0405caf12} 
+\index{ser.c@{ser.c}!init\_fifos@{init\_fifos}}
+\index{init\_fifos@{init\_fifos}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{init\_fifos()}{init\_fifos()}}
+{\footnotesize\ttfamily int init\+\_\+fifos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the FIFOs of the serial port. 
+
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{ser_8c_a37cbaa2ee8bd0f17124505a0405caf12_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a54c5c870213646cc6461a98208990d7e}\label{ser_8c_a54c5c870213646cc6461a98208990d7e} 
+\index{ser.c@{ser.c}!init\_queues@{init\_queues}}
+\index{init\_queues@{init\_queues}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{init\_queues()}{init\_queues()}}
+{\footnotesize\ttfamily void init\+\_\+queues (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the send and receive queues. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{ser_8c_a54c5c870213646cc6461a98208990d7e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{ser_8c_a54c5c870213646cc6461a98208990d7e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_ad6ce7fc337012f7a60f51e0747291ada}\label{ser_8c_ad6ce7fc337012f7a60f51e0747291ada} 
+\index{ser.c@{ser.c}!read\_byte@{read\_byte}}
+\index{read\_byte@{read\_byte}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{read\_byte()}{read\_byte()}}
+{\footnotesize\ttfamily int read\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Reads a byte from the UART receive buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to store the read byte. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{ser_8c_ad6ce7fc337012f7a60f51e0747291ada_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_ad6ce7fc337012f7a60f51e0747291ada_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_ad96ee630b8a3c428a3ac10c3b8bad01d}\label{ser_8c_ad96ee630b8a3c428a3ac10c3b8bad01d} 
+\index{ser.c@{ser.c}!read\_lcr@{read\_lcr}}
+\index{read\_lcr@{read\_lcr}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{read\_lcr()}{read\_lcr()}}
+{\footnotesize\ttfamily int read\+\_\+lcr (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{conf }\end{DoxyParamCaption})}
+
+
+
+Reads the Line Control Register (LCR) value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conf} & Pointer to store the read LCR value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{ser_8c_ad96ee630b8a3c428a3ac10c3b8bad01d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_ad96ee630b8a3c428a3ac10c3b8bad01d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a0a213756c8e2f84975a76c4bc6e2933c}\label{ser_8c_a0a213756c8e2f84975a76c4bc6e2933c} 
+\index{ser.c@{ser.c}!read\_lsr@{read\_lsr}}
+\index{read\_lsr@{read\_lsr}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{read\_lsr()}{read\_lsr()}}
+{\footnotesize\ttfamily int read\+\_\+lsr (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{status }\end{DoxyParamCaption})}
+
+
+
+Reads the Line Status Register (LSR) value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Pointer to store the read LSR value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{ser_8c_a0a213756c8e2f84975a76c4bc6e2933c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a0a213756c8e2f84975a76c4bc6e2933c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a2eff397867945c80b90829c73420b9dd}\label{ser_8c_a2eff397867945c80b90829c73420b9dd} 
+\index{ser.c@{ser.c}!receive\_queue\_front@{receive\_queue\_front}}
+\index{receive\_queue\_front@{receive\_queue\_front}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{receive\_queue\_front()}{receive\_queue\_front()}}
+{\footnotesize\ttfamily uint8\+\_\+t receive\+\_\+queue\+\_\+front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the value of the front element in the receive queue without removing it. 
+
+\begin{DoxyReturn}{Returns}
+The value of the front element in the receive queue. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{ser_8c_a2eff397867945c80b90829c73420b9dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a2eff397867945c80b90829c73420b9dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_ac744c756a04d5f3baf68ea0ffa5dff21}\label{ser_8c_ac744c756a04d5f3baf68ea0ffa5dff21} 
+\index{ser.c@{ser.c}!receive\_queue\_is\_empty@{receive\_queue\_is\_empty}}
+\index{receive\_queue\_is\_empty@{receive\_queue\_is\_empty}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{receive\_queue\_is\_empty()}{receive\_queue\_is\_empty()}}
+{\footnotesize\ttfamily bool receive\+\_\+queue\+\_\+is\+\_\+empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the receive queue is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the receive queue is empty, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{ser_8c_ac744c756a04d5f3baf68ea0ffa5dff21_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_ac744c756a04d5f3baf68ea0ffa5dff21_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_ae569d91a2c2daa3f70035e54f5734340}\label{ser_8c_ae569d91a2c2daa3f70035e54f5734340} 
+\index{ser.c@{ser.c}!receive\_queue\_pop@{receive\_queue\_pop}}
+\index{receive\_queue\_pop@{receive\_queue\_pop}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{receive\_queue\_pop()}{receive\_queue\_pop()}}
+{\footnotesize\ttfamily uint8\+\_\+t receive\+\_\+queue\+\_\+pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes and returns the front element from the receive queue. 
+
+\begin{DoxyReturn}{Returns}
+The value of the front element in the receive queue. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_ae569d91a2c2daa3f70035e54f5734340_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_ae569d91a2c2daa3f70035e54f5734340_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a6ad4b00058cc8eb30187b95d34edd3f9}\label{ser_8c_a6ad4b00058cc8eb30187b95d34edd3f9} 
+\index{ser.c@{ser.c}!receive\_queue\_push@{receive\_queue\_push}}
+\index{receive\_queue\_push@{receive\_queue\_push}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{receive\_queue\_push()}{receive\_queue\_push()}}
+{\footnotesize\ttfamily void receive\+\_\+queue\+\_\+push (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Adds a byte to the receive queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The byte to be added to the receive queue. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a6ad4b00058cc8eb30187b95d34edd3f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a6ad4b00058cc8eb30187b95d34edd3f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a2c7f265ecac6d3de66c68d291b3271a6}\label{ser_8c_a2c7f265ecac6d3de66c68d291b3271a6} 
+\index{ser.c@{ser.c}!receive\_queue\_size@{receive\_queue\_size}}
+\index{receive\_queue\_size@{receive\_queue\_size}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{receive\_queue\_size()}{receive\_queue\_size()}}
+{\footnotesize\ttfamily uint8\+\_\+t receive\+\_\+queue\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the number of elements in the receive queue. 
+
+\begin{DoxyReturn}{Returns}
+The number of elements in the receive queue. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{ser_8c_a2c7f265ecac6d3de66c68d291b3271a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a2c7f265ecac6d3de66c68d291b3271a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a7d5928b9bc756afa235f21d8532b0a1e}\label{ser_8c_a7d5928b9bc756afa235f21d8532b0a1e} 
+\index{ser.c@{ser.c}!send\_byte@{send\_byte}}
+\index{send\_byte@{send\_byte}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{send\_byte()}{send\_byte()}}
+{\footnotesize\ttfamily int send\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Sends a byte through the UART transmit buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The byte to be sent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a7d5928b9bc756afa235f21d8532b0a1e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a7d5928b9bc756afa235f21d8532b0a1e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_afbefc34bc41c323555ca4f834fc7eb7a}\label{ser_8c_afbefc34bc41c323555ca4f834fc7eb7a} 
+\index{ser.c@{ser.c}!send\_bytes@{send\_bytes}}
+\index{send\_bytes@{send\_bytes}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{send\_bytes()}{send\_bytes()}}
+{\footnotesize\ttfamily int send\+\_\+bytes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sends bytes from the send queue to the UART transmit buffer. 
+
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_afbefc34bc41c323555ca4f834fc7eb7a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_afbefc34bc41c323555ca4f834fc7eb7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_aed2f6f42744701ff0ad54a7638018721}\label{ser_8c_aed2f6f42744701ff0ad54a7638018721} 
+\index{ser.c@{ser.c}!send\_queue\_is\_empty@{send\_queue\_is\_empty}}
+\index{send\_queue\_is\_empty@{send\_queue\_is\_empty}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{send\_queue\_is\_empty()}{send\_queue\_is\_empty()}}
+{\footnotesize\ttfamily bool send\+\_\+queue\+\_\+is\+\_\+empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the send queue is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the send queue is empty, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{ser_8c_aed2f6f42744701ff0ad54a7638018721_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_aed2f6f42744701ff0ad54a7638018721_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a7c232bfe6e9ff822db3f9135e41bb623}\label{ser_8c_a7c232bfe6e9ff822db3f9135e41bb623} 
+\index{ser.c@{ser.c}!send\_queue\_push@{send\_queue\_push}}
+\index{send\_queue\_push@{send\_queue\_push}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{send\_queue\_push()}{send\_queue\_push()}}
+{\footnotesize\ttfamily void send\+\_\+queue\+\_\+push (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{byte }\end{DoxyParamCaption})}
+
+
+
+Adds a byte to the send queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte} & The byte to be added to the send queue. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a7c232bfe6e9ff822db3f9135e41bb623_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a7c232bfe6e9ff822db3f9135e41bb623_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a61d67b678980744a1e3e51dd13f51ac0}\label{ser_8c_a61d67b678980744a1e3e51dd13f51ac0} 
+\index{ser.c@{ser.c}!ser\_conf@{ser\_conf}}
+\index{ser\_conf@{ser\_conf}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{ser\_conf()}{ser\_conf()}}
+{\footnotesize\ttfamily int ser\+\_\+conf (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bits,  }\item[{uint8\+\_\+t}]{stop,  }\item[{uint8\+\_\+t}]{par\+\_\+mode }\end{DoxyParamCaption})}
+
+
+
+Configures the serial port parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits} & Number of bits per character (5-\/8). \\
+\hline
+{\em stop} & Number of stop bits (1-\/2). \\
+\hline
+{\em par\+\_\+mode} & Parity mode (1-\/4). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{ser_8c_a61d67b678980744a1e3e51dd13f51ac0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a61d67b678980744a1e3e51dd13f51ac0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a1cafe9a07f13a56805639db7c5d6f273}\label{ser_8c_a1cafe9a07f13a56805639db7c5d6f273} 
+\index{ser.c@{ser.c}!ser\_enable\_interrupts@{ser\_enable\_interrupts}}
+\index{ser\_enable\_interrupts@{ser\_enable\_interrupts}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{ser\_enable\_interrupts()}{ser\_enable\_interrupts()}}
+{\footnotesize\ttfamily int ser\+\_\+enable\+\_\+interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enables interrupts for the serial port. 
+
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a1cafe9a07f13a56805639db7c5d6f273_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a9353fabdd05ea291e02243dace57ae1c}\label{ser_8c_a9353fabdd05ea291e02243dace57ae1c} 
+\index{ser.c@{ser.c}!ser\_ih@{ser\_ih}}
+\index{ser\_ih@{ser\_ih}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{ser\_ih()}{ser\_ih()}}
+{\footnotesize\ttfamily void ser\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Interrupt handler for the serial port. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a9353fabdd05ea291e02243dace57ae1c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a9353fabdd05ea291e02243dace57ae1c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a828235322fd790c645629859eace5270}\label{ser_8c_a828235322fd790c645629859eace5270} 
+\index{ser.c@{ser.c}!ser\_init@{ser\_init}}
+\index{ser\_init@{ser\_init}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{ser\_init()}{ser\_init()}}
+{\footnotesize\ttfamily int ser\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the serial port by setting up its parameters, bit rate, interrupts, and FIFOs. 
+
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a828235322fd790c645629859eace5270_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{ser_8c_a828235322fd790c645629859eace5270_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_ad9df9c87c58c3846836ae0a9b365d573}\label{ser_8c_ad9df9c87c58c3846836ae0a9b365d573} 
+\index{ser.c@{ser.c}!ser\_subscribe\_int@{ser\_subscribe\_int}}
+\index{ser\_subscribe\_int@{ser\_subscribe\_int}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{ser\_subscribe\_int()}{ser\_subscribe\_int()}}
+{\footnotesize\ttfamily int ser\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes to interrupts from the serial port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Pointer to the bit mask of the subscribed interrupt. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{ser_8c_ad9df9c87c58c3846836ae0a9b365d573_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a7d7df555d50a59b9ee60efb23e95d550}\label{ser_8c_a7d7df555d50a59b9ee60efb23e95d550} 
+\index{ser.c@{ser.c}!ser\_unsubscribe\_int@{ser\_unsubscribe\_int}}
+\index{ser\_unsubscribe\_int@{ser\_unsubscribe\_int}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{ser\_unsubscribe\_int()}{ser\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int ser\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes from interrupts from the serial port. 
+
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a7d7df555d50a59b9ee60efb23e95d550_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a44f70f30a4b7f976edc9db4a54782207}\label{ser_8c_a44f70f30a4b7f976edc9db4a54782207} 
+\index{ser.c@{ser.c}!transmitter\_ready@{transmitter\_ready}}
+\index{transmitter\_ready@{transmitter\_ready}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{transmitter\_ready()}{transmitter\_ready()}}
+{\footnotesize\ttfamily bool transmitter\+\_\+ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the transmitter is ready to send data. 
+
+\begin{DoxyReturn}{Returns}
+True if the transmitter is ready, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a44f70f30a4b7f976edc9db4a54782207_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ser_8c_a406e6517544d394bb3b98ec862d96296}\label{ser_8c_a406e6517544d394bb3b98ec862d96296} 
+\index{ser.c@{ser.c}!write\_lcr@{write\_lcr}}
+\index{write\_lcr@{write\_lcr}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{write\_lcr()}{write\_lcr()}}
+{\footnotesize\ttfamily int write\+\_\+lcr (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{conf }\end{DoxyParamCaption})}
+
+
+
+Writes a value to the Line Control Register (LCR). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conf} & The value to write to the LCR. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 upon success, 1 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ser_8c_a406e6517544d394bb3b98ec862d96296_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ser_8c_a7754579d4c88282fd9047ac5adfc447b}\label{ser_8c_a7754579d4c88282fd9047ac5adfc447b} 
+\index{ser.c@{ser.c}!hook\_ser@{hook\_ser}}
+\index{hook\_ser@{hook\_ser}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{hook\_ser}{hook\_ser}}
+{\footnotesize\ttfamily int hook\+\_\+ser = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{ser_8c_a122d097cf75950366da57f5362d9d97a}\label{ser_8c_a122d097cf75950366da57f5362d9d97a} 
+\index{ser.c@{ser.c}!ih\_err@{ih\_err}}
+\index{ih\_err@{ih\_err}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{ih\_err}{ih\_err}}
+{\footnotesize\ttfamily int ih\+\_\+err = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{ser_8c_aafb265d77380923c46f802f185798947}\label{ser_8c_aafb265d77380923c46f802f185798947} 
+\index{ser.c@{ser.c}!queue\_receive@{queue\_receive}}
+\index{queue\_receive@{queue\_receive}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{queue\_receive}{queue\_receive}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*} queue\+\_\+receive = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{ser_8c_aa361a3d64df3902ba6df804eef24ca94}\label{ser_8c_aa361a3d64df3902ba6df804eef24ca94} 
+\index{ser.c@{ser.c}!queue\_send@{queue\_send}}
+\index{queue\_send@{queue\_send}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{queue\_send}{queue\_send}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structQueue}{Queue}}\texorpdfstring{$\ast$}{*} queue\+\_\+send = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{ser_8c_a1b20a7c2dd7dfebe93282fc9816e7cd4}\label{ser_8c_a1b20a7c2dd7dfebe93282fc9816e7cd4} 
+\index{ser.c@{ser.c}!ready\_to\_send@{ready\_to\_send}}
+\index{ready\_to\_send@{ready\_to\_send}!ser.c@{ser.c}}
+\doxysubsubsection{\texorpdfstring{ready\_to\_send}{ready\_to\_send}}
+{\footnotesize\ttfamily bool ready\+\_\+to\+\_\+send = true\hspace{0.3cm}{\ttfamily [static]}}
+

@@ -1,0 +1,5 @@
+<map id="timer_get_conf" name="timer_get_conf">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,125,33"/>
+<area shape="rect" id="Node000002" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="173,5,271,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,17,158,17,158,22,125,22"/>
+</map>

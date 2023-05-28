@@ -1,0 +1,18 @@
+<map id="send_bytes" name="send_bytes">
+<area shape="rect" id="Node000001" title="Sends bytes from the send queue to the UART transmit buffer." alt="" coords="5,81,101,109"/>
+<area shape="rect" id="Node000002" href="$queue_8c.html#a32df32dccfc5eadc233531804f0cb305" title=" " alt="" coords="169,5,221,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,79,154,38,157,42,82,83"/>
+<area shape="rect" id="Node000003" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="289,68,370,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,90,274,82,275,87,101,96"/>
+<area shape="rect" id="Node000004" href="$queue_8c.html#adf4516721a62bf0453cab358d2491f25" title=" " alt="" coords="149,107,241,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="102,101,134,107,133,112,101,106"/>
+<area shape="rect" id="Node000005" href="$ser_8c.html#a7d5928b9bc756afa235f21d8532b0a1e" title="Sends a byte through the UART transmit buffer." alt="" coords="151,159,239,186"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="81,107,156,149,154,153,79,112"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="241,105,274,95,275,100,242,110"/>
+<area shape="rect" id="Node000006" href="$ser_8c.html#ad96ee630b8a3c428a3ac10c3b8bad01d" title="Reads the Line Control Register (LCR) value." alt="" coords="293,145,366,173"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="239,165,278,162,278,167,240,171"/>
+<area shape="rect" id="Node000008" href="$ser_8c.html#a406e6517544d394bb3b98ec862d96296" title="Writes a value to the Line Control Register (LCR)." alt="" coords="291,197,368,225"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="240,183,277,194,276,199,239,188"/>
+<area shape="rect" id="Node000007" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="418,145,517,173"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="367,157,403,157,403,162,367,162"/>
+</map>

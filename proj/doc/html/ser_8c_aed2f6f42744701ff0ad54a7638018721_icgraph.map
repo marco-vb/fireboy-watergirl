@@ -1,0 +1,18 @@
+<map id="send_queue_is_empty" name="send_queue_is_empty">
+<area shape="rect" id="Node000001" title="Checks if the send queue is empty." alt="" coords="659,84,825,112"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#adb16266bac82ba2376f626661c75a3ff" title="draws the game over screen and controlls if any of the options is chosen" alt="" coords="472,5,606,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="691,81,610,48,578,36,580,31,612,43,693,76"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,135,268,162"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="701,121,658,138,611,151,516,163,421,165,336,162,268,157,269,151,336,157,421,160,516,157,610,146,656,133,699,116"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#ad7ca2d21a727f7d55afef2392de3b5f8" title="draws the main menu and controlls if an option is chosen" alt="" coords="470,57,608,85"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="644,88,607,83,608,78,645,82"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#ac581b9d6af85c4c35f9d423a966cba8e" title="draws the pause menu" alt="" coords="467,109,611,137"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="644,113,611,117,611,112,644,107"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,84,419,112"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="485,41,468,48,395,86,393,81,466,43,482,36"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="313,120,264,137,263,132,311,115"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,135,127,162"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="160,151,127,151,127,146,160,146"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="456,87,420,92,419,87,455,81"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="452,113,419,108,420,103,453,108"/>
+</map>

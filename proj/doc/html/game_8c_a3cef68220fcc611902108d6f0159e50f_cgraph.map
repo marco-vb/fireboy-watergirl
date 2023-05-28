@@ -1,0 +1,99 @@
+<map id="draw_game" name="draw_game">
+<area shape="rect" id="Node000001" title="draws the elements of the game" alt="" coords="5,368,103,396"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#ad4bb9a6cbe9640cf7f11f5ee54328ab9" title="Copies the information from the buffer to the video memory (double buffering technique)." alt="" coords="176,109,276,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,367,62,325,79,266,107,204,126,174,149,148,161,139,164,143,152,152,130,177,111,206,84,268,68,326,60,368"/>
+<area shape="rect" id="Node000003" href="$character_8c.html#a8ed78533de9ec5526c2049016890b14f" title="Draws the character." alt="" coords="165,317,287,345"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,365,161,347,163,352,104,370"/>
+<area shape="rect" id="Node000005" href="$sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws a sprite." alt="" coords="390,369,487,397"/>
+<area shape="poly" id="edge33_Node000001_Node000005" title=" " alt="" coords="103,379,375,380,375,386,103,385"/>
+<area shape="rect" id="Node000007" href="$rtc_8c.html#a693f7721f41dbaa76ff4b80abe5a979e" title="Draws the current date on the screen." alt="" coords="181,265,271,293"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="68,366,103,335,149,304,166,295,168,300,152,308,107,339,71,370"/>
+<area shape="rect" id="Node000018" href="$character_8c.html#a7f174e00bc7d210f5d1cb4dc033196ef" title="Moves blocks that are falling, stops all blocks that have hit the ground and draws all the blocks." alt="" coords="151,419,301,446"/>
+<area shape="poly" id="edge22_Node000001_Node000018" title=" " alt="" coords="104,394,163,411,161,416,102,399"/>
+<area shape="rect" id="Node000021" href="$game_8c.html#ab323971701b6e01aff44feeaa9475735" title="Draws the ropes on the screen. And controlls whether or not the characters can or have cut them." alt="" coords="178,471,274,498"/>
+<area shape="poly" id="edge26_Node000001_Node000021" title=" " alt="" coords="71,394,107,424,152,456,165,462,163,467,149,460,103,429,68,398"/>
+<area shape="rect" id="Node000022" href="$sprite_8c.html#a92dc8c9632f56d3d3bde58d592e4ca84" title="Erases a sprite from the screen." alt="" coords="388,525,489,553"/>
+<area shape="poly" id="edge48_Node000001_Node000022" title=" " alt="" coords="64,395,95,452,121,483,152,508,207,530,265,542,322,546,373,544,373,549,322,551,264,547,205,535,149,512,117,487,91,455,59,397"/>
+<area shape="rect" id="Node000026" href="$rtc_8c.html#a0635403a6f2f9a5d2cc60dd5c988cb10" title="Draws the current time on the screen." alt="" coords="181,161,271,189"/>
+<area shape="poly" id="edge34_Node000001_Node000026" title=" " alt="" coords="57,367,67,333,86,288,113,241,149,200,166,189,169,193,152,204,117,244,91,291,72,335,62,368"/>
+<area shape="rect" id="Node000031" href="$count__down_8c.html#a9eb831ba2a514ba15a974586e8f80364" title="Draws the timer on the screen." alt="" coords="178,213,274,241"/>
+<area shape="poly" id="edge44_Node000001_Node000031" title=" " alt="" coords="60,366,94,311,119,279,149,252,163,243,166,248,152,256,123,283,98,314,65,369"/>
+<area shape="rect" id="Node000032" href="$character_8c.html#aac85aba5e302d3fc430fb88b935adfae" title="Erases all the blocks from the screen." alt="" coords="173,572,279,600"/>
+<area shape="poly" id="edge46_Node000001_Node000032" title=" " alt="" coords="62,395,92,468,119,513,152,552,167,563,164,567,149,556,114,516,88,471,57,397"/>
+<area shape="rect" id="Node000033" href="$character_8c.html#a02f6d3746a540b8fea9d89676f41e5bd" title="Moves the character." alt="" coords="197,655,255,682"/>
+<area shape="poly" id="edge49_Node000001_Node000033" title=" " alt="" coords="61,395,72,435,90,490,117,552,153,610,170,628,189,644,186,648,166,632,149,613,112,554,85,492,67,436,56,397"/>
+<area shape="rect" id="Node000004" href="$character_8c.html#a8b169546cf7af139aebb8d1983003e37" title="Updates the current character&#39;s sprite." alt="" coords="349,317,528,345"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="287,329,334,329,334,334,287,334"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="286,343,376,365,375,370,285,348"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="812,291,947,318"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="488,392,577,406,672,420,713,420,763,406,791,391,817,371,857,328,861,332,821,375,794,395,765,411,714,425,672,425,576,411,487,397"/>
+<area shape="rect" id="Node000008" href="$graphics_8c.html#ae9737a99715a2fd3df5523fa354c8a6b" title="Draws a number on the screen." alt="" coords="384,161,494,189"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="270,265,300,250,314,238,323,225,332,212,348,200,368,189,371,194,350,204,336,216,327,228,318,241,302,255,272,270"/>
+<area shape="rect" id="Node000011" href="$graphics_8c.html#a854c182b18a745f21e466549c173358d" title="Draws special characters." alt="" coords="368,213,509,241"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="270,266,364,242,366,248,271,271"/>
+<area shape="rect" id="Node000012" href="$rtc_8c.html#a214be91f260f35a70fc21ff14d6e61c9" title="Reads the date (day, month, and year) from the RTC." alt="" coords="396,265,482,293"/>
+<area shape="poly" id="edge14_Node000007_Node000012" title=" " alt="" coords="271,277,381,277,381,282,271,282"/>
+<area shape="rect" id="Node000009" href="$graphics_8c.html#a8dc3b64d819195e41495b03be84f9db5" title="Draws an xpm image." alt="" coords="625,161,715,189"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="494,173,610,173,610,178,494,178"/>
+<area shape="rect" id="Node000010" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="576,213,764,241"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="495,185,591,207,590,212,494,190"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="716,181,765,199,818,238,859,278,855,282,814,242,762,204,714,186"/>
+<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="503,210,610,186,612,191,504,215"/>
+<area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="510,225,561,225,561,230,510,230"/>
+<area shape="rect" id="Node000013" href="$rtc_8c.html#ad57da43843e5668e01141cc5379ae7fc" title="Reads the day from the RTC." alt="" coords="629,369,711,397"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="483,285,507,292,530,304,545,317,554,330,563,342,578,354,616,370,614,375,575,359,559,346,550,333,541,320,527,308,505,297,482,290"/>
+<area shape="rect" id="Node000016" href="$rtc_8c.html#a47ee0b7c5946446b7112474b281b3c36" title="Reads the month from the RTC." alt="" coords="620,265,720,293"/>
+<area shape="poly" id="edge18_Node000012_Node000016" title=" " alt="" coords="482,277,605,277,605,282,482,282"/>
+<area shape="rect" id="Node000017" href="$rtc_8c.html#a383166706dbbe68ee69cd067d4f8b935" title="Reads the year from the RTC." alt="" coords="627,317,713,345"/>
+<area shape="poly" id="edge20_Node000012_Node000017" title=" " alt="" coords="483,286,613,316,612,321,482,291"/>
+<area shape="rect" id="Node000014" href="$rtc_8c.html#ae29bac2e634d591d0a31eef4deb72ced" title="Reads a value from a RTC register." alt="" coords="828,188,931,216"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="710,376,737,368,762,354,779,337,788,320,796,300,809,278,853,225,857,229,814,281,801,303,793,322,784,340,765,359,739,373,712,381"/>
+<area shape="rect" id="Node000015" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="995,188,1093,216"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="931,199,980,199,980,205,931,205"/>
+<area shape="poly" id="edge19_Node000016_Node000014" title=" " alt="" coords="719,264,763,250,834,220,836,225,765,255,721,269"/>
+<area shape="poly" id="edge21_Node000017_Node000014" title=" " alt="" coords="713,321,762,302,814,264,855,225,859,228,818,269,765,307,715,326"/>
+<area shape="poly" id="edge23_Node000018_Node000005" title=" " alt="" coords="288,416,375,395,376,400,289,421"/>
+<area shape="rect" id="Node000019" href="$character_8c.html#af1f79d19ce37d907109cac4428d1a9e9" title="Checks if block hit the ground." alt="" coords="394,421,484,449"/>
+<area shape="poly" id="edge24_Node000018_Node000019" title=" " alt="" coords="301,431,379,432,379,437,301,436"/>
+<area shape="rect" id="Node000020" href="$map_8c.html#a2117f266cf32d37631770302fe987115" title="Returns the letter corresponding to the tile at the given position on the map." alt="" coords="635,655,705,682"/>
+<area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="485,440,508,448,530,460,560,492,595,541,656,640,651,643,590,544,556,495,527,464,506,452,484,445"/>
+<area shape="poly" id="edge27_Node000021_Node000005" title=" " alt="" coords="273,469,300,456,314,444,323,432,332,420,348,408,375,395,377,400,350,412,336,423,327,435,318,448,302,460,275,473"/>
+<area shape="poly" id="edge28_Node000021_Node000022" title=" " alt="" coords="275,494,374,520,373,525,274,499"/>
+<area shape="rect" id="Node000023" href="$mouse_8c.html#a9f516b600d90049ccc3e14b2271055fd" title="Checks if the left mouse button is clicked while over the specified sprite." alt="" coords="364,473,514,501"/>
+<area shape="poly" id="edge30_Node000021_Node000023" title=" " alt="" coords="274,482,349,483,349,489,274,488"/>
+<area shape="poly" id="edge29_Node000022_Node000010" title=" " alt="" coords="489,532,509,524,526,511,547,479,555,447,554,415,550,383,545,351,544,318,552,285,574,252,578,248,582,252,578,256,557,287,549,319,550,351,555,383,560,415,560,448,552,481,530,514,512,528,491,536"/>
+<area shape="rect" id="Node000024" href="$mouse_8c.html#a67ad33cc421ed4f48546fd7648f767df" title="Checks if the mouse is over the specified sprite." alt="" coords="597,473,743,501"/>
+<area shape="poly" id="edge31_Node000023_Node000024" title=" " alt="" coords="514,485,582,485,582,490,514,490"/>
+<area shape="rect" id="Node000025" href="$mouse_8c.html#aee417ce29c994f148e41f76856416a6e" title="Checks if the mouse is inside the specified rectangle." alt="" coords="824,473,935,501"/>
+<area shape="poly" id="edge32_Node000024_Node000025" title=" " alt="" coords="743,485,809,485,809,490,743,490"/>
+<area shape="poly" id="edge35_Node000026_Node000008" title=" " alt="" coords="271,173,369,173,369,178,271,178"/>
+<area shape="poly" id="edge36_Node000026_Node000011" title=" " alt="" coords="272,183,366,207,364,212,271,189"/>
+<area shape="rect" id="Node000027" href="$rtc_8c.html#a8ad785120424df9b86a61baeddb6ef99" title="Reads the time (hours, minutes, and seconds) from the RTC." alt="" coords="395,83,482,110"/>
+<area shape="poly" id="edge37_Node000026_Node000027" title=" " alt="" coords="267,158,300,146,386,114,388,119,302,151,268,163"/>
+<area shape="rect" id="Node000028" href="$rtc_8c.html#a3092c218cb22ffd19f8b4fcb1ee2077e" title="Reads the hours from the RTC." alt="" coords="623,109,717,137"/>
+<area shape="poly" id="edge38_Node000027_Node000028" title=" " alt="" coords="483,99,609,114,609,119,482,104"/>
+<area shape="rect" id="Node000029" href="$rtc_8c.html#aafcc44e46ecbabcc5ca2915c981f4a3a" title="Reads the minutes from the RTC." alt="" coords="615,5,725,33"/>
+<area shape="poly" id="edge40_Node000027_Node000029" title=" " alt="" coords="475,80,575,43,602,35,603,40,577,48,477,85"/>
+<area shape="rect" id="Node000030" href="$rtc_8c.html#a429d381b7aefae1d9f86c12027b509b1" title="Reads the seconds from the RTC." alt="" coords="615,57,725,85"/>
+<area shape="poly" id="edge42_Node000027_Node000030" title=" " alt="" coords="482,89,600,76,600,81,483,94"/>
+<area shape="poly" id="edge39_Node000028_Node000014" title=" " alt="" coords="718,132,765,147,838,179,836,184,763,152,717,138"/>
+<area shape="poly" id="edge41_Node000029_Node000014" title=" " alt="" coords="727,26,765,44,799,73,828,108,868,174,863,176,824,111,795,77,762,48,725,31"/>
+<area shape="poly" id="edge43_Node000030_Node000014" title=" " alt="" coords="727,80,765,96,818,134,859,175,855,179,814,138,762,100,725,85"/>
+<area shape="poly" id="edge45_Node000031_Node000008" title=" " alt="" coords="273,213,368,189,370,195,274,218"/>
+<area shape="poly" id="edge47_Node000032_Node000022" title=" " alt="" coords="279,572,373,551,374,556,280,577"/>
+<area shape="rect" id="Node000034" href="$character_8c.html#a1c090412145267c0cd7b206bf1748fce" title="Checks if the character is on the ground." alt="" coords="385,629,492,657"/>
+<area shape="poly" id="edge50_Node000033_Node000034" title=" " alt="" coords="255,662,370,649,370,654,256,668"/>
+<area shape="rect" id="Node000035" href="$character_8c.html#ad029cdd99d59cb48a3a1aa8f4df3a00c" title="Checks if there is a wall below the character." alt="" coords="394,681,484,709"/>
+<area shape="poly" id="edge52_Node000033_Node000035" title=" " alt="" coords="256,669,379,685,378,690,255,675"/>
+<area shape="rect" id="Node000036" href="$character_8c.html#a67bf0d4985ab95237ed10fe7c484139b" title="Checks if there is a wall to the left of the character." alt="" coords="400,733,477,761"/>
+<area shape="poly" id="edge54_Node000033_Node000036" title=" " alt="" coords="256,679,350,718,387,730,385,735,348,723,254,684"/>
+<area shape="rect" id="Node000037" href="$character_8c.html#abdbb6041d86921195528c87d6b89ec6d" title="Checks if there is a wall to the right of the character." alt="" coords="396,785,481,813"/>
+<area shape="poly" id="edge56_Node000033_Node000037" title=" " alt="" coords="242,681,287,725,318,749,350,770,383,784,381,789,348,775,314,753,284,729,238,685"/>
+<area shape="rect" id="Node000038" href="$character_8c.html#a2605da6aca7ed27a5367ea0404014695" title="Checks if there is a wall above the character." alt="" coords="403,577,474,605"/>
+<area shape="poly" id="edge58_Node000033_Node000038" title=" " alt="" coords="254,653,348,615,388,602,390,607,350,620,256,658"/>
+<area shape="poly" id="edge51_Node000034_Node000020" title=" " alt="" coords="493,646,620,660,620,666,492,652"/>
+<area shape="poly" id="edge53_Node000035_Node000020" title=" " alt="" coords="484,687,620,672,620,677,484,693"/>
+<area shape="poly" id="edge55_Node000036_Node000020" title=" " alt="" coords="477,734,527,718,620,685,622,690,529,723,479,739"/>
+<area shape="poly" id="edge57_Node000037_Node000020" title=" " alt="" coords="481,787,527,770,590,731,641,690,644,695,593,735,530,775,483,792"/>
+<area shape="poly" id="edge59_Node000038_Node000020" title=" " alt="" coords="476,599,529,615,622,648,620,653,527,620,474,604"/>
+</map>

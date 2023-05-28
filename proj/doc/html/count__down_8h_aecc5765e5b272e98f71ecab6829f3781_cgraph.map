@@ -1,0 +1,5 @@
+<map id="decrement_counter" name="decrement_counter">
+<area shape="rect" id="Node000001" title="Decrements the counter by one." alt="" coords="5,5,153,33"/>
+<area shape="rect" id="Node000002" href="$count__down_8c.html#a0f245700d736529dc9cb1a24a3d96735" title="Starts a counter." alt="" coords="201,5,308,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,17,186,17,186,22,153,22"/>
+</map>

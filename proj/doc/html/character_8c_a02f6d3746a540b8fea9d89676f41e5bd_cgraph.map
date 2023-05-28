@@ -1,0 +1,19 @@
+<map id="move" name="move">
+<area shape="rect" id="Node000001" title="Moves the character." alt="" coords="5,109,64,137"/>
+<area shape="rect" id="Node000002" href="$character_8c.html#a1c090412145267c0cd7b206bf1748fce" title="Checks if the character is on the ground." alt="" coords="112,5,219,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,107,73,77,110,44,117,39,120,43,113,48,77,80,49,111"/>
+<area shape="rect" id="Node000004" href="$character_8c.html#ad029cdd99d59cb48a3a1aa8f4df3a00c" title="Checks if there is a wall below the character." alt="" coords="120,57,211,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="63,109,114,89,116,94,65,114"/>
+<area shape="rect" id="Node000005" href="$character_8c.html#a67bf0d4985ab95237ed10fe7c484139b" title="Checks if there is a wall to the left of the character." alt="" coords="127,109,204,137"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="64,121,112,121,112,126,64,126"/>
+<area shape="rect" id="Node000006" href="$character_8c.html#abdbb6041d86921195528c87d6b89ec6d" title="Checks if there is a wall to the right of the character." alt="" coords="123,161,208,189"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="65,132,116,153,114,158,63,137"/>
+<area shape="rect" id="Node000007" href="$character_8c.html#a2605da6aca7ed27a5367ea0404014695" title="Checks if there is a wall above the character." alt="" coords="130,213,201,241"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="49,135,77,166,113,198,120,203,117,208,110,203,73,170,45,139"/>
+<area shape="rect" id="Node000003" href="$map_8c.html#a2117f266cf32d37631770302fe987115" title="Returns the letter corresponding to the tile at the given position on the map." alt="" coords="267,109,337,137"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="200,31,221,44,253,70,280,96,276,100,249,74,217,48,197,36"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="205,83,254,102,252,107,203,88"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="204,121,252,121,252,126,204,126"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="203,158,252,139,254,144,205,163"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="197,210,217,198,249,173,276,146,280,150,253,177,221,203,200,215"/>
+</map>

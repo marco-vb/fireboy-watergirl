@@ -1,0 +1,203 @@
+\doxysection{count\+\_\+down/count\+\_\+down.c File Reference}
+\hypertarget{count__down_8c}{}\label{count__down_8c}\index{count\_down/count\_down.c@{count\_down/count\_down.c}}
+{\ttfamily \#include \"{}count\+\_\+down.\+h\"{}}\newline
+Include dependency graph for count\+\_\+down.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{count__down_8c_a0f245700d736529dc9cb1a24a3d96735}{start\+\_\+counter}} (int time)
+\begin{DoxyCompactList}\small\item\em Starts a counter. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{count__down_8c_a9eb831ba2a514ba15a974586e8f80364}{draw\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Draws the timer on the screen. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{count__down_8c_a03188185c2d9b335ac9b205e1e984393}{decrement\+\_\+counter}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the counter by one. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{count__down_8c_a3420e0b565bf46a29818d0d9697d9e78}{set\+\_\+timer\+\_\+pos}} (int x\+\_\+, int y\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the position of the timer on the screen. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{count__down_8c_a4a43a1fa9417906bd2a1938f659a9260}{clear\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Clears the timer from the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{count__down_8c_a652f3ec6c0e23f72e16fa43bf0b407f1}{seconds\+\_\+left}} =0
+\item 
+int \mbox{\hyperlink{count__down_8c_a6c8ec3c3e77241328358d43697f6f840}{first}}
+\item 
+int \mbox{\hyperlink{count__down_8c_a6cf35be1947a62f134392fcb1b3c54d2}{second}}
+\item 
+int \mbox{\hyperlink{count__down_8c_afa74e7ad47cd5cbf2a3677c5a3bf2cdb}{third}}
+\item 
+int \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}} =150
+\item 
+int \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}} =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{count__down_8c_a4a43a1fa9417906bd2a1938f659a9260}\label{count__down_8c_a4a43a1fa9417906bd2a1938f659a9260} 
+\index{count\_down.c@{count\_down.c}!clear\_timer@{clear\_timer}}
+\index{clear\_timer@{clear\_timer}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{clear\_timer()}{clear\_timer()}}
+{\footnotesize\ttfamily int() clear\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the timer from the screen. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 1 if an error occurs while clearing the numbers, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{count__down_8c_a4a43a1fa9417906bd2a1938f659a9260_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{count__down_8c_a03188185c2d9b335ac9b205e1e984393}\label{count__down_8c_a03188185c2d9b335ac9b205e1e984393} 
+\index{count\_down.c@{count\_down.c}!decrement\_counter@{decrement\_counter}}
+\index{decrement\_counter@{decrement\_counter}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{decrement\_counter()}{decrement\_counter()}}
+{\footnotesize\ttfamily int() decrement\+\_\+counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decrements the counter by one. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the time has ended, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{count__down_8c_a03188185c2d9b335ac9b205e1e984393_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8c_a03188185c2d9b335ac9b205e1e984393_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{count__down_8c_a9eb831ba2a514ba15a974586e8f80364}\label{count__down_8c_a9eb831ba2a514ba15a974586e8f80364} 
+\index{count\_down.c@{count\_down.c}!draw\_timer@{draw\_timer}}
+\index{draw\_timer@{draw\_timer}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{draw\_timer()}{draw\_timer()}}
+{\footnotesize\ttfamily int() draw\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the timer on the screen. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 1 if an error occurs while drawing the numbers, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8c_a9eb831ba2a514ba15a974586e8f80364_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8c_a9eb831ba2a514ba15a974586e8f80364_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{count__down_8c_a3420e0b565bf46a29818d0d9697d9e78}\label{count__down_8c_a3420e0b565bf46a29818d0d9697d9e78} 
+\index{count\_down.c@{count\_down.c}!set\_timer\_pos@{set\_timer\_pos}}
+\index{set\_timer\_pos@{set\_timer\_pos}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{set\_timer\_pos()}{set\_timer\_pos()}}
+{\footnotesize\ttfamily void() set\+\_\+timer\+\_\+pos (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the position of the timer on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The horizontal position of the timer on the screen. \\
+\hline
+{\em y} & The vertical position of the timer on the screen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{count__down_8c_a0f245700d736529dc9cb1a24a3d96735}\label{count__down_8c_a0f245700d736529dc9cb1a24a3d96735} 
+\index{count\_down.c@{count\_down.c}!start\_counter@{start\_counter}}
+\index{start\_counter@{start\_counter}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{start\_counter()}{start\_counter()}}
+{\footnotesize\ttfamily int() start\+\_\+counter (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+Starts a counter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The time of the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the time is lower than 0, 0 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8c_a0f245700d736529dc9cb1a24a3d96735_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{count__down_8c_a6c8ec3c3e77241328358d43697f6f840}\label{count__down_8c_a6c8ec3c3e77241328358d43697f6f840} 
+\index{count\_down.c@{count\_down.c}!first@{first}}
+\index{first@{first}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{first}{first}}
+{\footnotesize\ttfamily int first}
+
+\Hypertarget{count__down_8c_a6cf35be1947a62f134392fcb1b3c54d2}\label{count__down_8c_a6cf35be1947a62f134392fcb1b3c54d2} 
+\index{count\_down.c@{count\_down.c}!second@{second}}
+\index{second@{second}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{second}{second}}
+{\footnotesize\ttfamily int second}
+
+\Hypertarget{count__down_8c_a652f3ec6c0e23f72e16fa43bf0b407f1}\label{count__down_8c_a652f3ec6c0e23f72e16fa43bf0b407f1} 
+\index{count\_down.c@{count\_down.c}!seconds\_left@{seconds\_left}}
+\index{seconds\_left@{seconds\_left}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{seconds\_left}{seconds\_left}}
+{\footnotesize\ttfamily int seconds\+\_\+left =0}
+
+\Hypertarget{count__down_8c_afa74e7ad47cd5cbf2a3677c5a3bf2cdb}\label{count__down_8c_afa74e7ad47cd5cbf2a3677c5a3bf2cdb} 
+\index{count\_down.c@{count\_down.c}!third@{third}}
+\index{third@{third}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{third}{third}}
+{\footnotesize\ttfamily int third}
+
+\Hypertarget{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}\label{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc} 
+\index{count\_down.c@{count\_down.c}!x@{x}}
+\index{x@{x}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x =150}
+
+\Hypertarget{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}\label{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33} 
+\index{count\_down.c@{count\_down.c}!y@{y}}
+\index{y@{y}!count\_down.c@{count\_down.c}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int y =0}
+

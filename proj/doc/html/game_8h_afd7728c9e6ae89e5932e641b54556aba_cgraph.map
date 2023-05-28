@@ -1,0 +1,31 @@
+<map id="exit_game" name="exit_game">
+<area shape="rect" id="Node000001" title="Exists the game." alt="" coords="5,84,96,112"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a3e8d2ec60eba082aabdea302626824d3" title="Clears all the buffers and the video memory." alt="" coords="151,5,288,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,81,143,43,159,36,162,41,145,48,76,86"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a49f6d45fc3b252adda8895f21180ec70" title="Exists multiplayer mode." alt="" coords="155,57,284,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="96,88,140,81,141,86,96,93"/>
+<area shape="rect" id="Node000009" href="$map_8c.html#a1d1326355ebc52cb1eaca3531963e323" title="Resets all the falling blocks to their original position." alt="" coords="144,109,295,137"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="96,102,130,107,129,112,96,107"/>
+<area shape="rect" id="Node000012" href="$communication_8c.html#af8494b1ffe09f9a8028cd5270c1098a8" title=" " alt="" coords="155,161,284,189"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="77,110,145,146,162,153,160,158,143,151,74,115"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#ad4bb9a6cbe9640cf7f11f5ee54328ab9" title="Copies the information from the buffer to the video memory (double buffering technique)." alt="" coords="362,5,461,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,17,347,17,347,22,288,22"/>
+<area shape="rect" id="Node000005" href="$ser_8c.html#a6d0537e7d115b0aa6bf6961f4a9a28dd" title="Clears the send and receive queues." alt="" coords="358,57,465,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="284,69,343,69,343,74,284,74"/>
+<area shape="rect" id="Node000006" href="$queue_8c.html#a119efee68b4d232dd411a5ca2ca3327b" title=" " alt="" coords="572,57,672,85"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="466,69,557,69,557,74,466,74"/>
+<area shape="rect" id="Node000007" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="911,108,992,136"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="673,71,762,79,864,94,897,102,896,107,862,99,761,84,673,76"/>
+<area shape="rect" id="Node000008" href="$queue_8c.html#adf4516721a62bf0453cab358d2491f25" title=" " alt="" coords="767,108,860,136"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="673,82,754,103,752,109,672,87"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="860,119,896,119,896,125,860,125"/>
+<area shape="rect" id="Node000010" href="$sprite_8c.html#a92dc8c9632f56d3d3bde58d592e4ca84" title="Erases a sprite from the screen." alt="" coords="361,109,462,137"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="296,121,346,121,346,126,296,126"/>
+<area shape="rect" id="Node000011" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="528,109,716,137"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="463,121,514,121,514,126,463,126"/>
+<area shape="rect" id="Node000013" href="$ser_8c.html#a7c232bfe6e9ff822db3f9135e41bb623" title="Adds a byte to the send queue." alt="" coords="343,161,480,189"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="284,173,329,173,329,178,284,178"/>
+<area shape="rect" id="Node000014" href="$queue_8c.html#aa7982825b04c812a55cf357852d83207" title=" " alt="" coords="764,160,863,188"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="481,172,749,171,749,177,481,178"/>
+<area shape="poly" id="edge15_Node000014_Node000007" title=" " alt="" coords="852,157,899,139,900,144,853,162"/>
+</map>

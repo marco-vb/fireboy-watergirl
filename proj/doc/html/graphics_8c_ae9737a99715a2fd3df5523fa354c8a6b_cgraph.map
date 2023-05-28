@@ -1,0 +1,9 @@
+<map id="draw_number" name="draw_number">
+<area shape="rect" id="Node000001" title="Draws a number on the screen." alt="" coords="5,32,116,60"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a8dc3b64d819195e41495b03be84f9db5" title="Draws an xpm image." alt="" coords="213,5,302,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,36,197,25,198,30,116,41"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="164,57,351,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="116,50,149,55,148,60,116,56"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="399,5,534,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,17,384,17,384,22,302,22"/>
+</map>

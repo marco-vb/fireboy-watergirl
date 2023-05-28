@@ -1,0 +1,16 @@
+<map id="move_left" name="move_left">
+<area shape="rect" id="Node000001" title="Moves the character to the left." alt="" coords="703,32,790,60"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#a9b28a5527b28478822d9e3057018a991" title="moves the fireboy depending of the keyborad key" alt="" coords="537,5,649,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="688,38,649,31,650,26,689,33"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#a20eb9add0344df232c6b9e6883506f65" title="moves the watergirl depending of the keyborad key" alt="" coords="531,57,655,85"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="688,58,656,64,655,58,688,53"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,31,268,58"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="523,17,425,15,316,22,267,33,266,27,316,17,424,9,523,11"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a0520354a211cab81d76e08490253c0c4" title="Retrives information from the serial port to check what the remote player has done and replicates it." alt="" coords="316,31,483,58"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="523,31,484,36,483,31,522,26"/>
+<area shape="rect" id="Node000004" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,127,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="160,47,127,47,127,42,160,42"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="301,47,269,47,269,42,301,42"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="517,79,421,80,316,72,266,61,267,56,316,67,421,75,517,73"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="516,63,484,59,484,53,517,58"/>
+</map>

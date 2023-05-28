@@ -1,0 +1,12 @@
+<map id="characters/character.h" name="characters/character.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="125,5,291,33"/>
+<area shape="rect" id="Node000002" href="$character_8c.html" title=" " alt="" coords="5,81,171,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,43,111,83,108,78,173,39"/>
+<area shape="rect" id="Node000003" href="$game_8c.html" title=" " alt="" coords="173,157,243,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,47,211,156,205,156,205,47"/>
+<area shape="rect" id="Node000004" href="$game_8h.html" title=" " alt="" coords="245,81,315,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,42,269,79,265,82,229,46"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="259,121,223,158,219,154,255,118"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html" title=" " alt="" coords="267,157,325,184"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="289,123,296,156,291,157,283,124"/>
+</map>

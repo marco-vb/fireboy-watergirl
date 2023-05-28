@@ -1,0 +1,431 @@
+\doxysection{communication/communication.h File Reference}
+\hypertarget{communication_8h}{}\label{communication_8h}\index{communication/communication.h@{communication/communication.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for communication.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{communication_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{communication_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{communication_8h_a92394613cf84d1ee74dc94fb07fef163}{KEYBOARD\+\_\+\+ID}}~\textquotesingle{}k\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{communication_8h_aab54750568fdf2f02d5cd1568721512b}{ROPE\+\_\+\+ID}}~\textquotesingle{}r\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{communication_8h_a492f5dc0c74cda987cdfb7bc9224f115}{CHANGE\+\_\+\+ID}}~\textquotesingle{}\mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{communication_8h_a01f00af29c36596bfdc14566828574c1}{CONNECT\+\_\+\+ID}}~\textquotesingle{}c\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{communication_8h_a2312d632d761279653ebdaa084c1e2c0}{CONNECT\+\_\+\+ACK}}~0x\+FA
+\item 
+\#define \mbox{\hyperlink{communication_8h_a8e828b3cdadffbbefc29d0dc327209e3}{CONNECT\+\_\+\+START}}~0x\+F9
+\item 
+\#define \mbox{\hyperlink{communication_8h_a3ac465bd7e2bcc782fd06e166cffd0da}{CONNECT\+\_\+\+READY}}~0x\+FB
+\item 
+\#define \mbox{\hyperlink{communication_8h_a87db3af7606c324a36efa49366da7093}{GAME\+\_\+\+OVER\+\_\+\+ID}}~0x10
+\item 
+\#define \mbox{\hyperlink{communication_8h_a9194fd5f6353667acc893d6f98326ef9}{RESUME\+\_\+\+GAME}}~0x11
+\item 
+\#define \mbox{\hyperlink{communication_8h_a0b191b9c64cdd029176fc11eaf776857}{RESTART\+\_\+\+GAME}}~0x12
+\item 
+\#define \mbox{\hyperlink{communication_8h_af26e8d7a88e676b61e8215e828a01653}{EXIT\+\_\+\+GAME}}~0x13
+\item 
+\#define \mbox{\hyperlink{communication_8h_a14b7a0f8df8fc8f50551fb487b421bfe}{NEXT\+\_\+\+LEVEL}}~0x14
+\item 
+\#define \mbox{\hyperlink{communication_8h_a5a8c18c0514a3c10e5311ee5f6978e74}{PAUSE\+\_\+\+GAME}}~0x15
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{communication_8h_a76e6a164103650c55a9bd4fab8aec859}{send\+\_\+keyboard\+\_\+key}} (\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}} key)
+\item 
+void \mbox{\hyperlink{communication_8h_ad1095b0dd267ffbc51e8b02a4fa03879}{send\+\_\+destroyed\+\_\+rope}} (uint8\+\_\+t \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, uint8\+\_\+t \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}})
+\item 
+void \mbox{\hyperlink{communication_8h_a09a44a5cbd0382f3d0457cca799039c6}{send\+\_\+start\+\_\+connection}} ()
+\item 
+void \mbox{\hyperlink{communication_8h_a9f4e7b04eb03bdb25352345dd982b7a8}{send\+\_\+accept\+\_\+connection}} ()
+\item 
+void \mbox{\hyperlink{communication_8h_a2d6c671c0cb6d87397538d859e59ba04}{send\+\_\+ready\+\_\+connection}} ()
+\item 
+void \mbox{\hyperlink{communication_8h_a34e8f3974f75e8f32631f3ce82e20aeb}{send\+\_\+game\+\_\+over}} ()
+\item 
+void \mbox{\hyperlink{communication_8h_a5732b3c9685d054ef5f1df0d3a8cdd12}{send\+\_\+resume\+\_\+game}} ()
+\item 
+void \mbox{\hyperlink{communication_8h_ae1edb4f83197397349a7cb6aa5d2e122}{send\+\_\+restart\+\_\+game}} ()
+\item 
+void \mbox{\hyperlink{communication_8h_af8494b1ffe09f9a8028cd5270c1098a8}{send\+\_\+exit\+\_\+game}} ()
+\item 
+void \mbox{\hyperlink{communication_8h_abdf9dc47bdb92932e941d8444ce40ad8}{send\+\_\+next\+\_\+level}} ()
+\item 
+void \mbox{\hyperlink{communication_8h_a7c13a0bdc0fc01bd6446db2bc1e4ff4f}{send\+\_\+pause\+\_\+game}} ()
+\item 
+bool \mbox{\hyperlink{communication_8h_ae2f67f196a873692fbf1d16029877abc}{check\+\_\+connection}} ()
+\item 
+bool \mbox{\hyperlink{communication_8h_a16f9b03aed26f7c954b8ab5e697d4dd1}{check\+\_\+ready}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{communication_8h_a492f5dc0c74cda987cdfb7bc9224f115}\label{communication_8h_a492f5dc0c74cda987cdfb7bc9224f115} 
+\index{communication.h@{communication.h}!CHANGE\_ID@{CHANGE\_ID}}
+\index{CHANGE\_ID@{CHANGE\_ID}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{CHANGE\_ID}{CHANGE\_ID}}
+{\footnotesize\ttfamily \#define CHANGE\+\_\+\+ID~\textquotesingle{}\mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}\textquotesingle{}}
+
+\Hypertarget{communication_8h_a2312d632d761279653ebdaa084c1e2c0}\label{communication_8h_a2312d632d761279653ebdaa084c1e2c0} 
+\index{communication.h@{communication.h}!CONNECT\_ACK@{CONNECT\_ACK}}
+\index{CONNECT\_ACK@{CONNECT\_ACK}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{CONNECT\_ACK}{CONNECT\_ACK}}
+{\footnotesize\ttfamily \#define CONNECT\+\_\+\+ACK~0x\+FA}
+
+\Hypertarget{communication_8h_a01f00af29c36596bfdc14566828574c1}\label{communication_8h_a01f00af29c36596bfdc14566828574c1} 
+\index{communication.h@{communication.h}!CONNECT\_ID@{CONNECT\_ID}}
+\index{CONNECT\_ID@{CONNECT\_ID}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{CONNECT\_ID}{CONNECT\_ID}}
+{\footnotesize\ttfamily \#define CONNECT\+\_\+\+ID~\textquotesingle{}c\textquotesingle{}}
+
+\Hypertarget{communication_8h_a3ac465bd7e2bcc782fd06e166cffd0da}\label{communication_8h_a3ac465bd7e2bcc782fd06e166cffd0da} 
+\index{communication.h@{communication.h}!CONNECT\_READY@{CONNECT\_READY}}
+\index{CONNECT\_READY@{CONNECT\_READY}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{CONNECT\_READY}{CONNECT\_READY}}
+{\footnotesize\ttfamily \#define CONNECT\+\_\+\+READY~0x\+FB}
+
+\Hypertarget{communication_8h_a8e828b3cdadffbbefc29d0dc327209e3}\label{communication_8h_a8e828b3cdadffbbefc29d0dc327209e3} 
+\index{communication.h@{communication.h}!CONNECT\_START@{CONNECT\_START}}
+\index{CONNECT\_START@{CONNECT\_START}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{CONNECT\_START}{CONNECT\_START}}
+{\footnotesize\ttfamily \#define CONNECT\+\_\+\+START~0x\+F9}
+
+\Hypertarget{communication_8h_af26e8d7a88e676b61e8215e828a01653}\label{communication_8h_af26e8d7a88e676b61e8215e828a01653} 
+\index{communication.h@{communication.h}!EXIT\_GAME@{EXIT\_GAME}}
+\index{EXIT\_GAME@{EXIT\_GAME}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{EXIT\_GAME}{EXIT\_GAME}}
+{\footnotesize\ttfamily \#define EXIT\+\_\+\+GAME~0x13}
+
+\Hypertarget{communication_8h_a87db3af7606c324a36efa49366da7093}\label{communication_8h_a87db3af7606c324a36efa49366da7093} 
+\index{communication.h@{communication.h}!GAME\_OVER\_ID@{GAME\_OVER\_ID}}
+\index{GAME\_OVER\_ID@{GAME\_OVER\_ID}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{GAME\_OVER\_ID}{GAME\_OVER\_ID}}
+{\footnotesize\ttfamily \#define GAME\+\_\+\+OVER\+\_\+\+ID~0x10}
+
+\Hypertarget{communication_8h_a92394613cf84d1ee74dc94fb07fef163}\label{communication_8h_a92394613cf84d1ee74dc94fb07fef163} 
+\index{communication.h@{communication.h}!KEYBOARD\_ID@{KEYBOARD\_ID}}
+\index{KEYBOARD\_ID@{KEYBOARD\_ID}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{KEYBOARD\_ID}{KEYBOARD\_ID}}
+{\footnotesize\ttfamily \#define KEYBOARD\+\_\+\+ID~\textquotesingle{}k\textquotesingle{}}
+
+\Hypertarget{communication_8h_a14b7a0f8df8fc8f50551fb487b421bfe}\label{communication_8h_a14b7a0f8df8fc8f50551fb487b421bfe} 
+\index{communication.h@{communication.h}!NEXT\_LEVEL@{NEXT\_LEVEL}}
+\index{NEXT\_LEVEL@{NEXT\_LEVEL}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{NEXT\_LEVEL}{NEXT\_LEVEL}}
+{\footnotesize\ttfamily \#define NEXT\+\_\+\+LEVEL~0x14}
+
+\Hypertarget{communication_8h_a5a8c18c0514a3c10e5311ee5f6978e74}\label{communication_8h_a5a8c18c0514a3c10e5311ee5f6978e74} 
+\index{communication.h@{communication.h}!PAUSE\_GAME@{PAUSE\_GAME}}
+\index{PAUSE\_GAME@{PAUSE\_GAME}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{PAUSE\_GAME}{PAUSE\_GAME}}
+{\footnotesize\ttfamily \#define PAUSE\+\_\+\+GAME~0x15}
+
+\Hypertarget{communication_8h_a0b191b9c64cdd029176fc11eaf776857}\label{communication_8h_a0b191b9c64cdd029176fc11eaf776857} 
+\index{communication.h@{communication.h}!RESTART\_GAME@{RESTART\_GAME}}
+\index{RESTART\_GAME@{RESTART\_GAME}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{RESTART\_GAME}{RESTART\_GAME}}
+{\footnotesize\ttfamily \#define RESTART\+\_\+\+GAME~0x12}
+
+\Hypertarget{communication_8h_a9194fd5f6353667acc893d6f98326ef9}\label{communication_8h_a9194fd5f6353667acc893d6f98326ef9} 
+\index{communication.h@{communication.h}!RESUME\_GAME@{RESUME\_GAME}}
+\index{RESUME\_GAME@{RESUME\_GAME}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{RESUME\_GAME}{RESUME\_GAME}}
+{\footnotesize\ttfamily \#define RESUME\+\_\+\+GAME~0x11}
+
+\Hypertarget{communication_8h_aab54750568fdf2f02d5cd1568721512b}\label{communication_8h_aab54750568fdf2f02d5cd1568721512b} 
+\index{communication.h@{communication.h}!ROPE\_ID@{ROPE\_ID}}
+\index{ROPE\_ID@{ROPE\_ID}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{ROPE\_ID}{ROPE\_ID}}
+{\footnotesize\ttfamily \#define ROPE\+\_\+\+ID~\textquotesingle{}r\textquotesingle{}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{communication_8h_ae2f67f196a873692fbf1d16029877abc}\label{communication_8h_ae2f67f196a873692fbf1d16029877abc} 
+\index{communication.h@{communication.h}!check\_connection@{check\_connection}}
+\index{check\_connection@{check\_connection}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{check\_connection()}{check\_connection()}}
+{\footnotesize\ttfamily bool check\+\_\+connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_ae2f67f196a873692fbf1d16029877abc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_ae2f67f196a873692fbf1d16029877abc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_a16f9b03aed26f7c954b8ab5e697d4dd1}\label{communication_8h_a16f9b03aed26f7c954b8ab5e697d4dd1} 
+\index{communication.h@{communication.h}!check\_ready@{check\_ready}}
+\index{check\_ready@{check\_ready}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{check\_ready()}{check\_ready()}}
+{\footnotesize\ttfamily bool check\+\_\+ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a16f9b03aed26f7c954b8ab5e697d4dd1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_a9f4e7b04eb03bdb25352345dd982b7a8}\label{communication_8h_a9f4e7b04eb03bdb25352345dd982b7a8} 
+\index{communication.h@{communication.h}!send\_accept\_connection@{send\_accept\_connection}}
+\index{send\_accept\_connection@{send\_accept\_connection}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_accept\_connection()}{send\_accept\_connection()}}
+{\footnotesize\ttfamily void send\+\_\+accept\+\_\+connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a9f4e7b04eb03bdb25352345dd982b7a8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a9f4e7b04eb03bdb25352345dd982b7a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_ad1095b0dd267ffbc51e8b02a4fa03879}\label{communication_8h_ad1095b0dd267ffbc51e8b02a4fa03879} 
+\index{communication.h@{communication.h}!send\_destroyed\_rope@{send\_destroyed\_rope}}
+\index{send\_destroyed\_rope@{send\_destroyed\_rope}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_destroyed\_rope()}{send\_destroyed\_rope()}}
+{\footnotesize\ttfamily void send\+\_\+destroyed\+\_\+rope (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_ad1095b0dd267ffbc51e8b02a4fa03879_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_af8494b1ffe09f9a8028cd5270c1098a8}\label{communication_8h_af8494b1ffe09f9a8028cd5270c1098a8} 
+\index{communication.h@{communication.h}!send\_exit\_game@{send\_exit\_game}}
+\index{send\_exit\_game@{send\_exit\_game}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_exit\_game()}{send\_exit\_game()}}
+{\footnotesize\ttfamily void send\+\_\+exit\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_af8494b1ffe09f9a8028cd5270c1098a8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_af8494b1ffe09f9a8028cd5270c1098a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_a34e8f3974f75e8f32631f3ce82e20aeb}\label{communication_8h_a34e8f3974f75e8f32631f3ce82e20aeb} 
+\index{communication.h@{communication.h}!send\_game\_over@{send\_game\_over}}
+\index{send\_game\_over@{send\_game\_over}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_game\_over()}{send\_game\_over()}}
+{\footnotesize\ttfamily void send\+\_\+game\+\_\+over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a34e8f3974f75e8f32631f3ce82e20aeb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a34e8f3974f75e8f32631f3ce82e20aeb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_a76e6a164103650c55a9bd4fab8aec859}\label{communication_8h_a76e6a164103650c55a9bd4fab8aec859} 
+\index{communication.h@{communication.h}!send\_keyboard\_key@{send\_keyboard\_key}}
+\index{send\_keyboard\_key@{send\_keyboard\_key}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_keyboard\_key()}{send\_keyboard\_key()}}
+{\footnotesize\ttfamily void send\+\_\+keyboard\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}}}]{key }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a76e6a164103650c55a9bd4fab8aec859_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a76e6a164103650c55a9bd4fab8aec859_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_abdf9dc47bdb92932e941d8444ce40ad8}\label{communication_8h_abdf9dc47bdb92932e941d8444ce40ad8} 
+\index{communication.h@{communication.h}!send\_next\_level@{send\_next\_level}}
+\index{send\_next\_level@{send\_next\_level}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_next\_level()}{send\_next\_level()}}
+{\footnotesize\ttfamily void send\+\_\+next\+\_\+level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_abdf9dc47bdb92932e941d8444ce40ad8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_abdf9dc47bdb92932e941d8444ce40ad8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_a7c13a0bdc0fc01bd6446db2bc1e4ff4f}\label{communication_8h_a7c13a0bdc0fc01bd6446db2bc1e4ff4f} 
+\index{communication.h@{communication.h}!send\_pause\_game@{send\_pause\_game}}
+\index{send\_pause\_game@{send\_pause\_game}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_pause\_game()}{send\_pause\_game()}}
+{\footnotesize\ttfamily void send\+\_\+pause\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a7c13a0bdc0fc01bd6446db2bc1e4ff4f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a7c13a0bdc0fc01bd6446db2bc1e4ff4f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_a2d6c671c0cb6d87397538d859e59ba04}\label{communication_8h_a2d6c671c0cb6d87397538d859e59ba04} 
+\index{communication.h@{communication.h}!send\_ready\_connection@{send\_ready\_connection}}
+\index{send\_ready\_connection@{send\_ready\_connection}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_ready\_connection()}{send\_ready\_connection()}}
+{\footnotesize\ttfamily void send\+\_\+ready\+\_\+connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a2d6c671c0cb6d87397538d859e59ba04_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a2d6c671c0cb6d87397538d859e59ba04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_ae1edb4f83197397349a7cb6aa5d2e122}\label{communication_8h_ae1edb4f83197397349a7cb6aa5d2e122} 
+\index{communication.h@{communication.h}!send\_restart\_game@{send\_restart\_game}}
+\index{send\_restart\_game@{send\_restart\_game}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_restart\_game()}{send\_restart\_game()}}
+{\footnotesize\ttfamily void send\+\_\+restart\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_ae1edb4f83197397349a7cb6aa5d2e122_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_ae1edb4f83197397349a7cb6aa5d2e122_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_a5732b3c9685d054ef5f1df0d3a8cdd12}\label{communication_8h_a5732b3c9685d054ef5f1df0d3a8cdd12} 
+\index{communication.h@{communication.h}!send\_resume\_game@{send\_resume\_game}}
+\index{send\_resume\_game@{send\_resume\_game}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_resume\_game()}{send\_resume\_game()}}
+{\footnotesize\ttfamily void send\+\_\+resume\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a5732b3c9685d054ef5f1df0d3a8cdd12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a5732b3c9685d054ef5f1df0d3a8cdd12_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{communication_8h_a09a44a5cbd0382f3d0457cca799039c6}\label{communication_8h_a09a44a5cbd0382f3d0457cca799039c6} 
+\index{communication.h@{communication.h}!send\_start\_connection@{send\_start\_connection}}
+\index{send\_start\_connection@{send\_start\_connection}!communication.h@{communication.h}}
+\doxysubsubsection{\texorpdfstring{send\_start\_connection()}{send\_start\_connection()}}
+{\footnotesize\ttfamily void send\+\_\+start\+\_\+connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a09a44a5cbd0382f3d0457cca799039c6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{communication_8h_a09a44a5cbd0382f3d0457cca799039c6_icgraph}
+\end{center}
+\end{figure}

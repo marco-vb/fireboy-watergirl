@@ -1,0 +1,118 @@
+\doxysection{character.\+h}
+\hypertarget{character_8h_source}{}\label{character_8h_source}\index{characters/character.h@{characters/character.h}}
+\mbox{\hyperlink{character_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_CHARACTER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_CHARACTER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../drivers/graphics/graphics.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../sprites/falling\_block.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../sprites/sprite.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../maps/map.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/running\_down\_shield0.xpm"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_left/left\_shield1.xpm"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_left/left\_shield2.xpm"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_left/left\_shield3.xpm"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_left/left\_shield4.xpm"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_left/left\_shield5.xpm"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_left/left\_shield6.xpm"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_right/shield\_right1.xpm"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_right/shield\_right2.xpm"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_right/shield\_right3.xpm"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_right/shield\_right4.xpm"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_right/shield\_right5.xpm"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/fireZelda/shield\_right/shield\_right6.xpm"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/running\_down\_shield0.xpm"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_left/left\_shield1.xpm"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_left/left\_shield2.xpm"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_left/left\_shield3.xpm"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_left/left\_shield4.xpm"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_left/left\_shield5.xpm"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_left/left\_shield6.xpm"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_right/shield\_right1.xpm"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_right/shield\_right2.xpm"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_right/shield\_right3.xpm"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_right/shield\_right4.xpm"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_right/shield\_right5.xpm"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}../xpm/zeldas/waterZelda/shield\_right/shield\_right6.xpm"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}\ \{\ \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aaadb45120aafd37a973140edee24708065}{LEFT}},\ \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aaaec8379af7490bb9eaaf579cf17876f38}{RIGHT}},\ \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aaaba595d8bca8bc5e67c37c0a9d89becfa}{UP}},\ \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aaa88ec7d5086d2469ba843c7fcceade8a6}{DEFAULT}}\ \};}
+\DoxyCodeLine{00040\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{character_8h_a3d71b92820bd3decb3c70113e0c8beba}{Elements}}\ \{\ \mbox{\hyperlink{character_8h_a3d71b92820bd3decb3c70113e0c8bebaa6811f08ec3a763b0351fab6fb5054df8}{FIRE}},\ \mbox{\hyperlink{character_8h_a3d71b92820bd3decb3c70113e0c8bebaa9ac7d5e5851d7a2bc186a1c3341589f6}{WATER}}\ \};}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ GRAVITY\ 1\ }}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ DEFAULT\_SPEED\ 7\ }}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ JUMP\ 15\ }}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ CHECKBOX\_PADDING\ 10\ }}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}\ \mbox{\hyperlink{structCharacter_aa3230c5a3eeaf27e74d8ea7866f4c866}{direction}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCharacter_a6c38ec50636092a813f1cb89b14e6698}{animation\_delay}};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCharacter_a27a850beb4ba807af61982cfe9655eb2}{frames\_to\_next\_change}};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCharacter_ae988633f6100a27cce6a373ec5c7ce25}{current\_sprite}};}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{structCharacter_a6216169826c432994811d72170ca4a15}{sprite}};}
+\DoxyCodeLine{00052\ \ \ \ \ uint32\_t*\ left[6];}
+\DoxyCodeLine{00053\ \ \ \ \ uint32\_t*\ right[6];}
+\DoxyCodeLine{00054\ \ \ \ \ uint32\_t*\ \mbox{\hyperlink{structCharacter_af4be4887ee76635043032de8ac1220c2}{front}};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{character_8h_a3d71b92820bd3decb3c70113e0c8beba}{Elements}}\ \mbox{\hyperlink{structCharacter_ac5338cad3f7cfdbe9d7de3a4b391e0ef}{element}};}
+\DoxyCodeLine{00056\ \}\ \mbox{\hyperlink{structCharacter}{Character}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \mbox{\hyperlink{structCharacter}{Character}}*\ \mbox{\hyperlink{character_8h_a4d30f3dcba9d610e55202861deca1a88}{fireboy}};}
+\DoxyCodeLine{00060\ \mbox{\hyperlink{structCharacter}{Character}}*\ \mbox{\hyperlink{character_8h_a650dbd72c2801dde7b4e33a0e08f0bf1}{watergirl}};}
+\DoxyCodeLine{00061\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structMap}{Map}}*\ \mbox{\hyperlink{character_8h_a6f7e766d44058178f28200bc1fbdd7c4}{current\_map}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_af1f79d19ce37d907109cac4428d1a9e9}{hit\_ground}}(\mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_a204005cfc4a4ffd8ba457f9266800714}{block}});}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_a7f174e00bc7d210f5d1cb4dc033196ef}{draw\_falling\_blocks}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_aac85aba5e302d3fc430fb88b935adfae}{erase\_blocks}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_ad029cdd99d59cb48a3a1aa8f4df3a00c}{wall\_down}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_a67bf0d4985ab95237ed10fe7c484139b}{wall\_left}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_abdbb6041d86921195528c87d6b89ec6d}{wall\_right}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_a2605da6aca7ed27a5367ea0404014695}{wall\_up}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_a6d2a472efccfc1e2bce2c0b6efdb707e}{door\_fire}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_a7040e7399f12613e117e53285321dc3a}{door\_water}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00140\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_af295687353f5a7218debe5629c063f88}{draw\_character}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_a8729391d8f6487cdc547573cdcd1a498}{create\_characters}}();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00154\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_aedc96236fa71d5ab7c074d6590c1e789}{set\_position}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}});}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00161\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_a01b5c72802ffada2232aca1333fb5d2e}{character\_current\_sprite}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00169\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_a6db7e6d4cce636393abc416e1186fa6d}{is\_on\_ground}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00176\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_a1c2bb5f7b8faba5b5907e0beb432e978}{update\_character}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_a4d02f50978a2f7c026d5cc1c95d53734}{update\_direction}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}\ dir);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_a02f6d3746a540b8fea9d89676f41e5bd}{move}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00199\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_a5ad6d041795877ad328bbf281112557e}{move\_left}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00206\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_a7927c362746f908655b489aebaa4747c}{move\_right}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_a25209a85101a5473c3f5442b91079faa}{jump}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00222\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{character_8h_aa074f6b3248cc52e018d755eb744ec92}{stop\_moving}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00230\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_a1e9467c65e2ec00635cb70c4ac63e92d}{on\_fire}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00238\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_aa7596aedbb5fe00d2464a0415d009016}{on\_water}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00246\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{character_8h_a580c2ea442d7da3aa78047a6d6bbb3bb}{on\_poison}}(\mbox{\hyperlink{structCharacter}{Character}}*\ character);}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_CHARACTER\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

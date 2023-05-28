@@ -1,0 +1,318 @@
+\doxysection{drivers/kbc/keyboard.h File Reference}
+\hypertarget{keyboard_8h}{}\label{keyboard_8h}\index{drivers/kbc/keyboard.h@{drivers/kbc/keyboard.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for keyboard.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{keyboard_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structkeyboard__packet__t}{keyboard\+\_\+packet\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}} \{ \newline
+\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2a662d23aadd7106a3a2afdfd5d426ed}{KEY\+\_\+\+ENTER}} = 0x1C
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58ae53e9370c0243e9b0260458d3a55f315}{KEY\+\_\+\+ESC}} = 0x01
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a01d2889f9a7550008ad6140c41e733de}{KEY\+\_\+\+SPACE}} = 0x39
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa3cd0158e01f834cebcfb3fc5578df4b}{KEY\+\_\+\+BACKSPACE}} = 0x0E
+, \newline
+\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a0848a442d907968b211b97bc2bd88acd}{KEY\+\_\+\+UP}} = 0x48
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa9cdac7967bf7d88fdb761138a2a3416}{KEY\+\_\+\+DOWN}} = 0x50
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a612120b69c7dfd46086db7aaebdbcf65}{KEY\+\_\+\+LEFT}} = 0x4B
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a6504370d9c6391e1a9da6a1a529b089d}{KEY\+\_\+\+RIGHT}} = 0x4D
+, \newline
+\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58abe661264f41ec6d3079abff046cf1dbf}{KEY\+\_\+\+LSHIFT}} = 0x2A
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58ae19afb52bc4d77e8af190acbd26156bf}{KEY\+\_\+\+RSHIFT}} = 0x36
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a6aac97a191c5e1c86afe266a44615b13}{KEY\+\_\+\+LCTRL}} = 0x1D
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58acc027f0e8b0966b1b19bf5264d719dce}{KEY\+\_\+\+RCTRL}} = 0x9D
+, \newline
+\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa7b3a3d0503a46bec51c6e3da95747cc}{KEY\+\_\+A}} = 0x1E
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2e6a652ccd7afc5ce75ac4d902b6a60a}{KEY\+\_\+W}} = 0x11
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2fd73a4d527efe137e8f259db2092766}{KEY\+\_\+D}} = 0x20
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58abb2f0ce8efc3067757dbf091437f89f5}{KEY\+\_\+S}} = 0x1F
+, \newline
+\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58ac8234231b36474d3666ad56752fe6f5e}{KEY\+\_\+Q}} = 0x10
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2af9840d90c49239339bfd42f9f32868}{KEY\+\_\+E}} = 0x12
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a8b8daa06bdfb9245dc7c1030e6bf845c}{KEY\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a23fd901153941a7dae1c29446e083b3e}{KEY\+\_\+\+LEFT\+\_\+\+BREAK}} = 0x\+CB
+, \newline
+\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a88f316d9efe5b7431f55e999c60a79f3}{KEY\+\_\+\+RIGHT\+\_\+\+BREAK}} = 0x\+CD
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa11ce58412d0e2960c5cb3aaf43c5df3}{KEY\+\_\+\+A\+\_\+\+BREAK}} = 0x9E
+, \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58abdfc910cb81e32383f2a4c6e1b55a091}{KEY\+\_\+\+D\+\_\+\+BREAK}} = 0x\+A0
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{keyboard_8h_a8eee4d0a15beada731a514481b5ad4bf}{keyboard\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes to keyboard. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{keyboard_8h_ac95aea27a5e91b363b876fed881f368f}{keyboard\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes from keyboard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{keyboard_8h_af49a7f97dc208a576badc1ea399c90c9}{k\+\_\+read\+\_\+byte}} (uint8\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Reads a byte received from the keyboard and updates the packet accordingly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{keyboard_8h_a6a2a6c2b64c950d09dbcc2cc52073e12}{keyboard\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Keyboard interrupt handler. Reads data from the keyboard and updates the packet. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{keyboard_8h_ae9d9aecd950ed73e5af4a2029ab7d347}{keyboard\+\_\+restore\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Restores the keyboard interrupt handler to its original state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}} \mbox{\hyperlink{keyboard_8h_a8293ed7354a6ea82112562399eff8220}{keyboard\+\_\+get\+\_\+key}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the key from the keyboard packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58} 
+\index{keyboard.h@{keyboard.h}!keyboard\_key@{keyboard\_key}}
+\index{keyboard\_key@{keyboard\_key}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{keyboard\_key}{keyboard\_key}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_ENTER@{KEY\_ENTER}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_ENTER@{KEY\_ENTER}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2a662d23aadd7106a3a2afdfd5d426ed}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2a662d23aadd7106a3a2afdfd5d426ed} 
+KEY\+\_\+\+ENTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_ESC@{KEY\_ESC}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_ESC@{KEY\_ESC}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58ae53e9370c0243e9b0260458d3a55f315}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58ae53e9370c0243e9b0260458d3a55f315} 
+KEY\+\_\+\+ESC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_SPACE@{KEY\_SPACE}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_SPACE@{KEY\_SPACE}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a01d2889f9a7550008ad6140c41e733de}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a01d2889f9a7550008ad6140c41e733de} 
+KEY\+\_\+\+SPACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_BACKSPACE@{KEY\_BACKSPACE}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_BACKSPACE@{KEY\_BACKSPACE}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa3cd0158e01f834cebcfb3fc5578df4b}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa3cd0158e01f834cebcfb3fc5578df4b} 
+KEY\+\_\+\+BACKSPACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_UP@{KEY\_UP}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_UP@{KEY\_UP}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a0848a442d907968b211b97bc2bd88acd}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a0848a442d907968b211b97bc2bd88acd} 
+KEY\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_DOWN@{KEY\_DOWN}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_DOWN@{KEY\_DOWN}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa9cdac7967bf7d88fdb761138a2a3416}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa9cdac7967bf7d88fdb761138a2a3416} 
+KEY\+\_\+\+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_LEFT@{KEY\_LEFT}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_LEFT@{KEY\_LEFT}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a612120b69c7dfd46086db7aaebdbcf65}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a612120b69c7dfd46086db7aaebdbcf65} 
+KEY\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_RIGHT@{KEY\_RIGHT}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_RIGHT@{KEY\_RIGHT}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a6504370d9c6391e1a9da6a1a529b089d}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a6504370d9c6391e1a9da6a1a529b089d} 
+KEY\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_LSHIFT@{KEY\_LSHIFT}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_LSHIFT@{KEY\_LSHIFT}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58abe661264f41ec6d3079abff046cf1dbf}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58abe661264f41ec6d3079abff046cf1dbf} 
+KEY\+\_\+\+LSHIFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_RSHIFT@{KEY\_RSHIFT}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_RSHIFT@{KEY\_RSHIFT}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58ae19afb52bc4d77e8af190acbd26156bf}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58ae19afb52bc4d77e8af190acbd26156bf} 
+KEY\+\_\+\+RSHIFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_LCTRL@{KEY\_LCTRL}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_LCTRL@{KEY\_LCTRL}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a6aac97a191c5e1c86afe266a44615b13}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a6aac97a191c5e1c86afe266a44615b13} 
+KEY\+\_\+\+LCTRL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_RCTRL@{KEY\_RCTRL}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_RCTRL@{KEY\_RCTRL}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58acc027f0e8b0966b1b19bf5264d719dce}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58acc027f0e8b0966b1b19bf5264d719dce} 
+KEY\+\_\+\+RCTRL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_A@{KEY\_A}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_A@{KEY\_A}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa7b3a3d0503a46bec51c6e3da95747cc}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa7b3a3d0503a46bec51c6e3da95747cc} 
+KEY\+\_\+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_W@{KEY\_W}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_W@{KEY\_W}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2e6a652ccd7afc5ce75ac4d902b6a60a}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2e6a652ccd7afc5ce75ac4d902b6a60a} 
+KEY\+\_\+W&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_D@{KEY\_D}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_D@{KEY\_D}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2fd73a4d527efe137e8f259db2092766}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2fd73a4d527efe137e8f259db2092766} 
+KEY\+\_\+D&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_S@{KEY\_S}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_S@{KEY\_S}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58abb2f0ce8efc3067757dbf091437f89f5}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58abb2f0ce8efc3067757dbf091437f89f5} 
+KEY\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_Q@{KEY\_Q}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_Q@{KEY\_Q}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58ac8234231b36474d3666ad56752fe6f5e}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58ac8234231b36474d3666ad56752fe6f5e} 
+KEY\+\_\+Q&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_E@{KEY\_E}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_E@{KEY\_E}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2af9840d90c49239339bfd42f9f32868}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a2af9840d90c49239339bfd42f9f32868} 
+KEY\+\_\+E&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_NONE@{KEY\_NONE}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_NONE@{KEY\_NONE}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a8b8daa06bdfb9245dc7c1030e6bf845c}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a8b8daa06bdfb9245dc7c1030e6bf845c} 
+KEY\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_LEFT\_BREAK@{KEY\_LEFT\_BREAK}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_LEFT\_BREAK@{KEY\_LEFT\_BREAK}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a23fd901153941a7dae1c29446e083b3e}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a23fd901153941a7dae1c29446e083b3e} 
+KEY\+\_\+\+LEFT\+\_\+\+BREAK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_RIGHT\_BREAK@{KEY\_RIGHT\_BREAK}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_RIGHT\_BREAK@{KEY\_RIGHT\_BREAK}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a88f316d9efe5b7431f55e999c60a79f3}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58a88f316d9efe5b7431f55e999c60a79f3} 
+KEY\+\_\+\+RIGHT\+\_\+\+BREAK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_A\_BREAK@{KEY\_A\_BREAK}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_A\_BREAK@{KEY\_A\_BREAK}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa11ce58412d0e2960c5cb3aaf43c5df3}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58aa11ce58412d0e2960c5cb3aaf43c5df3} 
+KEY\+\_\+\+A\+\_\+\+BREAK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_D\_BREAK@{KEY\_D\_BREAK}!keyboard.h@{keyboard.h}}\index{keyboard.h@{keyboard.h}!KEY\_D\_BREAK@{KEY\_D\_BREAK}}}\Hypertarget{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58abdfc910cb81e32383f2a4c6e1b55a091}\label{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58abdfc910cb81e32383f2a4c6e1b55a091} 
+KEY\+\_\+\+D\+\_\+\+BREAK&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{keyboard_8h_af49a7f97dc208a576badc1ea399c90c9}\label{keyboard_8h_af49a7f97dc208a576badc1ea399c90c9} 
+\index{keyboard.h@{keyboard.h}!k\_read\_byte@{k\_read\_byte}}
+\index{k\_read\_byte@{k\_read\_byte}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{k\_read\_byte()}{k\_read\_byte()}}
+{\footnotesize\ttfamily void k\+\_\+read\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+Reads a byte received from the keyboard and updates the packet accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The byte received from the keyboard. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_af49a7f97dc208a576badc1ea399c90c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8h_a8293ed7354a6ea82112562399eff8220}\label{keyboard_8h_a8293ed7354a6ea82112562399eff8220} 
+\index{keyboard.h@{keyboard.h}!keyboard\_get\_key@{keyboard\_get\_key}}
+\index{keyboard\_get\_key@{keyboard\_get\_key}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{keyboard\_get\_key()}{keyboard\_get\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}} keyboard\+\_\+get\+\_\+key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the key from the keyboard packet. 
+
+\begin{DoxyReturn}{Returns}
+Returns the key from the keyboard packet. If the packet is not complete, KEY\+\_\+\+NONE is returned. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a8293ed7354a6ea82112562399eff8220_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8h_a6a2a6c2b64c950d09dbcc2cc52073e12}\label{keyboard_8h_a6a2a6c2b64c950d09dbcc2cc52073e12} 
+\index{keyboard.h@{keyboard.h}!keyboard\_ih@{keyboard\_ih}}
+\index{keyboard\_ih@{keyboard\_ih}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{keyboard\_ih()}{keyboard\_ih()}}
+{\footnotesize\ttfamily void keyboard\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Keyboard interrupt handler. Reads data from the keyboard and updates the packet. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a6a2a6c2b64c950d09dbcc2cc52073e12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a6a2a6c2b64c950d09dbcc2cc52073e12_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8h_ae9d9aecd950ed73e5af4a2029ab7d347}\label{keyboard_8h_ae9d9aecd950ed73e5af4a2029ab7d347} 
+\index{keyboard.h@{keyboard.h}!keyboard\_restore\_int@{keyboard\_restore\_int}}
+\index{keyboard\_restore\_int@{keyboard\_restore\_int}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{keyboard\_restore\_int()}{keyboard\_restore\_int()}}
+{\footnotesize\ttfamily int keyboard\+\_\+restore\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Restores the keyboard interrupt handler to its original state. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_ae9d9aecd950ed73e5af4a2029ab7d347_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8h_a8eee4d0a15beada731a514481b5ad4bf}\label{keyboard_8h_a8eee4d0a15beada731a514481b5ad4bf} 
+\index{keyboard.h@{keyboard.h}!keyboard\_subscribe\_int@{keyboard\_subscribe\_int}}
+\index{keyboard\_subscribe\_int@{keyboard\_subscribe\_int}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{keyboard\_subscribe\_int()}{keyboard\_subscribe\_int()}}
+{\footnotesize\ttfamily int keyboard\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes to keyboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Pointer that will be pointed to the keyboard hook\+\_\+id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a8eee4d0a15beada731a514481b5ad4bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8h_ac95aea27a5e91b363b876fed881f368f}\label{keyboard_8h_ac95aea27a5e91b363b876fed881f368f} 
+\index{keyboard.h@{keyboard.h}!keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}}
+\index{keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{keyboard\_unsubscribe\_int()}{keyboard\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int keyboard\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes from keyboard. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_ac95aea27a5e91b363b876fed881f368f_icgraph}
+\end{center}
+\end{figure}

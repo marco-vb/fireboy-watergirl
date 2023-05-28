@@ -1,0 +1,5 @@
+<map id="clear_timer" name="clear_timer">
+<area shape="rect" id="Node000001" title="Clears the timer from the screen." alt="" coords="5,5,101,33"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="149,5,336,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,17,134,17,134,22,101,22"/>
+</map>

@@ -1,0 +1,21 @@
+<map id="mouse_over_sprite" name="mouse_over_sprite">
+<area shape="rect" id="Node000001" title="Checks if the mouse is over the specified sprite." alt="" coords="997,56,1143,84"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#ad7ca2d21a727f7d55afef2392de3b5f8" title="draws the main menu and controlls if an option is chosen" alt="" coords="613,5,750,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="993,55,949,47,845,34,750,26,751,21,845,29,950,42,994,50"/>
+<area shape="rect" id="Node000006" href="$mouse_8c.html#a9f516b600d90049ccc3e14b2271055fd" title="Checks if the left mouse button is clicked while over the specified sprite." alt="" coords="799,56,949,84"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="983,73,949,73,949,67,983,67"/>
+<area shape="rect" id="Node000009" href="$mouse_8c.html#ac94353664374148e28b58b21a8c206d8" title="Checks if the right mouse button is clicked while over the specified sprite." alt="" coords="798,108,949,136"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1002,91,930,110,928,105,1000,85"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,32,419,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="598,29,420,44,420,39,598,24"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,32,268,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="301,49,269,49,269,43,301,43"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,32,127,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="160,49,127,49,127,43,160,43"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="804,54,736,36,737,31,806,49"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#ab323971701b6e01aff44feeaa9475735" title="Draws the ropes on the screen. And controlls whether or not the characters can or have cut them." alt="" coords="633,57,730,85"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="783,73,730,73,730,68,783,68"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#a3cef68220fcc611902108d6f0159e50f" title="draws the elements of the game" alt="" coords="467,57,565,85"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="618,74,565,74,565,69,618,69"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="452,63,419,57,420,52,453,58"/>
+</map>

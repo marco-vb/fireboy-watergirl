@@ -1,0 +1,45 @@
+var character_8h =
+[
+    [ "Character", "structCharacter.html", "structCharacter" ],
+    [ "CHECKBOX_PADDING", "character_8h.html#a5eb4e63d28d3f73cebd43a71569d35c6", null ],
+    [ "DEFAULT_SPEED", "character_8h.html#afc945b2e8394478f97e2aabc7aebaf0e", null ],
+    [ "GRAVITY", "character_8h.html#a6801baa546c6112d19eb095111d24720", null ],
+    [ "JUMP", "character_8h.html#aee551d17fffb6235cc7123499dbf7d65", null ],
+    [ "Direction", "character_8h.html#a224b9163917ac32fc95a60d8c1eec3aa", [
+      [ "LEFT", "character_8h.html#a224b9163917ac32fc95a60d8c1eec3aaadb45120aafd37a973140edee24708065", null ],
+      [ "RIGHT", "character_8h.html#a224b9163917ac32fc95a60d8c1eec3aaaec8379af7490bb9eaaf579cf17876f38", null ],
+      [ "UP", "character_8h.html#a224b9163917ac32fc95a60d8c1eec3aaaba595d8bca8bc5e67c37c0a9d89becfa", null ],
+      [ "DEFAULT", "character_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa88ec7d5086d2469ba843c7fcceade8a6", null ]
+    ] ],
+    [ "Elements", "character_8h.html#a3d71b92820bd3decb3c70113e0c8beba", [
+      [ "FIRE", "character_8h.html#a3d71b92820bd3decb3c70113e0c8bebaa6811f08ec3a763b0351fab6fb5054df8", null ],
+      [ "WATER", "character_8h.html#a3d71b92820bd3decb3c70113e0c8bebaa9ac7d5e5851d7a2bc186a1c3341589f6", null ]
+    ] ],
+    [ "character_current_sprite", "character_8h.html#a01b5c72802ffada2232aca1333fb5d2e", null ],
+    [ "create_characters", "character_8h.html#a8729391d8f6487cdc547573cdcd1a498", null ],
+    [ "door_fire", "character_8h.html#a6d2a472efccfc1e2bce2c0b6efdb707e", null ],
+    [ "door_water", "character_8h.html#a7040e7399f12613e117e53285321dc3a", null ],
+    [ "draw_character", "character_8h.html#af295687353f5a7218debe5629c063f88", null ],
+    [ "draw_falling_blocks", "character_8h.html#a7f174e00bc7d210f5d1cb4dc033196ef", null ],
+    [ "erase_blocks", "character_8h.html#aac85aba5e302d3fc430fb88b935adfae", null ],
+    [ "hit_ground", "character_8h.html#af1f79d19ce37d907109cac4428d1a9e9", null ],
+    [ "is_on_ground", "character_8h.html#a6db7e6d4cce636393abc416e1186fa6d", null ],
+    [ "jump", "character_8h.html#a25209a85101a5473c3f5442b91079faa", null ],
+    [ "move", "character_8h.html#a02f6d3746a540b8fea9d89676f41e5bd", null ],
+    [ "move_left", "character_8h.html#a5ad6d041795877ad328bbf281112557e", null ],
+    [ "move_right", "character_8h.html#a7927c362746f908655b489aebaa4747c", null ],
+    [ "on_fire", "character_8h.html#a1e9467c65e2ec00635cb70c4ac63e92d", null ],
+    [ "on_poison", "character_8h.html#a580c2ea442d7da3aa78047a6d6bbb3bb", null ],
+    [ "on_water", "character_8h.html#aa7596aedbb5fe00d2464a0415d009016", null ],
+    [ "set_position", "character_8h.html#aedc96236fa71d5ab7c074d6590c1e789", null ],
+    [ "stop_moving", "character_8h.html#aa074f6b3248cc52e018d755eb744ec92", null ],
+    [ "update_character", "character_8h.html#a1c2bb5f7b8faba5b5907e0beb432e978", null ],
+    [ "update_direction", "character_8h.html#a4d02f50978a2f7c026d5cc1c95d53734", null ],
+    [ "wall_down", "character_8h.html#ad029cdd99d59cb48a3a1aa8f4df3a00c", null ],
+    [ "wall_left", "character_8h.html#a67bf0d4985ab95237ed10fe7c484139b", null ],
+    [ "wall_right", "character_8h.html#abdbb6041d86921195528c87d6b89ec6d", null ],
+    [ "wall_up", "character_8h.html#a2605da6aca7ed27a5367ea0404014695", null ],
+    [ "current_map", "character_8h.html#a6f7e766d44058178f28200bc1fbdd7c4", null ],
+    [ "fireboy", "character_8h.html#a4d30f3dcba9d610e55202861deca1a88", null ],
+    [ "watergirl", "character_8h.html#a650dbd72c2801dde7b4e33a0e08f0bf1", null ]
+];

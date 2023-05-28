@@ -1,0 +1,21 @@
+<map id="check_ready" name="check_ready">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,84,109,112"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a2eff397867945c80b90829c73420b9dd" title="Retrieves the value of the front element in the receive queue without removing it." alt="" coords="157,5,311,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,81,156,43,174,36,176,41,158,48,84,86"/>
+<area shape="rect" id="Node000004" href="$ser_8c.html#ac744c756a04d5f3baf68ea0ffa5dff21" title="Checks if the receive queue is empty." alt="" coords="359,109,542,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="109,98,344,114,344,119,109,104"/>
+<area shape="rect" id="Node000006" href="$ser_8c.html#ae569d91a2c2daa3f70035e54f5734340" title="Removes and returns the front element from the receive queue." alt="" coords="160,57,308,85"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="109,87,145,82,146,87,110,93"/>
+<area shape="rect" id="Node000008" href="$ser_8c.html#a2c7f265ecac6d3de66c68d291b3271a6" title="Retrieves the number of elements in the receive queue." alt="" coords="159,160,309,188"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="91,110,158,139,186,151,184,156,156,144,89,115"/>
+<area shape="rect" id="Node000003" href="$queue_8c.html#a32df32dccfc5eadc233531804f0cb305" title=" " alt="" coords="425,5,477,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="311,17,409,17,409,22,311,22"/>
+<area shape="rect" id="Node000005" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="590,84,672,112"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="543,108,575,103,576,108,543,113"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="294,54,409,26,411,31,295,59"/>
+<area shape="rect" id="Node000007" href="$queue_8c.html#adf4516721a62bf0453cab358d2491f25" title=" " alt="" coords="405,57,497,85"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="308,69,390,69,390,74,308,74"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="498,75,576,87,575,92,497,81"/>
+<area shape="rect" id="Node000009" href="$queue_8c.html#a452a10ef01f1ebfc42ec1286cbb88eb6" title=" " alt="" coords="413,161,488,189"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="309,172,398,172,398,178,309,177"/>
+</map>

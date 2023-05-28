@@ -1,0 +1,71 @@
+<map id="draw_main_menu" name="draw_main_menu">
+<area shape="rect" id="Node000001" title="draws the main menu and controlls if an option is chosen" alt="" coords="5,492,143,520"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a04849a384fadcd26c6c1dc5814d97a37" title=" " alt="" coords="205,57,344,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,491,85,433,106,345,140,244,162,194,188,147,213,117,240,92,243,96,217,121,193,150,167,197,145,246,111,346,90,434,80,492"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#a3e8d2ec60eba082aabdea302626824d3" title="Clears all the buffers and the video memory." alt="" coords="206,413,343,441"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="104,489,190,451,211,444,213,449,192,456,106,494"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#ad4bb9a6cbe9640cf7f11f5ee54328ab9" title="Copies the information from the buffer to the video memory (double buffering technique)." alt="" coords="429,364,528,392"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="84,490,126,443,156,419,190,399,247,381,306,371,364,368,414,369,414,374,364,373,307,377,248,386,192,404,159,423,130,447,88,493"/>
+<area shape="rect" id="Node000007" href="$map_8c.html#ac95da25035e96eeda36c003bdf8853f1" title="Draws the given map." alt="" coords="230,465,319,493"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="142,494,215,484,215,490,143,499"/>
+<area shape="rect" id="Node000012" href="$sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws a sprite." alt="" coords="226,517,323,545"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="143,512,211,521,210,526,142,517"/>
+<area shape="rect" id="Node000013" href="$sprite_8c.html#a92dc8c9632f56d3d3bde58d592e4ca84" title="Erases a sprite from the screen." alt="" coords="428,621,529,649"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="106,518,192,554,309,591,414,618,413,623,307,596,190,559,104,523"/>
+<area shape="rect" id="Node000015" href="$mouse_8c.html#a9f516b600d90049ccc3e14b2271055fd" title="Checks if the left mouse button is clicked while over the specified sprite." alt="" coords="199,720,350,748"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="82,519,96,555,119,603,151,655,192,700,209,711,206,716,189,704,147,658,114,606,91,557,77,521"/>
+<area shape="rect" id="Node000016" href="$mouse_8c.html#a67ad33cc421ed4f48546fd7648f767df" title="Checks if the mouse is over the specified sprite." alt="" coords="406,696,551,724"/>
+<area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="84,519,99,548,123,586,154,624,192,656,240,679,292,694,343,703,391,708,391,713,343,709,290,699,238,684,189,660,150,628,118,589,94,551,79,521"/>
+<area shape="rect" id="Node000018" href="$map_8c.html#a1d1326355ebc52cb1eaca3531963e323" title="Resets all the falling blocks to their original position." alt="" coords="199,619,350,646"/>
+<area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="91,518,135,557,192,598,216,610,214,615,189,603,131,561,88,522"/>
+<area shape="rect" id="Node000019" href="$ser_8c.html#afbefc34bc41c323555ca4f834fc7eb7a" title="Sends bytes from the send queue to the UART transmit buffer." alt="" coords="227,160,322,188"/>
+<area shape="poly" id="edge22_Node000001_Node000019" title=" " alt="" coords="78,490,117,389,149,321,188,255,215,223,243,196,247,199,219,226,193,258,154,323,121,391,82,492"/>
+<area shape="rect" id="Node000026" href="$ser_8c.html#aed2f6f42744701ff0ad54a7638018721" title="Checks if the send queue is empty." alt="" coords="610,263,776,290"/>
+<area shape="poly" id="edge31_Node000001_Node000026" title=" " alt="" coords="76,491,87,451,108,397,142,342,164,318,189,298,242,272,298,254,356,244,415,239,472,239,526,243,618,257,617,262,526,248,472,245,415,244,357,249,299,259,244,277,192,303,167,322,146,345,113,399,92,453,81,492"/>
+<area shape="rect" id="Node000027" href="$communication_8c.html#a09a44a5cbd0382f3d0457cca799039c6" title=" " alt="" coords="191,312,358,340"/>
+<area shape="poly" id="edge33_Node000001_Node000027" title=" " alt="" coords="81,490,121,427,153,389,189,356,209,344,211,348,192,360,156,393,126,430,85,493"/>
+<area shape="rect" id="Node000030" href="$count__down_8c.html#a0f245700d736529dc9cb1a24a3d96735" title="Starts a counter." alt="" coords="221,772,328,800"/>
+<area shape="poly" id="edge37_Node000001_Node000030" title=" " alt="" coords="80,520,91,565,111,629,144,698,166,729,192,757,209,768,206,772,189,761,162,733,140,701,106,631,85,567,75,521"/>
+<area shape="rect" id="Node000031" href="$ser_8c.html#a44f70f30a4b7f976edc9db4a54782207" title="Checks if the transmitter is ready to send data." alt="" coords="205,824,344,852"/>
+<area shape="poly" id="edge38_Node000001_Node000031" title=" " alt="" coords="79,520,86,573,105,651,119,694,139,736,163,775,193,809,198,814,195,818,189,813,158,778,134,738,114,696,100,653,81,574,74,520"/>
+<area shape="rect" id="Node000003" href="$ser_8c.html#a0a213756c8e2f84975a76c4bc6e2933c" title="Reads the Line Status Register (LSR) value." alt="" coords="656,5,730,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,54,406,43,533,28,641,20,642,25,533,34,406,48,344,59"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="835,32,933,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="731,22,820,34,819,40,730,27"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="334,410,414,391,415,396,335,415"/>
+<area shape="rect" id="Node000008" href="$sprite_8c.html#aeb91b0831a9bc988b1c041836318001b" title="Creates a sprite object." alt="" coords="426,416,532,444"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="319,466,411,443,412,449,320,471"/>
+<area shape="rect" id="Node000009" href="$graphics_8c.html#ad5b4d5bb4cb1f5a41075afa1ecc3ae98" title="Copies the information from the." alt="" coords="411,468,547,496"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="319,477,395,478,395,483,319,482"/>
+<area shape="rect" id="Node000010" href="$graphics_8c.html#a8dc3b64d819195e41495b03be84f9db5" title="Draws an xpm image." alt="" coords="434,520,523,548"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="320,488,420,516,419,521,319,494"/>
+<area shape="rect" id="Node000011" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="625,544,761,572"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="524,536,611,546,610,551,524,541"/>
+<area shape="poly" id="edge13_Node000012_Node000011" title=" " alt="" coords="324,541,406,557,513,562,611,560,611,566,513,567,406,562,323,547"/>
+<area shape="rect" id="Node000014" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="599,621,787,649"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="530,633,584,633,584,638,530,638"/>
+<area shape="poly" id="edge17_Node000015_Node000016" title=" " alt="" coords="349,722,391,717,391,723,350,728"/>
+<area shape="rect" id="Node000017" href="$mouse_8c.html#aee417ce29c994f148e41f76856416a6e" title="Checks if the mouse is inside the specified rectangle." alt="" coords="637,696,749,724"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="552,707,622,707,622,713,552,713"/>
+<area shape="poly" id="edge21_Node000018_Node000013" title=" " alt="" coords="350,631,413,632,413,637,350,636"/>
+<area shape="rect" id="Node000020" href="$queue_8c.html#a32df32dccfc5eadc233531804f0cb305" title=" " alt="" coords="453,109,505,137"/>
+<area shape="poly" id="edge23_Node000019_Node000020" title=" " alt="" coords="322,159,438,130,439,136,323,165"/>
+<area shape="rect" id="Node000021" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="843,236,925,264"/>
+<area shape="poly" id="edge24_Node000019_Node000021" title=" " alt="" coords="322,167,410,162,527,162,657,172,723,182,787,197,821,209,851,226,849,230,819,214,786,202,722,187,657,177,527,167,410,167,323,172"/>
+<area shape="rect" id="Node000022" href="$queue_8c.html#adf4516721a62bf0453cab358d2491f25" title=" " alt="" coords="647,211,739,238"/>
+<area shape="poly" id="edge25_Node000019_Node000022" title=" " alt="" coords="322,178,406,190,633,216,632,221,406,195,322,183"/>
+<area shape="rect" id="Node000023" href="$ser_8c.html#a7d5928b9bc756afa235f21d8532b0a1e" title="Sends a byte through the UART transmit buffer." alt="" coords="435,57,523,85"/>
+<area shape="poly" id="edge27_Node000019_Node000023" title=" " alt="" coords="296,157,345,127,405,95,421,88,423,93,407,100,348,132,299,162"/>
+<area shape="poly" id="edge26_Node000022_Node000021" title=" " alt="" coords="740,228,829,240,828,245,739,233"/>
+<area shape="rect" id="Node000024" href="$ser_8c.html#ad96ee630b8a3c428a3ac10c3b8bad01d" title="Reads the Line Control Register (LCR) value." alt="" coords="656,57,730,85"/>
+<area shape="poly" id="edge28_Node000023_Node000024" title=" " alt="" coords="523,69,641,69,641,74,523,74"/>
+<area shape="rect" id="Node000025" href="$ser_8c.html#a406e6517544d394bb3b98ec862d96296" title="Writes a value to the Line Control Register (LCR)." alt="" coords="654,109,732,137"/>
+<area shape="poly" id="edge30_Node000023_Node000025" title=" " alt="" coords="524,79,640,108,639,113,523,84"/>
+<area shape="poly" id="edge29_Node000024_Node000004" title=" " alt="" coords="730,64,819,52,820,57,731,69"/>
+<area shape="poly" id="edge32_Node000026_Node000021" title=" " alt="" coords="776,262,828,255,829,260,777,268"/>
+<area shape="rect" id="Node000028" href="$ser_8c.html#a7c232bfe6e9ff822db3f9135e41bb623" title="Adds a byte to the send queue." alt="" coords="410,312,547,340"/>
+<area shape="poly" id="edge34_Node000027_Node000028" title=" " alt="" coords="358,323,395,323,395,329,358,329"/>
+<area shape="rect" id="Node000029" href="$queue_8c.html#aa7982825b04c812a55cf357852d83207" title=" " alt="" coords="643,315,743,342"/>
+<area shape="poly" id="edge35_Node000028_Node000029" title=" " alt="" coords="548,324,628,325,628,330,548,329"/>
+<area shape="poly" id="edge36_Node000029_Node000021" title=" " alt="" coords="742,314,786,299,846,269,848,274,788,304,744,319"/>
+</map>

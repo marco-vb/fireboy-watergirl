@@ -1,0 +1,17 @@
+<map id="exit_game" name="exit_game">
+<area shape="rect" id="Node000001" title="Exists the game." alt="" coords="723,57,813,85"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#adb16266bac82ba2376f626661c75a3ff" title="draws the game over screen and controlls if any of the options is chosen" alt="" coords="536,5,670,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="708,55,648,36,650,31,709,50"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#ac581b9d6af85c4c35f9d423a966cba8e" title="draws the pause menu" alt="" coords="531,57,675,85"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="708,74,675,74,675,69,708,69"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#a0520354a211cab81d76e08490253c0c4" title="Retrives information from the serial port to check what the remote player has done and replicates it." alt="" coords="316,108,483,136"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="709,92,675,99,576,113,484,121,483,115,575,108,674,94,707,86"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="348,56,451,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="531,40,453,60,451,54,530,35"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,83,268,110"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="333,82,269,92,268,87,333,77"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,83,127,110"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="160,99,127,99,127,94,160,94"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="517,73,452,73,452,68,517,68"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="301,110,268,106,269,100,302,105"/>
+</map>

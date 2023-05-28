@@ -1,0 +1,5 @@
+<map id="is_on_ground" name="is_on_ground">
+<area shape="rect" id="Node000001" title="Checks if the character is on the ground." alt="" coords="5,5,113,33"/>
+<area shape="rect" id="Node000002" href="$map_8c.html#a2117f266cf32d37631770302fe987115" title="Returns the letter corresponding to the tile at the given position on the map." alt="" coords="161,5,231,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,17,146,17,146,22,113,22"/>
+</map>

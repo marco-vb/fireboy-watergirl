@@ -1,0 +1,5 @@
+<map id="receive_queue_front" name="receive_queue_front">
+<area shape="rect" id="Node000001" title="Retrieves the value of the front element in the receive queue without removing it." alt="" coords="5,5,160,33"/>
+<area shape="rect" id="Node000002" href="$queue_8c.html#a32df32dccfc5eadc233531804f0cb305" title=" " alt="" coords="208,5,260,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,17,193,17,193,22,160,22"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="draw_ropes" name="draw_ropes">
+<area shape="rect" id="Node000001" title="Draws the ropes on the screen. And controlls whether or not the characters can or have cut them." alt="" coords="5,57,102,85"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws a sprite." alt="" coords="176,5,274,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,54,162,35,164,40,103,59"/>
+<area shape="rect" id="Node000004" href="$sprite_8c.html#a92dc8c9632f56d3d3bde58d592e4ca84" title="Erases a sprite from the screen." alt="" coords="174,57,276,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="102,69,160,69,160,74,102,74"/>
+<area shape="rect" id="Node000006" href="$mouse_8c.html#a9f516b600d90049ccc3e14b2271055fd" title="Checks if the left mouse button is clicked while over the specified sprite." alt="" coords="150,109,300,137"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="103,83,164,102,162,107,101,88"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="374,5,509,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,17,359,17,359,22,274,22"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="348,57,535,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="276,69,333,69,333,74,276,74"/>
+<area shape="rect" id="Node000007" href="$mouse_8c.html#a67ad33cc421ed4f48546fd7648f767df" title="Checks if the mouse is over the specified sprite." alt="" coords="369,109,514,137"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="300,121,355,121,355,126,300,126"/>
+<area shape="rect" id="Node000008" href="$mouse_8c.html#aee417ce29c994f148e41f76856416a6e" title="Checks if the mouse is inside the specified rectangle." alt="" coords="583,109,695,137"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="515,121,569,121,569,126,515,126"/>
+</map>

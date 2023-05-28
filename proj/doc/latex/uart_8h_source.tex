@@ -1,0 +1,57 @@
+\doxysection{uart.\+h}
+\hypertarget{uart_8h_source}{}\label{uart_8h_source}\index{drivers/serial\_port/uart.h@{drivers/serial\_port/uart.h}}
+\mbox{\hyperlink{uart_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UART\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UART\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SER\_COM1\_IRQ\ 4}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SER\_COM2\_IRQ\ 3}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ SER\_BASE\ 0x3F8}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ SER\_RHR\ SER\_BASE}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ SER\_THR\ SER\_BASE}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ SER\_DLL\ SER\_BASE}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ SER\_DLM\ (SER\_BASE\ +\ 1)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ SER\_IER\ (SER\_BASE\ +\ 1)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ SER\_IIR\ (SER\_BASE\ +\ 2)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ SER\_FCR\ (SER\_BASE\ +\ 2)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ SER\_LCR\ (SER\_BASE\ +\ 3)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ SER\_LSR\ (SER\_BASE\ +\ 5)}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ PAR\_ODD\ 1}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ PAR\_EVEN\ 2}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ PAR\_ALWAYS\_ODD\ 3}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ PAR\_ALWAYS\_EVEN\ 4}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ LCR\_DLAB\ BIT(7)}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SER\_DATA\_RECEIVE\_INT\ BIT(0)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ SER\_EMPTY\_TRANSMIT\_INT\ BIT(1)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ SER\_RECEIVER\_ERR\_INT\ BIT(2)}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ IIR\_INT\_STATUS\ BIT(0)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ INT\_ORIGIN\_MASK\ (BIT(1)\ |\ BIT(2)\ |\ BIT(3))}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ IIR\_TRANSMIT\_EMPTY\ 1}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ IIR\_DATA\_RECEIVED\ 2}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ IIR\_DATA\_ERR\ 3}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ IIR\_CHAR\_TIMEOUT\ 4}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ LSR\_RECEIVED\_DATA\ BIT(0)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ LSR\_TRANSMITTER\_EMPTY\ BIT(5)}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ SEND\_FIFO\_SIZE\ 16}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ FCR\_ENABLE\_FIFOS\ BIT(0)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ FCR\_CLEAR\_FIFOS\ (BIT(1)\ |\ BIT(2))}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ FCR\_TRIGGER\_4\ BIT(6)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ FCR\_TRIGGER\_8\ BIT(7)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ FCR\_TRIGGER\_14\ (BIT(6)\ |\ BIT(7))}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ ACK\ 0xFA}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ NACK\ 0xFE}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

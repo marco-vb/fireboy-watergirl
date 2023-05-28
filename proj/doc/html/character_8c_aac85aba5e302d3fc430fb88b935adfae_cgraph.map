@@ -1,0 +1,7 @@
+<map id="erase_blocks" name="erase_blocks">
+<area shape="rect" id="Node000001" title="Erases all the blocks from the screen." alt="" coords="5,5,112,33"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#a92dc8c9632f56d3d3bde58d592e4ca84" title="Erases a sprite from the screen." alt="" coords="160,5,261,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,17,145,17,145,22,112,22"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="309,5,496,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,17,294,17,294,22,261,22"/>
+</map>

@@ -1,0 +1,35 @@
+\doxysection{queue.\+h}
+\hypertarget{queue_8h_source}{}\label{queue_8h_source}\index{drivers/queue.h@{drivers/queue.h}}
+\mbox{\hyperlink{queue_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QUEUE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QUEUE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structQueue__val}{Queue\_val}}\ \mbox{\hyperlink{structQueue__val}{Queue\_val}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structQueue}{Queue}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structQueue}{Queue}}\ \mbox{\hyperlink{structQueue}{Queue}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \mbox{\hyperlink{structQueue}{Queue}}*\ \mbox{\hyperlink{queue_8h_ab2665c051fb2db3b58a79e73a5416825}{create\_queue}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{queue_8h_a46a50b33e476d55cabbb406086bf2cda}{destroy\_queue}}(\mbox{\hyperlink{structQueue}{Queue}}\ *q);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{queue_8h_aa7982825b04c812a55cf357852d83207}{push\_queue}}(\mbox{\hyperlink{structQueue}{Queue}}\ *q,\ uint8\_t\ val);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{queue_8h_adf4516721a62bf0453cab358d2491f25}{pop\_queue}}(\mbox{\hyperlink{structQueue}{Queue}}\ *q);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ uint8\_t\ \mbox{\hyperlink{queue_8h_a32df32dccfc5eadc233531804f0cb305}{front}}(\mbox{\hyperlink{structQueue}{Queue}}\ *q);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{queue_8h_a1a03a0cff8f6b685beee30e08f3a3b80}{is\_empty}}(\mbox{\hyperlink{structQueue}{Queue}}\ *q);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{queue_8h_a119efee68b4d232dd411a5ca2ca3327b}{clear\_queue}}(\mbox{\hyperlink{structQueue}{Queue}}\ *q);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ uint8\_t\ \mbox{\hyperlink{queue_8h_a452a10ef01f1ebfc42ec1286cbb88eb6}{get\_size}}(\mbox{\hyperlink{structQueue}{Queue}}\ *q);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

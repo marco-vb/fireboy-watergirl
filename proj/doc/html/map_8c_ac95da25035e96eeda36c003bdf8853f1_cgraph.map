@@ -1,0 +1,11 @@
+<map id="draw_map" name="draw_map">
+<area shape="rect" id="Node000001" title="Draws the given map." alt="" coords="5,57,95,85"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#aeb91b0831a9bc988b1c041836318001b" title="Creates a sprite object." alt="" coords="158,5,264,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,54,151,36,152,41,96,59"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#ad5b4d5bb4cb1f5a41075afa1ecc3ae98" title="Copies the information from the." alt="" coords="143,57,279,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="95,69,128,69,128,74,95,74"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a8dc3b64d819195e41495b03be84f9db5" title="Draws an xpm image." alt="" coords="166,109,256,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="96,83,153,102,152,107,94,88"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="327,109,462,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="256,121,312,121,312,126,256,126"/>
+</map>

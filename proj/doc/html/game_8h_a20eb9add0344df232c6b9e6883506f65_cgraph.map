@@ -1,0 +1,18 @@
+<map id="watergirl_move" name="watergirl_move">
+<area shape="rect" id="Node000001" title="moves the watergirl depending of the keyborad key" alt="" coords="5,84,129,112"/>
+<area shape="rect" id="Node000002" href="$character_8c.html#af40f6b63c4785323573099d650399e6b" title="Moves the character up." alt="" coords="202,5,257,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,81,187,36,190,41,99,86"/>
+<area shape="rect" id="Node000005" href="$character_8c.html#a9e4a1ae4d65d1f9bc294f9ce05ec1fbf" title="Moves the character to the left." alt="" coords="186,57,273,85"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="129,85,171,78,171,83,130,90"/>
+<area shape="rect" id="Node000007" href="$character_8c.html#a804799f3a2e7840e134c772802690d32" title="Moves the character to the right." alt="" coords="182,109,277,137"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="130,105,167,111,167,116,129,110"/>
+<area shape="rect" id="Node000008" href="$character_8c.html#a2548e08b9442f811ed205380814fddd3" title="Makes the character stop moving." alt="" coords="177,161,282,189"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="99,110,187,152,184,157,97,115"/>
+<area shape="rect" id="Node000003" href="$character_8c.html#a1c090412145267c0cd7b206bf1748fce" title="Checks if the character is on the ground." alt="" coords="342,5,449,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,17,326,17,326,22,257,22"/>
+<area shape="rect" id="Node000004" href="$map_8c.html#a2117f266cf32d37631770302fe987115" title="Returns the letter corresponding to the tile at the given position on the map." alt="" coords="508,5,579,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="449,17,494,17,494,22,449,22"/>
+<area shape="rect" id="Node000006" href="$character_8c.html#aad9a3bf5d601ca6ec465aeb28667c89c" title="Changes the character&#39;s direction." alt="" coords="330,83,460,110"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="274,75,316,82,315,87,273,80"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="277,113,315,107,315,112,278,118"/>
+</map>

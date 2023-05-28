@@ -1,0 +1,22 @@
+<map id="drivers/kbc/i8042.h" name="drivers/kbc/i8042.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="216,5,361,33"/>
+<area shape="rect" id="Node000002" href="$kbc_8h.html" title=" " alt="" coords="306,81,439,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="316,41,359,79,356,83,313,45"/>
+<area shape="rect" id="Node000009" href="$mouse_8h.html" title=" " alt="" coords="129,81,282,109"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="264,45,222,83,219,79,261,41"/>
+<area shape="rect" id="Node000003" href="$kbc_8c.html" title=" " alt="" coords="5,157,137,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="305,115,126,159,125,153,304,110"/>
+<area shape="rect" id="Node000004" href="$keyboard_8c.html" title=" " alt="" coords="432,157,601,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="412,113,492,154,490,159,410,118"/>
+<area shape="rect" id="Node000005" href="$mouse_8c.html" title=" " alt="" coords="160,157,313,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="336,118,262,159,259,154,334,114"/>
+<area shape="rect" id="Node000006" href="$game_8h.html" title=" " alt="" coords="337,157,408,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="375,124,375,156,370,156,370,124"/>
+<area shape="rect" id="Node000007" href="$game_8c.html" title=" " alt="" coords="294,232,363,260"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="359,198,338,233,334,231,355,196"/>
+<area shape="rect" id="Node000008" href="$proj_8c.html" title=" " alt="" coords="388,232,445,260"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="390,196,411,231,406,233,385,198"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="171,118,96,159,94,154,168,114"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="219,122,233,155,228,157,214,124"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="250,113,344,154,342,159,248,117"/>
+</map>

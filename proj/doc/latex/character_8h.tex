@@ -1,0 +1,958 @@
+\doxysection{characters/character.h File Reference}
+\hypertarget{character_8h}{}\label{character_8h}\index{characters/character.h@{characters/character.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \"{}../drivers/graphics/graphics.\+h\"{}}\newline
+{\ttfamily \#include \"{}../sprites/falling\+\_\+block.\+h\"{}}\newline
+{\ttfamily \#include \"{}../sprites/sprite.\+h\"{}}\newline
+{\ttfamily \#include \"{}../maps/map.\+h\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/running\+\_\+down\+\_\+shield0.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+left/left\+\_\+shield1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+left/left\+\_\+shield2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+left/left\+\_\+shield3.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+left/left\+\_\+shield4.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+left/left\+\_\+shield5.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+left/left\+\_\+shield6.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+right/shield\+\_\+right1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+right/shield\+\_\+right2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+right/shield\+\_\+right3.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+right/shield\+\_\+right4.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+right/shield\+\_\+right5.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/fire\+Zelda/shield\+\_\+right/shield\+\_\+right6.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/running\+\_\+down\+\_\+shield0.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+left/left\+\_\+shield1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+left/left\+\_\+shield2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+left/left\+\_\+shield3.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+left/left\+\_\+shield4.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+left/left\+\_\+shield5.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+left/left\+\_\+shield6.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+right/shield\+\_\+right1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+right/shield\+\_\+right2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+right/shield\+\_\+right3.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+right/shield\+\_\+right4.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+right/shield\+\_\+right5.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/zeldas/water\+Zelda/shield\+\_\+right/shield\+\_\+right6.\+xpm\"{}}\newline
+Include dependency graph for character.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{character_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCharacter}{Character}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{character_8h_a6801baa546c6112d19eb095111d24720}{GRAVITY}}~1 /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Default vertical acelarition to when Objects are falling\texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{character_8h_afc945b2e8394478f97e2aabc7aebaf0e}{DEFAULT\+\_\+\+SPEED}}~7 /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Default horizontal speed when characters are moving\texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{character_8h_aee551d17fffb6235cc7123499dbf7d65}{JUMP}}~15 /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief vertical speed to when a character \mbox{\hyperlink{character_8c_af40f6b63c4785323573099d650399e6b}{jump}}\texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{character_8h_a5eb4e63d28d3f73cebd43a71569d35c6}{CHECKBOX\+\_\+\+PADDING}}~10 /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Margin of the sprite which is not going to be considered as a checkbox\texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} \{ \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aaadb45120aafd37a973140edee24708065}{LEFT}}
+, \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aaaec8379af7490bb9eaaf579cf17876f38}{RIGHT}}
+, \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aaaba595d8bca8bc5e67c37c0a9d89becfa}{UP}}
+, \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aaa88ec7d5086d2469ba843c7fcceade8a6}{DEFAULT}}
+ \}
+\item 
+enum \mbox{\hyperlink{character_8h_a3d71b92820bd3decb3c70113e0c8beba}{Elements}} \{ \mbox{\hyperlink{character_8h_a3d71b92820bd3decb3c70113e0c8bebaa6811f08ec3a763b0351fab6fb5054df8}{FIRE}}
+, \mbox{\hyperlink{character_8h_a3d71b92820bd3decb3c70113e0c8bebaa9ac7d5e5851d7a2bc186a1c3341589f6}{WATER}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{character_8h_af1f79d19ce37d907109cac4428d1a9e9}{hit\+\_\+ground}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{sprite_8h_a204005cfc4a4ffd8ba457f9266800714}{block}})
+\begin{DoxyCompactList}\small\item\em Checks if block hit the ground. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_a7f174e00bc7d210f5d1cb4dc033196ef}{draw\+\_\+falling\+\_\+blocks}} ()
+\begin{DoxyCompactList}\small\item\em Moves blocks that are falling, stops all blocks that have hit the ground and draws all the blocks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_aac85aba5e302d3fc430fb88b935adfae}{erase\+\_\+blocks}} ()
+\begin{DoxyCompactList}\small\item\em Erases all the blocks from the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_ad029cdd99d59cb48a3a1aa8f4df3a00c}{wall\+\_\+down}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if there is a wall below the character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_a67bf0d4985ab95237ed10fe7c484139b}{wall\+\_\+left}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if there is a wall to the left of the character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_abdbb6041d86921195528c87d6b89ec6d}{wall\+\_\+right}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if there is a wall to the right of the character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_a2605da6aca7ed27a5367ea0404014695}{wall\+\_\+up}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if there is a wall above the character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_a6d2a472efccfc1e2bce2c0b6efdb707e}{door\+\_\+fire}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if the character is in front of the fire door. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_a7040e7399f12613e117e53285321dc3a}{door\+\_\+water}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if the character is in front of the water door. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_af295687353f5a7218debe5629c063f88}{draw\+\_\+character}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Draws the character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_a8729391d8f6487cdc547573cdcd1a498}{create\+\_\+characters}} ()
+\begin{DoxyCompactList}\small\item\em Creates the characters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_aedc96236fa71d5ab7c074d6590c1e789}{set\+\_\+position}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character, int \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}})
+\begin{DoxyCompactList}\small\item\em Sets the character\textquotesingle{}s position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_a01b5c72802ffada2232aca1333fb5d2e}{character\+\_\+current\+\_\+sprite}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Updates the current character\textquotesingle{}s sprite. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_a6db7e6d4cce636393abc416e1186fa6d}{is\+\_\+on\+\_\+ground}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if the character is on the ground. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_a1c2bb5f7b8faba5b5907e0beb432e978}{update\+\_\+character}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Updates the sprite values of the character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_a4d02f50978a2f7c026d5cc1c95d53734}{update\+\_\+direction}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character, enum \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em Changes the character\textquotesingle{}s direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_a02f6d3746a540b8fea9d89676f41e5bd}{move}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Moves the character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_a5ad6d041795877ad328bbf281112557e}{move\+\_\+left}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Moves the character to the left. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_a7927c362746f908655b489aebaa4747c}{move\+\_\+right}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Moves the character to the right. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_a25209a85101a5473c3f5442b91079faa}{jump}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Moves the character up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{character_8h_aa074f6b3248cc52e018d755eb744ec92}{stop\+\_\+moving}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Makes the character stop moving. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_a1e9467c65e2ec00635cb70c4ac63e92d}{on\+\_\+fire}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if the character is on fire. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_aa7596aedbb5fe00d2464a0415d009016}{on\+\_\+water}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if the character is on water. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{character_8h_a580c2ea442d7da3aa78047a6d6bbb3bb}{on\+\_\+poison}} (\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}character)
+\begin{DoxyCompactList}\small\item\em Checks if the character is on the poison. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{character_8h_a4d30f3dcba9d610e55202861deca1a88}{fireboy}}
+\item 
+\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{character_8h_a650dbd72c2801dde7b4e33a0e08f0bf1}{watergirl}}
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{character_8h_a6f7e766d44058178f28200bc1fbdd7c4}{current\+\_\+map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{character_8h_a5eb4e63d28d3f73cebd43a71569d35c6}\label{character_8h_a5eb4e63d28d3f73cebd43a71569d35c6} 
+\index{character.h@{character.h}!CHECKBOX\_PADDING@{CHECKBOX\_PADDING}}
+\index{CHECKBOX\_PADDING@{CHECKBOX\_PADDING}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{CHECKBOX\_PADDING}{CHECKBOX\_PADDING}}
+{\footnotesize\ttfamily \#define CHECKBOX\+\_\+\+PADDING~10 /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Margin of the sprite which is not going to be considered as a checkbox\texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{character_8h_afc945b2e8394478f97e2aabc7aebaf0e}\label{character_8h_afc945b2e8394478f97e2aabc7aebaf0e} 
+\index{character.h@{character.h}!DEFAULT\_SPEED@{DEFAULT\_SPEED}}
+\index{DEFAULT\_SPEED@{DEFAULT\_SPEED}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_SPEED}{DEFAULT\_SPEED}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+SPEED~7 /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Default horizontal speed when characters are moving\texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{character_8h_a6801baa546c6112d19eb095111d24720}\label{character_8h_a6801baa546c6112d19eb095111d24720} 
+\index{character.h@{character.h}!GRAVITY@{GRAVITY}}
+\index{GRAVITY@{GRAVITY}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{GRAVITY}{GRAVITY}}
+{\footnotesize\ttfamily \#define GRAVITY~1 /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Default vertical acelarition to when Objects are falling\texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{character_8h_aee551d17fffb6235cc7123499dbf7d65}\label{character_8h_aee551d17fffb6235cc7123499dbf7d65} 
+\index{character.h@{character.h}!JUMP@{JUMP}}
+\index{JUMP@{JUMP}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{JUMP}{JUMP}}
+{\footnotesize\ttfamily \#define JUMP~15 /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief vertical speed to when a character \mbox{\hyperlink{character_8c_af40f6b63c4785323573099d650399e6b}{jump}}\texorpdfstring{$\ast$}{*}/}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{character_8h_a224b9163917ac32fc95a60d8c1eec3aa}\label{character_8h_a224b9163917ac32fc95a60d8c1eec3aa} 
+\index{character.h@{character.h}!Direction@{Direction}}
+\index{Direction@{Direction}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!character.h@{character.h}}\index{character.h@{character.h}!LEFT@{LEFT}}}\Hypertarget{character_8h_a224b9163917ac32fc95a60d8c1eec3aaadb45120aafd37a973140edee24708065}\label{character_8h_a224b9163917ac32fc95a60d8c1eec3aaadb45120aafd37a973140edee24708065} 
+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!character.h@{character.h}}\index{character.h@{character.h}!RIGHT@{RIGHT}}}\Hypertarget{character_8h_a224b9163917ac32fc95a60d8c1eec3aaaec8379af7490bb9eaaf579cf17876f38}\label{character_8h_a224b9163917ac32fc95a60d8c1eec3aaaec8379af7490bb9eaaf579cf17876f38} 
+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!character.h@{character.h}}\index{character.h@{character.h}!UP@{UP}}}\Hypertarget{character_8h_a224b9163917ac32fc95a60d8c1eec3aaaba595d8bca8bc5e67c37c0a9d89becfa}\label{character_8h_a224b9163917ac32fc95a60d8c1eec3aaaba595d8bca8bc5e67c37c0a9d89becfa} 
+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEFAULT@{DEFAULT}!character.h@{character.h}}\index{character.h@{character.h}!DEFAULT@{DEFAULT}}}\Hypertarget{character_8h_a224b9163917ac32fc95a60d8c1eec3aaa88ec7d5086d2469ba843c7fcceade8a6}\label{character_8h_a224b9163917ac32fc95a60d8c1eec3aaa88ec7d5086d2469ba843c7fcceade8a6} 
+DEFAULT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{character_8h_a3d71b92820bd3decb3c70113e0c8beba}\label{character_8h_a3d71b92820bd3decb3c70113e0c8beba} 
+\index{character.h@{character.h}!Elements@{Elements}}
+\index{Elements@{Elements}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{Elements}{Elements}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{character_8h_a3d71b92820bd3decb3c70113e0c8beba}{Elements}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIRE@{FIRE}!character.h@{character.h}}\index{character.h@{character.h}!FIRE@{FIRE}}}\Hypertarget{character_8h_a3d71b92820bd3decb3c70113e0c8bebaa6811f08ec3a763b0351fab6fb5054df8}\label{character_8h_a3d71b92820bd3decb3c70113e0c8bebaa6811f08ec3a763b0351fab6fb5054df8} 
+FIRE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WATER@{WATER}!character.h@{character.h}}\index{character.h@{character.h}!WATER@{WATER}}}\Hypertarget{character_8h_a3d71b92820bd3decb3c70113e0c8bebaa9ac7d5e5851d7a2bc186a1c3341589f6}\label{character_8h_a3d71b92820bd3decb3c70113e0c8bebaa9ac7d5e5851d7a2bc186a1c3341589f6} 
+WATER&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{character_8h_a01b5c72802ffada2232aca1333fb5d2e}\label{character_8h_a01b5c72802ffada2232aca1333fb5d2e} 
+\index{character.h@{character.h}!character\_current\_sprite@{character\_current\_sprite}}
+\index{character\_current\_sprite@{character\_current\_sprite}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{character\_current\_sprite()}{character\_current\_sprite()}}
+{\footnotesize\ttfamily void character\+\_\+current\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Updates the current character\textquotesingle{}s sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to be analyzed. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a01b5c72802ffada2232aca1333fb5d2e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a8729391d8f6487cdc547573cdcd1a498}\label{character_8h_a8729391d8f6487cdc547573cdcd1a498} 
+\index{character.h@{character.h}!create\_characters@{create\_characters}}
+\index{create\_characters@{create\_characters}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{create\_characters()}{create\_characters()}}
+{\footnotesize\ttfamily int create\+\_\+characters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the characters. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{character_8h_a8729391d8f6487cdc547573cdcd1a498_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{character_8h_a8729391d8f6487cdc547573cdcd1a498_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a6d2a472efccfc1e2bce2c0b6efdb707e}\label{character_8h_a6d2a472efccfc1e2bce2c0b6efdb707e} 
+\index{character.h@{character.h}!door\_fire@{door\_fire}}
+\index{door\_fire@{door\_fire}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{door\_fire()}{door\_fire()}}
+{\footnotesize\ttfamily int door\+\_\+fire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if the character is in front of the fire door. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the character is in front of the fire door, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{character_8h_a6d2a472efccfc1e2bce2c0b6efdb707e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a6d2a472efccfc1e2bce2c0b6efdb707e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a7040e7399f12613e117e53285321dc3a}\label{character_8h_a7040e7399f12613e117e53285321dc3a} 
+\index{character.h@{character.h}!door\_water@{door\_water}}
+\index{door\_water@{door\_water}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{door\_water()}{door\_water()}}
+{\footnotesize\ttfamily int door\+\_\+water (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if the character is in front of the water door. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the character is in front of the water door, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{character_8h_a7040e7399f12613e117e53285321dc3a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a7040e7399f12613e117e53285321dc3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_af295687353f5a7218debe5629c063f88}\label{character_8h_af295687353f5a7218debe5629c063f88} 
+\index{character.h@{character.h}!draw\_character@{draw\_character}}
+\index{draw\_character@{draw\_character}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{draw\_character()}{draw\_character()}}
+{\footnotesize\ttfamily int draw\+\_\+character (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Draws the character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to be drawn. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if an error occurs while drawing, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_af295687353f5a7218debe5629c063f88_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_af295687353f5a7218debe5629c063f88_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a7f174e00bc7d210f5d1cb4dc033196ef}\label{character_8h_a7f174e00bc7d210f5d1cb4dc033196ef} 
+\index{character.h@{character.h}!draw\_falling\_blocks@{draw\_falling\_blocks}}
+\index{draw\_falling\_blocks@{draw\_falling\_blocks}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{draw\_falling\_blocks()}{draw\_falling\_blocks()}}
+{\footnotesize\ttfamily void draw\+\_\+falling\+\_\+blocks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves blocks that are falling, stops all blocks that have hit the ground and draws all the blocks. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a7f174e00bc7d210f5d1cb4dc033196ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a7f174e00bc7d210f5d1cb4dc033196ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_aac85aba5e302d3fc430fb88b935adfae}\label{character_8h_aac85aba5e302d3fc430fb88b935adfae} 
+\index{character.h@{character.h}!erase\_blocks@{erase\_blocks}}
+\index{erase\_blocks@{erase\_blocks}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{erase\_blocks()}{erase\_blocks()}}
+{\footnotesize\ttfamily void erase\+\_\+blocks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Erases all the blocks from the screen. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_aac85aba5e302d3fc430fb88b935adfae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_aac85aba5e302d3fc430fb88b935adfae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_af1f79d19ce37d907109cac4428d1a9e9}\label{character_8h_af1f79d19ce37d907109cac4428d1a9e9} 
+\index{character.h@{character.h}!hit\_ground@{hit\_ground}}
+\index{hit\_ground@{hit\_ground}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{hit\_ground()}{hit\_ground()}}
+{\footnotesize\ttfamily int hit\+\_\+ground (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{block }\end{DoxyParamCaption})}
+
+
+
+Checks if block hit the ground. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & block to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if block has it the ground, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{character_8h_af1f79d19ce37d907109cac4428d1a9e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_af1f79d19ce37d907109cac4428d1a9e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a6db7e6d4cce636393abc416e1186fa6d}\label{character_8h_a6db7e6d4cce636393abc416e1186fa6d} 
+\index{character.h@{character.h}!is\_on\_ground@{is\_on\_ground}}
+\index{is\_on\_ground@{is\_on\_ground}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{is\_on\_ground()}{is\_on\_ground()}}
+{\footnotesize\ttfamily int is\+\_\+on\+\_\+ground (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if the character is on the ground. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to be analyzed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the character is on the ground, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{character_8h_a6db7e6d4cce636393abc416e1186fa6d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a6db7e6d4cce636393abc416e1186fa6d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a25209a85101a5473c3f5442b91079faa}\label{character_8h_a25209a85101a5473c3f5442b91079faa} 
+\index{character.h@{character.h}!jump@{jump}}
+\index{jump@{jump}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{jump()}{jump()}}
+{\footnotesize\ttfamily void jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Moves the character up. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character\\
+\hline
+\end{DoxyParams}
+to move. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{character_8h_a25209a85101a5473c3f5442b91079faa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a25209a85101a5473c3f5442b91079faa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a02f6d3746a540b8fea9d89676f41e5bd}\label{character_8h_a02f6d3746a540b8fea9d89676f41e5bd} 
+\index{character.h@{character.h}!move@{move}}
+\index{move@{move}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Moves the character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to move. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{character_8h_a02f6d3746a540b8fea9d89676f41e5bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a02f6d3746a540b8fea9d89676f41e5bd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a5ad6d041795877ad328bbf281112557e}\label{character_8h_a5ad6d041795877ad328bbf281112557e} 
+\index{character.h@{character.h}!move\_left@{move\_left}}
+\index{move\_left@{move\_left}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{move\_left()}{move\_left()}}
+{\footnotesize\ttfamily void move\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Moves the character to the left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to be moved. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{character_8h_a5ad6d041795877ad328bbf281112557e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a5ad6d041795877ad328bbf281112557e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a7927c362746f908655b489aebaa4747c}\label{character_8h_a7927c362746f908655b489aebaa4747c} 
+\index{character.h@{character.h}!move\_right@{move\_right}}
+\index{move\_right@{move\_right}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{move\_right()}{move\_right()}}
+{\footnotesize\ttfamily void move\+\_\+right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Moves the character to the right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to be moved. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{character_8h_a7927c362746f908655b489aebaa4747c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a7927c362746f908655b489aebaa4747c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a1e9467c65e2ec00635cb70c4ac63e92d}\label{character_8h_a1e9467c65e2ec00635cb70c4ac63e92d} 
+\index{character.h@{character.h}!on\_fire@{on\_fire}}
+\index{on\_fire@{on\_fire}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{on\_fire()}{on\_fire()}}
+{\footnotesize\ttfamily int on\+\_\+fire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if the character is on fire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to be analyzed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the character is on fire, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{character_8h_a1e9467c65e2ec00635cb70c4ac63e92d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a1e9467c65e2ec00635cb70c4ac63e92d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a580c2ea442d7da3aa78047a6d6bbb3bb}\label{character_8h_a580c2ea442d7da3aa78047a6d6bbb3bb} 
+\index{character.h@{character.h}!on\_poison@{on\_poison}}
+\index{on\_poison@{on\_poison}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{on\_poison()}{on\_poison()}}
+{\footnotesize\ttfamily int on\+\_\+poison (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if the character is on the poison. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to be analyzed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the character is on poison, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{character_8h_a580c2ea442d7da3aa78047a6d6bbb3bb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a580c2ea442d7da3aa78047a6d6bbb3bb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_aa7596aedbb5fe00d2464a0415d009016}\label{character_8h_aa7596aedbb5fe00d2464a0415d009016} 
+\index{character.h@{character.h}!on\_water@{on\_water}}
+\index{on\_water@{on\_water}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{on\_water()}{on\_water()}}
+{\footnotesize\ttfamily int on\+\_\+water (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if the character is on water. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to be analyzed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the character is on water, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{character_8h_aa7596aedbb5fe00d2464a0415d009016_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_aa7596aedbb5fe00d2464a0415d009016_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_aedc96236fa71d5ab7c074d6590c1e789}\label{character_8h_aedc96236fa71d5ab7c074d6590c1e789} 
+\index{character.h@{character.h}!set\_position@{set\_position}}
+\index{set\_position@{set\_position}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{set\_position()}{set\_position()}}
+{\footnotesize\ttfamily void set\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the character\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to change the position. \\
+\hline
+{\em x} & The new x position of the character. \\
+\hline
+{\em y} & The new y position of the character. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{character_8h_aa074f6b3248cc52e018d755eb744ec92}\label{character_8h_aa074f6b3248cc52e018d755eb744ec92} 
+\index{character.h@{character.h}!stop\_moving@{stop\_moving}}
+\index{stop\_moving@{stop\_moving}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{stop\_moving()}{stop\_moving()}}
+{\footnotesize\ttfamily void stop\+\_\+moving (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Makes the character stop moving. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to stop. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_aa074f6b3248cc52e018d755eb744ec92_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a1c2bb5f7b8faba5b5907e0beb432e978}\label{character_8h_a1c2bb5f7b8faba5b5907e0beb432e978} 
+\index{character.h@{character.h}!update\_character@{update\_character}}
+\index{update\_character@{update\_character}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{update\_character()}{update\_character()}}
+{\footnotesize\ttfamily void update\+\_\+character (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Updates the sprite values of the character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to be updated. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a1c2bb5f7b8faba5b5907e0beb432e978_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a4d02f50978a2f7c026d5cc1c95d53734}\label{character_8h_a4d02f50978a2f7c026d5cc1c95d53734} 
+\index{character.h@{character.h}!update\_direction@{update\_direction}}
+\index{update\_direction@{update\_direction}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{update\_direction()}{update\_direction()}}
+{\footnotesize\ttfamily int update\+\_\+direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character,  }\item[{enum \mbox{\hyperlink{character_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Changes the character\textquotesingle{}s direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to change the direction. \\
+\hline
+{\em dir} & The new direction of the character. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the new position is different from the previous position, 0 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a4d02f50978a2f7c026d5cc1c95d53734_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_ad029cdd99d59cb48a3a1aa8f4df3a00c}\label{character_8h_ad029cdd99d59cb48a3a1aa8f4df3a00c} 
+\index{character.h@{character.h}!wall\_down@{wall\_down}}
+\index{wall\_down@{wall\_down}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{wall\_down()}{wall\_down()}}
+{\footnotesize\ttfamily int wall\+\_\+down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if there is a wall below the character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if there is a wall below the character, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{character_8h_ad029cdd99d59cb48a3a1aa8f4df3a00c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_ad029cdd99d59cb48a3a1aa8f4df3a00c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a67bf0d4985ab95237ed10fe7c484139b}\label{character_8h_a67bf0d4985ab95237ed10fe7c484139b} 
+\index{character.h@{character.h}!wall\_left@{wall\_left}}
+\index{wall\_left@{wall\_left}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{wall\_left()}{wall\_left()}}
+{\footnotesize\ttfamily int wall\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if there is a wall to the left of the character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if there is a wall to the left of the character, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{character_8h_a67bf0d4985ab95237ed10fe7c484139b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a67bf0d4985ab95237ed10fe7c484139b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_abdbb6041d86921195528c87d6b89ec6d}\label{character_8h_abdbb6041d86921195528c87d6b89ec6d} 
+\index{character.h@{character.h}!wall\_right@{wall\_right}}
+\index{wall\_right@{wall\_right}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{wall\_right()}{wall\_right()}}
+{\footnotesize\ttfamily int wall\+\_\+right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if there is a wall to the right of the character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if there is a wall to the right of the character, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{character_8h_abdbb6041d86921195528c87d6b89ec6d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_abdbb6041d86921195528c87d6b89ec6d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{character_8h_a2605da6aca7ed27a5367ea0404014695}\label{character_8h_a2605da6aca7ed27a5367ea0404014695} 
+\index{character.h@{character.h}!wall\_up@{wall\_up}}
+\index{wall\_up@{wall\_up}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{wall\_up()}{wall\_up()}}
+{\footnotesize\ttfamily int wall\+\_\+up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCharacter}{Character}} \texorpdfstring{$\ast$}{*}}]{character }\end{DoxyParamCaption})}
+
+
+
+Checks if there is a wall above the character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & The character to analyze. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if there is a wall above the character, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{character_8h_a2605da6aca7ed27a5367ea0404014695_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{character_8h_a2605da6aca7ed27a5367ea0404014695_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{character_8h_a6f7e766d44058178f28200bc1fbdd7c4}\label{character_8h_a6f7e766d44058178f28200bc1fbdd7c4} 
+\index{character.h@{character.h}!current\_map@{current\_map}}
+\index{current\_map@{current\_map}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{current\_map}{current\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}}\texorpdfstring{$\ast$}{*} current\+\_\+map\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{character_8h_a4d30f3dcba9d610e55202861deca1a88}\label{character_8h_a4d30f3dcba9d610e55202861deca1a88} 
+\index{character.h@{character.h}!fireboy@{fireboy}}
+\index{fireboy@{fireboy}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{fireboy}{fireboy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCharacter}{Character}}\texorpdfstring{$\ast$}{*} fireboy}
+
+\Hypertarget{character_8h_a650dbd72c2801dde7b4e33a0e08f0bf1}\label{character_8h_a650dbd72c2801dde7b4e33a0e08f0bf1} 
+\index{character.h@{character.h}!watergirl@{watergirl}}
+\index{watergirl@{watergirl}!character.h@{character.h}}
+\doxysubsubsection{\texorpdfstring{watergirl}{watergirl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCharacter}{Character}}\texorpdfstring{$\ast$}{*} watergirl}
+

@@ -1,0 +1,7 @@
+<map id="kbc_write" name="kbc_write">
+<area shape="rect" id="Node000001" title="Writes a command to the keyboard register." alt="" coords="5,5,90,33"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html#a478e9d9e6e396379599060715e26730a" title="Gets the status from the keyboard register." alt="" coords="138,5,257,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,17,123,17,123,22,90,22"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="305,5,403,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,17,290,17,290,22,257,22"/>
+</map>

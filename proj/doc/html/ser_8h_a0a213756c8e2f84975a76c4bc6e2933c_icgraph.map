@@ -1,0 +1,27 @@
+<map id="read_lsr" name="read_lsr">
+<area shape="rect" id="Node000001" title="Reads the Line Status Register (LSR) value." alt="" coords="846,236,919,264"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a04849a384fadcd26c6c1dc5814d97a37" title=" " alt="" coords="659,109,798,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="852,229,745,140,749,136,855,225"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,185,268,213"/>
+<area shape="poly" id="edge11_Node000001_Node000005" title=" " alt="" coords="831,249,268,205,269,200,831,243"/>
+<area shape="rect" id="Node000009" href="$ser_8c.html#a221cfb1ba6e15d4bb8846a9222d1348a" title="Retrieves the data errors from the Line Status Register (LSR)." alt="" coords="667,261,790,289"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="832,261,791,268,790,262,831,256"/>
+<area shape="rect" id="Node000010" href="$ser_8c.html#a9353fabdd05ea291e02243dace57ae1c" title="Interrupt handler for the serial port." alt="" coords="509,261,569,289"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="854,275,828,291,799,303,767,310,735,312,671,309,614,299,569,287,570,282,615,294,672,304,735,307,767,304,797,298,826,286,851,271"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#adb16266bac82ba2376f626661c75a3ff" title="draws the game over screen and controlls if any of the options is chosen" alt="" coords="472,5,606,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="695,103,655,75,609,48,582,36,584,31,612,43,658,71,698,98"/>
+<area shape="poly" id="edge10_Node000002_Node000005" title=" " alt="" coords="652,143,611,151,421,179,269,197,268,192,420,174,610,146,651,138"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#ad7ca2d21a727f7d55afef2392de3b5f8" title="draws the main menu and controlls if an option is chosen" alt="" coords="470,57,608,85"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="661,107,591,88,593,83,662,102"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#ac581b9d6af85c4c35f9d423a966cba8e" title="draws the pause menu" alt="" coords="467,109,611,137"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="643,126,611,126,611,121,643,121"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,84,419,112"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="485,41,468,48,395,86,393,81,466,43,482,36"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="336,123,244,187,241,183,333,118"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,185,127,213"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="160,202,127,202,127,197,160,197"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="456,87,420,92,419,87,455,81"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="452,113,419,108,420,103,453,108"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="652,278,570,278,570,273,652,273"/>
+<area shape="poly" id="edge14_Node000010_Node000005" title=" " alt="" coords="494,275,410,266,315,246,279,232,247,216,249,211,281,227,317,241,411,261,494,270"/>
+</map>

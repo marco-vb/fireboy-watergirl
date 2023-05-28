@@ -1,0 +1,5 @@
+<map id="draw_sprite" name="draw_sprite">
+<area shape="rect" id="Node000001" title="Draws a sprite." alt="" coords="5,5,103,33"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="151,5,286,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,17,136,17,136,22,103,22"/>
+</map>

@@ -1,0 +1,39 @@
+<map id="write_lcr" name="write_lcr">
+<area shape="rect" id="Node000001" title="Writes a value to the Line Control Register (LCR)." alt="" coords="949,81,1027,109"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a34638d3bf7213fabe13ebe6909bf0df6" title="Configures the bit rate for the serial port." alt="" coords="659,5,765,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="954,75,928,60,900,47,831,30,765,23,766,18,832,25,902,42,931,55,957,70"/>
+<area shape="rect" id="Node000005" href="$ser_8c.html#ad6ce7fc337012f7a60f51e0747291ada" title="Reads a byte from the UART receive buffer." alt="" coords="669,107,755,134"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="935,103,756,119,755,114,934,97"/>
+<area shape="rect" id="Node000009" href="$ser_8c.html#a7d5928b9bc756afa235f21d8532b0a1e" title="Sends a byte through the UART transmit buffer." alt="" coords="813,157,901,185"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="952,119,884,159,882,154,949,114"/>
+<area shape="rect" id="Node000015" href="$ser_8c.html#a61d67b678980744a1e3e51dd13f51ac0" title="Configures the serial port parameters." alt="" coords="819,56,895,84"/>
+<area shape="poly" id="edge20_Node000001_Node000015" title=" " alt="" coords="934,88,895,80,897,75,935,82"/>
+<area shape="rect" id="Node000003" href="$ser_8c.html#a828235322fd790c645629859eace5270" title="Initializes the serial port by setting up its parameters, bit rate, interrupts, and FIFOs." alt="" coords="504,5,574,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="644,22,574,22,574,17,644,17"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#aa19b202ec8bfc484a80caa3b5d445663" title=" " alt="" coords="325,5,411,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="489,22,411,22,411,17,489,17"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,132,268,160"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="654,106,610,98,528,90,463,92,398,101,317,119,264,134,263,129,315,114,397,96,462,86,528,85,611,93,655,101"/>
+<area shape="rect" id="Node000008" href="$ser_8c.html#a9353fabdd05ea291e02243dace57ae1c" title="Interrupt handler for the serial port." alt="" coords="509,107,569,134"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="654,123,570,123,570,118,654,118"/>
+<area shape="rect" id="Node000007" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,132,127,160"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="160,149,127,149,127,143,160,143"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="494,127,268,145,268,140,494,121"/>
+<area shape="rect" id="Node000010" href="$ser_8c.html#afbefc34bc41c323555ca4f834fc7eb7a" title="Sends bytes from the send queue to the UART transmit buffer." alt="" coords="664,183,760,210"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="799,184,760,191,759,186,798,179"/>
+<area shape="poly" id="edge18_Node000010_Node000006" title=" " alt="" coords="649,193,268,153,269,148,650,187"/>
+<area shape="poly" id="edge19_Node000010_Node000008" title=" " alt="" coords="664,179,569,136,571,131,666,174"/>
+<area shape="rect" id="Node000011" href="$game_8c.html#adb16266bac82ba2376f626661c75a3ff" title="draws the game over screen and controlls if any of the options is chosen" alt="" coords="472,208,606,236"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="650,208,607,215,606,209,649,203"/>
+<area shape="rect" id="Node000013" href="$game_8c.html#ad7ca2d21a727f7d55afef2392de3b5f8" title="draws the main menu and controlls if an option is chosen" alt="" coords="470,260,608,288"/>
+<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="673,220,612,250,582,262,580,257,610,245,670,215"/>
+<area shape="rect" id="Node000014" href="$game_8c.html#ac581b9d6af85c4c35f9d423a966cba8e" title="draws the pause menu" alt="" coords="467,312,611,340"/>
+<area shape="poly" id="edge16_Node000010_Node000014" title=" " alt="" coords="693,223,658,263,612,301,588,314,586,309,609,297,654,259,689,220"/>
+<area shape="rect" id="Node000012" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,233,419,261"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="458,237,420,242,419,237,457,231"/>
+<area shape="poly" id="edge13_Node000012_Node000006" title=" " alt="" coords="333,227,241,162,244,158,336,222"/>
+<area shape="poly" id="edge15_Node000013_Node000012" title=" " alt="" coords="455,264,419,258,420,253,456,258"/>
+<area shape="poly" id="edge17_Node000014_Node000012" title=" " alt="" coords="482,309,466,302,393,264,395,259,468,297,485,304"/>
+<area shape="poly" id="edge21_Node000015_Node000002" title=" " alt="" coords="804,54,753,36,755,31,806,49"/>
+<area shape="poly" id="edge22_Node000015_Node000003" title=" " alt="" coords="804,67,658,47,573,30,574,25,659,42,805,62"/>
+</map>

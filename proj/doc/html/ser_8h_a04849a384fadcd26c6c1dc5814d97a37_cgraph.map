@@ -1,0 +1,7 @@
+<map id="check_transmitter" name="check_transmitter">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,145,33"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a0a213756c8e2f84975a76c4bc6e2933c" title="Reads the Line Status Register (LSR) value." alt="" coords="193,5,266,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,17,178,17,178,22,145,22"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="314,5,412,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="267,17,299,17,299,22,267,22"/>
+</map>

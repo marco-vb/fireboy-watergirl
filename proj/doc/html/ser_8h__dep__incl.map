@@ -1,0 +1,9 @@
+<map id="drivers/serial_port/ser.h" name="drivers/serial_port/ser.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="268,5,408,50"/>
+<area shape="rect" id="Node000002" href="$communication_8c.html" title=" " alt="" coords="5,107,244,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,59,156,108,154,104,272,54"/>
+<area shape="rect" id="Node000003" href="$ser_8c.html" title=" " alt="" coords="268,98,408,143"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="341,65,341,98,335,98,335,65"/>
+<area shape="rect" id="Node000004" href="$game_8c.html" title=" " alt="" coords="431,107,501,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="381,56,449,104,446,108,378,61"/>
+</map>

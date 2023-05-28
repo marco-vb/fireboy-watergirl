@@ -1,0 +1,11 @@
+<map id="m_read_byte" name="m_read_byte">
+<area shape="rect" id="Node000001" title="Reads a byte received from the mouse and updates the packet accordingly." alt="" coords="5,32,112,60"/>
+<area shape="rect" id="Node000002" href="$mouse_8c.html#a96ec8f04c0a326b8c26c498b98f5244a" title="Builds the mouse packet from the received bytes." alt="" coords="160,5,314,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,35,144,30,145,36,112,41"/>
+<area shape="rect" id="Node000003" href="$mouse_8c.html#ac171a0597dea4c379525d0c922ff1ce5" title="Updates the mouse position based on the delta values." alt="" coords="163,57,311,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,51,149,56,148,61,112,56"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a96831d611df1b6f4402dec1da8eaaef5" title="Returns the horizontal resolution of the screen." alt="" coords="362,31,439,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="310,57,347,50,348,56,311,62"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#adbb976e8111bdebbf31503894844e592" title="Returns the vertical resolution of the screen." alt="" coords="362,83,439,110"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="311,80,348,86,347,91,310,85"/>
+</map>

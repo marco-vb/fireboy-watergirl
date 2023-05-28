@@ -1,0 +1,13 @@
+<map id="drivers/kbc/mouse.h" name="drivers/kbc/mouse.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="160,5,313,33"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html" title=" " alt="" coords="5,81,137,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,42,101,83,99,78,193,37"/>
+<area shape="rect" id="Node000003" href="$mouse_8c.html" title=" " alt="" coords="160,81,313,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,48,239,81,234,81,234,48"/>
+<area shape="rect" id="Node000004" href="$game_8h.html" title=" " alt="" coords="337,81,408,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="275,38,349,78,347,83,272,43"/>
+<area shape="rect" id="Node000005" href="$game_8c.html" title=" " alt="" coords="294,157,363,184"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="359,123,338,158,334,155,355,120"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html" title=" " alt="" coords="388,157,445,184"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="390,120,411,155,406,158,385,123"/>
+</map>

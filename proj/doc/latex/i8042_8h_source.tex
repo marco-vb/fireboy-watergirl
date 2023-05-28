@@ -1,0 +1,74 @@
+\doxysection{i8042.\+h}
+\hypertarget{i8042_8h_source}{}\label{i8042_8h_source}\index{drivers/kbc/i8042.h@{drivers/kbc/i8042.h}}
+\mbox{\hyperlink{i8042_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_I8042\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_I8042\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ KEYBOARD\_IRQ\ 1}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MOUSE\_IRQ\ 12}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ESC\_BREAK\ 0x81}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ TWO\_BYTES\ 0xe0}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MAKE\_OR\_BREAK\ BIT(7)}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ KBC\_ST\_REG\ 0x64}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ KBC\_CMD\_REG\ 0x64}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ KBC\_IN\ 0x64}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ KBC\_IN\_ARGS\ 0x60}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ KBC\_IN\_RES\ 0x60}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ KBC\_OUT\ 0x60}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ KBC\_READ\_CMD\ 0x20}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ KBC\_WRITE\_CMD\ 0x60}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ KBC\_OUT\_FULL\ BIT(0)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ KBC\_IN\_FULL\ BIT(1)}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ KBC\_INT\ BIT(0)}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ KBC\_WRITE\_BYTE\ 0xD2}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ KBC\_DISABLE\_MOUSE\ 0xA7}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ KBC\_ENABLE\_MOUSE\ 0xA8}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ KBC\_CHECK\_MOUSE\ 0xA9}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ KBC\_PERROR\ BIT(7)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ KBC\_TERROR\ BIT(6)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ KBC\_ERROR\ (BIT(7)\ |\ BIT(6))}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ WAIT\_KBC\ 2000}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ MOUSE\_DATA\ BIT(5)}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MOUSE\_READ\_DATA\ 0xEB}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ MOUSE\_WRITE\_DATA\ 0xD4}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ MOUSE\_DISABLE\_DR\ 0xF5}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ MOUSE\_ENABLE\_DR\ 0xF4}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ MOUSE\_STREAM\_MODE\ 0xEA}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ MOUSE\_REMOTE\_MODE\ 0xF0}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ MOUSE\_STATUS\_REQUEST\ 0xE9}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ MOUSE\_RESET\ 0xFF}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ MOUSE\_RESEND\ 0xFE}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ MOUSE\_ACK\ 0xFA}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ MOUSE\_NACK\ 0xFE}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ MOUSE\_SYNC\_BIT\ BIT(3)}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ MOUSE\_LB\ BIT(0)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ MOUSE\_RB\ BIT(1)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ MOUSE\_MB\ BIT(2)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ MOUSE\_MSBX\ BIT(4)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ MOUSE\_MSBY\ BIT(5)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ MOUSE\_XOV\ BIT(6)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ MOUSE\_YOV\ BIT(7)}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_I8042\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

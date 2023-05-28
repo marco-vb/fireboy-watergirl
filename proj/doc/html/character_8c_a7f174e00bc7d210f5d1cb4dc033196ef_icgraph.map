@@ -1,0 +1,11 @@
+<map id="draw_falling_blocks" name="draw_falling_blocks">
+<area shape="rect" id="Node000001" title="Moves blocks that are falling, stops all blocks that have hit the ground and draws all the blocks." alt="" coords="613,5,763,33"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#a3cef68220fcc611902108d6f0159e50f" title="draws the elements of the game" alt="" coords="467,5,565,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="598,22,565,22,565,17,598,17"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,5,419,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,22,420,22,420,17,452,17"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,5,268,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="301,22,269,22,269,17,301,17"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,127,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="160,22,127,22,127,17,160,17"/>
+</map>

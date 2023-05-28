@@ -1,0 +1,27 @@
+<map id="ser_init" name="ser_init">
+<area shape="rect" id="Node000001" title="Initializes the serial port by setting up its parameters, bit rate, interrupts, and FIFOs." alt="" coords="5,235,75,262"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a34638d3bf7213fabe13ebe6909bf0df6" title="Configures the bit rate for the serial port." alt="" coords="151,121,257,149"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,232,121,177,159,154,162,158,124,181,58,236"/>
+<area shape="rect" id="Node000005" href="$ser_8c.html#a61d67b678980744a1e3e51dd13f51ac0" title="Configures the serial port parameters." alt="" coords="350,211,426,238"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="75,233,122,221,179,215,236,213,335,217,334,222,236,218,179,220,123,226,76,238"/>
+<area shape="rect" id="Node000009" href="$ser_8c.html#a37cbaa2ee8bd0f17124505a0405caf12" title="Initializes the FIFOs of the serial port." alt="" coords="165,235,243,262"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="75,246,150,246,150,251,75,251"/>
+<area shape="rect" id="Node000010" href="$ser_8c.html#a54c5c870213646cc6461a98208990d7e" title="Initializes the send and receive queues." alt="" coords="156,287,252,314"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="76,257,145,279,144,284,74,262"/>
+<area shape="rect" id="Node000012" href="$ser_8c.html#a1cafe9a07f13a56805639db7c5d6f273" title="Enables interrupts for the serial port." alt="" coords="123,339,285,366"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="55,261,84,292,124,324,137,330,134,335,121,328,80,296,51,264"/>
+<area shape="rect" id="Node000003" href="$ser_8c.html#ad96ee630b8a3c428a3ac10c3b8bad01d" title="Reads the Line Control Register (LCR) value." alt="" coords="351,5,424,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="222,119,271,83,332,44,341,38,344,43,334,48,274,88,225,123"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="235,147,345,201,343,206,233,152"/>
+<area shape="rect" id="Node000006" href="$ser_8c.html#a406e6517544d394bb3b98ec862d96296" title="Writes a value to the Line Control Register (LCR)." alt="" coords="501,159,578,186"/>
+<area shape="poly" id="edge8_Node000002_Node000006" title=" " alt="" coords="257,132,344,135,443,145,487,154,486,159,442,150,344,140,257,137"/>
+<area shape="rect" id="Node000007" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title="Calculates the less significant byte from the value given." alt="" coords="337,57,438,85"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="245,118,331,88,333,93,247,123"/>
+<area shape="rect" id="Node000008" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title="Calculates the most significant byte from the value given." alt="" coords="335,159,441,186"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="258,143,321,156,320,161,257,149"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="490,5,589,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="425,17,475,17,475,22,425,22"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="425,209,486,188,488,193,427,214"/>
+<area shape="rect" id="Node000011" href="$queue_8c.html#ab2665c051fb2db3b58a79e73a5416825" title=" " alt="" coords="333,287,442,314"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="252,298,318,298,318,303,252,303"/>
+</map>

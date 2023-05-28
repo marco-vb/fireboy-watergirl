@@ -1,0 +1,21 @@
+<map id="ibf_empty" name="ibf_empty">
+<area shape="rect" id="Node000001" title="Checks if the input buffer is empty." alt="" coords="856,57,943,85"/>
+<area shape="rect" id="Node000002" href="$mouse_8c.html#a7a769bcdab7ded10f2a9bbd77747d504" title="Sends a command to the mouse." alt="" coords="670,57,808,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="841,74,809,74,809,69,841,69"/>
+<area shape="rect" id="Node000003" href="$mouse_8c.html#ac93462fdee1791bdddd06b5ca7e6d0d9" title="Disables data reporting by the mouse." alt="" coords="471,5,610,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="668,56,596,36,597,31,670,50"/>
+<area shape="rect" id="Node000007" href="$mouse_8c.html#ae6e74d2b64d6df5f731ad0aadebc839a" title="Enables data reporting by the mouse." alt="" coords="472,57,609,85"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="655,74,609,74,609,69,655,69"/>
+<area shape="rect" id="Node000010" href="$mouse_8c.html#addbf401c63e77802f3b63e1dfea97782" title="Sets the mouse to stream mode." alt="" coords="459,109,622,137"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="670,92,597,111,596,106,668,87"/>
+<area shape="rect" id="Node000004" href="$kbc_8c.html#ad181ecf5c7a5cd19a73fe6771aadba6d" title="Disables the keyboard and the mouse Usubscribes to the mouse and the kayboard and disables the mouse ..." alt="" coords="313,5,411,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="456,22,412,22,412,17,456,17"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#abc1fb57f21dfdfe8414ed5ff0c744a10" title="exits the game mode" alt="" coords="175,5,265,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="298,22,265,22,265,17,298,17"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,127,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="160,22,127,22,127,17,160,17"/>
+<area shape="rect" id="Node000008" href="$kbc_8c.html#af76d4adb283dd7099a5c162d4e0bf877" title="Initializes the keyboard and the mouse. Subscribes to the mouse and the keyboard and enables mouse da..." alt="" coords="326,57,398,85"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="458,74,399,74,399,69,458,69"/>
+<area shape="rect" id="Node000009" href="$game_8c.html#aa19b202ec8bfc484a80caa3b5d445663" title=" " alt="" coords="177,57,263,85"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="311,74,263,74,263,69,311,69"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="receive_queue_is_empty" name="receive_queue_is_empty">
+<area shape="rect" id="Node000001" title="Checks if the receive queue is empty." alt="" coords="5,5,189,33"/>
+<area shape="rect" id="Node000002" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="237,5,318,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,17,222,17,222,22,189,22"/>
+</map>

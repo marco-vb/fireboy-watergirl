@@ -1,0 +1,314 @@
+\doxysection{maps/map.h File Reference}
+\hypertarget{map_8h}{}\label{map_8h}\index{maps/map.h@{maps/map.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \"{}../drivers/graphics/graphics.\+h\"{}}\newline
+{\ttfamily \#include \"{}../sprites/sprite.\+h\"{}}\newline
+{\ttfamily \#include \"{}../sprites/falling\+\_\+block.\+h\"{}}\newline
+{\ttfamily \#include \"{}../objects/block.\+h\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/level\+\_\+background1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/level\+\_\+background2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/level\+\_\+background3.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/wall1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/wall2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/lava1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/lava2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/lava3.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/water1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/water2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/water3.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/rope.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/fire\+\_\+door1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/fire\+\_\+door2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/fire\+\_\+door3.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/fire\+\_\+door4.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/water\+\_\+door1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/water\+\_\+door2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/water\+\_\+door3.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/water\+\_\+door4.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/poison1.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/poison2.\+xpm\"{}}\newline
+{\ttfamily \#include \"{}../xpm/background/poison3.\+xpm\"{}}\newline
+Include dependency graph for map.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{map_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMap}{Map}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{map_8h_a31c0cc3c6754f2b731a76b916e566f9b}{MAPS\+\_\+\+PATH}}~\"{}/home/lcom/labs/proj/src/maps/map\"{}
+\item 
+\#define \mbox{\hyperlink{map_8h_a049a8f16747f5d80c27b885f8746beff}{MAPS\+\_\+\+EXT}}~\"{}.txt\"{}
+\item 
+\#define \mbox{\hyperlink{map_8h_a62ecd70800687eb2d625af180c4210d7}{TILE\+\_\+\+SIZE}}~32
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8h_a7533eb7fa274ce37104956f58a8fe0e9}{create\+\_\+map}} (int level)
+\begin{DoxyCompactList}\small\item\em Creates a map corresponding to the given level. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{map_8h_a5d4b5327269cf4e9b9bbad4265e5b922}{load\+\_\+maps}} ()
+\begin{DoxyCompactList}\small\item\em Loads all the maps. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{map_8h_a731238211da72ff2ea121384fa10039b}{draw\+\_\+map}} (\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}map)
+\begin{DoxyCompactList}\small\item\em Draws the given map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{map_8h_ad7d1e2595412e612be34597c3fb8db8d}{next\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Changes the current level to the next level. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{map_8h_a2117f266cf32d37631770302fe987115}{get\+\_\+tile}} (\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}map, u\+\_\+int32\+\_\+t \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, u\+\_\+int32\+\_\+t \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}})
+\begin{DoxyCompactList}\small\item\em Returns the letter corresponding to the tile at the given position on the map. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{map_8h_a1d1326355ebc52cb1eaca3531963e323}{reset\+\_\+falling\+\_\+blocks}} ()
+\begin{DoxyCompactList}\small\item\em Resets all the falling blocks to their original position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8h_ad22af15c559f183da6e5602edb9a215a}{ropes}} \mbox{[}10\mbox{]}\mbox{[}10\mbox{]}
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8h_a31b58054ba61e6d08a8cc085d3719753}{map1}}
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8h_a9068c7b10e396fb7e675b7c9ee407e69}{map2}}
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8h_a9d9924b9069ebff409f482b1ced80349}{map3}}
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8h_a6f7e766d44058178f28200bc1fbdd7c4}{current\+\_\+map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{map_8h_a049a8f16747f5d80c27b885f8746beff}\label{map_8h_a049a8f16747f5d80c27b885f8746beff} 
+\index{map.h@{map.h}!MAPS\_EXT@{MAPS\_EXT}}
+\index{MAPS\_EXT@{MAPS\_EXT}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{MAPS\_EXT}{MAPS\_EXT}}
+{\footnotesize\ttfamily \#define MAPS\+\_\+\+EXT~\"{}.txt\"{}}
+
+\Hypertarget{map_8h_a31c0cc3c6754f2b731a76b916e566f9b}\label{map_8h_a31c0cc3c6754f2b731a76b916e566f9b} 
+\index{map.h@{map.h}!MAPS\_PATH@{MAPS\_PATH}}
+\index{MAPS\_PATH@{MAPS\_PATH}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{MAPS\_PATH}{MAPS\_PATH}}
+{\footnotesize\ttfamily \#define MAPS\+\_\+\+PATH~\"{}/home/lcom/labs/proj/src/maps/map\"{}}
+
+\Hypertarget{map_8h_a62ecd70800687eb2d625af180c4210d7}\label{map_8h_a62ecd70800687eb2d625af180c4210d7} 
+\index{map.h@{map.h}!TILE\_SIZE@{TILE\_SIZE}}
+\index{TILE\_SIZE@{TILE\_SIZE}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{TILE\_SIZE}{TILE\_SIZE}}
+{\footnotesize\ttfamily \#define TILE\+\_\+\+SIZE~32}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{map_8h_a7533eb7fa274ce37104956f58a8fe0e9}\label{map_8h_a7533eb7fa274ce37104956f58a8fe0e9} 
+\index{map.h@{map.h}!create\_map@{create\_map}}
+\index{create\_map@{create\_map}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{create\_map()}{create\_map()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} create\+\_\+map (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Creates a map corresponding to the given level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level of the map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map\texorpdfstring{$\ast$}{*} The created map. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8h_a7533eb7fa274ce37104956f58a8fe0e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8h_a731238211da72ff2ea121384fa10039b}\label{map_8h_a731238211da72ff2ea121384fa10039b} 
+\index{map.h@{map.h}!draw\_map@{draw\_map}}
+\index{draw\_map@{draw\_map}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{draw\_map()}{draw\_map()}}
+{\footnotesize\ttfamily int draw\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})}
+
+
+
+Draws the given map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The map to be drawn. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if an image fails to load, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8h_a731238211da72ff2ea121384fa10039b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8h_a731238211da72ff2ea121384fa10039b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8h_a2117f266cf32d37631770302fe987115}\label{map_8h_a2117f266cf32d37631770302fe987115} 
+\index{map.h@{map.h}!get\_tile@{get\_tile}}
+\index{get\_tile@{get\_tile}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{get\_tile()}{get\_tile()}}
+{\footnotesize\ttfamily char get\+\_\+tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}}]{map,  }\item[{u\+\_\+int32\+\_\+t}]{x,  }\item[{u\+\_\+int32\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns the letter corresponding to the tile at the given position on the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The map from which to retrieve the tile. \\
+\hline
+{\em x} & The x position on the map. \\
+\hline
+{\em y} & The y position on the map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char The letter corresponding to the tile at the given coordinates. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8h_a2117f266cf32d37631770302fe987115_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8h_a5d4b5327269cf4e9b9bbad4265e5b922}\label{map_8h_a5d4b5327269cf4e9b9bbad4265e5b922} 
+\index{map.h@{map.h}!load\_maps@{load\_maps}}
+\index{load\_maps@{load\_maps}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{load\_maps()}{load\_maps()}}
+{\footnotesize\ttfamily int load\+\_\+maps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads all the maps. 
+
+\begin{DoxyReturn}{Returns}
+1 if an error occurs while loading the maps, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{map_8h_a5d4b5327269cf4e9b9bbad4265e5b922_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{map_8h_a5d4b5327269cf4e9b9bbad4265e5b922_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8h_ad7d1e2595412e612be34597c3fb8db8d}\label{map_8h_ad7d1e2595412e612be34597c3fb8db8d} 
+\index{map.h@{map.h}!nextLevel@{nextLevel}}
+\index{nextLevel@{nextLevel}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{nextLevel()}{nextLevel()}}
+{\footnotesize\ttfamily int next\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Changes the current level to the next level. 
+
+\begin{DoxyReturn}{Returns}
+1 if the current level was the last, 0 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8h_ad7d1e2595412e612be34597c3fb8db8d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8h_a1d1326355ebc52cb1eaca3531963e323}\label{map_8h_a1d1326355ebc52cb1eaca3531963e323} 
+\index{map.h@{map.h}!reset\_falling\_blocks@{reset\_falling\_blocks}}
+\index{reset\_falling\_blocks@{reset\_falling\_blocks}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{reset\_falling\_blocks()}{reset\_falling\_blocks()}}
+{\footnotesize\ttfamily void() reset\+\_\+falling\+\_\+blocks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets all the falling blocks to their original position. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8h_a1d1326355ebc52cb1eaca3531963e323_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8h_a1d1326355ebc52cb1eaca3531963e323_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{map_8h_a6f7e766d44058178f28200bc1fbdd7c4}\label{map_8h_a6f7e766d44058178f28200bc1fbdd7c4} 
+\index{map.h@{map.h}!current\_map@{current\_map}}
+\index{current\_map@{current\_map}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{current\_map}{current\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}}\texorpdfstring{$\ast$}{*} current\+\_\+map}
+
+\Hypertarget{map_8h_a31b58054ba61e6d08a8cc085d3719753}\label{map_8h_a31b58054ba61e6d08a8cc085d3719753} 
+\index{map.h@{map.h}!map1@{map1}}
+\index{map1@{map1}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{map1}{map1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}}\texorpdfstring{$\ast$}{*} map1}
+
+\Hypertarget{map_8h_a9068c7b10e396fb7e675b7c9ee407e69}\label{map_8h_a9068c7b10e396fb7e675b7c9ee407e69} 
+\index{map.h@{map.h}!map2@{map2}}
+\index{map2@{map2}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{map2}{map2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}}\texorpdfstring{$\ast$}{*} map2}
+
+\Hypertarget{map_8h_a9d9924b9069ebff409f482b1ced80349}\label{map_8h_a9d9924b9069ebff409f482b1ced80349} 
+\index{map.h@{map.h}!map3@{map3}}
+\index{map3@{map3}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{map3}{map3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}}\texorpdfstring{$\ast$}{*} map3}
+
+\Hypertarget{map_8h_ad22af15c559f183da6e5602edb9a215a}\label{map_8h_ad22af15c559f183da6e5602edb9a215a} 
+\index{map.h@{map.h}!ropes@{ropes}}
+\index{ropes@{ropes}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{ropes}{ropes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}}\texorpdfstring{$\ast$}{*} ropes\mbox{[}10\mbox{]}\mbox{[}10\mbox{]}}
+

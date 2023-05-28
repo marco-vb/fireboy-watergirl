@@ -1,0 +1,23 @@
+<map id="send_byte" name="send_byte">
+<area shape="rect" id="Node000001" title="Sends a byte through the UART transmit buffer." alt="" coords="802,109,890,137"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#afbefc34bc41c323555ca4f834fc7eb7a" title="Sends bytes from the send queue to the UART transmit buffer." alt="" coords="659,109,754,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="787,126,755,126,755,121,787,121"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#adb16266bac82ba2376f626661c75a3ff" title="draws the game over screen and controlls if any of the options is chosen" alt="" coords="472,5,606,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="679,101,647,74,609,48,584,36,586,31,612,44,650,70,682,97"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,160,268,188"/>
+<area shape="poly" id="edge10_Node000002_Node000005" title=" " alt="" coords="645,144,611,151,516,164,421,171,268,176,268,171,421,166,515,158,610,146,644,139"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#ad7ca2d21a727f7d55afef2392de3b5f8" title="draws the main menu and controlls if an option is chosen" alt="" coords="470,57,608,85"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="644,107,585,88,587,83,646,102"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#ac581b9d6af85c4c35f9d423a966cba8e" title="draws the pause menu" alt="" coords="467,109,611,137"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="644,126,611,126,611,121,644,121"/>
+<area shape="rect" id="Node000009" href="$ser_8c.html#a9353fabdd05ea291e02243dace57ae1c" title="Interrupt handler for the serial port." alt="" coords="338,211,398,238"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="682,149,650,174,612,195,554,213,495,222,399,228,398,223,495,217,553,207,610,190,647,170,678,145"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,84,419,112"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="485,41,468,48,395,86,393,81,466,43,482,36"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="327,121,251,162,249,157,325,117"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,160,127,188"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="160,177,127,177,127,171,160,171"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="456,87,420,92,419,87,455,81"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="452,113,419,108,420,103,453,108"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="322,212,263,191,264,186,324,207"/>
+</map>

@@ -1,0 +1,29 @@
+<map id="draw_date" name="draw_date">
+<area shape="rect" id="Node000001" title="Draws the current date on the screen." alt="" coords="5,57,95,85"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#ae9737a99715a2fd3df5523fa354c8a6b" title="Draws a number on the screen." alt="" coords="158,57,269,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,69,143,69,143,74,95,74"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#a854c182b18a745f21e466549c173358d" title="Draws special characters." alt="" coords="143,5,284,33"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="94,54,153,35,155,41,96,59"/>
+<area shape="rect" id="Node000007" href="$rtc_8c.html#a214be91f260f35a70fc21ff14d6e61c9" title="Reads the date (day, month, and year) from the RTC." alt="" coords="170,135,257,162"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="82,83,171,126,168,130,80,88"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a8dc3b64d819195e41495b03be84f9db5" title="Draws an xpm image." alt="" coords="381,57,470,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="269,69,366,69,366,74,269,74"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="332,5,519,33"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="268,55,351,34,353,40,269,60"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="567,57,703,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="471,69,552,69,552,74,471,74"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="274,31,367,54,366,59,272,36"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="284,17,317,17,317,22,284,22"/>
+<area shape="rect" id="Node000008" href="$rtc_8c.html#ad57da43843e5668e01141cc5379ae7fc" title="Reads the day from the RTC." alt="" coords="385,109,466,137"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="257,141,370,127,370,132,257,146"/>
+<area shape="rect" id="Node000011" href="$rtc_8c.html#a47ee0b7c5946446b7112474b281b3c36" title="Reads the month from the RTC." alt="" coords="376,161,475,189"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="257,151,361,164,361,170,257,157"/>
+<area shape="rect" id="Node000012" href="$rtc_8c.html#a383166706dbbe68ee69cd067d4f8b935" title="Reads the year from the RTC." alt="" coords="383,213,469,241"/>
+<area shape="poly" id="edge14_Node000007_Node000012" title=" " alt="" coords="245,160,333,198,369,210,367,215,331,203,243,165"/>
+<area shape="rect" id="Node000009" href="$rtc_8c.html#ae29bac2e634d591d0a31eef4deb72ced" title="Reads a value from a RTC register." alt="" coords="584,161,686,189"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="467,131,570,156,569,162,466,136"/>
+<area shape="rect" id="Node000010" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="751,161,849,189"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="687,173,736,173,736,178,687,178"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="476,173,569,173,569,178,476,178"/>
+<area shape="poly" id="edge15_Node000012_Node000009" title=" " alt="" coords="469,214,569,189,570,194,470,219"/>
+</map>

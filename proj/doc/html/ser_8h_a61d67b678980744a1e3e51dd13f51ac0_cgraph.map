@@ -1,0 +1,5 @@
+<map id="ser_conf" name="ser_conf">
+<area shape="rect" id="Node000001" title="Configures the serial port parameters." alt="" coords="5,5,82,33"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a406e6517544d394bb3b98ec862d96296" title="Writes a value to the Line Control Register (LCR)." alt="" coords="130,5,207,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,17,115,17,115,22,82,22"/>
+</map>

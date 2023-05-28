@@ -1,0 +1,9 @@
+<map id="send_byte" name="send_byte">
+<area shape="rect" id="Node000001" title="Sends a byte through the UART transmit buffer." alt="" coords="5,32,94,60"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#ad96ee630b8a3c428a3ac10c3b8bad01d" title="Reads the Line Control Register (LCR) value." alt="" coords="144,5,217,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,34,129,27,130,32,95,39"/>
+<area shape="rect" id="Node000004" href="$ser_8c.html#a406e6517544d394bb3b98ec862d96296" title="Writes a value to the Line Control Register (LCR)." alt="" coords="142,57,219,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="95,52,127,58,126,63,94,57"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="267,5,365,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,17,252,17,252,22,217,22"/>
+</map>

@@ -1,0 +1,524 @@
+\doxysection{drivers/rtc/rtc.c File Reference}
+\hypertarget{rtc_8c}{}\label{rtc_8c}\index{drivers/rtc/rtc.c@{drivers/rtc/rtc.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \"{}rtc.\+h\"{}}\newline
+Include dependency graph for rtc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{rtc_8c_a35232e4c879f3cb82678674f56cf4751}{rtc\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the Real Time Clock (RTC) \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a6bbe679f115cec90d36d50eb2aac1b89}{rtc\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes to RTC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a9d4850bb2a488644672d43287f160622}{rtc\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes from RTC interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_ae29bac2e634d591d0a31eef4deb72ced}{rtc\+\_\+read\+\_\+reg}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Reads a value from a RTC register. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a4d5027cd5e763401c38199ec78c7d90e}{rtc\+\_\+write\+\_\+reg}} (uint8\+\_\+t reg, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Writes a value to a RTC register. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a3092c218cb22ffd19f8b4fcb1ee2077e}{read\+\_\+hours}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}hours)
+\begin{DoxyCompactList}\small\item\em Reads the hours from the RTC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_aafcc44e46ecbabcc5ca2915c981f4a3a}{read\+\_\+minutes}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}minutes)
+\begin{DoxyCompactList}\small\item\em Reads the minutes from the RTC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a429d381b7aefae1d9f86c12027b509b1}{read\+\_\+seconds}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}seconds)
+\begin{DoxyCompactList}\small\item\em Reads the seconds from the RTC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_ad57da43843e5668e01141cc5379ae7fc}{read\+\_\+day}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}day)
+\begin{DoxyCompactList}\small\item\em Reads the day from the RTC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a47ee0b7c5946446b7112474b281b3c36}{read\+\_\+month}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}month)
+\begin{DoxyCompactList}\small\item\em Reads the month from the RTC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a383166706dbbe68ee69cd067d4f8b935}{read\+\_\+year}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}year)
+\begin{DoxyCompactList}\small\item\em Reads the year from the RTC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a214be91f260f35a70fc21ff14d6e61c9}{read\+\_\+date}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}day, uint8\+\_\+t \texorpdfstring{$\ast$}{*}month, uint8\+\_\+t \texorpdfstring{$\ast$}{*}year)
+\begin{DoxyCompactList}\small\item\em Reads the date (day, month, and year) from the RTC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a8ad785120424df9b86a61baeddb6ef99}{read\+\_\+time}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}hours, uint8\+\_\+t \texorpdfstring{$\ast$}{*}minutes, uint8\+\_\+t \texorpdfstring{$\ast$}{*}seconds)
+\begin{DoxyCompactList}\small\item\em Reads the time (hours, minutes, and seconds) from the RTC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a0635403a6f2f9a5d2cc60dd5c988cb10}{draw\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current time on the screen. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8c_a693f7721f41dbaa76ff4b80abe5a979e}{draw\+\_\+date}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current date on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rtc_8c_a6c52a1d32571a429369253ce7c3a3d7a}{rtc\+\_\+hook\+\_\+id}} = 8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rtc_8c_a693f7721f41dbaa76ff4b80abe5a979e}\label{rtc_8c_a693f7721f41dbaa76ff4b80abe5a979e} 
+\index{rtc.c@{rtc.c}!draw\_date@{draw\_date}}
+\index{draw\_date@{draw\_date}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{draw\_date()}{draw\_date()}}
+{\footnotesize\ttfamily int() draw\+\_\+date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the current date on the screen. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a693f7721f41dbaa76ff4b80abe5a979e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a693f7721f41dbaa76ff4b80abe5a979e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_a0635403a6f2f9a5d2cc60dd5c988cb10}\label{rtc_8c_a0635403a6f2f9a5d2cc60dd5c988cb10} 
+\index{rtc.c@{rtc.c}!draw\_time@{draw\_time}}
+\index{draw\_time@{draw\_time}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{draw\_time()}{draw\_time()}}
+{\footnotesize\ttfamily int() draw\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the current time on the screen. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a0635403a6f2f9a5d2cc60dd5c988cb10_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a0635403a6f2f9a5d2cc60dd5c988cb10_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_a214be91f260f35a70fc21ff14d6e61c9}\label{rtc_8c_a214be91f260f35a70fc21ff14d6e61c9} 
+\index{rtc.c@{rtc.c}!read\_date@{read\_date}}
+\index{read\_date@{read\_date}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{read\_date()}{read\_date()}}
+{\footnotesize\ttfamily int() read\+\_\+date (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{day,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{month,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{year }\end{DoxyParamCaption})}
+
+
+
+Reads the date (day, month, and year) from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & Variable to store the read day. \\
+\hline
+{\em month} & Variable to store the read month. \\
+\hline
+{\em year} & Variable to store the read year. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a214be91f260f35a70fc21ff14d6e61c9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a214be91f260f35a70fc21ff14d6e61c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_ad57da43843e5668e01141cc5379ae7fc}\label{rtc_8c_ad57da43843e5668e01141cc5379ae7fc} 
+\index{rtc.c@{rtc.c}!read\_day@{read\_day}}
+\index{read\_day@{read\_day}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{read\_day()}{read\_day()}}
+{\footnotesize\ttfamily int() read\+\_\+day (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{day }\end{DoxyParamCaption})}
+
+
+
+Reads the day from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & Variable to store the read day. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_ad57da43843e5668e01141cc5379ae7fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_ad57da43843e5668e01141cc5379ae7fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_a3092c218cb22ffd19f8b4fcb1ee2077e}\label{rtc_8c_a3092c218cb22ffd19f8b4fcb1ee2077e} 
+\index{rtc.c@{rtc.c}!read\_hours@{read\_hours}}
+\index{read\_hours@{read\_hours}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{read\_hours()}{read\_hours()}}
+{\footnotesize\ttfamily int() read\+\_\+hours (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{hours }\end{DoxyParamCaption})}
+
+
+
+Reads the hours from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours} & Variable to store the read hours. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a3092c218cb22ffd19f8b4fcb1ee2077e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a3092c218cb22ffd19f8b4fcb1ee2077e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_aafcc44e46ecbabcc5ca2915c981f4a3a}\label{rtc_8c_aafcc44e46ecbabcc5ca2915c981f4a3a} 
+\index{rtc.c@{rtc.c}!read\_minutes@{read\_minutes}}
+\index{read\_minutes@{read\_minutes}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{read\_minutes()}{read\_minutes()}}
+{\footnotesize\ttfamily int() read\+\_\+minutes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{minutes }\end{DoxyParamCaption})}
+
+
+
+Reads the minutes from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minutes} & Variable to store the read minutes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_aafcc44e46ecbabcc5ca2915c981f4a3a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_aafcc44e46ecbabcc5ca2915c981f4a3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_a47ee0b7c5946446b7112474b281b3c36}\label{rtc_8c_a47ee0b7c5946446b7112474b281b3c36} 
+\index{rtc.c@{rtc.c}!read\_month@{read\_month}}
+\index{read\_month@{read\_month}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{read\_month()}{read\_month()}}
+{\footnotesize\ttfamily int() read\+\_\+month (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{month }\end{DoxyParamCaption})}
+
+
+
+Reads the month from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & Variable to store the read month. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a47ee0b7c5946446b7112474b281b3c36_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a47ee0b7c5946446b7112474b281b3c36_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_a429d381b7aefae1d9f86c12027b509b1}\label{rtc_8c_a429d381b7aefae1d9f86c12027b509b1} 
+\index{rtc.c@{rtc.c}!read\_seconds@{read\_seconds}}
+\index{read\_seconds@{read\_seconds}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{read\_seconds()}{read\_seconds()}}
+{\footnotesize\ttfamily int() read\+\_\+seconds (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Reads the seconds from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & Variable to store the read seconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a429d381b7aefae1d9f86c12027b509b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a429d381b7aefae1d9f86c12027b509b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_a8ad785120424df9b86a61baeddb6ef99}\label{rtc_8c_a8ad785120424df9b86a61baeddb6ef99} 
+\index{rtc.c@{rtc.c}!read\_time@{read\_time}}
+\index{read\_time@{read\_time}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{read\_time()}{read\_time()}}
+{\footnotesize\ttfamily int() read\+\_\+time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{hours,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{minutes,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Reads the time (hours, minutes, and seconds) from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours} & Variable to store the read hours. \\
+\hline
+{\em minutes} & Variable to store the read minutes. \\
+\hline
+{\em seconds} & Variable to store the read seconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a8ad785120424df9b86a61baeddb6ef99_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a8ad785120424df9b86a61baeddb6ef99_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_a383166706dbbe68ee69cd067d4f8b935}\label{rtc_8c_a383166706dbbe68ee69cd067d4f8b935} 
+\index{rtc.c@{rtc.c}!read\_year@{read\_year}}
+\index{read\_year@{read\_year}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{read\_year()}{read\_year()}}
+{\footnotesize\ttfamily int() read\+\_\+year (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{year }\end{DoxyParamCaption})}
+
+
+
+Reads the year from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Variable to store the read year. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a383166706dbbe68ee69cd067d4f8b935_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a383166706dbbe68ee69cd067d4f8b935_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_a35232e4c879f3cb82678674f56cf4751}\label{rtc_8c_a35232e4c879f3cb82678674f56cf4751} 
+\index{rtc.c@{rtc.c}!rtc\_init@{rtc\_init}}
+\index{rtc\_init@{rtc\_init}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_init()}{rtc\_init()}}
+{\footnotesize\ttfamily int() rtc\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the Real Time Clock (RTC) 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a35232e4c879f3cb82678674f56cf4751_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{rtc_8c_a35232e4c879f3cb82678674f56cf4751_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_ae29bac2e634d591d0a31eef4deb72ced}\label{rtc_8c_ae29bac2e634d591d0a31eef4deb72ced} 
+\index{rtc.c@{rtc.c}!rtc\_read\_reg@{rtc\_read\_reg}}
+\index{rtc\_read\_reg@{rtc\_read\_reg}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_read\_reg()}{rtc\_read\_reg()}}
+{\footnotesize\ttfamily int() rtc\+\_\+read\+\_\+reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Reads a value from a RTC register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to read from. \\
+\hline
+{\em data} & Variable to store the read value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{rtc_8c_ae29bac2e634d591d0a31eef4deb72ced_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_ae29bac2e634d591d0a31eef4deb72ced_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8c_a6bbe679f115cec90d36d50eb2aac1b89}\label{rtc_8c_a6bbe679f115cec90d36d50eb2aac1b89} 
+\index{rtc.c@{rtc.c}!rtc\_subscribe\_int@{rtc\_subscribe\_int}}
+\index{rtc\_subscribe\_int@{rtc\_subscribe\_int}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_subscribe\_int()}{rtc\_subscribe\_int()}}
+{\footnotesize\ttfamily int() rtc\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes to RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Variable to store the bit mask for the RTC\textquotesingle{}s IRQ line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+\Hypertarget{rtc_8c_a9d4850bb2a488644672d43287f160622}\label{rtc_8c_a9d4850bb2a488644672d43287f160622} 
+\index{rtc.c@{rtc.c}!rtc\_unsubscribe\_int@{rtc\_unsubscribe\_int}}
+\index{rtc\_unsubscribe\_int@{rtc\_unsubscribe\_int}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_unsubscribe\_int()}{rtc\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int() rtc\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes from RTC interrupts. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+\Hypertarget{rtc_8c_a4d5027cd5e763401c38199ec78c7d90e}\label{rtc_8c_a4d5027cd5e763401c38199ec78c7d90e} 
+\index{rtc.c@{rtc.c}!rtc\_write\_reg@{rtc\_write\_reg}}
+\index{rtc\_write\_reg@{rtc\_write\_reg}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_write\_reg()}{rtc\_write\_reg()}}
+{\footnotesize\ttfamily int() rtc\+\_\+write\+\_\+reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Writes a value to a RTC register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to write to. \\
+\hline
+{\em data} & The value to write to the register. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{rtc_8c_a4d5027cd5e763401c38199ec78c7d90e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{rtc_8c_a6c52a1d32571a429369253ce7c3a3d7a}\label{rtc_8c_a6c52a1d32571a429369253ce7c3a3d7a} 
+\index{rtc.c@{rtc.c}!rtc\_hook\_id@{rtc\_hook\_id}}
+\index{rtc\_hook\_id@{rtc\_hook\_id}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_hook\_id}{rtc\_hook\_id}}
+{\footnotesize\ttfamily int rtc\+\_\+hook\+\_\+id = 8}
+

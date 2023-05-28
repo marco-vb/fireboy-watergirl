@@ -1,0 +1,9 @@
+<map id="drivers/kbc/kbc.h" name="drivers/kbc/kbc.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="21,5,153,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,76,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,35,59,70,54,67,77,32"/>
+<area shape="rect" id="Node000003" href="$i8042_8h.html" title=" " alt="" coords="99,81,169,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,32,120,67,116,70,93,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="92,157,176,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="137,109,137,142,131,142,131,109"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="obf_full" name="obf_full">
+<area shape="rect" id="Node000001" title="Checks if the output buffer is full." alt="" coords="5,5,76,33"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html#a5b7c0fcbbf462fdc98d5cf45f1a6f62f" title="Checks if the a buffer is full." alt="" coords="124,5,212,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,17,109,17,109,22,76,22"/>
+<area shape="rect" id="Node000003" href="$kbc_8c.html#a478e9d9e6e396379599060715e26730a" title="Gets the status from the keyboard register." alt="" coords="260,5,379,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,17,245,17,245,22,212,22"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="427,5,526,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="380,17,413,17,413,22,380,22"/>
+</map>

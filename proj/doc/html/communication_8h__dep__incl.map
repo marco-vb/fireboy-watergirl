@@ -1,0 +1,7 @@
+<map id="communication/communication.h" name="communication/communication.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="93,5,332,33"/>
+<area shape="rect" id="Node000002" href="$communication_8c.html" title=" " alt="" coords="5,81,244,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,45,142,83,138,79,184,41"/>
+<area shape="rect" id="Node000003" href="$game_8c.html" title=" " alt="" coords="267,81,337,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="241,41,288,78,284,83,238,45"/>
+</map>

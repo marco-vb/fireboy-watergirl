@@ -1,0 +1,193 @@
+\doxysection{drivers/kbc/keyboard.c File Reference}
+\hypertarget{keyboard_8c}{}\label{keyboard_8c}\index{drivers/kbc/keyboard.c@{drivers/kbc/keyboard.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \"{}kbc.\+h\"{}}\newline
+{\ttfamily \#include \"{}keyboard.\+h\"{}}\newline
+Include dependency graph for keyboard.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{keyboard_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{keyboard_8c_a178b1db0b319dccad2840cc3fd273132}{keyboard\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes to keyboard. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{keyboard_8c_a32cc4de66854f8a7bd909e7aa8b901ed}{keyboard\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes from keyboard. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{keyboard_8c_a9dd5abe1355bd233d6a16abceaae0c59}{k\+\_\+read\+\_\+byte}} (uint8\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Reads a byte received from the keyboard and updates the packet accordingly. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{keyboard_8c_afad76a00abafbbd8a712c442b796005d}{keyboard\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Keyboard interrupt handler. Reads data from the keyboard and updates the packet. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{keyboard_8c_a01727e90837bef7cb8bf6944a8f72133}{keyboard\+\_\+restore\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Restores the keyboard interrupt handler to its original state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}}() \mbox{\hyperlink{keyboard_8c_a0e582d18ca9f6ef5999a40212d324787}{keyboard\+\_\+get\+\_\+key}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the key from the keyboard packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{keyboard_8c_a5a64e6c8a5e96e1c082bff7bde2fd9a1}{hook\+\_\+keyboard}} = 1
+\item 
+\mbox{\hyperlink{structkeyboard__packet__t}{keyboard\+\_\+packet\+\_\+t}} \mbox{\hyperlink{keyboard_8c_a96c693f959862d3ef7ec01a7639bd861}{keyboard\+\_\+packet}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{keyboard_8c_a9dd5abe1355bd233d6a16abceaae0c59}\label{keyboard_8c_a9dd5abe1355bd233d6a16abceaae0c59} 
+\index{keyboard.c@{keyboard.c}!k\_read\_byte@{k\_read\_byte}}
+\index{k\_read\_byte@{k\_read\_byte}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{k\_read\_byte()}{k\_read\_byte()}}
+{\footnotesize\ttfamily void() k\+\_\+read\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+Reads a byte received from the keyboard and updates the packet accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The byte received from the keyboard. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c_a9dd5abe1355bd233d6a16abceaae0c59_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8c_a0e582d18ca9f6ef5999a40212d324787}\label{keyboard_8c_a0e582d18ca9f6ef5999a40212d324787} 
+\index{keyboard.c@{keyboard.c}!keyboard\_get\_key@{keyboard\_get\_key}}
+\index{keyboard\_get\_key@{keyboard\_get\_key}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_get\_key()}{keyboard\_get\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\+\_\+key}}() keyboard\+\_\+get\+\_\+key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the key from the keyboard packet. 
+
+\begin{DoxyReturn}{Returns}
+Returns the key from the keyboard packet. If the packet is not complete, KEY\+\_\+\+NONE is returned. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c_a0e582d18ca9f6ef5999a40212d324787_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8c_afad76a00abafbbd8a712c442b796005d}\label{keyboard_8c_afad76a00abafbbd8a712c442b796005d} 
+\index{keyboard.c@{keyboard.c}!keyboard\_ih@{keyboard\_ih}}
+\index{keyboard\_ih@{keyboard\_ih}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_ih()}{keyboard\_ih()}}
+{\footnotesize\ttfamily void() keyboard\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Keyboard interrupt handler. Reads data from the keyboard and updates the packet. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c_afad76a00abafbbd8a712c442b796005d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c_afad76a00abafbbd8a712c442b796005d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8c_a01727e90837bef7cb8bf6944a8f72133}\label{keyboard_8c_a01727e90837bef7cb8bf6944a8f72133} 
+\index{keyboard.c@{keyboard.c}!keyboard\_restore\_int@{keyboard\_restore\_int}}
+\index{keyboard\_restore\_int@{keyboard\_restore\_int}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_restore\_int()}{keyboard\_restore\_int()}}
+{\footnotesize\ttfamily int() keyboard\+\_\+restore\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Restores the keyboard interrupt handler to its original state. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c_a01727e90837bef7cb8bf6944a8f72133_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8c_a178b1db0b319dccad2840cc3fd273132}\label{keyboard_8c_a178b1db0b319dccad2840cc3fd273132} 
+\index{keyboard.c@{keyboard.c}!keyboard\_subscribe\_int@{keyboard\_subscribe\_int}}
+\index{keyboard\_subscribe\_int@{keyboard\_subscribe\_int}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_subscribe\_int()}{keyboard\_subscribe\_int()}}
+{\footnotesize\ttfamily int() keyboard\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes to keyboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Pointer that will be pointed to the keyboard hook\+\_\+id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c_a178b1db0b319dccad2840cc3fd273132_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{keyboard_8c_a32cc4de66854f8a7bd909e7aa8b901ed}\label{keyboard_8c_a32cc4de66854f8a7bd909e7aa8b901ed} 
+\index{keyboard.c@{keyboard.c}!keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}}
+\index{keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_unsubscribe\_int()}{keyboard\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int() keyboard\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes from keyboard. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8c_a32cc4de66854f8a7bd909e7aa8b901ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{keyboard_8c_a5a64e6c8a5e96e1c082bff7bde2fd9a1}\label{keyboard_8c_a5a64e6c8a5e96e1c082bff7bde2fd9a1} 
+\index{keyboard.c@{keyboard.c}!hook\_keyboard@{hook\_keyboard}}
+\index{hook\_keyboard@{hook\_keyboard}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{hook\_keyboard}{hook\_keyboard}}
+{\footnotesize\ttfamily int hook\+\_\+keyboard = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{keyboard_8c_a96c693f959862d3ef7ec01a7639bd861}\label{keyboard_8c_a96c693f959862d3ef7ec01a7639bd861} 
+\index{keyboard.c@{keyboard.c}!keyboard\_packet@{keyboard\_packet}}
+\index{keyboard\_packet@{keyboard\_packet}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_packet}{keyboard\_packet}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structkeyboard__packet__t}{keyboard\+\_\+packet\+\_\+t}} keyboard\+\_\+packet}
+

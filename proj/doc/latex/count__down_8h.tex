@@ -1,0 +1,158 @@
+\doxysection{count\+\_\+down/count\+\_\+down.h File Reference}
+\hypertarget{count__down_8h}{}\label{count__down_8h}\index{count\_down/count\_down.h@{count\_down/count\_down.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \"{}../drivers/graphics/graphics.\+h\"{}}\newline
+Include dependency graph for count\+\_\+down.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{count__down_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{count__down_8h_a3ecd7db38f654593de1f0d39f5aef0e1}{start\+\_\+counter}} (int time)
+\begin{DoxyCompactList}\small\item\em Starts a counter. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{count__down_8h_aecc5765e5b272e98f71ecab6829f3781}{decrement\+\_\+counter}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the counter by one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{count__down_8h_a2714aa68fc456bcd506de0d0b9a3462e}{set\+\_\+timer\+\_\+pos}} (int \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}})
+\begin{DoxyCompactList}\small\item\em Sets the position of the timer on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{count__down_8h_ad4770f1afc16e19e62eb94c55202b05a}{draw\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Draws the timer on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{count__down_8h_a10dcb714f3e07d9aa8ccb1b5fb66a2a5}{clear\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Clears the timer from the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{count__down_8h_a10dcb714f3e07d9aa8ccb1b5fb66a2a5}\label{count__down_8h_a10dcb714f3e07d9aa8ccb1b5fb66a2a5} 
+\index{count\_down.h@{count\_down.h}!clear\_timer@{clear\_timer}}
+\index{clear\_timer@{clear\_timer}!count\_down.h@{count\_down.h}}
+\doxysubsubsection{\texorpdfstring{clear\_timer()}{clear\_timer()}}
+{\footnotesize\ttfamily int clear\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the timer from the screen. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 1 if an error occurs while clearing the numbers, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{count__down_8h_a10dcb714f3e07d9aa8ccb1b5fb66a2a5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{count__down_8h_aecc5765e5b272e98f71ecab6829f3781}\label{count__down_8h_aecc5765e5b272e98f71ecab6829f3781} 
+\index{count\_down.h@{count\_down.h}!decrement\_counter@{decrement\_counter}}
+\index{decrement\_counter@{decrement\_counter}!count\_down.h@{count\_down.h}}
+\doxysubsubsection{\texorpdfstring{decrement\_counter()}{decrement\_counter()}}
+{\footnotesize\ttfamily int decrement\+\_\+counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decrements the counter by one. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the time has ended, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{count__down_8h_aecc5765e5b272e98f71ecab6829f3781_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8h_aecc5765e5b272e98f71ecab6829f3781_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{count__down_8h_ad4770f1afc16e19e62eb94c55202b05a}\label{count__down_8h_ad4770f1afc16e19e62eb94c55202b05a} 
+\index{count\_down.h@{count\_down.h}!draw\_timer@{draw\_timer}}
+\index{draw\_timer@{draw\_timer}!count\_down.h@{count\_down.h}}
+\doxysubsubsection{\texorpdfstring{draw\_timer()}{draw\_timer()}}
+{\footnotesize\ttfamily int draw\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the timer on the screen. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 1 if an error occurs while drawing the numbers, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8h_ad4770f1afc16e19e62eb94c55202b05a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8h_ad4770f1afc16e19e62eb94c55202b05a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{count__down_8h_a2714aa68fc456bcd506de0d0b9a3462e}\label{count__down_8h_a2714aa68fc456bcd506de0d0b9a3462e} 
+\index{count\_down.h@{count\_down.h}!set\_timer\_pos@{set\_timer\_pos}}
+\index{set\_timer\_pos@{set\_timer\_pos}!count\_down.h@{count\_down.h}}
+\doxysubsubsection{\texorpdfstring{set\_timer\_pos()}{set\_timer\_pos()}}
+{\footnotesize\ttfamily void set\+\_\+timer\+\_\+pos (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the position of the timer on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The horizontal position of the timer on the screen. \\
+\hline
+{\em y} & The vertical position of the timer on the screen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{count__down_8h_a3ecd7db38f654593de1f0d39f5aef0e1}\label{count__down_8h_a3ecd7db38f654593de1f0d39f5aef0e1} 
+\index{count\_down.h@{count\_down.h}!start\_counter@{start\_counter}}
+\index{start\_counter@{start\_counter}!count\_down.h@{count\_down.h}}
+\doxysubsubsection{\texorpdfstring{start\_counter()}{start\_counter()}}
+{\footnotesize\ttfamily int start\+\_\+counter (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+Starts a counter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The time of the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 if the time is lower than 0, 0 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__down_8h_a3ecd7db38f654593de1f0d39f5aef0e1_icgraph}
+\end{center}
+\end{figure}

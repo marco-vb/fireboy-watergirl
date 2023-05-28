@@ -1,0 +1,367 @@
+\doxysection{drivers/kbc/kbc.h File Reference}
+\hypertarget{kbc_8h}{}\label{kbc_8h}\index{drivers/kbc/kbc.h@{drivers/kbc/kbc.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \"{}i8042.\+h\"{}}\newline
+Include dependency graph for kbc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{kbc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kbc_8h_a2f901acc7ec2e88efa1f7eb391832e67}{kbc\+\_\+get\+\_\+status}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Gets the status from the keyboard register. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kbc_8h_a329ba4421641ca5198df31959322b27e}{kbc\+\_\+read\+\_\+data}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Reads a byte from the output buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kbc_8h_a6da15cccd098edde3a7c6fec6da4a8ef}{kbc\+\_\+write}} (uint8\+\_\+t port, uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Writes a command to the keyboard register. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kbc_8h_aa1dcd642657d7da0376e36cda809b0e3}{kbc\+\_\+write\+\_\+cmd}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Writes a command to the keyboard register. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kbc_8h_ab7c3aa73d53fa86cf82ef40b5032784d}{kbc\+\_\+write\+\_\+arg}} (uint8\+\_\+t arg)
+\begin{DoxyCompactList}\small\item\em Writes an argument to the keyboard arguments register. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kbc_8h_a2992ef6c558ce20a332875497797c61f}{obf\+\_\+full}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the output buffer is full. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kbc_8h_a033ac1e524d28bf42fbd9d9a83466a10}{ibf\+\_\+empty}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the input buffer is empty. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kbc_8h_a28671696d322cc8ab56248a0889ca132}{buffer\+\_\+full}} (uint8\+\_\+t flag)
+\begin{DoxyCompactList}\small\item\em Checks if the a buffer is full. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kbc_8h_a810dd8759294901aac42ee1cc2b07afa}{kbc\+\_\+init}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{game_8c_ad94de15d99fb7e7c59ceaf11b348a26c}{irq\+\_\+keyboard}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{game_8c_a3c3f9b11f30efcaaea7455fd72ea7491}{irq\+\_\+mouse}})
+\begin{DoxyCompactList}\small\item\em Initializes the keyboard and the mouse. Subscribes to the mouse and the keyboard and enables mouse data report. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kbc_8h_a60bb58654afdee98724521d0cfb36bf2}{kbc\+\_\+disable}} ()
+\begin{DoxyCompactList}\small\item\em Disables the keyboard and the mouse Usubscribes to the mouse and the kayboard and disables the mouse data report. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{kbc_8h_a28671696d322cc8ab56248a0889ca132}\label{kbc_8h_a28671696d322cc8ab56248a0889ca132} 
+\index{kbc.h@{kbc.h}!buffer\_full@{buffer\_full}}
+\index{buffer\_full@{buffer\_full}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{buffer\_full()}{buffer\_full()}}
+{\footnotesize\ttfamily int buffer\+\_\+full (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{flag }\end{DoxyParamCaption})}
+
+
+
+Checks if the a buffer is full. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & The flag to chose the buffer to check (KBC\+\_\+\+IN\+\_\+\+FULL or KBC\+\_\+\+OUT\+\_\+\+FULL). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if the buffer is full, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a28671696d322cc8ab56248a0889ca132_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a28671696d322cc8ab56248a0889ca132_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{kbc_8h_a033ac1e524d28bf42fbd9d9a83466a10}\label{kbc_8h_a033ac1e524d28bf42fbd9d9a83466a10} 
+\index{kbc.h@{kbc.h}!ibf\_empty@{ibf\_empty}}
+\index{ibf\_empty@{ibf\_empty}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{ibf\_empty()}{ibf\_empty()}}
+{\footnotesize\ttfamily int ibf\+\_\+empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the input buffer is empty. 
+
+\begin{DoxyReturn}{Returns}
+Returns 1 if the input buffer is empty, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a033ac1e524d28bf42fbd9d9a83466a10_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a033ac1e524d28bf42fbd9d9a83466a10_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{kbc_8h_a60bb58654afdee98724521d0cfb36bf2}\label{kbc_8h_a60bb58654afdee98724521d0cfb36bf2} 
+\index{kbc.h@{kbc.h}!kbc\_disable@{kbc\_disable}}
+\index{kbc\_disable@{kbc\_disable}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_disable()}{kbc\_disable()}}
+{\footnotesize\ttfamily int kbc\+\_\+disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disables the keyboard and the mouse Usubscribes to the mouse and the kayboard and disables the mouse data report. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a60bb58654afdee98724521d0cfb36bf2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a60bb58654afdee98724521d0cfb36bf2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{kbc_8h_a2f901acc7ec2e88efa1f7eb391832e67}\label{kbc_8h_a2f901acc7ec2e88efa1f7eb391832e67} 
+\index{kbc.h@{kbc.h}!kbc\_get\_status@{kbc\_get\_status}}
+\index{kbc\_get\_status@{kbc\_get\_status}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_get\_status()}{kbc\_get\_status()}}
+{\footnotesize\ttfamily int kbc\+\_\+get\+\_\+status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Gets the status from the keyboard register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em st} & Variable where the status will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{kbc_8h_a2f901acc7ec2e88efa1f7eb391832e67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a2f901acc7ec2e88efa1f7eb391832e67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{kbc_8h_a810dd8759294901aac42ee1cc2b07afa}\label{kbc_8h_a810dd8759294901aac42ee1cc2b07afa} 
+\index{kbc.h@{kbc.h}!kbc\_init@{kbc\_init}}
+\index{kbc\_init@{kbc\_init}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_init()}{kbc\_init()}}
+{\footnotesize\ttfamily int kbc\+\_\+init (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{irq\+\_\+keyboard,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{irq\+\_\+mouse }\end{DoxyParamCaption})}
+
+
+
+Initializes the keyboard and the mouse. Subscribes to the mouse and the keyboard and enables mouse data report. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em irq\+\_\+keyboard} & Variable where the keyboard hook\+\_\+id will be stored. \\
+\hline
+{\em irq\+\_\+mouse} & Variable where the mouse hook\+\_\+id will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a810dd8759294901aac42ee1cc2b07afa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{kbc_8h_a810dd8759294901aac42ee1cc2b07afa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{kbc_8h_a329ba4421641ca5198df31959322b27e}\label{kbc_8h_a329ba4421641ca5198df31959322b27e} 
+\index{kbc.h@{kbc.h}!kbc\_read\_data@{kbc\_read\_data}}
+\index{kbc\_read\_data@{kbc\_read\_data}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_read\_data()}{kbc\_read\_data()}}
+{\footnotesize\ttfamily int kbc\+\_\+read\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Reads a byte from the output buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Variable where the byte will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{kbc_8h_a329ba4421641ca5198df31959322b27e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a329ba4421641ca5198df31959322b27e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{kbc_8h_a6da15cccd098edde3a7c6fec6da4a8ef}\label{kbc_8h_a6da15cccd098edde3a7c6fec6da4a8ef} 
+\index{kbc.h@{kbc.h}!kbc\_write@{kbc\_write}}
+\index{kbc\_write@{kbc\_write}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_write()}{kbc\_write()}}
+{\footnotesize\ttfamily int kbc\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Writes a command to the keyboard register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to write the command to. \\
+\hline
+{\em cmd} & The command to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a6da15cccd098edde3a7c6fec6da4a8ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a6da15cccd098edde3a7c6fec6da4a8ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{kbc_8h_ab7c3aa73d53fa86cf82ef40b5032784d}\label{kbc_8h_ab7c3aa73d53fa86cf82ef40b5032784d} 
+\index{kbc.h@{kbc.h}!kbc\_write\_arg@{kbc\_write\_arg}}
+\index{kbc\_write\_arg@{kbc\_write\_arg}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_write\_arg()}{kbc\_write\_arg()}}
+{\footnotesize\ttfamily int kbc\+\_\+write\+\_\+arg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{arg }\end{DoxyParamCaption})}
+
+
+
+Writes an argument to the keyboard arguments register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The argument to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_ab7c3aa73d53fa86cf82ef40b5032784d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_ab7c3aa73d53fa86cf82ef40b5032784d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{kbc_8h_aa1dcd642657d7da0376e36cda809b0e3}\label{kbc_8h_aa1dcd642657d7da0376e36cda809b0e3} 
+\index{kbc.h@{kbc.h}!kbc\_write\_cmd@{kbc\_write\_cmd}}
+\index{kbc\_write\_cmd@{kbc\_write\_cmd}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_write\_cmd()}{kbc\_write\_cmd()}}
+{\footnotesize\ttfamily int kbc\+\_\+write\+\_\+cmd (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Writes a command to the keyboard register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & The command to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_aa1dcd642657d7da0376e36cda809b0e3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_aa1dcd642657d7da0376e36cda809b0e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{kbc_8h_a2992ef6c558ce20a332875497797c61f}\label{kbc_8h_a2992ef6c558ce20a332875497797c61f} 
+\index{kbc.h@{kbc.h}!obf\_full@{obf\_full}}
+\index{obf\_full@{obf\_full}!kbc.h@{kbc.h}}
+\doxysubsubsection{\texorpdfstring{obf\_full()}{obf\_full()}}
+{\footnotesize\ttfamily int obf\+\_\+full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the output buffer is full. 
+
+\begin{DoxyReturn}{Returns}
+Returns 1 if the output buffer is full, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h_a2992ef6c558ce20a332875497797c61f_cgraph}
+\end{center}
+\end{figure}

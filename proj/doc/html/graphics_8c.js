@@ -1,0 +1,28 @@
+var graphics_8c =
+[
+    [ "clear_background", "graphics_8c.html#a3e8d2ec60eba082aabdea302626824d3", null ],
+    [ "clear_buffer", "graphics_8c.html#af7831592ef04114ca9b46e672c0e646b", null ],
+    [ "draw_background", "graphics_8c.html#ad5b4d5bb4cb1f5a41075afa1ecc3ae98", null ],
+    [ "draw_buffer", "graphics_8c.html#ad4bb9a6cbe9640cf7f11f5ee54328ab9", null ],
+    [ "draw_number", "graphics_8c.html#ae9737a99715a2fd3df5523fa354c8a6b", null ],
+    [ "draw_special_char", "graphics_8c.html#a854c182b18a745f21e466549c173358d", null ],
+    [ "draw_xpm", "graphics_8c.html#a8dc3b64d819195e41495b03be84f9db5", null ],
+    [ "get_hres", "graphics_8c.html#a96831d611df1b6f4402dec1da8eaaef5", null ],
+    [ "get_vres", "graphics_8c.html#adbb976e8111bdebbf31503894844e592", null ],
+    [ "load_img", "graphics_8c.html#a800955b309cb7cce614419e4e0495004", null ],
+    [ "map_memory", "graphics_8c.html#af1bf9e7f07f92f3f1561df4630ce33d1", null ],
+    [ "replace_with_background", "graphics_8c.html#ae296753029e1d5646e0097109597def0", null ],
+    [ "text_mode", "graphics_8c.html#ae68327d7563d47a43e36fbb13bd4ec2e", null ],
+    [ "video_draw_pixel", "graphics_8c.html#ab0332ee565f978f725c021b4eb35958e", null ],
+    [ "video_mode", "graphics_8c.html#a810ae94f1777bf6fc1d9d281eeb2bc22", null ],
+    [ "video_set_mode", "graphics_8c.html#aa990c707b7715a066a86572d5494d71c", null ],
+    [ "background_buffer", "graphics_8c.html#a49d647556d3bdce98608cc0351aa070b", null ],
+    [ "buffer", "graphics_8c.html#a56ed84df35de10bdb65e72b184309497", null ],
+    [ "bytes_per_pixel", "graphics_8c.html#a273db53582b308a7fd6d6448e10f018f", null ],
+    [ "charxpm", "graphics_8c.html#a52968f47b9688472c112a9c3a19a44f6", null ],
+    [ "frames", "graphics_8c.html#a91cbb326aaace0b3f6101e0ecaddc8ed", null ],
+    [ "hres", "graphics_8c.html#abc3c784566289e1414929d23e32a0c6c", null ],
+    [ "video_mem", "graphics_8c.html#a51ca412bef7e65e7fb0a170abe47b36b", null ],
+    [ "vmi_p", "graphics_8c.html#a26081be7a771e5c611b33f15caaf831e", null ],
+    [ "vres", "graphics_8c.html#a573eca15e5986d6dd7ae53b5dab582e2", null ]
+];

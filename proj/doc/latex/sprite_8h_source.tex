@@ -1,0 +1,59 @@
+\doxysection{sprite.\+h}
+\hypertarget{sprite_8h_source}{}\label{sprite_8h_source}\index{sprites/sprite.h@{sprites/sprite.h}}
+\mbox{\hyperlink{sprite_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_SPRITE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_SPRITE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../drivers/graphics/graphics.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../xpm/cursor.xpm"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../xpm/background.xpm"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../xpm/logo.xpm"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../xpm/single\_player.xpm"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../xpm/single\_playerh.xpm"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../xpm/coop.xpm"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../xpm/cooph.xpm"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../xpm/exit.xpm"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../xpm/exitH.xpm"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../xpm/fireboy.xpm"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../xpm/watergirl.xpm"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../xpm/game-\/over.xpm"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../xpm/pause.xpm"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}../xpm/waiting.xpm"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSprite_ab36028dcefdd4bf024c52c8d9519a283}{x}},\ \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}},\ xspeed,\ yspeed;}
+\DoxyCodeLine{00024\ \ \ \ \ uint16\_t\ width,\ \mbox{\hyperlink{structSprite_a7d2d72b3ea47dab6db0ada4b36017d7a}{height}};}
+\DoxyCodeLine{00025\ \ \ \ \ uint32\_t*\ \mbox{\hyperlink{structSprite_a4c4d8a4338e3755baa31b5c36d97033e}{map}};}
+\DoxyCodeLine{00026\ \}\ \mbox{\hyperlink{structSprite}{Sprite}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_a69a7242ee147decd9b827b0c721a728c}{background}};}
+\DoxyCodeLine{00029\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_a3a7ea4305773abf5347bb261a8a5c16b}{cursor}};}
+\DoxyCodeLine{00030\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_a128ae586c5fbd6f3347f466a69a01ba1}{logo}};}
+\DoxyCodeLine{00031\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_aa7ccfc303e8b38c98ed26bda8481af19}{single\_player\_text}};}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_a695f7bf6dc44bb9076ae366a06be2508}{coop\_text}};}
+\DoxyCodeLine{00033\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_ac3fa1f11ef4ed3e5d3dad2cb1e643436}{exit\_text}};}
+\DoxyCodeLine{00034\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_abdef9fa8a27526e2cdcf3b9bc5bb945e}{single\_player\_texth}};}
+\DoxyCodeLine{00035\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_ae0a875d16001ccca7f54f34ab6b5b600}{coop\_texth}};}
+\DoxyCodeLine{00036\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_afab30dc6f8ef6760c2cb6b94886e22ce}{exit\_texth}};}
+\DoxyCodeLine{00037\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_a204005cfc4a4ffd8ba457f9266800714}{block}};}
+\DoxyCodeLine{00038\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_a09946ccf6f059580fd441db722f31f0f}{fzl}};}
+\DoxyCodeLine{00039\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_a0f98ef1e82accf0c47c2952a6ab99639}{game\_over}};}
+\DoxyCodeLine{00040\ \mbox{\hyperlink{structSprite}{Sprite}}\ *\ \mbox{\hyperlink{sprite_8h_a366ef7645bc15cd218799765f9ad701f}{pause\_menu}};}
+\DoxyCodeLine{00041\ \mbox{\hyperlink{structSprite}{Sprite}}\ *\ \mbox{\hyperlink{sprite_8h_a077d59142655370e617c4c4af6c84453}{waiting}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00053\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{sprite_8h_aeb91b0831a9bc988b1c041836318001b}{create\_sprite}}(xpm\_map\_t\ pic,\ uint16\_t\ \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ uint16\_t\ \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}},\ uint16\_t\ xspeed,\ uint16\_t\ yspeed);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sprite_8h_a3d39d1edf4dd00233efcecf5a3f6507e}{load\_sprites}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sprite_8h_ae10de51e6ec23c1eb987551e7ec4a0e9}{destroy\_sprite}}(\mbox{\hyperlink{structSprite}{Sprite}}*\ sp);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sprite_8h_a6c75fbf31230126d2f19b29deaf24b2f}{draw\_sprite}}(\mbox{\hyperlink{structSprite}{Sprite}}*\ sp);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sprite_8h_a92dc8c9632f56d3d3bde58d592e4ca84}{erase\_sprite}}(\mbox{\hyperlink{structSprite}{Sprite}}*\ sp);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_SPRITE\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

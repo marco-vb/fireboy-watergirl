@@ -1,0 +1,7 @@
+<map id="buffer_full" name="buffer_full">
+<area shape="rect" id="Node000001" title="Checks if the a buffer is full." alt="" coords="5,5,94,33"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html#a478e9d9e6e396379599060715e26730a" title="Gets the status from the keyboard register." alt="" coords="142,5,261,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,17,127,17,127,22,94,22"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="309,5,407,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,17,294,17,294,22,261,22"/>
+</map>

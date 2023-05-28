@@ -1,0 +1,5 @@
+<map id="erase_sprite" name="erase_sprite">
+<area shape="rect" id="Node000001" title="Erases a sprite from the screen." alt="" coords="5,5,107,33"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="155,5,342,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,17,140,17,140,22,107,22"/>
+</map>

@@ -1,0 +1,187 @@
+\doxysection{drivers/queue.c File Reference}
+\hypertarget{queue_8c}{}\label{queue_8c}\index{drivers/queue.c@{drivers/queue.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \"{}queue.\+h\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for queue.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structQueue__val}{Queue\+\_\+val}}
+\item 
+struct \mbox{\hyperlink{structQueue}{Queue}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{queue_8c_ab2665c051fb2db3b58a79e73a5416825}{create\+\_\+queue}} ()
+\item 
+void \mbox{\hyperlink{queue_8c_a46a50b33e476d55cabbb406086bf2cda}{destroy\+\_\+queue}} (\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}q)
+\item 
+void \mbox{\hyperlink{queue_8c_aa7982825b04c812a55cf357852d83207}{push\+\_\+queue}} (\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}q, uint8\+\_\+t val)
+\item 
+void \mbox{\hyperlink{queue_8c_adf4516721a62bf0453cab358d2491f25}{pop\+\_\+queue}} (\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}q)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{queue_8c_a32df32dccfc5eadc233531804f0cb305}{front}} (\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}q)
+\item 
+bool \mbox{\hyperlink{queue_8c_a1a03a0cff8f6b685beee30e08f3a3b80}{is\+\_\+empty}} (\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}q)
+\item 
+void \mbox{\hyperlink{queue_8c_a119efee68b4d232dd411a5ca2ca3327b}{clear\+\_\+queue}} (\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}q)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{queue_8c_a452a10ef01f1ebfc42ec1286cbb88eb6}{get\+\_\+size}} (\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}q)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{queue_8c_a119efee68b4d232dd411a5ca2ca3327b}\label{queue_8c_a119efee68b4d232dd411a5ca2ca3327b} 
+\index{queue.c@{queue.c}!clear\_queue@{clear\_queue}}
+\index{clear\_queue@{clear\_queue}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{clear\_queue()}{clear\_queue()}}
+{\footnotesize\ttfamily void clear\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}}]{q }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c_a119efee68b4d232dd411a5ca2ca3327b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c_a119efee68b4d232dd411a5ca2ca3327b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{queue_8c_ab2665c051fb2db3b58a79e73a5416825}\label{queue_8c_ab2665c051fb2db3b58a79e73a5416825} 
+\index{queue.c@{queue.c}!create\_queue@{create\_queue}}
+\index{create\_queue@{create\_queue}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{create\_queue()}{create\_queue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*} create\+\_\+queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c_ab2665c051fb2db3b58a79e73a5416825_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{queue_8c_a46a50b33e476d55cabbb406086bf2cda}\label{queue_8c_a46a50b33e476d55cabbb406086bf2cda} 
+\index{queue.c@{queue.c}!destroy\_queue@{destroy\_queue}}
+\index{destroy\_queue@{destroy\_queue}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_queue()}{destroy\_queue()}}
+{\footnotesize\ttfamily void destroy\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}}]{q }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c_a46a50b33e476d55cabbb406086bf2cda_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{queue_8c_a46a50b33e476d55cabbb406086bf2cda_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{queue_8c_a32df32dccfc5eadc233531804f0cb305}\label{queue_8c_a32df32dccfc5eadc233531804f0cb305} 
+\index{queue.c@{queue.c}!front@{front}}
+\index{front@{front}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily uint8\+\_\+t front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}}]{q }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c_a32df32dccfc5eadc233531804f0cb305_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{queue_8c_a452a10ef01f1ebfc42ec1286cbb88eb6}\label{queue_8c_a452a10ef01f1ebfc42ec1286cbb88eb6} 
+\index{queue.c@{queue.c}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}}]{q }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c_a452a10ef01f1ebfc42ec1286cbb88eb6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{queue_8c_a1a03a0cff8f6b685beee30e08f3a3b80}\label{queue_8c_a1a03a0cff8f6b685beee30e08f3a3b80} 
+\index{queue.c@{queue.c}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily bool is\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}}]{q }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c_a1a03a0cff8f6b685beee30e08f3a3b80_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{queue_8c_adf4516721a62bf0453cab358d2491f25}\label{queue_8c_adf4516721a62bf0453cab358d2491f25} 
+\index{queue.c@{queue.c}!pop\_queue@{pop\_queue}}
+\index{pop\_queue@{pop\_queue}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{pop\_queue()}{pop\_queue()}}
+{\footnotesize\ttfamily void pop\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}}]{q }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{queue_8c_adf4516721a62bf0453cab358d2491f25_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c_adf4516721a62bf0453cab358d2491f25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{queue_8c_aa7982825b04c812a55cf357852d83207}\label{queue_8c_aa7982825b04c812a55cf357852d83207} 
+\index{queue.c@{queue.c}!push\_queue@{push\_queue}}
+\index{push\_queue@{push\_queue}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{push\_queue()}{push\_queue()}}
+{\footnotesize\ttfamily void push\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} \texorpdfstring{$\ast$}{*}}]{q,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{queue_8c_aa7982825b04c812a55cf357852d83207_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8c_aa7982825b04c812a55cf357852d83207_icgraph}
+\end{center}
+\end{figure}

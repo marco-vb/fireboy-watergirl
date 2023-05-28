@@ -1,0 +1,21 @@
+<map id="exit_multiplayer" name="exit_multiplayer">
+<area shape="rect" id="Node000001" title="Exists multiplayer mode." alt="" coords="821,109,949,137"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#afd7728c9e6ae89e5932e641b54556aba" title="Exists the game." alt="" coords="683,59,773,86"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="825,107,772,89,774,84,827,102"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,109,268,137"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="807,136,635,151,551,154,467,151,360,143,268,132,269,127,361,137,467,146,551,149,635,146,806,130"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#a0520354a211cab81d76e08490253c0c4" title="Retrives information from the serial port to check what the remote player has done and replicates it." alt="" coords="467,109,635,137"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="807,126,635,126,635,121,807,121"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#adb16266bac82ba2376f626661c75a3ff" title="draws the game over screen and controlls if any of the options is chosen" alt="" coords="484,5,618,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="668,57,598,36,600,31,669,52"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#ac581b9d6af85c4c35f9d423a966cba8e" title="draws the pause menu" alt="" coords="479,57,623,85"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="668,75,623,74,623,69,668,69"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="669,92,602,111,601,106,668,87"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,57,419,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="486,40,420,59,418,54,485,35"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="314,93,263,111,262,106,312,88"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,109,127,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="160,126,127,126,127,121,160,121"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="464,74,420,74,420,69,464,69"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="452,126,269,126,269,121,452,121"/>
+</map>

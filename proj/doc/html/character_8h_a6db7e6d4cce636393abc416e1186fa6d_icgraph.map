@@ -1,0 +1,25 @@
+<map id="is_on_ground" name="is_on_ground">
+<area shape="rect" id="Node000001" title="Checks if the character is on the ground." alt="" coords="809,102,916,130"/>
+<area shape="rect" id="Node000002" href="$character_8c.html#af40f6b63c4785323573099d650399e6b" title="Moves the character up." alt="" coords="705,76,759,103"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="794,105,759,98,760,93,795,100"/>
+<area shape="rect" id="Node000008" href="$character_8c.html#a02f6d3746a540b8fea9d89676f41e5bd" title="Moves the character." alt="" coords="703,128,761,155"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="795,132,762,139,761,133,794,127"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a9b28a5527b28478822d9e3057018a991" title="moves the fireboy depending of the keyborad key" alt="" coords="537,24,649,51"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="690,77,631,54,633,49,692,72"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#a20eb9add0344df232c6b9e6883506f65" title="moves the watergirl depending of the keyborad key" alt="" coords="531,76,655,103"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="690,92,655,92,655,87,690,87"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,52,268,79"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="524,23,478,14,425,9,370,9,317,18,277,33,244,54,241,49,274,29,315,12,370,4,426,4,479,9,525,17"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#a0520354a211cab81d76e08490253c0c4" title="Retrives information from the serial port to check what the remote player has done and replicates it." alt="" coords="316,26,483,54"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="523,41,484,42,484,37,523,36"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,52,127,79"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="160,68,127,68,127,63,160,63"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="302,57,269,62,268,56,301,52"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="516,87,268,71,269,66,517,82"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="521,74,456,57,457,52,523,69"/>
+<area shape="rect" id="Node000009" href="$game_8c.html#a3cef68220fcc611902108d6f0159e50f" title="draws the elements of the game" alt="" coords="544,128,642,155"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="688,144,642,144,642,139,688,139"/>
+<area shape="rect" id="Node000010" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="348,128,451,155"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="530,144,452,144,452,139,530,139"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="345,124,315,112,251,82,253,78,317,107,347,120"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="send_destroyed_rope" name="send_destroyed_rope">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,166,33"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a7c232bfe6e9ff822db3f9135e41bb623" title="Adds a byte to the send queue." alt="" coords="214,5,351,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,17,199,17,199,22,166,22"/>
+<area shape="rect" id="Node000003" href="$queue_8c.html#aa7982825b04c812a55cf357852d83207" title=" " alt="" coords="399,5,498,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="352,17,384,17,384,22,352,22"/>
+<area shape="rect" id="Node000004" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="546,5,628,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="499,17,531,17,531,22,499,22"/>
+</map>

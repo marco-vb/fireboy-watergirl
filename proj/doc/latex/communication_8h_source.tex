@@ -1,0 +1,40 @@
+\doxysection{communication.\+h}
+\hypertarget{communication_8h_source}{}\label{communication_8h_source}\index{communication/communication.h@{communication/communication.h}}
+\mbox{\hyperlink{communication_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMMUNICATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COMMUNICATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ KEYBOARD\_ID\ 'k'}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ROPE\_ID\ 'r'}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ CHANGE\_ID\ 'x'}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CONNECT\_ID\ 'c'}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ CONNECT\_ACK\ 0xFA}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ CONNECT\_START\ 0xF9}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ CONNECT\_READY\ 0xFB}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ GAME\_OVER\_ID\ 0x10}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ RESUME\_GAME\ 0x11}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ RESTART\_GAME\ 0x12}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ EXIT\_GAME\ 0x13}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ NEXT\_LEVEL\ 0x14}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ PAUSE\_GAME\ 0x15}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_a76e6a164103650c55a9bd4fab8aec859}{send\_keyboard\_key}}(\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\_key}}\ key);}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_ad1095b0dd267ffbc51e8b02a4fa03879}{send\_destroyed\_rope}}(uint8\_t\ \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ uint8\_t\ \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}});}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_a09a44a5cbd0382f3d0457cca799039c6}{send\_start\_connection}}();}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_a9f4e7b04eb03bdb25352345dd982b7a8}{send\_accept\_connection}}();}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_a2d6c671c0cb6d87397538d859e59ba04}{send\_ready\_connection}}();}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_a34e8f3974f75e8f32631f3ce82e20aeb}{send\_game\_over}}();}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_a5732b3c9685d054ef5f1df0d3a8cdd12}{send\_resume\_game}}();}
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_ae1edb4f83197397349a7cb6aa5d2e122}{send\_restart\_game}}();}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_af8494b1ffe09f9a8028cd5270c1098a8}{send\_exit\_game}}();}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_abdf9dc47bdb92932e941d8444ce40ad8}{send\_next\_level}}();}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{communication_8h_a7c13a0bdc0fc01bd6446db2bc1e4ff4f}{send\_pause\_game}}();}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{communication_8h_ae2f67f196a873692fbf1d16029877abc}{check\_connection}}();}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{communication_8h_a16f9b03aed26f7c954b8ab5e697d4dd1}{check\_ready}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

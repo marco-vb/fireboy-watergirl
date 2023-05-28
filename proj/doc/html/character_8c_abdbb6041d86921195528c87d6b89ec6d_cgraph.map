@@ -1,0 +1,5 @@
+<map id="wall_right" name="wall_right">
+<area shape="rect" id="Node000001" title="Checks if there is a wall to the right of the character." alt="" coords="5,5,91,33"/>
+<area shape="rect" id="Node000002" href="$map_8c.html#a2117f266cf32d37631770302fe987115" title="Returns the letter corresponding to the tile at the given position on the map." alt="" coords="139,5,209,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,17,124,17,124,22,91,22"/>
+</map>

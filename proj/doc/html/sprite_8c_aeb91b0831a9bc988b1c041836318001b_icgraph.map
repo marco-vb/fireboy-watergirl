@@ -1,0 +1,35 @@
+<map id="create_sprite" name="create_sprite">
+<area shape="rect" id="Node000001" title="Creates a sprite object." alt="" coords="1053,84,1160,112"/>
+<area shape="rect" id="Node000002" href="$block_8c.html#aa88a509398b47eeb6eea2663bf5d6ed7" title=" " alt="" coords="885,5,989,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1065,79,1004,48,975,36,977,31,1006,43,1068,74"/>
+<area shape="rect" id="Node000003" href="$character_8c.html#a7f1729bb43b9847bdaa49d2271a21d62" title="Creates the characters." alt="" coords="868,57,1005,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1038,90,1005,85,1006,79,1039,85"/>
+<area shape="rect" id="Node000005" href="$map_8c.html#ac95da25035e96eeda36c003bdf8853f1" title="Draws the given map." alt="" coords="892,161,981,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1067,121,1006,151,977,163,975,158,1004,146,1065,116"/>
+<area shape="rect" id="Node000014" href="$sprite_8c.html#a3d39d1edf4dd00233efcecf5a3f6507e" title="Loads all the sprites needed." alt="" coords="887,109,987,137"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="1039,111,988,118,987,113,1038,105"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#aa19b202ec8bfc484a80caa3b5d445663" title=" " alt="" coords="708,57,795,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="853,74,795,74,795,69,853,69"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#ad7ca2d21a727f7d55afef2392de3b5f8" title="draws the main menu and controlls if an option is chosen" alt="" coords="683,109,820,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="877,161,802,140,804,135,878,156"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,212,268,240"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="892,198,821,223,724,247,646,257,567,258,467,254,360,245,268,235,269,229,361,240,467,249,567,253,646,252,723,241,819,218,890,193"/>
+<area shape="rect" id="Node000010" href="$game_8c.html#a0520354a211cab81d76e08490253c0c4" title="Retrives information from the serial port to check what the remote player has done and replicates it." alt="" coords="467,212,635,240"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="878,192,820,203,725,215,635,223,635,218,724,210,820,198,877,187"/>
+<area shape="rect" id="Node000011" href="$game_8c.html#ac979eefd2829522e5bde292d66cc2f23" title="Restarts the game." alt="" coords="697,161,806,189"/>
+<area shape="poly" id="edge12_Node000005_Node000011" title=" " alt="" coords="877,178,806,178,806,173,877,173"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,135,419,162"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="686,108,638,98,583,92,525,91,468,99,425,116,390,137,388,132,423,111,467,94,524,86,583,86,639,93,687,103"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="328,172,250,214,248,209,326,167"/>
+<area shape="rect" id="Node000009" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,212,127,240"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="160,229,127,229,127,223,160,223"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="452,229,269,229,269,223,452,223"/>
+<area shape="poly" id="edge17_Node000011_Node000010" title=" " alt="" coords="683,195,609,214,608,209,682,190"/>
+<area shape="rect" id="Node000012" href="$game_8c.html#adb16266bac82ba2376f626661c75a3ff" title="draws the game over screen and controlls if any of the options is chosen" alt="" coords="484,108,618,136"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="682,160,605,139,607,134,683,154"/>
+<area shape="rect" id="Node000013" href="$game_8c.html#ac581b9d6af85c4c35f9d423a966cba8e" title="draws the pause menu" alt="" coords="479,160,623,188"/>
+<area shape="poly" id="edge15_Node000011_Node000013" title=" " alt="" coords="682,177,623,177,623,172,682,172"/>
+<area shape="poly" id="edge14_Node000012_Node000007" title=" " alt="" coords="470,136,420,144,419,138,469,131"/>
+<area shape="poly" id="edge16_Node000013_Node000007" title=" " alt="" coords="464,165,419,158,420,153,465,159"/>
+<area shape="poly" id="edge19_Node000014_Node000004" title=" " alt="" coords="871,108,794,86,795,81,873,103"/>
+</map>

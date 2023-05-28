@@ -1,0 +1,828 @@
+\doxysection{drivers/rtc/rtc.h File Reference}
+\hypertarget{rtc_8h}{}\label{rtc_8h}\index{drivers/rtc/rtc.h@{drivers/rtc/rtc.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \"{}../graphics/graphics.\+h\"{}}\newline
+Include dependency graph for rtc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{rtc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a4e22feb6ffbc1cda32fadff5c740dc51}{RTC\+\_\+\+IRQ}}~8       /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief RTC IRQ Line on IRQ0 from PIC2 \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a710b98232df2c563009e6f8a6cd18220}{RTC\+\_\+\+ADDR\+\_\+\+REG}}~0x70   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief RTC Address Register Port \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0}{RTC\+\_\+\+DATA\+\_\+\+REG}}~0x71   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief RTC Data Register Port \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a512a9ef84990cc5b81d736cb2520a063}{SECS}}~0x00   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Seconds register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a4e293ad12791e710cc5bf76072edb3c4}{SECS\+\_\+\+ALARM}}~0x01   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Seconds alarm register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_afa2fdcd26bbe3ddf0ac9c9487aa59284}{MINS}}~0x02   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Minutes register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_ade8a352ea928d178e600040e0ec56bd2}{MINS\+\_\+\+ALARM}}~0x03   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Minutes alarm register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a212d0f839f6f7ca43ccde311f93d5892}{HOURS}}~0x04   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Hours register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_adc7e10d9ad06a95f30c5272967989e04}{HOURS\+\_\+\+ALARM}}~0x05   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Hours alarm register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_acd522b0e92d01c9bb65527206fc17508}{DAY\+\_\+\+WEEK}}~0x06   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Day of the week register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_aa652d6d52e8e86bfd3659f873c87a340}{DAY\+\_\+\+MONTH}}~0x07   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Day of the month register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a3729d06495d9713592f79f3122c9e677}{MONTH}}~0x08   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Month register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a5871356500f559add06ea81d60331b1b}{YEAR}}~0x09   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Year register \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_aa0e40d1cb9fea79e800aa79b8ca291f7}{REG\+\_\+A}}~0x0A   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Register A address \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a3289eebd69837790d4aacaccd18d46db}{UIP}}~BIT(7)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Update In Progress (UIP) flag bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a58b98fd122efac10bfca72cb8b8e7f40}{DV2}}~BIT(6)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Divisor 2 bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a1323f3cd409abb7826a25bdf3e6f8a59}{DV1}}~BIT(5)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Divisor 1 bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a137f2af9dafde3f8b2f796333f3b36f7}{DV0}}~BIT(4)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Divisor 0 bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a845771ab99e0080611b483818553bfb2}{RS3}}~BIT(3)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Rate Selector 3 bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_af134a1920b448555168d4582f0ef49fb}{RS2}}~BIT(2)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Rate Selector 2 bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_aee48b563b7ff09121325a0ba4c21c6d3}{RS1}}~BIT(1)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Rate Selector 1 bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a7c51f1f956efe40fd156fbb01baedc4e}{RS0}}~BIT(0)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Rate Selector 0 bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a28ed75c6727784e56c2bb8d828c876c9}{REG\+\_\+B}}~0x0B   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Register B address \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a59da1d65e87a723efe808dbabb4fc205}{SET}}~BIT(7)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Set to inhibit updates bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_ac40c2b49eb51e2adc237b530adfcadf4}{PIE}}~BIT(6)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Periodic Interrupt Enable (PIE) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a113847820d539c6a6836993b84d22800}{AIE}}~BIT(5)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Alarm Interrupt Enable (AIE) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a2c276876faf62c1b29fe2383ce4ccfda}{UIE}}~BIT(4)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Update Interrupt Enable (UIE) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a3eb471417c5e9c54468288c45c6d138b}{SQWE}}~BIT(3)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Square Wave Enable (SQWE) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a9a9aac904e687286501946469e2903d6}{DM}}~BIT(2)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Data Mode (1 -\/ Binary, 0 -\/ BCD) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a9f4fe887f0a8d76a310f6539ebbae763}{HR}}~BIT(1)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Set to 24-\/hour mode bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a2f2ba7be317f373f9a660f43b49c9d4e}{DSE}}~BIT(0)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Daylight Savings Enable (DSE) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a088e580de0961d5f30eb3366f97b324c}{REG\+\_\+C}}~0x0C   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Register C address \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a8565773f11252b9d615f1b12ac73032d}{IRQF}}~BIT(7)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief IRQ Active (IRQF) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_aa0e278c26c25558741febfadd7216caa}{PF}}~BIT(6)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Periodic Interrupt Pending (PF) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a76ba789cde9c36cd57dbb390bdee7661}{AF}}~BIT(5)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Alarm Interrupt Pending (AF) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a2657a76f02e47fa3f3320fa9c6353f31}{UF}}~BIT(4)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Update Interrupt Pending (UF) bit \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a8f2a2da8b96e20112d3f225636392424}{REG\+\_\+D}}~0x0D   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Register D address \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{rtc_8h_a23eb92fd11f6f00cb88b0a6e2197a92f}{VRT}}~BIT(7)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Valid Time (VRT) bit \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rtc_8h_a023cfe181f8a45fabb033751cb4356dc}{rtc\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the Real Time Clock (RTC) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a5171a9c0f54940fe60f7500896afcc86}{rtc\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes to RTC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_ab8f17bf5280c908c8b199a90fefcc758}{rtc\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes from RTC interrupts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a76827856de45c0728d613f90c5f6e009}{rtc\+\_\+read\+\_\+reg}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Reads a value from a RTC register. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_aa1fd64645937078b75ec6046b11b432e}{rtc\+\_\+write\+\_\+reg}} (uint8\+\_\+t reg, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Writes a value to a RTC register. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a49d112e7da6f83f064bfcb9d34fa0ac4}{read\+\_\+hours}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}hours)
+\begin{DoxyCompactList}\small\item\em Reads the hours from the RTC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_abd9ce5c6eea2eb684c2044a3b4711030}{read\+\_\+minutes}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}minutes)
+\begin{DoxyCompactList}\small\item\em Reads the minutes from the RTC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a323e98127ba99121173075ebc5b757ba}{read\+\_\+seconds}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}seconds)
+\begin{DoxyCompactList}\small\item\em Reads the seconds from the RTC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a7740f490432dd2d66295a3366d2b300a}{read\+\_\+day}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}day)
+\begin{DoxyCompactList}\small\item\em Reads the day from the RTC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a69a0b1164938aed0c8be10308c7034a7}{read\+\_\+month}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}month)
+\begin{DoxyCompactList}\small\item\em Reads the month from the RTC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_ad4d4d4918bb57e3d72c0d378a7e4cfc0}{read\+\_\+year}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}year)
+\begin{DoxyCompactList}\small\item\em Reads the year from the RTC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a997d3dbce00dbe50c063a922dc9edff7}{read\+\_\+date}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}day, uint8\+\_\+t \texorpdfstring{$\ast$}{*}month, uint8\+\_\+t \texorpdfstring{$\ast$}{*}year)
+\begin{DoxyCompactList}\small\item\em Reads the date (day, month, and year) from the RTC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a0f6fcc15658135409e77537a995446e2}{read\+\_\+time}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}hours, uint8\+\_\+t \texorpdfstring{$\ast$}{*}minutes, uint8\+\_\+t \texorpdfstring{$\ast$}{*}seconds)
+\begin{DoxyCompactList}\small\item\em Reads the time (hours, minutes, and seconds) from the RTC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a78550ae224ae0ca51b3de81c44477a45}{draw\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current time on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rtc_8h_a02a6f31164ff83d32aa7b56dcaf5aa91}{draw\+\_\+date}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current date on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{rtc_8h_a76ba789cde9c36cd57dbb390bdee7661}\label{rtc_8h_a76ba789cde9c36cd57dbb390bdee7661} 
+\index{rtc.h@{rtc.h}!AF@{AF}}
+\index{AF@{AF}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{AF}{AF}}
+{\footnotesize\ttfamily \#define AF~BIT(5)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Alarm Interrupt Pending (AF) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a113847820d539c6a6836993b84d22800}\label{rtc_8h_a113847820d539c6a6836993b84d22800} 
+\index{rtc.h@{rtc.h}!AIE@{AIE}}
+\index{AIE@{AIE}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{AIE}{AIE}}
+{\footnotesize\ttfamily \#define AIE~BIT(5)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Alarm Interrupt Enable (AIE) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_aa652d6d52e8e86bfd3659f873c87a340}\label{rtc_8h_aa652d6d52e8e86bfd3659f873c87a340} 
+\index{rtc.h@{rtc.h}!DAY\_MONTH@{DAY\_MONTH}}
+\index{DAY\_MONTH@{DAY\_MONTH}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{DAY\_MONTH}{DAY\_MONTH}}
+{\footnotesize\ttfamily \#define DAY\+\_\+\+MONTH~0x07   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Day of the month register \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_acd522b0e92d01c9bb65527206fc17508}\label{rtc_8h_acd522b0e92d01c9bb65527206fc17508} 
+\index{rtc.h@{rtc.h}!DAY\_WEEK@{DAY\_WEEK}}
+\index{DAY\_WEEK@{DAY\_WEEK}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{DAY\_WEEK}{DAY\_WEEK}}
+{\footnotesize\ttfamily \#define DAY\+\_\+\+WEEK~0x06   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Day of the week register \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a9a9aac904e687286501946469e2903d6}\label{rtc_8h_a9a9aac904e687286501946469e2903d6} 
+\index{rtc.h@{rtc.h}!DM@{DM}}
+\index{DM@{DM}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{DM}{DM}}
+{\footnotesize\ttfamily \#define DM~BIT(2)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Data Mode (1 -\/ Binary, 0 -\/ BCD) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a2f2ba7be317f373f9a660f43b49c9d4e}\label{rtc_8h_a2f2ba7be317f373f9a660f43b49c9d4e} 
+\index{rtc.h@{rtc.h}!DSE@{DSE}}
+\index{DSE@{DSE}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{DSE}{DSE}}
+{\footnotesize\ttfamily \#define DSE~BIT(0)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Daylight Savings Enable (DSE) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a137f2af9dafde3f8b2f796333f3b36f7}\label{rtc_8h_a137f2af9dafde3f8b2f796333f3b36f7} 
+\index{rtc.h@{rtc.h}!DV0@{DV0}}
+\index{DV0@{DV0}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{DV0}{DV0}}
+{\footnotesize\ttfamily \#define DV0~BIT(4)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Divisor 0 bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a1323f3cd409abb7826a25bdf3e6f8a59}\label{rtc_8h_a1323f3cd409abb7826a25bdf3e6f8a59} 
+\index{rtc.h@{rtc.h}!DV1@{DV1}}
+\index{DV1@{DV1}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{DV1}{DV1}}
+{\footnotesize\ttfamily \#define DV1~BIT(5)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Divisor 1 bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a58b98fd122efac10bfca72cb8b8e7f40}\label{rtc_8h_a58b98fd122efac10bfca72cb8b8e7f40} 
+\index{rtc.h@{rtc.h}!DV2@{DV2}}
+\index{DV2@{DV2}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{DV2}{DV2}}
+{\footnotesize\ttfamily \#define DV2~BIT(6)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Divisor 2 bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a212d0f839f6f7ca43ccde311f93d5892}\label{rtc_8h_a212d0f839f6f7ca43ccde311f93d5892} 
+\index{rtc.h@{rtc.h}!HOURS@{HOURS}}
+\index{HOURS@{HOURS}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{HOURS}{HOURS}}
+{\footnotesize\ttfamily \#define HOURS~0x04   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Hours register \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_adc7e10d9ad06a95f30c5272967989e04}\label{rtc_8h_adc7e10d9ad06a95f30c5272967989e04} 
+\index{rtc.h@{rtc.h}!HOURS\_ALARM@{HOURS\_ALARM}}
+\index{HOURS\_ALARM@{HOURS\_ALARM}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{HOURS\_ALARM}{HOURS\_ALARM}}
+{\footnotesize\ttfamily \#define HOURS\+\_\+\+ALARM~0x05   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Hours alarm register \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a9f4fe887f0a8d76a310f6539ebbae763}\label{rtc_8h_a9f4fe887f0a8d76a310f6539ebbae763} 
+\index{rtc.h@{rtc.h}!HR@{HR}}
+\index{HR@{HR}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{HR}{HR}}
+{\footnotesize\ttfamily \#define HR~BIT(1)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Set to 24-\/hour mode bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a8565773f11252b9d615f1b12ac73032d}\label{rtc_8h_a8565773f11252b9d615f1b12ac73032d} 
+\index{rtc.h@{rtc.h}!IRQF@{IRQF}}
+\index{IRQF@{IRQF}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{IRQF}{IRQF}}
+{\footnotesize\ttfamily \#define IRQF~BIT(7)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief IRQ Active (IRQF) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_afa2fdcd26bbe3ddf0ac9c9487aa59284}\label{rtc_8h_afa2fdcd26bbe3ddf0ac9c9487aa59284} 
+\index{rtc.h@{rtc.h}!MINS@{MINS}}
+\index{MINS@{MINS}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{MINS}{MINS}}
+{\footnotesize\ttfamily \#define MINS~0x02   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Minutes register \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_ade8a352ea928d178e600040e0ec56bd2}\label{rtc_8h_ade8a352ea928d178e600040e0ec56bd2} 
+\index{rtc.h@{rtc.h}!MINS\_ALARM@{MINS\_ALARM}}
+\index{MINS\_ALARM@{MINS\_ALARM}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{MINS\_ALARM}{MINS\_ALARM}}
+{\footnotesize\ttfamily \#define MINS\+\_\+\+ALARM~0x03   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Minutes alarm register \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a3729d06495d9713592f79f3122c9e677}\label{rtc_8h_a3729d06495d9713592f79f3122c9e677} 
+\index{rtc.h@{rtc.h}!MONTH@{MONTH}}
+\index{MONTH@{MONTH}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{MONTH}{MONTH}}
+{\footnotesize\ttfamily \#define MONTH~0x08   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Month register \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_aa0e278c26c25558741febfadd7216caa}\label{rtc_8h_aa0e278c26c25558741febfadd7216caa} 
+\index{rtc.h@{rtc.h}!PF@{PF}}
+\index{PF@{PF}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{PF}{PF}}
+{\footnotesize\ttfamily \#define PF~BIT(6)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Periodic Interrupt Pending (PF) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_ac40c2b49eb51e2adc237b530adfcadf4}\label{rtc_8h_ac40c2b49eb51e2adc237b530adfcadf4} 
+\index{rtc.h@{rtc.h}!PIE@{PIE}}
+\index{PIE@{PIE}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{PIE}{PIE}}
+{\footnotesize\ttfamily \#define PIE~BIT(6)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Periodic Interrupt Enable (PIE) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_aa0e40d1cb9fea79e800aa79b8ca291f7}\label{rtc_8h_aa0e40d1cb9fea79e800aa79b8ca291f7} 
+\index{rtc.h@{rtc.h}!REG\_A@{REG\_A}}
+\index{REG\_A@{REG\_A}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{REG\_A}{REG\_A}}
+{\footnotesize\ttfamily \#define REG\+\_\+A~0x0A   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Register A address \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a28ed75c6727784e56c2bb8d828c876c9}\label{rtc_8h_a28ed75c6727784e56c2bb8d828c876c9} 
+\index{rtc.h@{rtc.h}!REG\_B@{REG\_B}}
+\index{REG\_B@{REG\_B}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{REG\_B}{REG\_B}}
+{\footnotesize\ttfamily \#define REG\+\_\+B~0x0B   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Register B address \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a088e580de0961d5f30eb3366f97b324c}\label{rtc_8h_a088e580de0961d5f30eb3366f97b324c} 
+\index{rtc.h@{rtc.h}!REG\_C@{REG\_C}}
+\index{REG\_C@{REG\_C}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{REG\_C}{REG\_C}}
+{\footnotesize\ttfamily \#define REG\+\_\+C~0x0C   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Register C address \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a8f2a2da8b96e20112d3f225636392424}\label{rtc_8h_a8f2a2da8b96e20112d3f225636392424} 
+\index{rtc.h@{rtc.h}!REG\_D@{REG\_D}}
+\index{REG\_D@{REG\_D}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{REG\_D}{REG\_D}}
+{\footnotesize\ttfamily \#define REG\+\_\+D~0x0D   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Register D address \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a7c51f1f956efe40fd156fbb01baedc4e}\label{rtc_8h_a7c51f1f956efe40fd156fbb01baedc4e} 
+\index{rtc.h@{rtc.h}!RS0@{RS0}}
+\index{RS0@{RS0}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RS0}{RS0}}
+{\footnotesize\ttfamily \#define RS0~BIT(0)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Rate Selector 0 bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_aee48b563b7ff09121325a0ba4c21c6d3}\label{rtc_8h_aee48b563b7ff09121325a0ba4c21c6d3} 
+\index{rtc.h@{rtc.h}!RS1@{RS1}}
+\index{RS1@{RS1}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RS1}{RS1}}
+{\footnotesize\ttfamily \#define RS1~BIT(1)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Rate Selector 1 bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_af134a1920b448555168d4582f0ef49fb}\label{rtc_8h_af134a1920b448555168d4582f0ef49fb} 
+\index{rtc.h@{rtc.h}!RS2@{RS2}}
+\index{RS2@{RS2}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RS2}{RS2}}
+{\footnotesize\ttfamily \#define RS2~BIT(2)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Rate Selector 2 bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a845771ab99e0080611b483818553bfb2}\label{rtc_8h_a845771ab99e0080611b483818553bfb2} 
+\index{rtc.h@{rtc.h}!RS3@{RS3}}
+\index{RS3@{RS3}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RS3}{RS3}}
+{\footnotesize\ttfamily \#define RS3~BIT(3)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Rate Selector 3 bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a710b98232df2c563009e6f8a6cd18220}\label{rtc_8h_a710b98232df2c563009e6f8a6cd18220} 
+\index{rtc.h@{rtc.h}!RTC\_ADDR\_REG@{RTC\_ADDR\_REG}}
+\index{RTC\_ADDR\_REG@{RTC\_ADDR\_REG}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_ADDR\_REG}{RTC\_ADDR\_REG}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+ADDR\+\_\+\+REG~0x70   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief RTC Address Register Port \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0}\label{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0} 
+\index{rtc.h@{rtc.h}!RTC\_DATA\_REG@{RTC\_DATA\_REG}}
+\index{RTC\_DATA\_REG@{RTC\_DATA\_REG}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_DATA\_REG}{RTC\_DATA\_REG}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+DATA\+\_\+\+REG~0x71   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief RTC Data Register Port \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a4e22feb6ffbc1cda32fadff5c740dc51}\label{rtc_8h_a4e22feb6ffbc1cda32fadff5c740dc51} 
+\index{rtc.h@{rtc.h}!RTC\_IRQ@{RTC\_IRQ}}
+\index{RTC\_IRQ@{RTC\_IRQ}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_IRQ}{RTC\_IRQ}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+IRQ~8       /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief RTC IRQ Line on IRQ0 from PIC2 \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a512a9ef84990cc5b81d736cb2520a063}\label{rtc_8h_a512a9ef84990cc5b81d736cb2520a063} 
+\index{rtc.h@{rtc.h}!SECS@{SECS}}
+\index{SECS@{SECS}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{SECS}{SECS}}
+{\footnotesize\ttfamily \#define SECS~0x00   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Seconds register \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a4e293ad12791e710cc5bf76072edb3c4}\label{rtc_8h_a4e293ad12791e710cc5bf76072edb3c4} 
+\index{rtc.h@{rtc.h}!SECS\_ALARM@{SECS\_ALARM}}
+\index{SECS\_ALARM@{SECS\_ALARM}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{SECS\_ALARM}{SECS\_ALARM}}
+{\footnotesize\ttfamily \#define SECS\+\_\+\+ALARM~0x01   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Seconds alarm register \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a59da1d65e87a723efe808dbabb4fc205}\label{rtc_8h_a59da1d65e87a723efe808dbabb4fc205} 
+\index{rtc.h@{rtc.h}!SET@{SET}}
+\index{SET@{SET}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{SET}{SET}}
+{\footnotesize\ttfamily \#define SET~BIT(7)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Set to inhibit updates bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a3eb471417c5e9c54468288c45c6d138b}\label{rtc_8h_a3eb471417c5e9c54468288c45c6d138b} 
+\index{rtc.h@{rtc.h}!SQWE@{SQWE}}
+\index{SQWE@{SQWE}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{SQWE}{SQWE}}
+{\footnotesize\ttfamily \#define SQWE~BIT(3)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Square Wave Enable (SQWE) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a2657a76f02e47fa3f3320fa9c6353f31}\label{rtc_8h_a2657a76f02e47fa3f3320fa9c6353f31} 
+\index{rtc.h@{rtc.h}!UF@{UF}}
+\index{UF@{UF}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{UF}{UF}}
+{\footnotesize\ttfamily \#define UF~BIT(4)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Update Interrupt Pending (UF) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a2c276876faf62c1b29fe2383ce4ccfda}\label{rtc_8h_a2c276876faf62c1b29fe2383ce4ccfda} 
+\index{rtc.h@{rtc.h}!UIE@{UIE}}
+\index{UIE@{UIE}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{UIE}{UIE}}
+{\footnotesize\ttfamily \#define UIE~BIT(4)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Update Interrupt Enable (UIE) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a3289eebd69837790d4aacaccd18d46db}\label{rtc_8h_a3289eebd69837790d4aacaccd18d46db} 
+\index{rtc.h@{rtc.h}!UIP@{UIP}}
+\index{UIP@{UIP}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{UIP}{UIP}}
+{\footnotesize\ttfamily \#define UIP~BIT(7)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Update In Progress (UIP) flag bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a23eb92fd11f6f00cb88b0a6e2197a92f}\label{rtc_8h_a23eb92fd11f6f00cb88b0a6e2197a92f} 
+\index{rtc.h@{rtc.h}!VRT@{VRT}}
+\index{VRT@{VRT}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{VRT}{VRT}}
+{\footnotesize\ttfamily \#define VRT~BIT(7)   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Valid Time (VRT) bit \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{rtc_8h_a5871356500f559add06ea81d60331b1b}\label{rtc_8h_a5871356500f559add06ea81d60331b1b} 
+\index{rtc.h@{rtc.h}!YEAR@{YEAR}}
+\index{YEAR@{YEAR}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{YEAR}{YEAR}}
+{\footnotesize\ttfamily \#define YEAR~0x09   /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} @brief Year register \texorpdfstring{$\ast$}{*}/}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rtc_8h_a02a6f31164ff83d32aa7b56dcaf5aa91}\label{rtc_8h_a02a6f31164ff83d32aa7b56dcaf5aa91} 
+\index{rtc.h@{rtc.h}!draw\_date@{draw\_date}}
+\index{draw\_date@{draw\_date}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{draw\_date()}{draw\_date()}}
+{\footnotesize\ttfamily int draw\+\_\+date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the current date on the screen. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a02a6f31164ff83d32aa7b56dcaf5aa91_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a02a6f31164ff83d32aa7b56dcaf5aa91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a78550ae224ae0ca51b3de81c44477a45}\label{rtc_8h_a78550ae224ae0ca51b3de81c44477a45} 
+\index{rtc.h@{rtc.h}!draw\_time@{draw\_time}}
+\index{draw\_time@{draw\_time}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{draw\_time()}{draw\_time()}}
+{\footnotesize\ttfamily int draw\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the current time on the screen. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a78550ae224ae0ca51b3de81c44477a45_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a78550ae224ae0ca51b3de81c44477a45_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a997d3dbce00dbe50c063a922dc9edff7}\label{rtc_8h_a997d3dbce00dbe50c063a922dc9edff7} 
+\index{rtc.h@{rtc.h}!read\_date@{read\_date}}
+\index{read\_date@{read\_date}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{read\_date()}{read\_date()}}
+{\footnotesize\ttfamily int read\+\_\+date (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{day,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{month,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{year }\end{DoxyParamCaption})}
+
+
+
+Reads the date (day, month, and year) from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & Variable to store the read day. \\
+\hline
+{\em month} & Variable to store the read month. \\
+\hline
+{\em year} & Variable to store the read year. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a997d3dbce00dbe50c063a922dc9edff7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a997d3dbce00dbe50c063a922dc9edff7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a7740f490432dd2d66295a3366d2b300a}\label{rtc_8h_a7740f490432dd2d66295a3366d2b300a} 
+\index{rtc.h@{rtc.h}!read\_day@{read\_day}}
+\index{read\_day@{read\_day}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{read\_day()}{read\_day()}}
+{\footnotesize\ttfamily int read\+\_\+day (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{day }\end{DoxyParamCaption})}
+
+
+
+Reads the day from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & Variable to store the read day. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a7740f490432dd2d66295a3366d2b300a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a7740f490432dd2d66295a3366d2b300a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a49d112e7da6f83f064bfcb9d34fa0ac4}\label{rtc_8h_a49d112e7da6f83f064bfcb9d34fa0ac4} 
+\index{rtc.h@{rtc.h}!read\_hours@{read\_hours}}
+\index{read\_hours@{read\_hours}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{read\_hours()}{read\_hours()}}
+{\footnotesize\ttfamily int read\+\_\+hours (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{hours }\end{DoxyParamCaption})}
+
+
+
+Reads the hours from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours} & Variable to store the read hours. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a49d112e7da6f83f064bfcb9d34fa0ac4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a49d112e7da6f83f064bfcb9d34fa0ac4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_abd9ce5c6eea2eb684c2044a3b4711030}\label{rtc_8h_abd9ce5c6eea2eb684c2044a3b4711030} 
+\index{rtc.h@{rtc.h}!read\_minutes@{read\_minutes}}
+\index{read\_minutes@{read\_minutes}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{read\_minutes()}{read\_minutes()}}
+{\footnotesize\ttfamily int read\+\_\+minutes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{minutes }\end{DoxyParamCaption})}
+
+
+
+Reads the minutes from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minutes} & Variable to store the read minutes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_abd9ce5c6eea2eb684c2044a3b4711030_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_abd9ce5c6eea2eb684c2044a3b4711030_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a69a0b1164938aed0c8be10308c7034a7}\label{rtc_8h_a69a0b1164938aed0c8be10308c7034a7} 
+\index{rtc.h@{rtc.h}!read\_month@{read\_month}}
+\index{read\_month@{read\_month}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{read\_month()}{read\_month()}}
+{\footnotesize\ttfamily int read\+\_\+month (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{month }\end{DoxyParamCaption})}
+
+
+
+Reads the month from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & Variable to store the read month. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a69a0b1164938aed0c8be10308c7034a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a69a0b1164938aed0c8be10308c7034a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a323e98127ba99121173075ebc5b757ba}\label{rtc_8h_a323e98127ba99121173075ebc5b757ba} 
+\index{rtc.h@{rtc.h}!read\_seconds@{read\_seconds}}
+\index{read\_seconds@{read\_seconds}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{read\_seconds()}{read\_seconds()}}
+{\footnotesize\ttfamily int read\+\_\+seconds (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Reads the seconds from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & Variable to store the read seconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a323e98127ba99121173075ebc5b757ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a323e98127ba99121173075ebc5b757ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a0f6fcc15658135409e77537a995446e2}\label{rtc_8h_a0f6fcc15658135409e77537a995446e2} 
+\index{rtc.h@{rtc.h}!read\_time@{read\_time}}
+\index{read\_time@{read\_time}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{read\_time()}{read\_time()}}
+{\footnotesize\ttfamily int read\+\_\+time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{hours,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{minutes,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Reads the time (hours, minutes, and seconds) from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours} & Variable to store the read hours. \\
+\hline
+{\em minutes} & Variable to store the read minutes. \\
+\hline
+{\em seconds} & Variable to store the read seconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a0f6fcc15658135409e77537a995446e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a0f6fcc15658135409e77537a995446e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_ad4d4d4918bb57e3d72c0d378a7e4cfc0}\label{rtc_8h_ad4d4d4918bb57e3d72c0d378a7e4cfc0} 
+\index{rtc.h@{rtc.h}!read\_year@{read\_year}}
+\index{read\_year@{read\_year}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{read\_year()}{read\_year()}}
+{\footnotesize\ttfamily int read\+\_\+year (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{year }\end{DoxyParamCaption})}
+
+
+
+Reads the year from the RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Variable to store the read year. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_ad4d4d4918bb57e3d72c0d378a7e4cfc0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_ad4d4d4918bb57e3d72c0d378a7e4cfc0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a023cfe181f8a45fabb033751cb4356dc}\label{rtc_8h_a023cfe181f8a45fabb033751cb4356dc} 
+\index{rtc.h@{rtc.h}!rtc\_init@{rtc\_init}}
+\index{rtc\_init@{rtc\_init}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{rtc\_init()}{rtc\_init()}}
+{\footnotesize\ttfamily int rtc\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the Real Time Clock (RTC) 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a023cfe181f8a45fabb033751cb4356dc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{rtc_8h_a023cfe181f8a45fabb033751cb4356dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a76827856de45c0728d613f90c5f6e009}\label{rtc_8h_a76827856de45c0728d613f90c5f6e009} 
+\index{rtc.h@{rtc.h}!rtc\_read\_reg@{rtc\_read\_reg}}
+\index{rtc\_read\_reg@{rtc\_read\_reg}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{rtc\_read\_reg()}{rtc\_read\_reg()}}
+{\footnotesize\ttfamily int rtc\+\_\+read\+\_\+reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Reads a value from a RTC register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to read from. \\
+\hline
+{\em data} & Variable to store the read value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{rtc_8h_a76827856de45c0728d613f90c5f6e009_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a76827856de45c0728d613f90c5f6e009_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{rtc_8h_a5171a9c0f54940fe60f7500896afcc86}\label{rtc_8h_a5171a9c0f54940fe60f7500896afcc86} 
+\index{rtc.h@{rtc.h}!rtc\_subscribe\_int@{rtc\_subscribe\_int}}
+\index{rtc\_subscribe\_int@{rtc\_subscribe\_int}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{rtc\_subscribe\_int()}{rtc\_subscribe\_int()}}
+{\footnotesize\ttfamily int rtc\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes to RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Variable to store the bit mask for the RTC\textquotesingle{}s IRQ line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+\Hypertarget{rtc_8h_ab8f17bf5280c908c8b199a90fefcc758}\label{rtc_8h_ab8f17bf5280c908c8b199a90fefcc758} 
+\index{rtc.h@{rtc.h}!rtc\_unsubscribe\_int@{rtc\_unsubscribe\_int}}
+\index{rtc\_unsubscribe\_int@{rtc\_unsubscribe\_int}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{rtc\_unsubscribe\_int()}{rtc\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int rtc\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes from RTC interrupts. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+\Hypertarget{rtc_8h_aa1fd64645937078b75ec6046b11b432e}\label{rtc_8h_aa1fd64645937078b75ec6046b11b432e} 
+\index{rtc.h@{rtc.h}!rtc\_write\_reg@{rtc\_write\_reg}}
+\index{rtc\_write\_reg@{rtc\_write\_reg}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{rtc\_write\_reg()}{rtc\_write\_reg()}}
+{\footnotesize\ttfamily int rtc\+\_\+write\+\_\+reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Writes a value to a RTC register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to write to. \\
+\hline
+{\em data} & The value to write to the register. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{rtc_8h_aa1fd64645937078b75ec6046b11b432e_icgraph}
+\end{center}
+\end{figure}

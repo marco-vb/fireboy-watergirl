@@ -1,0 +1,9 @@
+<map id="rtc_init" name="rtc_init">
+<area shape="rect" id="Node000001" title="Initializes the Real Time Clock (RTC)" alt="" coords="5,32,72,60"/>
+<area shape="rect" id="Node000002" href="$rtc_8c.html#ae29bac2e634d591d0a31eef4deb72ced" title="Reads a value from a RTC register." alt="" coords="122,5,224,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,37,106,30,108,35,73,42"/>
+<area shape="rect" id="Node000004" href="$rtc_8c.html#a4d5027cd5e763401c38199ec78c7d90e" title="Writes a value to a RTC register." alt="" coords="120,57,226,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="73,49,105,56,104,61,72,55"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="274,5,372,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="225,17,259,17,259,22,225,22"/>
+</map>

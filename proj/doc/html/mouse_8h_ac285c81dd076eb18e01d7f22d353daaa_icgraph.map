@@ -1,0 +1,9 @@
+<map id="mouse_disable_dr" name="mouse_disable_dr">
+<area shape="rect" id="Node000001" title="Disables data reporting by the mouse." alt="" coords="459,5,599,33"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html#ad181ecf5c7a5cd19a73fe6771aadba6d" title="Disables the keyboard and the mouse Usubscribes to the mouse and the kayboard and disables the mouse ..." alt="" coords="313,5,411,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="444,22,412,22,412,17,444,17"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#abc1fb57f21dfdfe8414ed5ff0c744a10" title="exits the game mode" alt="" coords="175,5,265,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,22,265,22,265,17,298,17"/>
+<area shape="rect" id="Node000004" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,127,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="160,22,127,22,127,17,160,17"/>
+</map>

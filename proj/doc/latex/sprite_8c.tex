@@ -1,0 +1,208 @@
+\doxysection{sprites/sprite.c File Reference}
+\hypertarget{sprite_8c}{}\label{sprite_8c}\index{sprites/sprite.c@{sprites/sprite.c}}
+{\ttfamily \#include \"{}sprite.\+h\"{}}\newline
+Include dependency graph for sprite.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{sprite_8c_aeb91b0831a9bc988b1c041836318001b}{create\+\_\+sprite}} (xpm\+\_\+map\+\_\+t pic, uint16\+\_\+t \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, uint16\+\_\+t \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint16\+\_\+t xspeed, uint16\+\_\+t yspeed)
+\begin{DoxyCompactList}\small\item\em Creates a sprite object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8c_a3d39d1edf4dd00233efcecf5a3f6507e}{load\+\_\+sprites}} ()
+\begin{DoxyCompactList}\small\item\em Loads all the sprites needed. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8c_ae10de51e6ec23c1eb987551e7ec4a0e9}{destroy\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\begin{DoxyCompactList}\small\item\em Destroys a sprite. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8c_a6c75fbf31230126d2f19b29deaf24b2f}{draw\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\begin{DoxyCompactList}\small\item\em Draws a sprite. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8c_a92dc8c9632f56d3d3bde58d592e4ca84}{erase\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\begin{DoxyCompactList}\small\item\em Erases a sprite from the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8c_ae8b3e3df57b65f59e37d25d59af48459}{move\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\item 
+int \mbox{\hyperlink{sprite_8c_a89f1990315453247c90b2c0ea575ddc9}{animate\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sprite_8c_a89f1990315453247c90b2c0ea575ddc9}\label{sprite_8c_a89f1990315453247c90b2c0ea575ddc9} 
+\index{sprite.c@{sprite.c}!animate\_sprite@{animate\_sprite}}
+\index{animate\_sprite@{animate\_sprite}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{animate\_sprite()}{animate\_sprite()}}
+{\footnotesize\ttfamily int animate\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8c_a89f1990315453247c90b2c0ea575ddc9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sprite_8c_aeb91b0831a9bc988b1c041836318001b}\label{sprite_8c_aeb91b0831a9bc988b1c041836318001b} 
+\index{sprite.c@{sprite.c}!create\_sprite@{create\_sprite}}
+\index{create\_sprite@{create\_sprite}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{create\_sprite()}{create\_sprite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*} create\+\_\+sprite (\begin{DoxyParamCaption}\item[{xpm\+\_\+map\+\_\+t}]{pic,  }\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{xspeed,  }\item[{uint16\+\_\+t}]{yspeed }\end{DoxyParamCaption})}
+
+
+
+Creates a sprite object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pic} & The xpm image. \\
+\hline
+{\em x} & The horizontal position of the sprite. \\
+\hline
+{\em y} & The vertical position of the sprite. \\
+\hline
+{\em xspeed} & The horizontal speed of the sprite. \\
+\hline
+{\em yspeed} & The vertical speed of the sprite. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sprite\texorpdfstring{$\ast$}{*} The created sprite. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8c_aeb91b0831a9bc988b1c041836318001b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sprite_8c_ae10de51e6ec23c1eb987551e7ec4a0e9}\label{sprite_8c_ae10de51e6ec23c1eb987551e7ec4a0e9} 
+\index{sprite.c@{sprite.c}!destroy\_sprite@{destroy\_sprite}}
+\index{destroy\_sprite@{destroy\_sprite}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_sprite()}{destroy\_sprite()}}
+{\footnotesize\ttfamily int destroy\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+
+
+Destroys a sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite to destroy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if the sprite is null, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{sprite_8c_a6c75fbf31230126d2f19b29deaf24b2f}\label{sprite_8c_a6c75fbf31230126d2f19b29deaf24b2f} 
+\index{sprite.c@{sprite.c}!draw\_sprite@{draw\_sprite}}
+\index{draw\_sprite@{draw\_sprite}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{draw\_sprite()}{draw\_sprite()}}
+{\footnotesize\ttfamily int draw\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+
+
+Draws a sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite to be drawn. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if the sprite does not exist, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{sprite_8c_a6c75fbf31230126d2f19b29deaf24b2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8c_a6c75fbf31230126d2f19b29deaf24b2f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sprite_8c_a92dc8c9632f56d3d3bde58d592e4ca84}\label{sprite_8c_a92dc8c9632f56d3d3bde58d592e4ca84} 
+\index{sprite.c@{sprite.c}!erase\_sprite@{erase\_sprite}}
+\index{erase\_sprite@{erase\_sprite}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{erase\_sprite()}{erase\_sprite()}}
+{\footnotesize\ttfamily int erase\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+
+
+Erases a sprite from the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite to be erased. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if the sprite does not exist, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{sprite_8c_a92dc8c9632f56d3d3bde58d592e4ca84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8c_a92dc8c9632f56d3d3bde58d592e4ca84_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sprite_8c_a3d39d1edf4dd00233efcecf5a3f6507e}\label{sprite_8c_a3d39d1edf4dd00233efcecf5a3f6507e} 
+\index{sprite.c@{sprite.c}!load\_sprites@{load\_sprites}}
+\index{load\_sprites@{load\_sprites}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{load\_sprites()}{load\_sprites()}}
+{\footnotesize\ttfamily int load\+\_\+sprites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads all the sprites needed. 
+
+\begin{DoxyReturn}{Returns}
+1 if a sprite fails to load, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{sprite_8c_a3d39d1edf4dd00233efcecf5a3f6507e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{sprite_8c_a3d39d1edf4dd00233efcecf5a3f6507e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sprite_8c_ae8b3e3df57b65f59e37d25d59af48459}\label{sprite_8c_ae8b3e3df57b65f59e37d25d59af48459} 
+\index{sprite.c@{sprite.c}!move\_sprite@{move\_sprite}}
+\index{move\_sprite@{move\_sprite}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{move\_sprite()}{move\_sprite()}}
+{\footnotesize\ttfamily int move\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{sprite_8c_ae8b3e3df57b65f59e37d25d59af48459_icgraph}
+\end{center}
+\end{figure}

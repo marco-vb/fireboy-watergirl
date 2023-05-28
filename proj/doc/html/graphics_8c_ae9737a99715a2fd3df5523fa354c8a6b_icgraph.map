@@ -1,0 +1,19 @@
+<map id="draw_number" name="draw_number">
+<area shape="rect" id="Node000001" title="Draws a number on the screen." alt="" coords="756,57,866,85"/>
+<area shape="rect" id="Node000002" href="$rtc_8c.html#a693f7721f41dbaa76ff4b80abe5a979e" title="Draws the current date on the screen." alt="" coords="616,5,705,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="754,54,702,36,704,31,756,49"/>
+<area shape="rect" id="Node000007" href="$rtc_8c.html#a0635403a6f2f9a5d2cc60dd5c988cb10" title="Draws the current time on the screen." alt="" coords="615,57,706,85"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="741,74,706,74,706,69,741,69"/>
+<area shape="rect" id="Node000008" href="$count__down_8c.html#a9eb831ba2a514ba15a974586e8f80364" title="Draws the timer on the screen." alt="" coords="613,109,708,137"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="756,93,704,111,702,106,754,88"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a3cef68220fcc611902108d6f0159e50f" title="draws the elements of the game" alt="" coords="467,57,565,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="607,41,558,59,556,54,605,36"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,57,419,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="452,74,420,74,420,69,452,69"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,57,268,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="301,74,269,74,269,69,301,69"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,57,127,85"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="160,74,127,74,127,69,160,69"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="600,74,565,74,565,69,600,69"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="605,106,556,88,558,83,607,101"/>
+</map>

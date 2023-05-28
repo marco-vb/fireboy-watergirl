@@ -1,0 +1,9 @@
+<map id="send_start_connection" name="send_start_connection">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,173,33"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a7c232bfe6e9ff822db3f9135e41bb623" title="Adds a byte to the send queue." alt="" coords="221,5,358,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,17,206,17,206,22,173,22"/>
+<area shape="rect" id="Node000003" href="$queue_8c.html#aa7982825b04c812a55cf357852d83207" title=" " alt="" coords="406,5,505,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="359,17,391,17,391,22,359,22"/>
+<area shape="rect" id="Node000004" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="553,5,635,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="506,17,538,17,538,22,506,22"/>
+</map>

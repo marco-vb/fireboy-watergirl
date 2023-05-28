@@ -1,0 +1,459 @@
+\doxysection{drivers/kbc/mouse.c File Reference}
+\hypertarget{mouse_8c}{}\label{mouse_8c}\index{drivers/kbc/mouse.c@{drivers/kbc/mouse.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \"{}kbc.\+h\"{}}\newline
+{\ttfamily \#include \"{}mouse.\+h\"{}}\newline
+{\ttfamily \#include \"{}../graphics/graphics.\+h\"{}}\newline
+Include dependency graph for mouse.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{mouse_8c_a20285aed4b3ef45812cd967532dd09db}{mouse\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes to the mouse. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8c_a3ecf823d80520009ae5e0d76ae40a3c3}{mouse\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes from mouse interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8c_a7a769bcdab7ded10f2a9bbd77747d504}{mouse\+\_\+send\+\_\+cmd}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Sends a command to the mouse. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{mouse_8c_a42b4a9251d4782a0ee0fd5ccaa9fc809}{m\+\_\+read\+\_\+byte}} (uint8\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Reads a byte received from the mouse and updates the packet accordingly. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{mouse_8c_a96ec8f04c0a326b8c26c498b98f5244a}{mouse\+\_\+build\+\_\+packet}} ()
+\begin{DoxyCompactList}\small\item\em Builds the mouse packet from the received bytes. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{mouse_8c_ac171a0597dea4c379525d0c922ff1ce5}{mouse\+\_\+update\+\_\+pos}} ()
+\begin{DoxyCompactList}\small\item\em Updates the mouse position based on the delta values. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{mouse_8c_a210374b50462acdedab00df64d5cea3c}{mouse\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Mouse interrupt handler. Reads data from the mouse and updates the packet. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8c_ae6e74d2b64d6df5f731ad0aadebc839a}{mouse\+\_\+enable\+\_\+dr}} ()
+\begin{DoxyCompactList}\small\item\em Enables data reporting by the mouse. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8c_ac93462fdee1791bdddd06b5ca7e6d0d9}{mouse\+\_\+disable\+\_\+dr}} ()
+\begin{DoxyCompactList}\small\item\em Disables data reporting by the mouse. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8c_addbf401c63e77802f3b63e1dfea97782}{mouse\+\_\+stream\+\_\+mode}} ()
+\begin{DoxyCompactList}\small\item\em Sets the mouse to stream mode. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8c_aee417ce29c994f148e41f76856416a6e}{mouse\+\_\+inside}} (uint16\+\_\+t \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, uint16\+\_\+t \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint16\+\_\+t width, uint16\+\_\+t height)
+\begin{DoxyCompactList}\small\item\em Checks if the mouse is inside the specified rectangle. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8c_a67ad33cc421ed4f48546fd7648f767df}{mouse\+\_\+over\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\begin{DoxyCompactList}\small\item\em Checks if the mouse is over the specified sprite. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8c_a9f516b600d90049ccc3e14b2271055fd}{mouse\+\_\+lclick\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\begin{DoxyCompactList}\small\item\em Checks if the left mouse button is clicked while over the specified sprite. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8c_ac94353664374148e28b58b21a8c206d8}{mouse\+\_\+rclick\+\_\+sprite}} (\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}sp)
+\begin{DoxyCompactList}\small\item\em Checks if the right mouse button is clicked while over the specified sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{mouse_8c_abc3bcc5b60108e381a2d51468313a984}{hook\+\_\+mouse}} = 2
+\item 
+\mbox{\hyperlink{structmouse__packet__t}{mouse\+\_\+packet\+\_\+t}} \mbox{\hyperlink{mouse_8c_acb2c1734916cd3074f543ea3a92ba505}{mouse\+\_\+packet}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mouse_8c_a42b4a9251d4782a0ee0fd5ccaa9fc809}\label{mouse_8c_a42b4a9251d4782a0ee0fd5ccaa9fc809} 
+\index{mouse.c@{mouse.c}!m\_read\_byte@{m\_read\_byte}}
+\index{m\_read\_byte@{m\_read\_byte}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{m\_read\_byte()}{m\_read\_byte()}}
+{\footnotesize\ttfamily void() m\+\_\+read\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+Reads a byte received from the mouse and updates the packet accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The byte received from the mouse. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a42b4a9251d4782a0ee0fd5ccaa9fc809_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a42b4a9251d4782a0ee0fd5ccaa9fc809_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_a96ec8f04c0a326b8c26c498b98f5244a}\label{mouse_8c_a96ec8f04c0a326b8c26c498b98f5244a} 
+\index{mouse.c@{mouse.c}!mouse\_build\_packet@{mouse\_build\_packet}}
+\index{mouse\_build\_packet@{mouse\_build\_packet}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_build\_packet()}{mouse\_build\_packet()}}
+{\footnotesize\ttfamily void() mouse\+\_\+build\+\_\+packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Builds the mouse packet from the received bytes. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a96ec8f04c0a326b8c26c498b98f5244a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_ac93462fdee1791bdddd06b5ca7e6d0d9}\label{mouse_8c_ac93462fdee1791bdddd06b5ca7e6d0d9} 
+\index{mouse.c@{mouse.c}!mouse\_disable\_dr@{mouse\_disable\_dr}}
+\index{mouse\_disable\_dr@{mouse\_disable\_dr}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_disable\_dr()}{mouse\_disable\_dr()}}
+{\footnotesize\ttfamily int() mouse\+\_\+disable\+\_\+dr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disables data reporting by the mouse. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_ac93462fdee1791bdddd06b5ca7e6d0d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_ac93462fdee1791bdddd06b5ca7e6d0d9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_ae6e74d2b64d6df5f731ad0aadebc839a}\label{mouse_8c_ae6e74d2b64d6df5f731ad0aadebc839a} 
+\index{mouse.c@{mouse.c}!mouse\_enable\_dr@{mouse\_enable\_dr}}
+\index{mouse\_enable\_dr@{mouse\_enable\_dr}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_enable\_dr()}{mouse\_enable\_dr()}}
+{\footnotesize\ttfamily int() mouse\+\_\+enable\+\_\+dr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enables data reporting by the mouse. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_ae6e74d2b64d6df5f731ad0aadebc839a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_ae6e74d2b64d6df5f731ad0aadebc839a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_a210374b50462acdedab00df64d5cea3c}\label{mouse_8c_a210374b50462acdedab00df64d5cea3c} 
+\index{mouse.c@{mouse.c}!mouse\_ih@{mouse\_ih}}
+\index{mouse\_ih@{mouse\_ih}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_ih()}{mouse\_ih()}}
+{\footnotesize\ttfamily void() mouse\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mouse interrupt handler. Reads data from the mouse and updates the packet. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a210374b50462acdedab00df64d5cea3c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a210374b50462acdedab00df64d5cea3c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_aee417ce29c994f148e41f76856416a6e}\label{mouse_8c_aee417ce29c994f148e41f76856416a6e} 
+\index{mouse.c@{mouse.c}!mouse\_inside@{mouse\_inside}}
+\index{mouse\_inside@{mouse\_inside}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_inside()}{mouse\_inside()}}
+{\footnotesize\ttfamily int() mouse\+\_\+inside (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height }\end{DoxyParamCaption})}
+
+
+
+Checks if the mouse is inside the specified rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The horizontal of the rectangle. \\
+\hline
+{\em y} & The vertical of the rectangle. \\
+\hline
+{\em width} & The width of the rectangle. \\
+\hline
+{\em height} & The height of the rectangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if the mouse is inside the rectangle, 0 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_aee417ce29c994f148e41f76856416a6e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_a9f516b600d90049ccc3e14b2271055fd}\label{mouse_8c_a9f516b600d90049ccc3e14b2271055fd} 
+\index{mouse.c@{mouse.c}!mouse\_lclick\_sprite@{mouse\_lclick\_sprite}}
+\index{mouse\_lclick\_sprite@{mouse\_lclick\_sprite}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_lclick\_sprite()}{mouse\_lclick\_sprite()}}
+{\footnotesize\ttfamily int() mouse\+\_\+lclick\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+
+
+Checks if the left mouse button is clicked while over the specified sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if the left mouse button is clicked while over the sprite, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a9f516b600d90049ccc3e14b2271055fd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a9f516b600d90049ccc3e14b2271055fd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_a67ad33cc421ed4f48546fd7648f767df}\label{mouse_8c_a67ad33cc421ed4f48546fd7648f767df} 
+\index{mouse.c@{mouse.c}!mouse\_over\_sprite@{mouse\_over\_sprite}}
+\index{mouse\_over\_sprite@{mouse\_over\_sprite}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_over\_sprite()}{mouse\_over\_sprite()}}
+{\footnotesize\ttfamily int() mouse\+\_\+over\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+
+
+Checks if the mouse is over the specified sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if the mouse is over the sprite, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{mouse_8c_a67ad33cc421ed4f48546fd7648f767df_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a67ad33cc421ed4f48546fd7648f767df_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_ac94353664374148e28b58b21a8c206d8}\label{mouse_8c_ac94353664374148e28b58b21a8c206d8} 
+\index{mouse.c@{mouse.c}!mouse\_rclick\_sprite@{mouse\_rclick\_sprite}}
+\index{mouse\_rclick\_sprite@{mouse\_rclick\_sprite}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_rclick\_sprite()}{mouse\_rclick\_sprite()}}
+{\footnotesize\ttfamily int() mouse\+\_\+rclick\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sp }\end{DoxyParamCaption})}
+
+
+
+Checks if the right mouse button is clicked while over the specified sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & The sprite to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 if the right mouse button is clicked while over the sprite, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_ac94353664374148e28b58b21a8c206d8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_a7a769bcdab7ded10f2a9bbd77747d504}\label{mouse_8c_a7a769bcdab7ded10f2a9bbd77747d504} 
+\index{mouse.c@{mouse.c}!mouse\_send\_cmd@{mouse\_send\_cmd}}
+\index{mouse\_send\_cmd@{mouse\_send\_cmd}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_send\_cmd()}{mouse\_send\_cmd()}}
+{\footnotesize\ttfamily int() mouse\+\_\+send\+\_\+cmd (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Sends a command to the mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & The command to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a7a769bcdab7ded10f2a9bbd77747d504_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a7a769bcdab7ded10f2a9bbd77747d504_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_addbf401c63e77802f3b63e1dfea97782}\label{mouse_8c_addbf401c63e77802f3b63e1dfea97782} 
+\index{mouse.c@{mouse.c}!mouse\_stream\_mode@{mouse\_stream\_mode}}
+\index{mouse\_stream\_mode@{mouse\_stream\_mode}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_stream\_mode()}{mouse\_stream\_mode()}}
+{\footnotesize\ttfamily int() mouse\+\_\+stream\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the mouse to stream mode. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_addbf401c63e77802f3b63e1dfea97782_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_a20285aed4b3ef45812cd967532dd09db}\label{mouse_8c_a20285aed4b3ef45812cd967532dd09db} 
+\index{mouse.c@{mouse.c}!mouse\_subscribe\_int@{mouse\_subscribe\_int}}
+\index{mouse\_subscribe\_int@{mouse\_subscribe\_int}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_subscribe\_int()}{mouse\_subscribe\_int()}}
+{\footnotesize\ttfamily int() mouse\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes to the mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Pointer that will be pointed to the mouse hood\+\_\+id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a20285aed4b3ef45812cd967532dd09db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_a3ecf823d80520009ae5e0d76ae40a3c3}\label{mouse_8c_a3ecf823d80520009ae5e0d76ae40a3c3} 
+\index{mouse.c@{mouse.c}!mouse\_unsubscribe\_int@{mouse\_unsubscribe\_int}}
+\index{mouse\_unsubscribe\_int@{mouse\_unsubscribe\_int}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_unsubscribe\_int()}{mouse\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int() mouse\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes from mouse interrupts. 
+
+\begin{DoxyReturn}{Returns}
+int 1 if an error occurs, 0 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_a3ecf823d80520009ae5e0d76ae40a3c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mouse_8c_ac171a0597dea4c379525d0c922ff1ce5}\label{mouse_8c_ac171a0597dea4c379525d0c922ff1ce5} 
+\index{mouse.c@{mouse.c}!mouse\_update\_pos@{mouse\_update\_pos}}
+\index{mouse\_update\_pos@{mouse\_update\_pos}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_update\_pos()}{mouse\_update\_pos()}}
+{\footnotesize\ttfamily void() mouse\+\_\+update\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the mouse position based on the delta values. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{mouse_8c_ac171a0597dea4c379525d0c922ff1ce5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c_ac171a0597dea4c379525d0c922ff1ce5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mouse_8c_abc3bcc5b60108e381a2d51468313a984}\label{mouse_8c_abc3bcc5b60108e381a2d51468313a984} 
+\index{mouse.c@{mouse.c}!hook\_mouse@{hook\_mouse}}
+\index{hook\_mouse@{hook\_mouse}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{hook\_mouse}{hook\_mouse}}
+{\footnotesize\ttfamily int hook\+\_\+mouse = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{mouse_8c_acb2c1734916cd3074f543ea3a92ba505}\label{mouse_8c_acb2c1734916cd3074f543ea3a92ba505} 
+\index{mouse.c@{mouse.c}!mouse\_packet@{mouse\_packet}}
+\index{mouse\_packet@{mouse\_packet}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_packet}{mouse\_packet}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmouse__packet__t}{mouse\+\_\+packet\+\_\+t}} mouse\+\_\+packet}
+

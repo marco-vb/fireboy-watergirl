@@ -1,0 +1,29 @@
+<map id="mouse_inside" name="mouse_inside">
+<area shape="rect" id="Node000001" title="Checks if the mouse is inside the specified rectangle." alt="" coords="1227,56,1338,84"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#adb16266bac82ba2376f626661c75a3ff" title="draws the game over screen and controlls if any of the options is chosen" alt="" coords="467,5,601,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1217,55,1178,47,1016,30,855,22,711,19,601,20,601,15,711,14,855,16,1017,25,1179,42,1218,49"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#ac581b9d6af85c4c35f9d423a966cba8e" title="draws the pause menu" alt="" coords="1034,56,1178,84"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1212,73,1178,73,1178,67,1212,67"/>
+<area shape="rect" id="Node000007" href="$mouse_8c.html#a67ad33cc421ed4f48546fd7648f767df" title="Checks if the mouse is over the specified sprite." alt="" coords="1033,132,1179,160"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="1236,92,1141,134,1139,129,1234,88"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,81,419,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="490,42,401,83,399,78,487,37"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,81,268,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="301,98,269,98,269,93,301,93"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,81,127,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="160,98,127,98,127,93,160,93"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="1020,74,772,80,467,91,420,94,419,89,467,86,772,75,1019,69"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#ad7ca2d21a727f7d55afef2392de3b5f8" title="draws the main menu and controlls if an option is chosen" alt="" coords="649,107,786,134"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1018,143,786,128,786,122,1019,138"/>
+<area shape="rect" id="Node000009" href="$mouse_8c.html#a9f516b600d90049ccc3e14b2271055fd" title="Checks if the left mouse button is clicked while over the specified sprite." alt="" coords="835,157,985,185"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="1019,160,985,164,985,159,1019,154"/>
+<area shape="rect" id="Node000012" href="$mouse_8c.html#ac94353664374148e28b58b21a8c206d8" title="Checks if the right mouse button is clicked while over the specified sprite." alt="" coords="834,209,985,237"/>
+<area shape="poly" id="edge15_Node000007_Node000012" title=" " alt="" coords="1060,168,986,199,953,211,952,206,984,194,1058,164"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="633,117,419,102,420,96,634,112"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="840,156,772,137,773,132,842,151"/>
+<area shape="rect" id="Node000010" href="$game_8c.html#ab323971701b6e01aff44feeaa9475735" title="Draws the ropes on the screen. And controlls whether or not the characters can or have cut them." alt="" coords="669,159,766,186"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="819,174,766,175,766,170,819,169"/>
+<area shape="rect" id="Node000011" href="$game_8c.html#a3cef68220fcc611902108d6f0159e50f" title="draws the elements of the game" alt="" coords="485,157,583,185"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="654,175,583,174,583,169,654,169"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="487,153,399,112,401,107,490,148"/>
+</map>

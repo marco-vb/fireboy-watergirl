@@ -1,0 +1,210 @@
+\doxysection{maps/map.c File Reference}
+\hypertarget{map_8c}{}\label{map_8c}\index{maps/map.c@{maps/map.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \"{}map.\+h\"{}}\newline
+Include dependency graph for map.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}() \mbox{\hyperlink{map_8c_a9a7122990ff72505388303fe132972ce}{create\+\_\+map}} (int level)
+\begin{DoxyCompactList}\small\item\em Creates a map corresponding to the given level. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{map_8c_a8ff7ff301aba3547f286e2e04fac812b}{load\+\_\+maps}} ()
+\begin{DoxyCompactList}\small\item\em Loads all the maps. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{map_8c_ac95da25035e96eeda36c003bdf8853f1}{draw\+\_\+map}} (\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}map)
+\begin{DoxyCompactList}\small\item\em Draws the given map. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{map_8c_abd164c217aa4e06a21caa565e0435514}{next\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Changes the current level to the next level. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{map_8c_a1d1326355ebc52cb1eaca3531963e323}{reset\+\_\+falling\+\_\+blocks}} ()
+\begin{DoxyCompactList}\small\item\em Resets all the falling blocks to their original position. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{map_8c_a2117f266cf32d37631770302fe987115}{get\+\_\+tile}} (\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}map, u\+\_\+int32\+\_\+t \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, u\+\_\+int32\+\_\+t \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}})
+\begin{DoxyCompactList}\small\item\em Returns the letter corresponding to the tile at the given position on the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8c_a31b58054ba61e6d08a8cc085d3719753}{map1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{map_8c_a9a7122990ff72505388303fe132972ce}\label{map_8c_a9a7122990ff72505388303fe132972ce} 
+\index{map.c@{map.c}!create\_map@{create\_map}}
+\index{create\_map@{create\_map}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{create\_map()}{create\_map()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}() create\+\_\+map (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Creates a map corresponding to the given level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level of the map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map\texorpdfstring{$\ast$}{*} The created map. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8c_a9a7122990ff72505388303fe132972ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8c_ac95da25035e96eeda36c003bdf8853f1}\label{map_8c_ac95da25035e96eeda36c003bdf8853f1} 
+\index{map.c@{map.c}!draw\_map@{draw\_map}}
+\index{draw\_map@{draw\_map}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{draw\_map()}{draw\_map()}}
+{\footnotesize\ttfamily int() draw\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})}
+
+
+
+Draws the given map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The map to be drawn. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if an image fails to load, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8c_ac95da25035e96eeda36c003bdf8853f1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8c_ac95da25035e96eeda36c003bdf8853f1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8c_a2117f266cf32d37631770302fe987115}\label{map_8c_a2117f266cf32d37631770302fe987115} 
+\index{map.c@{map.c}!get\_tile@{get\_tile}}
+\index{get\_tile@{get\_tile}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{get\_tile()}{get\_tile()}}
+{\footnotesize\ttfamily char get\+\_\+tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMap}{Map}} \texorpdfstring{$\ast$}{*}}]{map,  }\item[{u\+\_\+int32\+\_\+t}]{x,  }\item[{u\+\_\+int32\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Returns the letter corresponding to the tile at the given position on the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The map from which to retrieve the tile. \\
+\hline
+{\em x} & The x position on the map. \\
+\hline
+{\em y} & The y position on the map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char The letter corresponding to the tile at the given coordinates. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8c_a2117f266cf32d37631770302fe987115_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8c_a8ff7ff301aba3547f286e2e04fac812b}\label{map_8c_a8ff7ff301aba3547f286e2e04fac812b} 
+\index{map.c@{map.c}!load\_maps@{load\_maps}}
+\index{load\_maps@{load\_maps}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{load\_maps()}{load\_maps()}}
+{\footnotesize\ttfamily int() load\+\_\+maps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads all the maps. 
+
+\begin{DoxyReturn}{Returns}
+1 if an error occurs while loading the maps, 0 otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{map_8c_a8ff7ff301aba3547f286e2e04fac812b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{map_8c_a8ff7ff301aba3547f286e2e04fac812b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8c_abd164c217aa4e06a21caa565e0435514}\label{map_8c_abd164c217aa4e06a21caa565e0435514} 
+\index{map.c@{map.c}!nextLevel@{nextLevel}}
+\index{nextLevel@{nextLevel}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{nextLevel()}{nextLevel()}}
+{\footnotesize\ttfamily int() next\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Changes the current level to the next level. 
+
+\begin{DoxyReturn}{Returns}
+1 if the current level was the last, 0 otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8c_abd164c217aa4e06a21caa565e0435514_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{map_8c_a1d1326355ebc52cb1eaca3531963e323}\label{map_8c_a1d1326355ebc52cb1eaca3531963e323} 
+\index{map.c@{map.c}!reset\_falling\_blocks@{reset\_falling\_blocks}}
+\index{reset\_falling\_blocks@{reset\_falling\_blocks}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{reset\_falling\_blocks()}{reset\_falling\_blocks()}}
+{\footnotesize\ttfamily void() reset\+\_\+falling\+\_\+blocks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets all the falling blocks to their original position. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8c_a1d1326355ebc52cb1eaca3531963e323_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{map_8c_a1d1326355ebc52cb1eaca3531963e323_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{map_8c_a31b58054ba61e6d08a8cc085d3719753}\label{map_8c_a31b58054ba61e6d08a8cc085d3719753} 
+\index{map.c@{map.c}!map1@{map1}}
+\index{map1@{map1}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{map1}{map1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMap}{Map}}\texorpdfstring{$\ast$}{*} map1\hspace{0.3cm}{\ttfamily [extern]}}
+

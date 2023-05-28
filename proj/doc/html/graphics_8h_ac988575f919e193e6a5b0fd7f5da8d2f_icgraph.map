@@ -1,0 +1,16 @@
+<map id="draw_special_char" name="draw_special_char">
+<area shape="rect" id="Node000001" title="Draws special characters." alt="" coords="751,32,892,60"/>
+<area shape="rect" id="Node000002" href="$rtc_8c.html#a693f7721f41dbaa76ff4b80abe5a979e" title="Draws the current date on the screen." alt="" coords="613,5,703,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="736,35,703,29,703,24,737,29"/>
+<area shape="rect" id="Node000007" href="$rtc_8c.html#a0635403a6f2f9a5d2cc60dd5c988cb10" title="Draws the current time on the screen." alt="" coords="613,57,703,85"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="737,62,704,67,703,62,736,56"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a3cef68220fcc611902108d6f0159e50f" title="draws the elements of the game" alt="" coords="467,32,565,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="599,33,566,39,565,34,598,28"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a7c067f553f23ef1112d1a30aa6124cd1" title="call the functions to draw in the screen and controlls what needs to be drawn" alt="" coords="316,32,419,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="452,49,420,49,420,43,452,43"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,32,268,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="301,49,269,49,269,43,301,43"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,32,127,60"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="160,49,127,49,127,43,160,43"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="598,63,565,57,566,52,598,58"/>
+</map>

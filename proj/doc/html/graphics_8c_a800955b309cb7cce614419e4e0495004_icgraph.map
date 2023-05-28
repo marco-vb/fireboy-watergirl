@@ -1,0 +1,7 @@
+<map id="load_img" name="load_img">
+<area shape="rect" id="Node000001" title="Loads an xpm image." alt="" coords="325,5,406,33"/>
+<area shape="rect" id="Node000002" href="$character_8c.html#a7f1729bb43b9847bdaa49d2271a21d62" title="Creates the characters." alt="" coords="140,5,277,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="310,22,278,22,278,17,310,17"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#aa19b202ec8bfc484a80caa3b5d445663" title=" " alt="" coords="5,5,92,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="125,22,92,22,92,17,125,17"/>
+</map>

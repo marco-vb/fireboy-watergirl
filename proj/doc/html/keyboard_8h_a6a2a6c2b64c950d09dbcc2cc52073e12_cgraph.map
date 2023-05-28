@@ -1,0 +1,12 @@
+<map id="keyboard_ih" name="keyboard_ih">
+<area shape="rect" id="Node000001" title="Keyboard interrupt handler. Reads data from the keyboard and updates the packet." alt="" coords="5,57,106,85"/>
+<area shape="rect" id="Node000002" href="$keyboard_8c.html#a9dd5abe1355bd233d6a16abceaae0c59" title="Reads a byte received from the keyboard and updates the packet accordingly." alt="" coords="163,5,264,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,54,155,36,156,41,101,59"/>
+<area shape="rect" id="Node000003" href="$kbc_8c.html#a478e9d9e6e396379599060715e26730a" title="Gets the status from the keyboard register." alt="" coords="154,57,273,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,69,139,69,139,74,106,74"/>
+<area shape="rect" id="Node000005" href="$kbc_8c.html#a638e7f85ff3800aaf17c95cde1760865" title="Reads a byte from the output buffer." alt="" coords="155,109,272,137"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="101,83,156,102,155,107,99,88"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="321,84,419,112"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="274,79,307,84,306,90,273,84"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="272,111,306,106,306,111,273,116"/>
+</map>

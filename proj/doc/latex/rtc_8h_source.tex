@@ -1,0 +1,90 @@
+\doxysection{rtc.\+h}
+\hypertarget{rtc_8h_source}{}\label{rtc_8h_source}\index{drivers/rtc/rtc.h@{drivers/rtc/rtc.h}}
+\mbox{\hyperlink{rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_RTC\_H\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_RTC\_H\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../graphics/graphics.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ RTC\ I/O\ Ports\ and\ IRQ\ Line}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ RTC\_IRQ\ 8\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ RTC\_ADDR\_REG\ 0x70\ \ \ }}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ RTC\_DATA\_REG\ 0x71\ \ \ }}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ RTC\ Register\ Addresses}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ SECS\ 0x00\ \ \ }}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ SECS\_ALARM\ 0x01\ \ \ }}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MINS\ 0x02\ \ \ }}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MINS\_ALARM\ 0x03\ \ \ }}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ HOURS\ 0x04\ \ \ }}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ HOURS\_ALARM\ 0x05\ \ \ }}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ DAY\_WEEK\ 0x06\ \ \ }}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ DAY\_MONTH\ 0x07\ \ \ }}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ MONTH\ 0x08\ \ \ }}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ YEAR\ 0x09\ \ \ }}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ Register\ A\ (10)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ REG\_A\ 0x0A\ \ \ }}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ UIP\ BIT(7)\ \ \ }}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ DV2\ BIT(6)\ \ \ }}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ DV1\ BIT(5)\ \ \ }}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ DV0\ BIT(4)\ \ \ }}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ RS3\ BIT(3)\ \ \ }}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ RS2\ BIT(2)\ \ \ }}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ RS1\ BIT(1)\ \ \ }}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ RS0\ BIT(0)\ \ \ }}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Register\ B\ (11)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ REG\_B\ 0x0B\ \ \ }}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SET\ BIT(7)\ \ \ }}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ PIE\ BIT(6)\ \ \ }}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ AIE\ BIT(5)\ \ \ }}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ UIE\ BIT(4)\ \ \ }}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ SQWE\ BIT(3)\ \ \ }}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ DM\ BIT(2)\ \ \ }}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ HR\ BIT(1)\ \ \ }}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ DSE\ BIT(0)\ \ \ }}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ Register\ C\ (12)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ REG\_C\ 0x0C\ \ \ }}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ IRQF\ BIT(7)\ \ \ }}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ PF\ BIT(6)\ \ \ }}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ AF\ BIT(5)\ \ \ }}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ UF\ BIT(4)\ \ \ }}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ Register\ D\ (13)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ REG\_D\ 0x0D\ \ \ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ VRT\ BIT(7)\ \ \ }}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a023cfe181f8a45fabb033751cb4356dc}{rtc\_init}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a5171a9c0f54940fe60f7500896afcc86}{rtc\_subscribe\_int}}(uint8\_t\ *bit\_no);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_ab8f17bf5280c908c8b199a90fefcc758}{rtc\_unsubscribe\_int}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a76827856de45c0728d613f90c5f6e009}{rtc\_read\_reg}}(uint8\_t\ reg,\ uint8\_t\ *data);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_aa1fd64645937078b75ec6046b11b432e}{rtc\_write\_reg}}(uint8\_t\ reg,\ uint8\_t\ data);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a49d112e7da6f83f064bfcb9d34fa0ac4}{read\_hours}}(uint8\_t\ *hours);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_abd9ce5c6eea2eb684c2044a3b4711030}{read\_minutes}}(uint8\_t\ *minutes);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a323e98127ba99121173075ebc5b757ba}{read\_seconds}}(uint8\_t\ *seconds);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00129\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a7740f490432dd2d66295a3366d2b300a}{read\_day}}(uint8\_t\ *day);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a69a0b1164938aed0c8be10308c7034a7}{read\_month}}(uint8\_t\ *month);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_ad4d4d4918bb57e3d72c0d378a7e4cfc0}{read\_year}}(uint8\_t\ *year);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00155\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a997d3dbce00dbe50c063a922dc9edff7}{read\_date}}(uint8\_t\ *day,\ uint8\_t\ *month,\ uint8\_t\ *year);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00165\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a0f6fcc15658135409e77537a995446e2}{read\_time}}(uint8\_t\ *hours,\ uint8\_t\ *minutes,\ uint8\_t\ *seconds);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00172\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a78550ae224ae0ca51b3de81c44477a45}{draw\_time}}();}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00180\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rtc_8h_a02a6f31164ff83d32aa7b56dcaf5aa91}{draw\_date}}();}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_RTC\_H\_\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

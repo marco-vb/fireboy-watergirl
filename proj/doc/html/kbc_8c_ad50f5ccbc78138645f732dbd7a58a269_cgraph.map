@@ -1,0 +1,9 @@
+<map id="ibf_empty" name="ibf_empty">
+<area shape="rect" id="Node000001" title="Checks if the input buffer is empty." alt="" coords="5,5,93,33"/>
+<area shape="rect" id="Node000002" href="$kbc_8c.html#a5b7c0fcbbf462fdc98d5cf45f1a6f62f" title="Checks if the a buffer is full." alt="" coords="141,5,229,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,17,126,17,126,22,93,22"/>
+<area shape="rect" id="Node000003" href="$kbc_8c.html#a478e9d9e6e396379599060715e26730a" title="Gets the status from the keyboard register." alt="" coords="277,5,396,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,17,262,17,262,22,229,22"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="444,5,543,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="397,17,430,17,430,22,397,22"/>
+</map>

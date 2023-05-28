@@ -1,0 +1,7 @@
+<map id="video_mode" name="video_mode">
+<area shape="rect" id="Node000001" title="Sets the video mode to 0x14c." alt="" coords="5,32,107,60"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#af1bf9e7f07f92f3f1561df4630ce33d1" title="Maps the video memory." alt="" coords="163,5,275,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,35,148,28,148,33,108,40"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#aa990c707b7715a066a86572d5494d71c" title="Sets the video mode." alt="" coords="155,57,283,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,51,140,56,139,61,107,56"/>
+</map>

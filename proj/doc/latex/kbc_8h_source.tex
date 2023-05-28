@@ -1,0 +1,34 @@
+\doxysection{kbc.\+h}
+\hypertarget{kbc_8h_source}{}\label{kbc_8h_source}\index{drivers/kbc/kbc.h@{drivers/kbc/kbc.h}}
+\mbox{\hyperlink{kbc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_KBC\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_KBC\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i8042_8h}{i8042.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_a2f901acc7ec2e88efa1f7eb391832e67}{kbc\_get\_status}}(uint8\_t*\ st);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_a329ba4421641ca5198df31959322b27e}{kbc\_read\_data}}(uint8\_t*\ data);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_a6da15cccd098edde3a7c6fec6da4a8ef}{kbc\_write}}(uint8\_t\ port,\ uint8\_t\ cmd);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_aa1dcd642657d7da0376e36cda809b0e3}{kbc\_write\_cmd}}(uint8\_t\ cmd);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_ab7c3aa73d53fa86cf82ef40b5032784d}{kbc\_write\_arg}}(uint8\_t\ arg);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_a2992ef6c558ce20a332875497797c61f}{obf\_full}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_a033ac1e524d28bf42fbd9d9a83466a10}{ibf\_empty}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_a28671696d322cc8ab56248a0889ca132}{buffer\_full}}(uint8\_t\ flag);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_a810dd8759294901aac42ee1cc2b07afa}{kbc\_init}}(uint8\_t*\ \mbox{\hyperlink{game_8c_ad94de15d99fb7e7c59ceaf11b348a26c}{irq\_keyboard}},\ uint8\_t*\ \mbox{\hyperlink{game_8c_a3c3f9b11f30efcaaea7455fd72ea7491}{irq\_mouse}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{kbc_8h_a60bb58654afdee98724521d0cfb36bf2}{kbc\_disable}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_KBC\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

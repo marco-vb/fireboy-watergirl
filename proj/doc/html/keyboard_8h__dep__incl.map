@@ -1,0 +1,15 @@
+<map id="drivers/kbc/keyboard.h" name="drivers/kbc/keyboard.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="336,5,505,33"/>
+<area shape="rect" id="Node000002" href="$communication_8c.html" title=" " alt="" coords="5,81,244,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,40,178,83,177,78,353,35"/>
+<area shape="rect" id="Node000003" href="$kbc_8c.html" title=" " alt="" coords="268,81,400,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="396,45,351,83,347,79,392,41"/>
+<area shape="rect" id="Node000004" href="$keyboard_8c.html" title=" " alt="" coords="423,81,591,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="449,41,494,79,490,83,445,45"/>
+<area shape="rect" id="Node000005" href="$game_8h.html" title=" " alt="" coords="616,81,686,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="476,35,616,80,615,85,474,40"/>
+<area shape="rect" id="Node000006" href="$game_8c.html" title=" " alt="" coords="573,157,642,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="638,123,617,158,613,155,634,120"/>
+<area shape="rect" id="Node000007" href="$proj_8c.html" title=" " alt="" coords="667,157,724,184"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="669,120,690,155,685,158,664,123"/>
+</map>

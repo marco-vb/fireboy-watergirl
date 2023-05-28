@@ -1,0 +1,7 @@
+<map id="map_memory" name="map_memory">
+<area shape="rect" id="Node000001" title="Maps the video memory." alt="" coords="289,5,401,33"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a810ae94f1777bf6fc1d9d281eeb2bc22" title="Sets the video mode to 0x14c." alt="" coords="140,5,241,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,22,241,22,241,17,274,17"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#aa19b202ec8bfc484a80caa3b5d445663" title=" " alt="" coords="5,5,92,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="125,22,92,22,92,17,125,17"/>
+</map>

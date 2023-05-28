@@ -1,0 +1,9 @@
+<map id="send_keyboard_key" name="send_keyboard_key">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,155,33"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#a7c232bfe6e9ff822db3f9135e41bb623" title="Adds a byte to the send queue." alt="" coords="203,5,340,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,17,188,17,188,22,155,22"/>
+<area shape="rect" id="Node000003" href="$queue_8c.html#aa7982825b04c812a55cf357852d83207" title=" " alt="" coords="388,5,487,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="341,17,373,17,373,22,341,22"/>
+<area shape="rect" id="Node000004" href="$queue_8c.html#a1a03a0cff8f6b685beee30e08f3a3b80" title=" " alt="" coords="535,5,617,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="488,17,520,17,520,22,488,22"/>
+</map>

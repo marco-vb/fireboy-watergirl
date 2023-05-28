@@ -1,0 +1,15 @@
+<map id="read_time" name="read_time">
+<area shape="rect" id="Node000001" title="Reads the time (hours, minutes, and seconds) from the RTC." alt="" coords="5,57,93,85"/>
+<area shape="rect" id="Node000002" href="$rtc_8c.html#a3092c218cb22ffd19f8b4fcb1ee2077e" title="Reads the hours from the RTC." alt="" coords="149,5,243,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,54,140,36,142,41,91,59"/>
+<area shape="rect" id="Node000005" href="$rtc_8c.html#aafcc44e46ecbabcc5ca2915c981f4a3a" title="Reads the minutes from the RTC." alt="" coords="141,57,251,85"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="93,69,126,69,126,74,93,74"/>
+<area shape="rect" id="Node000006" href="$rtc_8c.html#a429d381b7aefae1d9f86c12027b509b1" title="Reads the seconds from the RTC." alt="" coords="141,109,251,137"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="91,83,142,101,140,106,90,88"/>
+<area shape="rect" id="Node000003" href="$rtc_8c.html#ae29bac2e634d591d0a31eef4deb72ced" title="Reads a value from a RTC register." alt="" coords="299,57,401,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,31,294,50,292,55,239,36"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="449,57,548,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="402,69,434,69,434,74,402,74"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="251,69,284,69,284,74,251,74"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="239,106,292,88,294,93,240,111"/>
+</map>

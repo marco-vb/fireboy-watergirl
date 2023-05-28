@@ -1,0 +1,313 @@
+\doxysection{drivers/serial\+\_\+port/uart.h File Reference}
+\hypertarget{uart_8h}{}\label{uart_8h}\index{drivers/serial\_port/uart.h@{drivers/serial\_port/uart.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+Include dependency graph for uart.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{uart_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{uart_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{uart_8h_af0ec610995d060379690114f01c6eeaf}{SER\+\_\+\+COM1\+\_\+\+IRQ}}~4
+\item 
+\#define \mbox{\hyperlink{uart_8h_a420c631d8b538f2a8058e793523149e2}{SER\+\_\+\+COM2\+\_\+\+IRQ}}~3
+\item 
+\#define \mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}}~0x3\+F8
+\item 
+\#define \mbox{\hyperlink{uart_8h_a77e4f9dae0a988b54ba1f6141cab768a}{SER\+\_\+\+RHR}}~\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}}
+\item 
+\#define \mbox{\hyperlink{uart_8h_a3702c28928f73b9841ab8269f64177ed}{SER\+\_\+\+THR}}~\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}}
+\item 
+\#define \mbox{\hyperlink{uart_8h_a858484a29128b93600cd6b8971a91faf}{SER\+\_\+\+DLL}}~\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}}
+\item 
+\#define \mbox{\hyperlink{uart_8h_a54c2d9bcb790f3a6d0cd71d20ae5d427}{SER\+\_\+\+DLM}}~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 1)
+\item 
+\#define \mbox{\hyperlink{uart_8h_a783f8e3973a5f87d8af120d49742f834}{SER\+\_\+\+IER}}~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 1)
+\item 
+\#define \mbox{\hyperlink{uart_8h_a483c46ea5ed36388947426211cb63eab}{SER\+\_\+\+IIR}}~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 2)
+\item 
+\#define \mbox{\hyperlink{uart_8h_a9261eef6859842b51e42894b61c5b1c0}{SER\+\_\+\+FCR}}~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 2)
+\item 
+\#define \mbox{\hyperlink{uart_8h_a6475db6ed9440a92c680e54b2912b191}{SER\+\_\+\+LCR}}~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 3)
+\item 
+\#define \mbox{\hyperlink{uart_8h_a382b5d26eb113bfffbf2094eb4405042}{SER\+\_\+\+LSR}}~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 5)
+\item 
+\#define \mbox{\hyperlink{uart_8h_aa18d1e42508ed6d136d986dc9ca910d8}{PAR\+\_\+\+ODD}}~1
+\item 
+\#define \mbox{\hyperlink{uart_8h_a24956854d47a9560bb27c68f8593a757}{PAR\+\_\+\+EVEN}}~2
+\item 
+\#define \mbox{\hyperlink{uart_8h_a0b9bda4ac086e272e0eb5c95ae2ad761}{PAR\+\_\+\+ALWAYS\+\_\+\+ODD}}~3
+\item 
+\#define \mbox{\hyperlink{uart_8h_a272263959ecbc1231a9db6f0f0989ab6}{PAR\+\_\+\+ALWAYS\+\_\+\+EVEN}}~4
+\item 
+\#define \mbox{\hyperlink{uart_8h_a1cf80a668c79b3081803063178f40920}{LCR\+\_\+\+DLAB}}~BIT(7)
+\item 
+\#define \mbox{\hyperlink{uart_8h_a52f252c44691fc12924612f008a217fc}{SER\+\_\+\+DATA\+\_\+\+RECEIVE\+\_\+\+INT}}~BIT(0)
+\item 
+\#define \mbox{\hyperlink{uart_8h_a2b282b5f0140a93eb186b58b7c71e8c9}{SER\+\_\+\+EMPTY\+\_\+\+TRANSMIT\+\_\+\+INT}}~BIT(1)
+\item 
+\#define \mbox{\hyperlink{uart_8h_ab88bd2011c8ffae0224c3c5e7cbd18ac}{SER\+\_\+\+RECEIVER\+\_\+\+ERR\+\_\+\+INT}}~BIT(2)
+\item 
+\#define \mbox{\hyperlink{uart_8h_ac65813c244ad2f790ae499d066bdcbe6}{IIR\+\_\+\+INT\+\_\+\+STATUS}}~BIT(0)
+\item 
+\#define \mbox{\hyperlink{uart_8h_a40e0ff307445440efb3926d4975f8c54}{INT\+\_\+\+ORIGIN\+\_\+\+MASK}}~(BIT(1) \texorpdfstring{$\vert$}{|} BIT(2) \texorpdfstring{$\vert$}{|} BIT(3))
+\item 
+\#define \mbox{\hyperlink{uart_8h_a16cea583a03ef69b4cae9f8121338c87}{IIR\+\_\+\+TRANSMIT\+\_\+\+EMPTY}}~1
+\item 
+\#define \mbox{\hyperlink{uart_8h_ae2d663d55a363481336cd2ee71e77c83}{IIR\+\_\+\+DATA\+\_\+\+RECEIVED}}~2
+\item 
+\#define \mbox{\hyperlink{uart_8h_a86463d157e859f2bc966434d63c15bfd}{IIR\+\_\+\+DATA\+\_\+\+ERR}}~3
+\item 
+\#define \mbox{\hyperlink{uart_8h_a5ab0dd570adb416ffc4465c9a936bb09}{IIR\+\_\+\+CHAR\+\_\+\+TIMEOUT}}~4
+\item 
+\#define \mbox{\hyperlink{uart_8h_aa9dc2bac1a8924be8a0bccf23e6e370a}{LSR\+\_\+\+RECEIVED\+\_\+\+DATA}}~BIT(0)
+\item 
+\#define \mbox{\hyperlink{uart_8h_a9190bd9a868f59e4fd5a3e76e90b2386}{LSR\+\_\+\+TRANSMITTER\+\_\+\+EMPTY}}~BIT(5)
+\item 
+\#define \mbox{\hyperlink{uart_8h_adcf1f3eebaf1aa673ac50dd2a382f415}{SEND\+\_\+\+FIFO\+\_\+\+SIZE}}~16
+\item 
+\#define \mbox{\hyperlink{uart_8h_acbbf96e0ad7b0c0ce83ded2a69b7edd6}{FCR\+\_\+\+ENABLE\+\_\+\+FIFOS}}~BIT(0)
+\item 
+\#define \mbox{\hyperlink{uart_8h_aad637b5e2b53b8450b1984c5a5b80566}{FCR\+\_\+\+CLEAR\+\_\+\+FIFOS}}~(BIT(1) \texorpdfstring{$\vert$}{|} BIT(2))
+\item 
+\#define \mbox{\hyperlink{uart_8h_ac7e138b00d7ad28c7ee2db5b22734e0b}{FCR\+\_\+\+TRIGGER\+\_\+4}}~BIT(6)
+\item 
+\#define \mbox{\hyperlink{uart_8h_afc0cfc0d622b28be0a01d4181b3c2ba9}{FCR\+\_\+\+TRIGGER\+\_\+8}}~BIT(7)
+\item 
+\#define \mbox{\hyperlink{uart_8h_ad35df6339b2167c7c889a9e4585af5a6}{FCR\+\_\+\+TRIGGER\+\_\+14}}~(BIT(6) \texorpdfstring{$\vert$}{|} BIT(7))
+\item 
+\#define \mbox{\hyperlink{uart_8h_a6f6489887e08bff4887d0bc5dcf214d8}{ACK}}~0x\+FA
+\item 
+\#define \mbox{\hyperlink{uart_8h_a958518a45b12053ae33606ee7cb68a55}{NACK}}~0x\+FE
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{uart_8h_a6f6489887e08bff4887d0bc5dcf214d8}\label{uart_8h_a6f6489887e08bff4887d0bc5dcf214d8} 
+\index{uart.h@{uart.h}!ACK@{ACK}}
+\index{ACK@{ACK}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{ACK}{ACK}}
+{\footnotesize\ttfamily \#define ACK~0x\+FA}
+
+\Hypertarget{uart_8h_aad637b5e2b53b8450b1984c5a5b80566}\label{uart_8h_aad637b5e2b53b8450b1984c5a5b80566} 
+\index{uart.h@{uart.h}!FCR\_CLEAR\_FIFOS@{FCR\_CLEAR\_FIFOS}}
+\index{FCR\_CLEAR\_FIFOS@{FCR\_CLEAR\_FIFOS}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{FCR\_CLEAR\_FIFOS}{FCR\_CLEAR\_FIFOS}}
+{\footnotesize\ttfamily \#define FCR\+\_\+\+CLEAR\+\_\+\+FIFOS~(BIT(1) \texorpdfstring{$\vert$}{|} BIT(2))}
+
+\Hypertarget{uart_8h_acbbf96e0ad7b0c0ce83ded2a69b7edd6}\label{uart_8h_acbbf96e0ad7b0c0ce83ded2a69b7edd6} 
+\index{uart.h@{uart.h}!FCR\_ENABLE\_FIFOS@{FCR\_ENABLE\_FIFOS}}
+\index{FCR\_ENABLE\_FIFOS@{FCR\_ENABLE\_FIFOS}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{FCR\_ENABLE\_FIFOS}{FCR\_ENABLE\_FIFOS}}
+{\footnotesize\ttfamily \#define FCR\+\_\+\+ENABLE\+\_\+\+FIFOS~BIT(0)}
+
+\Hypertarget{uart_8h_ad35df6339b2167c7c889a9e4585af5a6}\label{uart_8h_ad35df6339b2167c7c889a9e4585af5a6} 
+\index{uart.h@{uart.h}!FCR\_TRIGGER\_14@{FCR\_TRIGGER\_14}}
+\index{FCR\_TRIGGER\_14@{FCR\_TRIGGER\_14}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{FCR\_TRIGGER\_14}{FCR\_TRIGGER\_14}}
+{\footnotesize\ttfamily \#define FCR\+\_\+\+TRIGGER\+\_\+14~(BIT(6) \texorpdfstring{$\vert$}{|} BIT(7))}
+
+\Hypertarget{uart_8h_ac7e138b00d7ad28c7ee2db5b22734e0b}\label{uart_8h_ac7e138b00d7ad28c7ee2db5b22734e0b} 
+\index{uart.h@{uart.h}!FCR\_TRIGGER\_4@{FCR\_TRIGGER\_4}}
+\index{FCR\_TRIGGER\_4@{FCR\_TRIGGER\_4}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{FCR\_TRIGGER\_4}{FCR\_TRIGGER\_4}}
+{\footnotesize\ttfamily \#define FCR\+\_\+\+TRIGGER\+\_\+4~BIT(6)}
+
+\Hypertarget{uart_8h_afc0cfc0d622b28be0a01d4181b3c2ba9}\label{uart_8h_afc0cfc0d622b28be0a01d4181b3c2ba9} 
+\index{uart.h@{uart.h}!FCR\_TRIGGER\_8@{FCR\_TRIGGER\_8}}
+\index{FCR\_TRIGGER\_8@{FCR\_TRIGGER\_8}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{FCR\_TRIGGER\_8}{FCR\_TRIGGER\_8}}
+{\footnotesize\ttfamily \#define FCR\+\_\+\+TRIGGER\+\_\+8~BIT(7)}
+
+\Hypertarget{uart_8h_a5ab0dd570adb416ffc4465c9a936bb09}\label{uart_8h_a5ab0dd570adb416ffc4465c9a936bb09} 
+\index{uart.h@{uart.h}!IIR\_CHAR\_TIMEOUT@{IIR\_CHAR\_TIMEOUT}}
+\index{IIR\_CHAR\_TIMEOUT@{IIR\_CHAR\_TIMEOUT}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{IIR\_CHAR\_TIMEOUT}{IIR\_CHAR\_TIMEOUT}}
+{\footnotesize\ttfamily \#define IIR\+\_\+\+CHAR\+\_\+\+TIMEOUT~4}
+
+\Hypertarget{uart_8h_a86463d157e859f2bc966434d63c15bfd}\label{uart_8h_a86463d157e859f2bc966434d63c15bfd} 
+\index{uart.h@{uart.h}!IIR\_DATA\_ERR@{IIR\_DATA\_ERR}}
+\index{IIR\_DATA\_ERR@{IIR\_DATA\_ERR}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{IIR\_DATA\_ERR}{IIR\_DATA\_ERR}}
+{\footnotesize\ttfamily \#define IIR\+\_\+\+DATA\+\_\+\+ERR~3}
+
+\Hypertarget{uart_8h_ae2d663d55a363481336cd2ee71e77c83}\label{uart_8h_ae2d663d55a363481336cd2ee71e77c83} 
+\index{uart.h@{uart.h}!IIR\_DATA\_RECEIVED@{IIR\_DATA\_RECEIVED}}
+\index{IIR\_DATA\_RECEIVED@{IIR\_DATA\_RECEIVED}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{IIR\_DATA\_RECEIVED}{IIR\_DATA\_RECEIVED}}
+{\footnotesize\ttfamily \#define IIR\+\_\+\+DATA\+\_\+\+RECEIVED~2}
+
+\Hypertarget{uart_8h_ac65813c244ad2f790ae499d066bdcbe6}\label{uart_8h_ac65813c244ad2f790ae499d066bdcbe6} 
+\index{uart.h@{uart.h}!IIR\_INT\_STATUS@{IIR\_INT\_STATUS}}
+\index{IIR\_INT\_STATUS@{IIR\_INT\_STATUS}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{IIR\_INT\_STATUS}{IIR\_INT\_STATUS}}
+{\footnotesize\ttfamily \#define IIR\+\_\+\+INT\+\_\+\+STATUS~BIT(0)}
+
+\Hypertarget{uart_8h_a16cea583a03ef69b4cae9f8121338c87}\label{uart_8h_a16cea583a03ef69b4cae9f8121338c87} 
+\index{uart.h@{uart.h}!IIR\_TRANSMIT\_EMPTY@{IIR\_TRANSMIT\_EMPTY}}
+\index{IIR\_TRANSMIT\_EMPTY@{IIR\_TRANSMIT\_EMPTY}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{IIR\_TRANSMIT\_EMPTY}{IIR\_TRANSMIT\_EMPTY}}
+{\footnotesize\ttfamily \#define IIR\+\_\+\+TRANSMIT\+\_\+\+EMPTY~1}
+
+\Hypertarget{uart_8h_a40e0ff307445440efb3926d4975f8c54}\label{uart_8h_a40e0ff307445440efb3926d4975f8c54} 
+\index{uart.h@{uart.h}!INT\_ORIGIN\_MASK@{INT\_ORIGIN\_MASK}}
+\index{INT\_ORIGIN\_MASK@{INT\_ORIGIN\_MASK}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{INT\_ORIGIN\_MASK}{INT\_ORIGIN\_MASK}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+ORIGIN\+\_\+\+MASK~(BIT(1) \texorpdfstring{$\vert$}{|} BIT(2) \texorpdfstring{$\vert$}{|} BIT(3))}
+
+\Hypertarget{uart_8h_a1cf80a668c79b3081803063178f40920}\label{uart_8h_a1cf80a668c79b3081803063178f40920} 
+\index{uart.h@{uart.h}!LCR\_DLAB@{LCR\_DLAB}}
+\index{LCR\_DLAB@{LCR\_DLAB}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{LCR\_DLAB}{LCR\_DLAB}}
+{\footnotesize\ttfamily \#define LCR\+\_\+\+DLAB~BIT(7)}
+
+\Hypertarget{uart_8h_aa9dc2bac1a8924be8a0bccf23e6e370a}\label{uart_8h_aa9dc2bac1a8924be8a0bccf23e6e370a} 
+\index{uart.h@{uart.h}!LSR\_RECEIVED\_DATA@{LSR\_RECEIVED\_DATA}}
+\index{LSR\_RECEIVED\_DATA@{LSR\_RECEIVED\_DATA}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{LSR\_RECEIVED\_DATA}{LSR\_RECEIVED\_DATA}}
+{\footnotesize\ttfamily \#define LSR\+\_\+\+RECEIVED\+\_\+\+DATA~BIT(0)}
+
+\Hypertarget{uart_8h_a9190bd9a868f59e4fd5a3e76e90b2386}\label{uart_8h_a9190bd9a868f59e4fd5a3e76e90b2386} 
+\index{uart.h@{uart.h}!LSR\_TRANSMITTER\_EMPTY@{LSR\_TRANSMITTER\_EMPTY}}
+\index{LSR\_TRANSMITTER\_EMPTY@{LSR\_TRANSMITTER\_EMPTY}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{LSR\_TRANSMITTER\_EMPTY}{LSR\_TRANSMITTER\_EMPTY}}
+{\footnotesize\ttfamily \#define LSR\+\_\+\+TRANSMITTER\+\_\+\+EMPTY~BIT(5)}
+
+\Hypertarget{uart_8h_a958518a45b12053ae33606ee7cb68a55}\label{uart_8h_a958518a45b12053ae33606ee7cb68a55} 
+\index{uart.h@{uart.h}!NACK@{NACK}}
+\index{NACK@{NACK}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{NACK}{NACK}}
+{\footnotesize\ttfamily \#define NACK~0x\+FE}
+
+\Hypertarget{uart_8h_a272263959ecbc1231a9db6f0f0989ab6}\label{uart_8h_a272263959ecbc1231a9db6f0f0989ab6} 
+\index{uart.h@{uart.h}!PAR\_ALWAYS\_EVEN@{PAR\_ALWAYS\_EVEN}}
+\index{PAR\_ALWAYS\_EVEN@{PAR\_ALWAYS\_EVEN}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{PAR\_ALWAYS\_EVEN}{PAR\_ALWAYS\_EVEN}}
+{\footnotesize\ttfamily \#define PAR\+\_\+\+ALWAYS\+\_\+\+EVEN~4}
+
+\Hypertarget{uart_8h_a0b9bda4ac086e272e0eb5c95ae2ad761}\label{uart_8h_a0b9bda4ac086e272e0eb5c95ae2ad761} 
+\index{uart.h@{uart.h}!PAR\_ALWAYS\_ODD@{PAR\_ALWAYS\_ODD}}
+\index{PAR\_ALWAYS\_ODD@{PAR\_ALWAYS\_ODD}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{PAR\_ALWAYS\_ODD}{PAR\_ALWAYS\_ODD}}
+{\footnotesize\ttfamily \#define PAR\+\_\+\+ALWAYS\+\_\+\+ODD~3}
+
+\Hypertarget{uart_8h_a24956854d47a9560bb27c68f8593a757}\label{uart_8h_a24956854d47a9560bb27c68f8593a757} 
+\index{uart.h@{uart.h}!PAR\_EVEN@{PAR\_EVEN}}
+\index{PAR\_EVEN@{PAR\_EVEN}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{PAR\_EVEN}{PAR\_EVEN}}
+{\footnotesize\ttfamily \#define PAR\+\_\+\+EVEN~2}
+
+\Hypertarget{uart_8h_aa18d1e42508ed6d136d986dc9ca910d8}\label{uart_8h_aa18d1e42508ed6d136d986dc9ca910d8} 
+\index{uart.h@{uart.h}!PAR\_ODD@{PAR\_ODD}}
+\index{PAR\_ODD@{PAR\_ODD}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{PAR\_ODD}{PAR\_ODD}}
+{\footnotesize\ttfamily \#define PAR\+\_\+\+ODD~1}
+
+\Hypertarget{uart_8h_adcf1f3eebaf1aa673ac50dd2a382f415}\label{uart_8h_adcf1f3eebaf1aa673ac50dd2a382f415} 
+\index{uart.h@{uart.h}!SEND\_FIFO\_SIZE@{SEND\_FIFO\_SIZE}}
+\index{SEND\_FIFO\_SIZE@{SEND\_FIFO\_SIZE}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SEND\_FIFO\_SIZE}{SEND\_FIFO\_SIZE}}
+{\footnotesize\ttfamily \#define SEND\+\_\+\+FIFO\+\_\+\+SIZE~16}
+
+\Hypertarget{uart_8h_ab8f4b4bd297359a86172e09511932a9d}\label{uart_8h_ab8f4b4bd297359a86172e09511932a9d} 
+\index{uart.h@{uart.h}!SER\_BASE@{SER\_BASE}}
+\index{SER\_BASE@{SER\_BASE}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_BASE}{SER\_BASE}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+BASE~0x3\+F8}
+
+\Hypertarget{uart_8h_af0ec610995d060379690114f01c6eeaf}\label{uart_8h_af0ec610995d060379690114f01c6eeaf} 
+\index{uart.h@{uart.h}!SER\_COM1\_IRQ@{SER\_COM1\_IRQ}}
+\index{SER\_COM1\_IRQ@{SER\_COM1\_IRQ}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_COM1\_IRQ}{SER\_COM1\_IRQ}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+COM1\+\_\+\+IRQ~4}
+
+\Hypertarget{uart_8h_a420c631d8b538f2a8058e793523149e2}\label{uart_8h_a420c631d8b538f2a8058e793523149e2} 
+\index{uart.h@{uart.h}!SER\_COM2\_IRQ@{SER\_COM2\_IRQ}}
+\index{SER\_COM2\_IRQ@{SER\_COM2\_IRQ}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_COM2\_IRQ}{SER\_COM2\_IRQ}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+COM2\+\_\+\+IRQ~3}
+
+\Hypertarget{uart_8h_a52f252c44691fc12924612f008a217fc}\label{uart_8h_a52f252c44691fc12924612f008a217fc} 
+\index{uart.h@{uart.h}!SER\_DATA\_RECEIVE\_INT@{SER\_DATA\_RECEIVE\_INT}}
+\index{SER\_DATA\_RECEIVE\_INT@{SER\_DATA\_RECEIVE\_INT}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_DATA\_RECEIVE\_INT}{SER\_DATA\_RECEIVE\_INT}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+DATA\+\_\+\+RECEIVE\+\_\+\+INT~BIT(0)}
+
+\Hypertarget{uart_8h_a858484a29128b93600cd6b8971a91faf}\label{uart_8h_a858484a29128b93600cd6b8971a91faf} 
+\index{uart.h@{uart.h}!SER\_DLL@{SER\_DLL}}
+\index{SER\_DLL@{SER\_DLL}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_DLL}{SER\_DLL}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+DLL~\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}}}
+
+\Hypertarget{uart_8h_a54c2d9bcb790f3a6d0cd71d20ae5d427}\label{uart_8h_a54c2d9bcb790f3a6d0cd71d20ae5d427} 
+\index{uart.h@{uart.h}!SER\_DLM@{SER\_DLM}}
+\index{SER\_DLM@{SER\_DLM}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_DLM}{SER\_DLM}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+DLM~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 1)}
+
+\Hypertarget{uart_8h_a2b282b5f0140a93eb186b58b7c71e8c9}\label{uart_8h_a2b282b5f0140a93eb186b58b7c71e8c9} 
+\index{uart.h@{uart.h}!SER\_EMPTY\_TRANSMIT\_INT@{SER\_EMPTY\_TRANSMIT\_INT}}
+\index{SER\_EMPTY\_TRANSMIT\_INT@{SER\_EMPTY\_TRANSMIT\_INT}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_EMPTY\_TRANSMIT\_INT}{SER\_EMPTY\_TRANSMIT\_INT}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+EMPTY\+\_\+\+TRANSMIT\+\_\+\+INT~BIT(1)}
+
+\Hypertarget{uart_8h_a9261eef6859842b51e42894b61c5b1c0}\label{uart_8h_a9261eef6859842b51e42894b61c5b1c0} 
+\index{uart.h@{uart.h}!SER\_FCR@{SER\_FCR}}
+\index{SER\_FCR@{SER\_FCR}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_FCR}{SER\_FCR}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+FCR~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 2)}
+
+\Hypertarget{uart_8h_a783f8e3973a5f87d8af120d49742f834}\label{uart_8h_a783f8e3973a5f87d8af120d49742f834} 
+\index{uart.h@{uart.h}!SER\_IER@{SER\_IER}}
+\index{SER\_IER@{SER\_IER}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_IER}{SER\_IER}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+IER~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 1)}
+
+\Hypertarget{uart_8h_a483c46ea5ed36388947426211cb63eab}\label{uart_8h_a483c46ea5ed36388947426211cb63eab} 
+\index{uart.h@{uart.h}!SER\_IIR@{SER\_IIR}}
+\index{SER\_IIR@{SER\_IIR}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_IIR}{SER\_IIR}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+IIR~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 2)}
+
+\Hypertarget{uart_8h_a6475db6ed9440a92c680e54b2912b191}\label{uart_8h_a6475db6ed9440a92c680e54b2912b191} 
+\index{uart.h@{uart.h}!SER\_LCR@{SER\_LCR}}
+\index{SER\_LCR@{SER\_LCR}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_LCR}{SER\_LCR}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+LCR~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 3)}
+
+\Hypertarget{uart_8h_a382b5d26eb113bfffbf2094eb4405042}\label{uart_8h_a382b5d26eb113bfffbf2094eb4405042} 
+\index{uart.h@{uart.h}!SER\_LSR@{SER\_LSR}}
+\index{SER\_LSR@{SER\_LSR}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_LSR}{SER\_LSR}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+LSR~(\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}} + 5)}
+
+\Hypertarget{uart_8h_ab88bd2011c8ffae0224c3c5e7cbd18ac}\label{uart_8h_ab88bd2011c8ffae0224c3c5e7cbd18ac} 
+\index{uart.h@{uart.h}!SER\_RECEIVER\_ERR\_INT@{SER\_RECEIVER\_ERR\_INT}}
+\index{SER\_RECEIVER\_ERR\_INT@{SER\_RECEIVER\_ERR\_INT}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_RECEIVER\_ERR\_INT}{SER\_RECEIVER\_ERR\_INT}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+RECEIVER\+\_\+\+ERR\+\_\+\+INT~BIT(2)}
+
+\Hypertarget{uart_8h_a77e4f9dae0a988b54ba1f6141cab768a}\label{uart_8h_a77e4f9dae0a988b54ba1f6141cab768a} 
+\index{uart.h@{uart.h}!SER\_RHR@{SER\_RHR}}
+\index{SER\_RHR@{SER\_RHR}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_RHR}{SER\_RHR}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+RHR~\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}}}
+
+\Hypertarget{uart_8h_a3702c28928f73b9841ab8269f64177ed}\label{uart_8h_a3702c28928f73b9841ab8269f64177ed} 
+\index{uart.h@{uart.h}!SER\_THR@{SER\_THR}}
+\index{SER\_THR@{SER\_THR}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{SER\_THR}{SER\_THR}}
+{\footnotesize\ttfamily \#define SER\+\_\+\+THR~\mbox{\hyperlink{uart_8h_ab8f4b4bd297359a86172e09511932a9d}{SER\+\_\+\+BASE}}}
+

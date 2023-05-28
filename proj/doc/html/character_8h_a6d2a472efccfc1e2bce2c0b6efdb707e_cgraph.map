@@ -1,0 +1,5 @@
+<map id="door_fire" name="door_fire">
+<area shape="rect" id="Node000001" title="Checks if the character is in front of the fire door." alt="" coords="5,5,85,33"/>
+<area shape="rect" id="Node000002" href="$map_8c.html#a2117f266cf32d37631770302fe987115" title="Returns the letter corresponding to the tile at the given position on the map." alt="" coords="133,5,203,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,17,118,17,118,22,85,22"/>
+</map>

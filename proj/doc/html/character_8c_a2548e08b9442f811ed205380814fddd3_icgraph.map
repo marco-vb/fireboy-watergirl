@@ -1,0 +1,18 @@
+<map id="stop_moving" name="stop_moving">
+<area shape="rect" id="Node000001" title="Makes the character stop moving." alt="" coords="703,81,808,109"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#a9b28a5527b28478822d9e3057018a991" title="moves the fireboy depending of the keyborad key" alt="" coords="537,5,649,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="709,77,623,36,626,31,712,72"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a04e415c2c57bcb7efab2055169302eed" title="creates a loop where the game will be played and where it detects all the drivers interruptions and p..." alt="" coords="175,81,268,109"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="722,120,690,136,655,148,601,158,545,161,490,158,436,152,338,133,264,112,265,107,339,128,436,147,490,153,545,155,600,152,654,143,688,131,719,115"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a0520354a211cab81d76e08490253c0c4" title="Retrives information from the serial port to check what the remote player has done and replicates it." alt="" coords="316,56,483,84"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="688,93,484,78,484,73,688,88"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#a20eb9add0344df232c6b9e6883506f65" title="moves the watergirl depending of the keyborad key" alt="" coords="531,107,655,134"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="688,108,655,114,654,108,688,103"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="523,21,424,26,370,34,317,47,278,64,244,83,242,79,275,59,315,42,369,29,423,21,522,15"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="525,40,456,58,455,53,523,35"/>
+<area shape="rect" id="Node000004" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,81,127,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="160,98,127,98,127,93,160,93"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="302,86,269,91,268,86,301,81"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="516,118,268,101,269,96,517,113"/>
+<area shape="poly" id="edge10_Node000006_Node000005" title=" " alt="" coords="523,105,455,87,456,82,525,100"/>
+</map>

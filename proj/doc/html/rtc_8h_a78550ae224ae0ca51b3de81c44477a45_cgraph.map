@@ -1,0 +1,29 @@
+<map id="draw_time" name="draw_time">
+<area shape="rect" id="Node000001" title="Draws the current time on the screen." alt="" coords="5,57,96,85"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#ae9737a99715a2fd3df5523fa354c8a6b" title="Draws a number on the screen." alt="" coords="159,57,270,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,69,144,69,144,74,96,74"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#a854c182b18a745f21e466549c173358d" title="Draws special characters." alt="" coords="144,5,285,33"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="95,54,154,35,155,41,97,59"/>
+<area shape="rect" id="Node000007" href="$rtc_8c.html#a8ad785120424df9b86a61baeddb6ef99" title="Reads the time (hours, minutes, and seconds) from the RTC." alt="" coords="171,135,258,162"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="83,83,171,126,169,130,81,88"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a8dc3b64d819195e41495b03be84f9db5" title="Draws an xpm image." alt="" coords="382,57,471,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="270,69,367,69,367,74,270,74"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#ae296753029e1d5646e0097109597def0" title="Replaces the pixel in the buffer used to store the information that is going to be drawn with the pix..." alt="" coords="333,5,520,33"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="269,55,352,34,354,40,270,60"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Draws a pixel at the given position with the given color." alt="" coords="568,57,704,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="472,69,553,69,553,74,472,74"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="275,31,368,54,367,59,273,36"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="285,17,318,17,318,22,285,22"/>
+<area shape="rect" id="Node000008" href="$rtc_8c.html#a3092c218cb22ffd19f8b4fcb1ee2077e" title="Reads the hours from the RTC." alt="" coords="380,109,473,137"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="258,141,365,128,365,133,259,146"/>
+<area shape="rect" id="Node000011" href="$rtc_8c.html#aafcc44e46ecbabcc5ca2915c981f4a3a" title="Reads the minutes from the RTC." alt="" coords="372,161,482,189"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="259,151,357,164,356,169,258,157"/>
+<area shape="rect" id="Node000012" href="$rtc_8c.html#a429d381b7aefae1d9f86c12027b509b1" title="Reads the seconds from the RTC." alt="" coords="372,213,482,241"/>
+<area shape="poly" id="edge14_Node000007_Node000012" title=" " alt="" coords="246,160,334,198,358,206,357,211,332,203,244,165"/>
+<area shape="rect" id="Node000009" href="$rtc_8c.html#ae29bac2e634d591d0a31eef4deb72ced" title="Reads a value from a RTC register." alt="" coords="585,161,687,189"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="475,132,571,156,570,162,473,137"/>
+<area shape="rect" id="Node000010" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="752,161,850,189"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="688,173,737,173,737,178,688,178"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="482,173,570,173,570,178,482,178"/>
+<area shape="poly" id="edge15_Node000012_Node000009" title=" " alt="" coords="482,211,570,189,571,194,483,216"/>
+</map>

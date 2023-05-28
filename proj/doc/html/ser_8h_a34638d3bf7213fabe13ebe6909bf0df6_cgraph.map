@@ -1,0 +1,16 @@
+<map id="bit_rate_conf" name="bit_rate_conf">
+<area shape="rect" id="Node000001" title="Configures the bit rate for the serial port." alt="" coords="5,108,112,136"/>
+<area shape="rect" id="Node000002" href="$ser_8c.html#ad96ee630b8a3c428a3ac10c3b8bad01d" title="Reads the Line Control Register (LCR) value." alt="" coords="176,5,250,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,105,112,76,158,44,167,38,170,43,161,48,116,80,78,110"/>
+<area shape="rect" id="Node000004" href="$ser_8c.html#a61d67b678980744a1e3e51dd13f51ac0" title="Configures the serial port parameters." alt="" coords="175,57,251,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="102,105,159,86,161,91,104,110"/>
+<area shape="rect" id="Node000005" href="$ser_8c.html#a406e6517544d394bb3b98ec862d96296" title="Writes a value to the Line Control Register (LCR)." alt="" coords="325,83,402,110"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="112,115,309,98,310,104,112,120"/>
+<area shape="rect" id="Node000006" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title="Calculates the less significant byte from the value given." alt="" coords="162,159,264,186"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="104,134,156,151,154,156,102,139"/>
+<area shape="rect" id="Node000007" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title="Calculates the most significant byte from the value given." alt="" coords="160,211,266,238"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="78,134,116,164,161,196,170,201,167,206,158,200,112,168,75,138"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value from a port and stores it value." alt="" coords="314,5,412,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="250,17,299,17,299,22,250,22"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="252,75,310,85,309,90,251,80"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="create_characters" name="create_characters">
+<area shape="rect" id="Node000001" title="Creates the characters." alt="" coords="5,32,143,60"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#aeb91b0831a9bc988b1c041836318001b" title="Creates a sprite object." alt="" coords="191,5,297,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,32,176,27,177,32,144,38"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a800955b309cb7cce614419e4e0495004" title="Loads an xpm image." alt="" coords="203,57,285,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,54,189,60,188,66,143,59"/>
+</map>

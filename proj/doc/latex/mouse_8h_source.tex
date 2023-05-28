@@ -1,0 +1,51 @@
+\doxysection{mouse.\+h}
+\hypertarget{mouse_8h_source}{}\label{mouse_8h_source}\index{drivers/kbc/mouse.h@{drivers/kbc/mouse.h}}
+\mbox{\hyperlink{mouse_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_MOUSE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_MOUSE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i8042_8h}{i8042.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../../sprites/sprite.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00011\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmouse__packet__t_a04e8e4f23d431963f384ac523bbd3658}{byte}},\ \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}};}
+\DoxyCodeLine{00012\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmouse__packet__t_ad0434b7a46826162189dbefe5d354a5b}{delta\_x}},\ delta\_y;}
+\DoxyCodeLine{00013\ \ \ \ \ uint8\_t\ bytes[3];}
+\DoxyCodeLine{00014\ \ \ \ \ uint8\_t\ rb,\ mb,\ lb,\ x\_ov,\ y\_ov,\ \mbox{\hyperlink{structmouse__packet__t_a9a95d6395c28a5c62fd788dc70cce5d2}{complete}};}
+\DoxyCodeLine{00015\ \}\ \mbox{\hyperlink{structmouse__packet__t}{mouse\_packet\_t}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_a9da18257ff113b686bb826d154bfaa87}{mouse\_subscribe\_int}}(uint8\_t*\ bit\_no);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_a685ad2706aca36d9869a30a19b9f446a}{mouse\_unsubscribe\_int}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_a055f435cce5b523acb5a0cbe240e585e}{mouse\_send\_cmd}}(uint8\_t\ cmd);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mouse_8h_a878ccaf975f55aec4505df7e4aceb7ed}{m\_read\_byte}}(uint8\_t\ b);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mouse_8h_a0e02a911146c3e015b30e5e37281fa15}{mouse\_build\_packet}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mouse_8h_ac5d2f2c91334fb958325835d7fc70885}{mouse\_update\_pos}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ void\ (\mbox{\hyperlink{mouse_8h_a210374b50462acdedab00df64d5cea3c}{mouse\_ih}})();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_a12afbe04f7fbd32a063b13d45ffcd602}{mouse\_enable\_dr}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_ac285c81dd076eb18e01d7f22d353daaa}{mouse\_disable\_dr}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_a31741c2a0b98e8ee1e09fa11186ec2a9}{mouse\_stream\_mode}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_abd6d44e0821e12a49432fd9737aeb5e2}{mouse\_inside}}(uint16\_t\ \mbox{\hyperlink{count__down_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}},\ uint16\_t\ \mbox{\hyperlink{count__down_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}},\ uint16\_t\ width,\ uint16\_t\ height);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_a3144f4bfa8f29e4efc66e7b4b90a5700}{mouse\_over\_sprite}}(\mbox{\hyperlink{structSprite}{Sprite}}*\ sp);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_aed9c354dc84d28c2b6b7884cd5537254}{mouse\_lclick\_sprite}}(\mbox{\hyperlink{structSprite}{Sprite}}*\ sp);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mouse_8h_a93262d193cba8244b6adeae8242dc717}{mouse\_rclick\_sprite}}(\mbox{\hyperlink{structSprite}{Sprite}}*\ sp);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_MOUSE\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

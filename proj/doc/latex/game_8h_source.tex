@@ -1,0 +1,72 @@
+\doxysection{game.\+h}
+\hypertarget{game_8h_source}{}\label{game_8h_source}\mbox{\hyperlink{game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_GAME\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_GAME\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{timer_8h}{drivers/timer/timer.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{kbc_8h}{drivers/kbc/kbc.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{keyboard_8h}{drivers/kbc/keyboard.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mouse_8h}{drivers/kbc/mouse.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{graphics_8h}{drivers/graphics/graphics.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sprite_8h}{sprites/sprite.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{character_8h}{characters/character.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structmouse__packet__t}{mouse\_packet\_t}}\ \mbox{\hyperlink{game_8h_acb2c1734916cd3074f543ea3a92ba505}{mouse\_packet}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structkeyboard__packet__t}{keyboard\_packet\_t}}\ \mbox{\hyperlink{game_8h_a96c693f959862d3ef7ec01a7639bd861}{keyboard\_packet}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{game_8h_a69a7242ee147decd9b827b0c721a728c}{background}},\ *\ \mbox{\hyperlink{game_8h_aebfd58350eb73bb9b969809907520654}{cursor}},\ *\ \mbox{\hyperlink{game_8h_abec27dc0237fd1a1181bb025964759e2}{logo}},\ *\ \mbox{\hyperlink{game_8h_ad6cf327056340de30f26484b97abf1dc}{play\_text}},\ *\ \mbox{\hyperlink{game_8h_afb87640c7bb33de8c1f1d612aae78b85}{settings\_text}},\ *\ \mbox{\hyperlink{game_8h_adc2784f829680b7019792f702149e001}{exit\_text}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{game_8h_a44a9f845593934144e5ace009bd06f4d}{play\_texth}},\ *\ \mbox{\hyperlink{game_8h_a5ad025f45a62ee1ffcafd3fffe9753da}{settings\_texth}},\ *\ \mbox{\hyperlink{game_8h_ad3b96f4521657808bd7e380068dbc1a2}{exit\_texth}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structCharacter}{Character}}*\ \mbox{\hyperlink{game_8h_a4d30f3dcba9d610e55202861deca1a88}{fireboy}},\ *\ \mbox{\hyperlink{game_8h_ae38947704983de257487d77b18391093}{watergirl}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structSprite}{Sprite}}*\ \mbox{\hyperlink{game_8h_ad22af15c559f183da6e5602edb9a215a}{ropes}}[10][10];}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2ac22743f1fc74de09544ecc9bab74a17b}{MAIN\_MENU}},}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2a036b8fed59b0b3aa5586f2d41c667ec2}{WAITING\_PLAYER}},}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2ad50cf309d7568040619ed26ee6835a84}{GAME}},}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2a24915ae526675a41cfb378d20b1513f6}{PAUSE\_MENU}},}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2a871723195985a4ae22d7e10d99bf8a00}{GAME\_OVER}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2a7a10b5d68d31711288e1fe0fa17dbf4f}{EXIT}},}
+\DoxyCodeLine{00031\ \}\ \mbox{\hyperlink{game_8h_ad0ed1832dd134806ad335cdcc1a59ad2}{game\_state}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_a47d86c55c1bc9d2a93df0b9476c4d630}{game\_init}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_a04e415c2c57bcb7efab2055169302eed}{game\_loop}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_abc1fb57f21dfdfe8414ed5ff0c744a10}{game\_exit}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_a7c067f553f23ef1112d1a30aa6124cd1}{draw\_screen}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_ad7ca2d21a727f7d55afef2392de3b5f8}{draw\_main\_menu}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_a3cef68220fcc611902108d6f0159e50f}{draw\_game}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_ab3b5065e46ff95e9c36bcf387ae65ce2}{draw\_waiting\_player\_background}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_ac581b9d6af85c4c35f9d423a966cba8e}{draw\_pause\_menu}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_adb16266bac82ba2376f626661c75a3ff}{draw\_game\_over}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_a9b28a5527b28478822d9e3057018a991}{fireboy\_move}}(\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\_key}}\ key);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_a20eb9add0344df232c6b9e6883506f65}{watergirl\_move}}(\mbox{\hyperlink{keyboard_8h_a6d53bede32f048c1d5bd3050a69c7f58}{keyboard\_key}}\ key);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_ab323971701b6e01aff44feeaa9475735}{draw\_ropes}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a49f6d45fc3b252adda8895f21180ec70}{exit\_multiplayer}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a0520354a211cab81d76e08490253c0c4}{handle\_remote\_player}}();}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a474fd053b8445c36f24261dde7ae17cb}{start\_multiplayer}}();}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_afd7728c9e6ae89e5932e641b54556aba}{exit\_game}}();}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_ac979eefd2829522e5bde292d66cc2f23}{restart\_game}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_GAME\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
