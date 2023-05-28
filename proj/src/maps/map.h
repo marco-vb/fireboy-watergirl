@@ -96,6 +96,10 @@ int nextLevel();
  */
 char get_tile(Map* map, u_int32_t x, u_int32_t y);
 
-int (reset_falling_blocks)();
+/**
+ * @brief Resets all the falling blocks to their original position
+ * 
+ */
+void (reset_falling_blocks)();
 
 #endif /* __MAP_H */

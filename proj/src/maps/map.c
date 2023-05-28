@@ -317,7 +317,7 @@ int  (nextLevel)(){
     return 1;
 }
 
-int (reset_falling_blocks)(){
+void (reset_falling_blocks)(){
     for(int i=0; i< current_map->n_blocks;i++){
         
         if(!current_map->blocks[i]) continue;
@@ -369,7 +369,6 @@ int (reset_falling_blocks)(){
            
         
     }
-    return 0;
 }
 
 char get_tile(Map* map, u_int32_t x, u_int32_t y) {

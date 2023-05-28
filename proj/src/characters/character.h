@@ -38,10 +38,10 @@
 
 enum Direction { LEFT, RIGHT, UP, DEFAULT };
 enum Elements { FIRE, WATER };
-#define GRAVITY 1
-#define DEFAULT_SPEED 7
-#define JUMP 15
-#define CHECKBOX_PADDING 10
+#define GRAVITY 1 /** @brief Default vertical acelarition to when Objects are falling*/
+#define DEFAULT_SPEED 7 /** @brief Default horizontal speed when characters are moving*/
+#define JUMP 15 /** @brief vertical speed to when a character jump*/
+#define CHECKBOX_PADDING 10 /** @brief Margin of the sprite which is not going to be considered as a checkbox*/
 
 typedef struct {
     enum Direction direction;
@@ -236,5 +236,12 @@ int on_fire(Character* character);
  * @return int Returns 1 if the character is on water, 0 otherwise.
  */
 int on_water(Character* character);
+
+/**
+ * @brief Checks if the character is on the poison
+ * 
+ * @param character The character to be analyzed
+ * @return int Returns 1 if the character is on poison, 0 otherwise
+ */
 int on_poison(Character* character);
 #endif /* __CHARACTER_H */

@@ -15,7 +15,7 @@
 #include "../../xpm/numbers/slash.xpm"
 #include "../../xpm/numbers/colon.xpm"
 
-#define VBE_VID_INT 0x10
+#define VBE_VID_INT 0x10 
 
 #define VBE_MODE_INFO 0x4F01
 #define VBE_SET_MODE 0x4F02
@@ -26,7 +26,7 @@
 #define VBE_VIDEO_MODE_ID 0x0105
 #define VBE_VIDEO_MODE_DC 0x014c
 
-#define SET_VBE_MODE 0x4F02
+#define SET_VBE_MODE 0x4F02 
 #define BIOS_SET_MODE 0x00
 #define TEXT_MODE 0x03
 
