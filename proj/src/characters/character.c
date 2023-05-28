@@ -56,11 +56,7 @@ void (set_position)(Character* character, int x, int y) {
  
 }
 
-char get_tile(Map* map, u_int32_t x, u_int32_t y) {
-    uint32_t index = y / TILE_SIZE * map->columns + x / TILE_SIZE;
 
-    return map->map[index];
-}
 
 int wall_down(Character* character) {
     uint32_t x = character->sprite->x;
@@ -69,9 +65,9 @@ int wall_down(Character* character) {
     char tile = get_tile(current_map, x + CHECKBOX_PADDING, y);
 
 
-    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile=='X') { return 1; }
     tile = get_tile(current_map, x + character->sprite->width - CHECKBOX_PADDING, y);
-    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile=='X') { return 1; }
 
 
     return 0;
@@ -136,6 +132,18 @@ int on_water(Character* character) {
     if (tile == 'P') { return 1; }
     tile = get_tile(current_map, x + character->sprite->width - 2 * CHECKBOX_PADDING, y);
     if (tile == 'P') return 1;
+
+    return 0;
+}
+int on_poison(Character* character) {
+    uint32_t x = character->sprite->x;
+    uint32_t y = character->sprite->y + character->sprite->height;
+
+    char tile = get_tile(current_map, x + 2 * CHECKBOX_PADDING, y + 1);
+
+    if (tile == 'V') { return 1; }
+    tile = get_tile(current_map, x + character->sprite->width - 2 * CHECKBOX_PADDING, y);
+    if (tile == 'V') return 1;
 
     return 0;
 }
@@ -259,13 +267,13 @@ int (is_on_ground)(Character* character) {
     uint32_t y = character->sprite->y + character->sprite->height;
 
     char tile = get_tile(current_map, x, y);
-    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile=='X' ) { return 1; }
 
     tile = get_tile(current_map, x + character->sprite->width, y);
-    if (tile == 'A' || tile == 'L' || tile == 'P') return 1;
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile=='X') return 1;
 
     tile = get_tile(current_map, x + character->sprite->width / 2, y);
-    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile=='X') { return 1; }
 
     return 0;
 }
@@ -274,45 +282,64 @@ int hit_ground(Sprite* block) {
     uint32_t x = block->x;
     uint32_t y = block->y + block->height;
 
-    char tile = get_tile(map1, x, y + 1);
-    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    char tile = get_tile(current_map, x, y + 1);
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile=='V') { return 1; }
 
-    tile = get_tile(map1, x + block->width, y);
-    if (tile == 'A' || tile == 'L' || tile == 'P') { return 1; }
+    tile = get_tile(current_map, x + block->width, y);
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile == 'V') { return 1; }
 
     return 0;
 }
 
 void draw_falling_blocks() {
-    static bool on_ground = false;
-    for (int i = 0; i < 10; i++) {
-        if (!blocks[i]) continue;
-
+    
+    for (int i = 0; i < current_map->n_blocks; i++) {
+        if (!current_map->blocks[i]) continue;
         // For some reason when I assign NULL to the rope in game.c,
-        // blocks[i]->rope is not NULL, but its coordinates get messed up.
+        // current_map->blocks[i]->rope is not NULL, but its coordinates get messed up.
         /* Rope was broken */
-        if (blocks[i]->rope->y > 2000 && !hit_ground(blocks[i]->sprite)) {
-            blocks[i]->sprite->yspeed += GRAVITY;
-            blocks[i]->sprite->y += blocks[i]->sprite->yspeed;
+        if (current_map->blocks[i]->is_cut && !(hit_ground(current_map->blocks[i]->sprite[1]) ||hit_ground(current_map->blocks[i]->sprite[2]) || hit_ground(current_map->blocks[i]->sprite[0]) )) {
+            current_map->blocks[i]->sprite[0]->yspeed += GRAVITY;
+            current_map->blocks[i]->sprite[1]->yspeed += GRAVITY;
+            current_map->blocks[i]->sprite[2]->yspeed += GRAVITY;
+            current_map->blocks[i]->sprite[0]->y += current_map->blocks[i]->sprite[0]->yspeed;
+            current_map->blocks[i]->sprite[1]->y += current_map->blocks[i]->sprite[1]->yspeed;
+            current_map->blocks[i]->sprite[2]->y += current_map->blocks[i]->sprite[2]->yspeed;
         }
 
-        if (hit_ground(blocks[i]->sprite) && !on_ground) {
-            blocks[i]->sprite->yspeed = 0;
-            while (hit_ground(blocks[i]->sprite)) {
-                blocks[i]->sprite->y--;
+        if ((hit_ground(current_map->blocks[i]->sprite[1]) ||hit_ground(current_map->blocks[i]->sprite[2]) || hit_ground(current_map->blocks[i]->sprite[0]) ) && !current_map->blocks[i]->is_on_ground) {
+            current_map->blocks[i]->sprite[0]->yspeed = 0;
+            current_map->blocks[i]->sprite[1]->yspeed = 0;
+            current_map->blocks[i]->sprite[2]->yspeed = 0;
+            while (hit_ground(current_map->blocks[i]->sprite[1]) ||hit_ground(current_map->blocks[i]->sprite[2]) || hit_ground(current_map->blocks[i]->sprite[0])) {
+                current_map->blocks[i]->sprite[0]->y--;
+                current_map->blocks[i]->sprite[1]->y--;
+                current_map->blocks[i]->sprite[2]->y--;
             }
-            uint32_t index = (blocks[i]->sprite->y / TILE_SIZE + 1) * map1->columns + blocks[i]->sprite->x / TILE_SIZE;
-            map1->map[index] = 'A';
-            on_ground = true;
+           
+            uint32_t index = (current_map->blocks[i]->sprite[1]->y / TILE_SIZE + 1) * current_map->columns + current_map->blocks[i]->sprite[1]->x / TILE_SIZE;
+        
+            current_map->map[index] = 'X';
+             index = (current_map->blocks[i]->sprite[0]->y / TILE_SIZE + 1) * current_map->columns + current_map->blocks[i]->sprite[0]->x / TILE_SIZE;
+            
+            current_map->map[index] = 'X';
+             index = (current_map->blocks[i]->sprite[2]->y / TILE_SIZE + 1) * current_map->columns + current_map->blocks[i]->sprite[2]->x / TILE_SIZE;
+ 
+            current_map->map[index] = 'X';
+            current_map->blocks[i]->is_on_ground = true;
         }
 
-        draw_sprite(blocks[i]->sprite);
+        draw_sprite(current_map->blocks[i]->sprite[0]);
+        draw_sprite(current_map->blocks[i]->sprite[1]);
+        draw_sprite(current_map->blocks[i]->sprite[2]);
     }
 }
 
 void erase_blocks() {
-    for (int i = 0; i < 10; i++) {
-        if (!blocks[i]) continue;
-        erase_sprite(blocks[i]->sprite);
+    for (int i = 0; i < current_map->n_blocks; i++) {
+        if (!current_map->blocks[i]) continue;
+        erase_sprite(current_map->blocks[i]->sprite[0]);
+        erase_sprite(current_map->blocks[i]->sprite[1]);
+        erase_sprite(current_map->blocks[i]->sprite[2]);
     }
 }

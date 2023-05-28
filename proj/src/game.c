@@ -102,7 +102,7 @@ int game_loop() {
                             }
                             current_frame = 0;
                         }
-                        if((on_fire(watergirl) || on_water(fireboy)) ){ 
+                        if((on_fire(watergirl) || on_water(fireboy)) || on_poison(fireboy) || on_poison(watergirl) ){ 
                             state=GAME_OVER;
                             stop_moving(fireboy);
                             stop_moving(watergirl);
@@ -206,6 +206,7 @@ int draw_main_menu() {
     Sprite* exit = mouse_over_sprite(exit_text) ? exit_texth : exit_text;
 
     if (mouse_lclick_sprite(single_player)) {
+        
         state = GAME;
         current_map=map1;
         fireboy->sprite->x=100;
@@ -215,7 +216,11 @@ int draw_main_menu() {
         
         start_counter(120);
         clear_background();
+       
         draw_map(current_map);
+     
+        reset_falling_blocks();
+     
         return 0;
     }
     if (mouse_lclick_sprite(coop)) {
@@ -252,31 +257,38 @@ int draw_main_menu() {
 }
 
 void draw_ropes() {
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            if (!ropes[i][j]) continue;
-            draw_sprite(ropes[i][j]);
-            int x_distf = abs(ropes[i][j]->x - fireboy->sprite->x);
-            int y_distf = abs(ropes[i][j]->y - fireboy->sprite->y);
-            int x_distw = abs(ropes[i][j]->x - watergirl->sprite->x);
-            int y_distw = abs(ropes[i][j]->y - watergirl->sprite->y);
-
+  
+    for (int i = 0; i < current_map->n_blocks; i++) {
+        
+        if(!current_map->blocks[i] ) continue;
+       
+        if(current_map->blocks[i]->is_cut) continue;
+        for (int j = 0; j < current_map->blocks[i]->n_rope; j++) {
+           
+            if (!current_map->blocks[i]->rope[j] ) continue;
+           
+            draw_sprite(current_map->blocks[i]->rope[j]);
+            
+            int x_distf = abs(current_map->blocks[i]->rope[j]->x - fireboy->sprite->x);
+            int y_distf = abs(current_map->blocks[i]->rope[j]->y - fireboy->sprite->y);
+            int x_distw = abs(current_map->blocks[i]->rope[j]->x - watergirl->sprite->x);
+            int y_distw = abs(current_map->blocks[i]->rope[j]->y - watergirl->sprite->y);
+            
             if ((x_distf > 150 || y_distf > 150) &&
                 (x_distw > 150 || y_distw > 150)) {
                 continue;
             }
-
-            if (mouse_lclick_sprite(ropes[i][j])) {
-                while (j < 10 && ropes[i][j]) {
-                    erase_sprite(ropes[i][j]);
-                    destroy_sprite(ropes[i][j]);
-                    ropes[i][j] = NULL;
-                    j++;
+          
+            if (mouse_lclick_sprite(current_map->blocks[i]->rope[j])) {
+                current_map->blocks[i]->is_cut=true;
+                for(int z=0; z<current_map->blocks[i]->n_rope;z++){
+                    erase_sprite( current_map->blocks[i]->rope[z]);
                 }
             }
         }
     }
 }
+
 
 int draw_game() {
     draw_sprite(cursor);
@@ -284,15 +296,20 @@ int draw_game() {
     move(watergirl);
     draw_character(fireboy);
     draw_character(watergirl);
+    
     draw_ropes();
+   
     draw_falling_blocks();
+  
     draw_sprite(cursor);
 
     draw_buffer();
     erase_sprite(cursor);
     erase_sprite(fireboy->sprite);
     erase_sprite(watergirl->sprite);
+  
     erase_blocks();
+    
 
     
     draw_timer();
@@ -305,12 +322,14 @@ int draw_game() {
 int draw_pause_menu() {
      if (mouse_inside(310, 452, 240, 80) && mouse_packet.lb) {
         state = MAIN_MENU;
+        reset_falling_blocks();
         clear_background();
         return 0;
     }
 
     if (mouse_inside(663, 452, 240, 80) && mouse_packet.lb) {
         state = GAME;
+        reset_falling_blocks();
         clear_background();
         start_counter(120);
         if(current_map==map1){
@@ -350,12 +369,14 @@ int draw_game_over() {
 
     if (mouse_inside(190, 540, 240, 80) && mouse_packet.lb) {
         state = MAIN_MENU;
+        reset_falling_blocks();
         clear_background();
         return 0;
     }
 
     if (mouse_inside(770, 540, 240, 80) && mouse_packet.lb) {
         state = GAME;
+        reset_falling_blocks();
         clear_background();
         start_counter(120);
         if(current_map==map1){

@@ -108,22 +108,32 @@ int (draw_map)(Map* map) {
 
                 if (map->map[index] == 'R') {
                     int i = 0;
+                    
+                    Falling_Block* falling_block = (Falling_Block*)malloc(sizeof(Falling_Block));
                     while (map->map[index] == 'R') {
                         map->map[index] = 'B';
-                        ropes[rope_count][i++] = create_sprite((xpm_map_t)rope_xpm, x, y, 0, 0);
+                        falling_block->rope[i++]= create_sprite((xpm_map_t)rope_xpm, x, y, 0, 0);
                         index += map->columns;
                         y += TILE_SIZE;
                     }
+                    
+                    falling_block->n_rope=i;
+                    falling_block->is_cut=false;
+                    falling_block->is_on_ground=false;
 
                     /* Falling Block */
                     if (map->map[index] == 'X') {
                         map->map[index] = 'B';
-                        Sprite* block = create_sprite((xpm_map_t)falling_block_xpm, x, y, 0, 0);
-                        Sprite* rope = ropes[rope_count][i - 1];
-                        Falling_Block* falling_block = (Falling_Block*)malloc(sizeof(Falling_Block));
-                        falling_block->sprite = block;
-                        falling_block->rope = rope;
-                        blocks[falling_block_count++] = falling_block;
+                     
+                        Sprite* block1 = create_sprite((xpm_map_t)wall1_xpm, x-32, y, 0, 0);
+                        Sprite* block2 = create_sprite((xpm_map_t)wall1_xpm, x, y, 0, 0);
+                        Sprite* block3 = create_sprite((xpm_map_t)wall2_xpm, x+32, y, 0, 0);
+                        falling_block->sprite[1] = block1;
+                        falling_block->sprite[2] = block2;
+                        falling_block->sprite[0] = block3;
+                        map->blocks[falling_block_count++] = falling_block;
+                        map->n_blocks=falling_block_count;
+                      
                     }
 
                     rope_count++;
@@ -257,8 +267,9 @@ int (draw_map)(Map* map) {
                     break;
                 }
                 water_door++;
-
+            }
             if(map->map[index] == 'V') {
+                printf("Poison\n");
                 if (poison % 5 == 0) {
                     if(draw_xpm((xpm_map_t)poison1_xpm, x, y)){
                         printf("Failed to load first image of the poison\n");
@@ -280,7 +291,7 @@ int (draw_map)(Map* map) {
                 poison++;
 
                 }
-            }
+            
         }
 
     }
@@ -298,4 +309,56 @@ int  (nextLevel)(){
         return 1;
     }
     return 1;
+}
+
+int (reset_falling_blocks)(){
+    for(int i=0; i< current_map->n_blocks;i++){
+        
+        if(!current_map->blocks[i]) continue;
+          
+            if(!current_map->blocks[i]->is_cut){ 
+                
+                continue;
+                }
+           
+            current_map->blocks[i]->is_cut=false;
+            current_map->blocks[i]->is_on_ground=false;
+             
+        
+            int map_index= (current_map->blocks[i]->sprite[0]->y+1) / TILE_SIZE * current_map->columns + current_map->blocks[i]->sprite[0]->x / TILE_SIZE;
+            current_map->map[map_index]='B';
+         
+            map_index=(current_map->blocks[i]->sprite[0]->y+1) / TILE_SIZE * current_map->columns + current_map->blocks[i]->sprite[1]->x / TILE_SIZE;
+            current_map->map[map_index]='B';
+         
+            map_index= (current_map->blocks[i]->sprite[0]->y+1) / TILE_SIZE * current_map->columns + current_map->blocks[i]->sprite[2]->x / TILE_SIZE;
+            current_map->map[map_index]='B';
+         
+            int y= current_map->blocks[i]->rope[current_map->blocks[i]->n_rope-1]->y + TILE_SIZE;
+            int x= current_map->blocks[i]->rope[current_map->blocks[i]->n_rope-1]->x ;
+            map_index=  y / TILE_SIZE * current_map->columns + x / TILE_SIZE;
+            current_map->map[map_index]='B';
+        
+            erase_sprite(current_map->blocks[i]->sprite[0]);
+            erase_sprite(current_map->blocks[i]->sprite[1]);
+            erase_sprite(current_map->blocks[i]->sprite[2]);
+           
+            current_map->blocks[i]->sprite[0]->x=x-TILE_SIZE;
+            current_map->blocks[i]->sprite[1]->x=x;
+            current_map->blocks[i]->sprite[2]->x=x+TILE_SIZE;
+            current_map->blocks[i]->sprite[0]->y=y;
+            current_map->blocks[i]->sprite[1]->y=y;
+            current_map->blocks[i]->sprite[2]->y=y;
+        
+        
+           
+        
+    }
+    return 0;
+}
+
+char get_tile(Map* map, u_int32_t x, u_int32_t y) {
+    uint32_t index = y / TILE_SIZE * map->columns + x / TILE_SIZE;
+
+    return map->map[index];
 }

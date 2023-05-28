@@ -58,8 +58,8 @@ typedef struct {
 
 Character* fireboy;
 Character* watergirl;
-extern Map* map1;
-extern Falling_Block* blocks[10];
+extern Map* current_map;
+
 
 /**
  * @brief Checks if block hit the ground
@@ -81,17 +81,7 @@ void draw_falling_blocks();
  */
 void erase_blocks();
 
-/**
- * @brief Returns the letter corresponding to the tile at the given position on the map.
- * 
- * @param map The map from which to retrieve the tile.
- * @param x The x position on the map.
- * @param y The y position on the map.
- * @return char The letter corresponding to the tile at the given coordinates.
 
-
- */
-char get_tile(Map* map, u_int32_t x, u_int32_t y);
 
 /**
  * @brief Checks if there is a wall below the character.
@@ -246,4 +236,5 @@ int on_fire(Character* character);
  * @return int Returns 1 if the character is on water, 0 otherwise.
  */
 int on_water(Character* character);
+int on_poison(Character* character);
 #endif /* __CHARACTER_H */

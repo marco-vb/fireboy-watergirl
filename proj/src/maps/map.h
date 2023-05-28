@@ -39,12 +39,14 @@
 #define TILE_SIZE 32
 
 Sprite* ropes[10][10];
-extern Falling_Block* blocks[10];
+
 
 typedef struct {
     int x, y;
     uint32_t rows, columns;
     char* map;
+    Falling_Block* blocks[10];
+    int n_blocks;
 } Map;
 
 Map* map1;
@@ -80,5 +82,19 @@ int draw_map(Map* map);
  * @return 1 if the current level was the last, 0 otherwise.
  */
 int nextLevel();
+
+/**
+ * @brief Returns the letter corresponding to the tile at the given position on the map.
+ * 
+ * @param map The map from which to retrieve the tile.
+ * @param x The x position on the map.
+ * @param y The y position on the map.
+ * @return char The letter corresponding to the tile at the given coordinates.
+
+
+ */
+char get_tile(Map* map, u_int32_t x, u_int32_t y);
+
+int (reset_falling_blocks)();
 
 #endif /* __MAP_H */
