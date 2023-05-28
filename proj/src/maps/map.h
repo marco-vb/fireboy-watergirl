@@ -51,6 +51,7 @@ typedef struct {
 
 Map* map1;
 Map* map2;
+Map* map3;
 Map* current_map;
 
 /**

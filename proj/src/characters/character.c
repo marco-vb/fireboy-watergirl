@@ -80,8 +80,9 @@ int wall_left(Character* character) {
 
     char tile = get_tile(current_map, x, y + CHECKBOX_PADDING);
 
-    if (tile == 'A') { return 1; }
-    if (get_tile(current_map, x, y + character->sprite->height - CHECKBOX_PADDING) == 'A') return 1;
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile=='X') { return 1; }
+    tile=get_tile(current_map, x, y + character->sprite->height - CHECKBOX_PADDING);
+    if ( tile == 'A' || tile == 'L' || tile == 'P' || tile=='X') return 1;
 
     return 0;
 }
@@ -92,8 +93,9 @@ int wall_right(Character* character) {
 
     char tile = get_tile(current_map, x, y + CHECKBOX_PADDING);
 
-    if (tile == 'A') { return 1; }
-    if (get_tile(current_map, x, y + character->sprite->height - CHECKBOX_PADDING) == 'A') return 1;
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile=='X') { return 1; }
+    tile=get_tile(current_map, x, y + character->sprite->height - CHECKBOX_PADDING) ;
+    if (tile == 'A' || tile == 'L' || tile == 'P' || tile=='X') return 1;
 
     return 0;
 }
@@ -104,9 +106,9 @@ int wall_up(Character* character) {
 
     char tile = get_tile(current_map, x + CHECKBOX_PADDING, y);
 
-    if (tile == 'A' || tile == 'P' || tile == 'L') { return 1; }
+    if (tile == 'A' || tile == 'P' || tile == 'L'|| tile=='X') { return 1; }
     tile = get_tile(current_map, x + character->sprite->width - CHECKBOX_PADDING, y);
-    if (tile == 'A' || tile == 'P' || tile == 'L') { return 1; }
+    if (tile == 'A' || tile == 'P' || tile == 'L'|| tile=='X') { return 1; }
 
     return 0;
 }
@@ -295,6 +297,17 @@ void draw_falling_blocks() {
     
     for (int i = 0; i < current_map->n_blocks; i++) {
         if (!current_map->blocks[i]) continue;
+        if(current_map->blocks[i]->is_cut && !current_map->blocks[i]->is_on_ground){
+            uint32_t index = (current_map->blocks[i]->sprite[1]->y / TILE_SIZE ) * current_map->columns + current_map->blocks[i]->sprite[1]->x / TILE_SIZE;
+        
+            current_map->map[index] = 'B';
+             index = (current_map->blocks[i]->sprite[0]->y / TILE_SIZE ) * current_map->columns + current_map->blocks[i]->sprite[0]->x / TILE_SIZE;
+            
+            current_map->map[index] = 'B';
+             index = (current_map->blocks[i]->sprite[2]->y / TILE_SIZE ) * current_map->columns + current_map->blocks[i]->sprite[2]->x / TILE_SIZE;
+ 
+            current_map->map[index] = 'B';
+        }
         // For some reason when I assign NULL to the rope in game.c,
         // current_map->blocks[i]->rope is not NULL, but its coordinates get messed up.
         /* Rope was broken */

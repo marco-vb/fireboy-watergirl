@@ -42,7 +42,7 @@ Map* (create_map)(int level) {
     }*/
 
     map->x = map->y = 0;
-
+    map->n_blocks=0;
     fclose(file);
     free(path);
     free(level_str);
@@ -53,9 +53,10 @@ Map* (create_map)(int level) {
 int (load_maps)() {
     map1 = create_map(1);
     map2 = create_map(2);
+    map3=create_map(3);
     current_map = map1;
 
-    if (!map1 || !map2) { return 1; }
+    if (!map1 || !map2 || !map3) { return 1; }
 
     return 0;
 }
@@ -67,7 +68,7 @@ int (draw_map)(Map* map) {
     unsigned int water = 0;
     unsigned int rope_count = 0;
     unsigned int falling_block_count = 0;
-
+    
     unsigned int fire_door = 0;
     unsigned int water_door = 0;
 
@@ -78,7 +79,7 @@ int (draw_map)(Map* map) {
             uint32_t index = i * map->columns + j;
             uint32_t x = map->x + j * TILE_SIZE, y = map->y + i * TILE_SIZE;
 
-            if (map->map[index] == 'B' || map->map[index] == 'R') {
+            if (map->map[index] == 'B' || map->map[index] == 'R' || map->map[index] == 'X') {
                 switch (background % 3)
                 {
                 case 0:
@@ -123,7 +124,8 @@ int (draw_map)(Map* map) {
 
                     /* Falling Block */
                     if (map->map[index] == 'X') {
-                        map->map[index] = 'B';
+                        map->map[index-1] = 'X';
+                        map->map[index+1]='X';
                      
                         Sprite* block1 = create_sprite((xpm_map_t)wall1_xpm, x-32, y, 0, 0);
                         Sprite* block2 = create_sprite((xpm_map_t)wall1_xpm, x, y, 0, 0);
@@ -269,7 +271,6 @@ int (draw_map)(Map* map) {
                 water_door++;
             }
             if(map->map[index] == 'V') {
-                printf("Poison\n");
                 if (poison % 5 == 0) {
                     if(draw_xpm((xpm_map_t)poison1_xpm, x, y)){
                         printf("Failed to load first image of the poison\n");
@@ -301,10 +302,15 @@ int (draw_map)(Map* map) {
 
 int  (nextLevel)(){
     if(current_map==map1){ 
+        
         current_map= map2;
         return 0;
     }
     if(current_map==map2){
+        current_map=map3;
+        return 0;
+    }
+    if(current_map==map3){
         current_map=map1;
         return 1;
     }
@@ -349,7 +355,16 @@ int (reset_falling_blocks)(){
             current_map->blocks[i]->sprite[0]->y=y;
             current_map->blocks[i]->sprite[1]->y=y;
             current_map->blocks[i]->sprite[2]->y=y;
-        
+            map_index= (current_map->blocks[i]->sprite[0]->y+1) / TILE_SIZE * current_map->columns + current_map->blocks[i]->sprite[0]->x / TILE_SIZE;
+            current_map->map[map_index]='X';
+         
+            map_index=(current_map->blocks[i]->sprite[0]->y+1) / TILE_SIZE * current_map->columns + current_map->blocks[i]->sprite[1]->x / TILE_SIZE;
+            current_map->map[map_index]='X';
+         
+            map_index= (current_map->blocks[i]->sprite[0]->y+1) / TILE_SIZE * current_map->columns + current_map->blocks[i]->sprite[2]->x / TILE_SIZE;
+            current_map->map[map_index]='X';
+         
+            
         
            
         

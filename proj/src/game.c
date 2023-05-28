@@ -108,12 +108,13 @@ int game_loop() {
                             stop_moving(watergirl);
                         }
                         if(door_fire(fireboy) && door_water(watergirl)){
+                            reset_falling_blocks();
+                            clear_background();
                             if(nextLevel()) state=MAIN_MENU;
                             else{
-                                clear_background();
                                 start_counter(120);
                                 draw_map(current_map);
-                            if( current_map==map1){
+                            if( current_map==map1 || current_map==map3){
                                 fireboy->sprite->x=100;
                                 fireboy->sprite->y=750;
                                 watergirl->sprite->x= 100;
@@ -332,7 +333,7 @@ int draw_pause_menu() {
         reset_falling_blocks();
         clear_background();
         start_counter(120);
-        if(current_map==map1){
+        if(current_map==map1 || current_map==map3){
            
             fireboy->sprite->x=100;
             fireboy->sprite->y=750;
@@ -379,7 +380,7 @@ int draw_game_over() {
         reset_falling_blocks();
         clear_background();
         start_counter(120);
-        if(current_map==map1){
+        if(current_map==map1 || current_map==map3){
            
             fireboy->sprite->x=100;
             fireboy->sprite->y=750;
