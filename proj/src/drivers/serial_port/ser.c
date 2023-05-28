@@ -39,18 +39,23 @@ void init_queues() {
     queue_receive = create_queue();
 }
 
+void clear_queues() {
+    clear_queue(queue_send);
+    clear_queue(queue_receive);
+}
+
 void destroy_queues() {
     destroy_queue(queue_send);
     destroy_queue(queue_receive);
 }
 
-uint8_t pop_byte() {
+uint8_t receive_queue_pop() {
     uint8_t byte = front(queue_receive);
     pop_queue(queue_receive);
     return byte;
 }
 
-void push_byte(uint8_t byte) {
+void send_queue_push(uint8_t byte) {
     push_queue(queue_send, byte);
 } 
 
@@ -60,6 +65,14 @@ bool receive_queue_is_empty() {
 
 bool send_queue_is_empty() {
     return is_empty(queue_send);
+}
+
+uint8_t receive_queue_front() {
+    return front(queue_receive);
+}
+
+uint8_t receive_queue_size() {
+    return get_size(queue_receive);
 }
 
 bool transmitter_ready() {
@@ -129,8 +142,6 @@ int ser_conf(uint8_t bits, uint8_t stop, uint8_t par_mode) {
         conf |= BIT(4);
     if (par_mode > 2)
         conf |= BIT(5);
-
-    printf("Conf: %x\n", conf);
 
     if (write_lcr(conf))
         return 1;

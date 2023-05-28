@@ -104,5 +104,7 @@ int watergirl_move(keyboard_key key);
  * @brief Draws the ropes on the screen. And controlls whether or not the characters can or have cut them.
  */
 void draw_ropes();
+void exit_multiplayer();
+void handle_remote_player();
 
 #endif /* __GAME_H */

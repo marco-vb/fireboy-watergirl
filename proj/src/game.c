@@ -7,11 +7,15 @@
 #include "maps/map.h"
 #include "count_down/count_down.h"
 #include "drivers/rtc/rtc.h"
+#include "drivers/serial_port/ser.h"
+#include "characters/character.h"
+#include "communication/communication.h"
+
 int frames_per_second = 60;
 int current_frame = 0;
 extern Map* current_map;
 extern Map* map1;
-uint8_t irq_mouse, irq_timer, irq_keyboard;
+uint8_t irq_mouse, irq_timer, irq_keyboard, irq_ser;
 static bool control_fireboy = true, control_watergirl = true, multiplayer = false;
 static int player;
 
@@ -29,6 +33,7 @@ int game_init(int player_number) {
     }
 
     timer_set_frequency(0, 60);
+
 
     if (kbc_init(&irq_keyboard, &irq_mouse)) {
         printf("Error initializing kbc.\n");
@@ -51,6 +56,16 @@ int game_init(int player_number) {
 
     if (rtc_init()) return 1;
 
+    if (ser_init()) {
+        printf("Error initializing serial port\n");
+        return 1;
+    }
+
+    if (ser_subscribe_int(&irq_ser)) {
+        printf("Error subscribing serial port interrupts.\n");
+        return 1;
+    }
+
     return 0;
 }
 
@@ -67,6 +82,11 @@ int game_exit() {
 
     if (text_mode() != OK) {
         printf("Error exiting video mode.\n");
+        return 1;
+    }
+
+    if (ser_unsubscribe_int()) {
+        printf("Error unsubscribing serial port interrupts.\n");
         return 1;
     }
 
@@ -115,6 +135,7 @@ int game_loop() {
                             reset_falling_blocks();
                             clear_background();
                             if (nextLevel()) {
+                                exit_multiplayer();
                                 state = MAIN_MENU;
                                 control_fireboy = control_watergirl = true;
                             }
@@ -139,6 +160,15 @@ int game_loop() {
                         update_character(fireboy);
                         update_character(watergirl);
                     }
+
+                    if (multiplayer) handle_remote_player();
+
+                    if (multiplayer && transmitter_ready() && !send_queue_is_empty()) {
+                        send_bytes();
+                    }
+
+                    update_character(fireboy);
+                    update_character(watergirl);
                     draw_screen();
                 }
 
@@ -147,32 +177,30 @@ int game_loop() {
                     if (!keyboard_packet.complete) continue;
                     keyboard_key k = keyboard_get_key();
 
-                    switch (k) {
-                    case KEY_ESC:
+                    if (k == KEY_ESC) {
                         if (state == MAIN_MENU) state = EXIT;
                         else if (state == GAME) state = PAUSE_MENU;
                         else {
+                            exit_multiplayer();
                             state = MAIN_MENU;
                             control_fireboy = control_watergirl = true;
                             clear_background();
                         }
                         break;
+                    }
 
-                    case KEY_A: case KEY_W: case KEY_S: case KEY_D:
-                        if(state==GAME && control_fireboy)fireboy_move(k);
-                        break;
+                    if (state == GAME && control_fireboy) fireboy_move(k);
+                    if (state == GAME && control_watergirl) watergirl_move(k);
 
-                    case KEY_LEFT: case KEY_UP: case KEY_DOWN: case KEY_RIGHT:
-                        if(state==GAME && control_watergirl)watergirl_move(k);
-                        break;
+                    if (multiplayer) {send_keyboard_key(k); printf("Sent key: %x\n", k);}
+                }
 
-                    case KEY_A_BREAK: case KEY_D_BREAK:
-                        if(state==GAME && control_fireboy)fireboy_move(k);
-                        break;
-                    case KEY_LEFT_BREAK: case KEY_RIGHT_BREAK:
-                        if(state==GAME && control_watergirl)watergirl_move(k);
-                        break;
-                    default:
+                if (msg.m_notify.interrupts & irq_ser) {
+                    ser_ih();
+
+                    if (check_ih_err()) {
+                        // TODO: Check/Remove this
+                        printf("Error?\n");
                         break;
                     }
                 }
@@ -238,6 +266,9 @@ int draw_main_menu() {
         fireboy->sprite->y=750;
         watergirl->sprite->x= 100;
         watergirl->sprite->y=750;
+        clear_queues();
+        init_fifos();
+
         state = GAME;
         multiplayer = true;
         if (player == 1)
@@ -383,6 +414,8 @@ int draw_pause_menu() {
 int draw_game_over() {
 
     if (mouse_inside(190, 540, 240, 80) && mouse_packet.lb) {
+        if (multiplayer) exit_multiplayer();
+        
         state = MAIN_MENU;
         reset_falling_blocks();
         clear_background();
@@ -434,8 +467,10 @@ int fireboy_move(keyboard_key key) {
     case KEY_D:
         move_right(fireboy);
         break;
-    default:
+    case KEY_A_BREAK: case KEY_D_BREAK:
         stop_moving(fireboy);
+        break;
+    default:
         break;
     }
 
@@ -453,10 +488,52 @@ int watergirl_move(keyboard_key key) {
     case KEY_RIGHT:
         move_right(watergirl);
         break;
-    default:
+    case KEY_LEFT_BREAK: case KEY_RIGHT_BREAK:
         stop_moving(watergirl);
+        break;
+    default:
         break;
     }
 
     return 0;
+}
+
+void exit_multiplayer() {
+    destroy_queues();
+    control_fireboy = control_watergirl = true;
+}
+
+void handle_remote_player() {
+    while (!receive_queue_is_empty()) {
+        switch(receive_queue_front()) {
+            case KEYBOARD_ID: {
+                uint8_t key;
+                if (receive_queue_size() < 2) {
+                    printf("Key hasn't been received\n");
+                    return;
+                }
+
+                receive_queue_pop();
+
+                key = receive_queue_pop();
+
+                printf("KEY: %x\n", key);
+                printf("Number of items: %d\n", receive_queue_size());
+
+                if (player == 1){
+                    printf("move_water");
+                    watergirl_move(key);
+                }
+                else if (player == 2) {
+                    printf("move fire\n");
+                    fireboy_move(key);
+                }
+
+                break;
+            }
+            default:
+                receive_queue_pop();
+                break;
+        }
+    }
 }

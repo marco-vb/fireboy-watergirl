@@ -2,11 +2,14 @@
 #define SER_H
 
 void init_queues();
+void clear_queues();
 void destroy_queues();
-uint8_t pop_byte();
-void push_byte(uint8_t byte);
+uint8_t receive_queue_pop();
+void send_queue_push(uint8_t byte);
 bool receive_queue_is_empty();
 bool send_queue_is_empty();
+uint8_t receive_queue_front();
+uint8_t receive_queue_size();
 int read_byte(uint8_t *data);
 int send_byte(uint8_t data);
 int send_bytes();
